@@ -73,7 +73,7 @@
             builtins.concatStringsSep "\n"
             (builtins.mapAttrsToList mkOptionLine c);
 
-          options = lib.mkOption {
+          options.programs.gtnh = lib.mkOption {
             type = lib.types.submodule {
               options = inputs.haumea.lib.load {
                 src = ./options;
@@ -88,13 +88,17 @@
             wantedBy = ["multi-user.target"];
             after = ["network.target"];
 
-            path = with pkgs; [jre8 bash];
+            path = with pkgs; [config.programs.gtnh.jvmPackage bash];
 
             environment = {
-              # MCRCON_PORT = toString icfg.serverConfig.rcon-port;
-              MCRCON_PASS = "whatisloveohbabydonthurtmedonthurtmenomore";
+              MCRCON_PORT = toString config.programs.gtnh.minecraft.server-properties.rcon-port;
+              MCRCON_PASS = toString config.programs.gtnh.minecraft.server-properties.rcon-password;
             };
-            script = '''';
+            script = ''
+              exec ${config.programs.gtnh.jvmPackage}/bin/java \
+                ${config.programs.gtnh.jvmOptString} \
+                -jar lwjgl3ify-forgePatches.jar nogui
+            '';
             serviceConfig = {
               Restart = "always";
               ExecStop = ''
@@ -112,7 +116,7 @@
 
               # Ensure server.properties is present
               if [[ -f server.properties ]]; then
-                mv -f server.properties server.properties.back
+                mv -f server.properties server.properties.bak
               fi
 
               # This file must be writeable, because Mojang.
@@ -129,9 +133,8 @@
           };
 
           users.groups.gtnh = {};
-
-          networking.firewall.allowedUDPPorts = "replaceme";
-          networking.firewall.allowedTCPPorts = "replaceme";
+          networking.firewall.allowedUDPPorts = [config.programs.gtnh.minecraft.server-properties.query-port];
+          networking.firewall.allowedTCPPorts = [config.programs.gtnh.minecraft.server-properties.server-port config.programs.gtnh.minecraft.server-properties.query-port config.programs.gtnh.minecraft.server-properties.rcon-port];
         };
       };
     };

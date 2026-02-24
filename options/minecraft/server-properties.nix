@@ -3,7 +3,7 @@ with lib; {
   options = {
     allow-flight = mkOption {
       type = with types; bool;
-      default = false;
+      default = true;
       description = ''
         Allows users to use flight on the server while in Survival mode, if
         they have a mod that provides flight installed.
@@ -33,6 +33,18 @@ with lib; {
         </itemizedlist>
       '';
     };
+    announce-player-achievements = mkOption {
+      type = with types; bool;
+      default = true;
+      description = ''
+        Whether to announce achievements in chat or not.
+
+        <itemizedlist>
+        <listitem><emphasis>false</emphasis> - Achievements are silenced.</listitem>
+        <listitem><emphasis>true</emphasis> - Achievements are logged in chat.</listitem>
+        </itemizedlist>
+      '';
+    };
     broadcast-console-to-ops = mkOption {
       type = with types; bool;
       default = true;
@@ -49,15 +61,17 @@ with lib; {
     };
     difficulty = mkOption {
       type = with types; ints.between 0 3;
-      default = 1;
+      default = 3;
       description = ''
         Defines the difficulty (such as damage dealt by mobs and the way
         hunger and poison affects players) of the server.
+
+        GTNH is balanced around difficulty 3, changing this default will affect gameplay
       '';
     };
     enable-command-block = mkOption {
       type = with types; bool;
-      default = false;
+      default = true;
       description = ''
         Enables command blocks
       '';
@@ -190,7 +204,7 @@ with lib; {
     };
     level-name = mkOption {
       type = with types; str;
-      default = "world";
+      default = "World";
       description = ''
         The "level-name" value is used as the world name and its folder
         name. The player may also copy their saved game folder here, and
@@ -216,7 +230,14 @@ with lib; {
       description = ''
         Determines the type of map that is generated.
 
+        <emphasis> DO NOT CHANGE THIS UNLESS YOU KNOW WHAT YOU ARE DOING </emphasis>
+        Gtnh expects the level type to be rwg for structure and ore generation, more info on the
+        <link linkend="https://wiki.gtnewhorizons.com/wiki/World_Generation"> wiki </link>
+
         <itemizedlist>
+        <listitem>
+        <emphasis>rwg</emphasis> - The default gtnh level type
+        </listitem>
         <listitem>
         <emphasis>default</emphasis> - Standard world with hills, valleys, water, etc.
         </listitem>
@@ -233,6 +254,14 @@ with lib; {
         <emphasis>buffet</emphasis> - Only for 1.15 or before. Same as default unless generator-settings is set.
         </listitem>
         </itemizedlist>
+      '';
+    };
+    max-build-height = mkOption {
+      type = types.ints.between 1 256;
+      default = 256;
+      description = ''
+        The maximum height in which building is allowed. Terrain may still naturally generate above a low height limit.
+        Cannot be sight higher than 256, only lower;
       '';
     };
     max-players = mkOption {
@@ -369,7 +398,7 @@ with lib; {
     };
     op-permission-level = mkOption {
       type = with types; ints.between 1 4;
-      default = 4;
+      default = 2;
       description = ''
         Sets the default permission level for ops when using /op. All
         levels inherit abilities and commands from levels before them.
@@ -601,7 +630,7 @@ with lib; {
     };
     spawn-protection = mkOption {
       type = with types; int;
-      default = 16;
+      default = 1;
       description = ''
         Determines the side length of the square spawn protection area as
         2x+1. Setting this to 0 disables the spawn protection. A value of
@@ -621,7 +650,7 @@ with lib; {
     };
     view-distance = mkOption {
       type = with types; ints.between 3 32;
-      default = 10;
+      default = 8;
       description = ''
         Sets the amount of world data the server sends the client,
         measured in chunks in each direction of the player (radius, not
@@ -630,7 +659,7 @@ with lib; {
     };
     white-list = mkOption {
       type = with types; bool;
-      default = false;
+      default = true;
       description = ''
         Enables a whitelist on the server.
 
