@@ -12,6 +12,9 @@
 
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        inputs.flake-parts.flakeModules.easyOverlay
+      ];
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
         config,
@@ -19,8 +22,54 @@
         inputs',
         pkgs,
         system,
+        lib,
         ...
-      }: {};
+      }: let
+        base-url = "https://downloads.gtnewhorizons.com/ServerPacks/";
+        version-list = [
+          {
+            version = "2.8.4";
+            sha = "sha256-pY13GgfdcHU13wFRkIV1U5gpbB6RODYS0tMv82mQwIw=";
+          }
+          {
+            version = "2.8.3";
+            sha = "sha256-SPJtgGve6c+RwAU71cxTi6jqL+bA4t+1f3+xvOFsqn8=";
+          }
+          {
+            version = "2.8.2";
+            sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+          }
+        ];
+        mkVersion = version:
+          pkgs.stdenv.mkDerivation {
+            name = "gtnh";
+            version = version.version;
+            src = pkgs.fetchurl {
+              url = "${base-url}GT_New_Horizons_${version.version}_Server_Java_17-25.zip";
+              sha256 = version.sha;
+            };
+            nativeBuildInputs = [pkgs.unzip];
+            unpackPhase = ''
+              unzip $src
+            '';
+            installPhase = ''
+              mkdir -p $out
+              cp -r . $out/
+            '';
+          };
+      in {
+        packages = builtins.listToAttrs (builtins.map (version: {
+            name = "gtnh-${version.version}";
+            value = mkVersion version;
+          })
+          version-list);
+
+        overlayAttrs = builtins.listToAttrs (builtins.map (version: {
+            name = "gtnh-${version.version}";
+            value = config.packages."gtnh-${version.version}";
+          })
+          version-list);
+      };
       flake = module @ {
         pkgs,
         config,
@@ -112,6 +161,7 @@
 
             preStart = ''
               # Ensure EULA is accepted
+              ln ${config.programs.gtnh.gtnhPackage}
               ln -sf ${eulaFile} eula.txt
 
               # Ensure server.properties is present

@@ -69,6 +69,13 @@ in {
       '';
     };
 
+    gtnhPackage = mkOption {
+      type = with types; package;
+      default = pkgs."gtnh-2.8.4";
+      description = ''
+        GTNH package used for the server.
+      '';
+    };
     jvmMaxAllocation = mkOption {
       type = with types; str;
       default = "6G";
