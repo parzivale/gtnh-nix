@@ -70,13 +70,13 @@
           })
           version-list);
       };
-      flake = module @ {
-        pkgs,
-        config,
-        lib,
-        ...
-      }: {
-        modules.nixos.gtnh = let
+      flake = {
+        modules.nixos.gtnh = module @ {
+          pkgs,
+          config,
+          lib,
+          ...
+        }: let
           eulaFile = builtins.toFile "eula.txt" ''
             # eula.txt managed by NixOS Configuration
             eula=true
@@ -122,6 +122,41 @@
             builtins.concatStringsSep "\n"
             (builtins.mapAttrsToList mkOptionLine c);
 
+          mkTypePrefix = v:
+            if builtins.isBool v
+            then "B"
+            else if builtins.isInt v
+            then "I"
+            else if builtins.isFloat v
+            then "D"
+            else "S";
+
+          mkValue = v:
+            if builtins.isBool v
+            then
+              (
+                if v
+                then "true"
+                else "false"
+              )
+            else toString v;
+
+          mkEntry = k: v:
+            if lib.hasPrefix "_" k
+            then ""
+            else if builtins.isAttrs v
+            then "\"${k}\" {\n${mkAttrs v}\n}"
+            else if builtins.isList v
+            then let
+              prefix =
+                if v == []
+                then "S"
+                else mkTypePrefix (builtins.head v);
+            in "${prefix}:\"${k}\" <\n${lib.concatMapStrings (x: "${mkValue x}\n") v}>"
+            else "${mkTypePrefix v}:\"${k}\"=${mkValue v}";
+
+          mkAttrs = attrs:
+            lib.concatStringsSep "\n" (lib.mapAttrsToList mkEntry attrs);
           options.programs.gtnh = lib.mkOption {
             type = lib.types.submodule {
               options = inputs.haumea.lib.load {
@@ -139,10 +174,6 @@
 
             path = with pkgs; [config.programs.gtnh.jvmPackage bash];
 
-            environment = {
-              MCRCON_PORT = toString config.programs.gtnh.minecraft.server-properties.rcon-port;
-              MCRCON_PASS = toString config.programs.gtnh.minecraft.server-properties.rcon-password;
-            };
             script = ''
               exec ${config.programs.gtnh.jvmPackage}/bin/java \
                 ${config.programs.gtnh.jvmOptString} \
@@ -161,7 +192,7 @@
 
             preStart = ''
               # Ensure EULA is accepted
-              ln ${config.programs.gtnh.gtnhPackage}
+              ln -sf ${config.programs.gtnh.gtnhPackage}
               ln -sf ${eulaFile} eula.txt
 
               # Ensure server.properties is present
