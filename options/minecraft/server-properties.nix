@@ -1,4 +1,8 @@
-{lib, ...}:
+{
+  config,
+  lib,
+  ...
+}:
 with lib; {
   allow-flight = mkOption {
     type = with types; bool;
@@ -529,7 +533,7 @@ with lib; {
   };
   rcon-port = mkOption {
     type = with types; port;
-    default = config.server-port + 1;
+    default = config.minecraft.server-properties.server-port + 1;
     description = ''
       Minecraft: <literal>rcon.port</literal>.
 

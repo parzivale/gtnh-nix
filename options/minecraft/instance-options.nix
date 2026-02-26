@@ -1,5 +1,4 @@
 {
-  name,
   lib,
   config,
   pkgs,
@@ -10,8 +9,6 @@ with lib; let
   mkJvmMsFlag = icfg: optionalString (icfg.jvmInitialAllocation != "") "-Xms${icfg.jvmInitialAllocation}";
   mkJvmOptString = icfg: "${mkJvmMxFlag icfg} ${mkJvmMsFlag icfg} ${icfg.jvmOpts}";
 in {
-  enable = mkEnableOption "Enable minecraft server instance ${name}";
-
   openRcon = mkOption {
     type = with types; bool;
     default = false;
@@ -59,7 +56,7 @@ in {
 
   jvmPackage = mkOption {
     type = with types; package;
-    default = pkgs.jre8;
+    default = pkgs.jdk25;
     description = ''
       JVM package used to run the server.
 
@@ -71,7 +68,7 @@ in {
 
   gtnhPackage = mkOption {
     type = with types; package;
-    default = pkgs."gtnh-2.8.4";
+    default = pkgs."gtnh-${config.version}";
     description = ''
       GTNH package used for the server.
     '';
@@ -159,6 +156,15 @@ in {
     readOnly = true;
     description = ''
       The compiled value of $JVMOPTS, exported as a read-only value.
+    '';
+  };
+
+  version = mkOption {
+    type = with types; str;
+    default = "2.8.4";
+    description = ''
+      GTNH version to run. Must match an entry in the version-list and have
+      a corresponding package exposed via the overlay (e.g. gtnh-2.8.4).
     '';
   };
 }
