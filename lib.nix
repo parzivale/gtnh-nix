@@ -28,7 +28,10 @@
 
   mkEntry = k: v:
     if builtins.isAttrs v
-    then "\"${k}\" {\n${mkCfg v}\n}"
+    # Empty-string key represents a top-level anonymous section.
+    # Writing `"" {` would produce an unmatched-quote parse error in Forge;
+    # write bare `{` instead, which Forge accepts as an anonymous section.
+    then if k == "" then "{\n${mkCfg v}\n}" else "\"${k}\" {\n${mkCfg v}\n}"
     else if builtins.isList v
     then let
       prefix =
