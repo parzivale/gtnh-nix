@@ -91,8 +91,8 @@
                 description = "DO NOT CHANGE THIS IF YOU DONT KNOW WHAT YOU ARE DOING [range: 0 ~ 2147483647, default: 5]";
               };
               barWidth = lib.mkOption {
-                type = lib.types.float;
-                default = 176.0;
+                type = lib.types.str;
+                default = "176.0";
                 description = "DO NOT CHANGE THIS IF YOU DONT KNOW WHAT YOU ARE DOING [range: 0.0 ~ 2.1474836E9, default: 176.0]";
               };
               barXLocation = lib.mkOption {
