@@ -184,7 +184,7 @@
                         mkdir -p "$rel"
                       else
                         case "$rel" in
-                          config/*)
+                          config/*|*.json)
                             if [[ -f "$rel" ]]; then
                               mv -f "$rel" "$rel.bak"
                             fi
