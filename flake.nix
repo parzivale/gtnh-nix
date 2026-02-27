@@ -174,9 +174,17 @@
                   };
 
                   preStart = ''
-                    for f in ${config.programs.gtnh.minecraft.instance-options.gtnhPackage}/*; do
-                      ln -sf "$f" .
-                    done
+                    # Reproduce the pack's directory tree: create real dirs, symlink
+                    # files. A plain `ln -sf pack/* .` would symlink directories
+                    # as read-only Nix store paths, preventing config file placement.
+                    while IFS= read -r -d $'\0' entry; do
+                      rel="''${entry#${config.programs.gtnh.minecraft.instance-options.gtnhPackage}/}"
+                      if [[ -d "$entry" ]]; then
+                        mkdir -p "$rel"
+                      else
+                        ln -sf "$entry" "$rel"
+                      fi
+                    done < <(find ${config.programs.gtnh.minecraft.instance-options.gtnhPackage} -mindepth 1 -print0 | sort -z)
                     # Ensure EULA is accepted
                     ln -sf ${eulaFile} eula.txt
                     ${lib.concatStringsSep "\n" (lib.flatten (lib.mapAttrsToList (_modGroup: cfgs:
