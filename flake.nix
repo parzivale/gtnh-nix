@@ -181,10 +181,10 @@
                     ln -sf ${eulaFile} eula.txt
                     ${lib.concatStringsSep "\n" (lib.flatten (lib.mapAttrsToList (_modGroup: cfgs:
                         lib.mapAttrsToList (_cfgName: value: ''
-                          if [[ -f ${value.path} ]]; then
-                            mv -f ${value.path} ${value.path}.bak
+                          if [[ -f "${value.path}" ]]; then
+                            mv -f "${value.path}" "${value.path}.bak"
                           fi
-                          ln -sf ${mkConfigFile value} ${value.path}
+                          ln -sf ${mkConfigFile value} "${value.path}"
                         '') cfgs)
                       config.programs.gtnh.mods))}
                     # Ensure server.properties is present
