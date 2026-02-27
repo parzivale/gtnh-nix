@@ -34,7 +34,10 @@
           virtualisation.diskSize = 20480;
         };
 
-        testScript = ''
+        testScript = {nodes, ...}: let
+          cfg = nodes.machine.config.programs.gtnh.minecraft.server-properties;
+          mcrcon = "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P ${toString cfg.rcon-port} -p ${cfg.rcon-password}";
+        in ''
           machine.wait_for_unit("multi-user.target")
 
           # User and group are created during system activation
@@ -49,14 +52,12 @@
 
           # Wait for RCON to come up — GTNH takes several minutes to start
           machine.wait_until_succeeds(
-            "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P 25575 -p whatisloveohbabydonthurtmedonthurtmenomore list",
+            "${mcrcon} list",
             timeout=600
           )
 
           # Verify the server responds sensibly to a list command
-          output = machine.succeed(
-            "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P 25575 -p whatisloveohbabydonthurtmedonthurtmenomore list"
-          )
+          output = machine.succeed("${mcrcon} list")
           assert "players" in output.lower(), f"Unexpected mcrcon output: {output}"
         '';
       };
