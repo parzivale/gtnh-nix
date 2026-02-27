@@ -21,8 +21,12 @@
 
           programs.gtnh.enable = true;
 
+          # Lower JVM heap so it fits inside the VM (default 6G would OOM)
+          programs.gtnh.minecraft.instance-options.jvmMaxAllocation = "3G";
+          programs.gtnh.minecraft.instance-options.jvmInitialAllocation = "3G";
+
           # Give the VM enough memory and disk for GTNH
-          virtualisation.memorySize = 8192;
+          virtualisation.memorySize = 6144;
           virtualisation.diskSize = 20480;
         };
 
