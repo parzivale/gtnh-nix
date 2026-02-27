@@ -36,7 +36,7 @@
             | grep -v '^\s*~' \
             | awk '{ if (prev != "" && /^\s*\{\s*$/) { print prev " {"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
             | tr -d ' \t"' \
-            | sed 's/^[BIDS]://' \
+            # | sed 's/^[BIDS]://' \
             | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
             | sort -u \
             || true
