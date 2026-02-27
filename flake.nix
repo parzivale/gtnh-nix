@@ -174,33 +174,49 @@
                   };
 
                   preStart = ''
-                    # Reproduce the pack's directory tree: create real dirs, symlink
-                    # files. A plain `ln -sf pack/* .` would symlink directories
-                    # as read-only Nix store paths, preventing config file placement.
+                    # Reproduce the pack's directory tree.
+                    # config/* files are copied (not symlinked) so mods can write to
+                    # them at startup; existing files are backed up first.
+                    # Everything else (jars etc.) is symlinked.
                     while IFS= read -r -d $'\0' entry; do
                       rel="''${entry#${config.programs.gtnh.minecraft.instance-options.gtnhPackage}/}"
                       if [[ -d "$entry" ]]; then
                         mkdir -p "$rel"
                       else
-                        ln -sf "$entry" "$rel"
+                        case "$rel" in
+                          config/*)
+                            if [[ -f "$rel" ]]; then
+                              mv -f "$rel" "$rel.bak"
+                            fi
+                            cp "$entry" "$rel"
+                            chmod 644 "$rel"
+                            ;;
+                          *)
+                            ln -sf "$entry" "$rel"
+                            ;;
+                        esac
                       fi
                     done < <(find ${config.programs.gtnh.minecraft.instance-options.gtnhPackage} -mindepth 1 -print0 | sort -z)
                     # Ensure EULA is accepted
-                    ln -sf ${eulaFile} eula.txt
+                    if [[ -f eula.txt ]]; then
+                      mv -f eula.txt eula.txt.bak
+                    fi
+                    cp ${eulaFile} eula.txt
+                    chmod 644 eula.txt
+                    # Place managed config files (copy rendered content so mods can write to them)
                     ${lib.concatStringsSep "\n" (lib.flatten (lib.mapAttrsToList (_modGroup: cfgs:
                         lib.mapAttrsToList (_cfgName: value: ''
                           if [[ -f "${value.path}" ]]; then
                             mv -f "${value.path}" "${value.path}.bak"
                           fi
-                          ln -sf ${mkConfigFile value} "${value.path}"
+                          cp ${mkConfigFile value} "${value.path}"
+                          chmod 644 "${value.path}"
                         '') cfgs)
                       config.programs.gtnh.mods))}
                     # Ensure server.properties is present
                     if [[ -f server.properties ]]; then
                       mv -f server.properties server.properties.bak
                     fi
-
-                    # This file must be writeable, because Mojang.
                     cp ${serverPropertiesFile config.programs.gtnh.minecraft.server-properties} server.properties
                     chmod 644 server.properties
                   '';
