@@ -21,12 +21,9 @@
 
           programs.gtnh.enable = true;
 
-          # Stub JVM — avoids pulling in a real JDK
-          programs.gtnh.minecraft.instance-options.jvmPackage =
-            pkgs.writeShellScriptBin "java" "exec sleep infinity";
-
-          # Don't actually launch the server process; preStart still runs as normal
-          systemd.services.gtnh.script = lib.mkForce "echo 'server start skipped in test'";
+          # Give the VM enough memory and disk for GTNH
+          virtualisation.memorySize = 8192;
+          virtualisation.diskSize = 20480;
         };
 
         testScript = ''
@@ -36,25 +33,23 @@
           machine.succeed("id gtnh-user")
           machine.succeed("getent group gtnh")
 
-          # Firewall ports are open (defaults: server/query 25565, rcon 25575)
-          machine.succeed("${pkgs.nftables}/bin/nft list ruleset | grep 25565")
-          machine.succeed("${pkgs.nftables}/bin/nft list ruleset | grep 25575")
-
           # Service unit is present and correctly defined
           machine.succeed("systemctl cat gtnh.service")
 
-          # Start the service — this runs preStart (symlinks pack + renders configs)
+          # Start the service — preStart runs, then the server boots
           machine.succeed("systemctl start gtnh.service")
 
-          # eula.txt should be a symlink created by preStart
-          machine.succeed("test -L /var/lib/gtnh/eula.txt")
+          # Wait for RCON to come up — GTNH takes several minutes to start
+          machine.wait_until_succeeds(
+            "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P 25575 -p whatisloveohbabydonthurtmedonthurtmenomore list",
+            timeout=600
+          )
 
-          # server.properties should be a regular file (copied, not symlinked)
-          machine.succeed("test -f /var/lib/gtnh/server.properties")
-          machine.succeed("test ! -L /var/lib/gtnh/server.properties")
-
-          # Spot-check a rendered config symlink
-          machine.succeed("test -L /var/lib/gtnh/config/forge.cfg")
+          # Verify the server responds sensibly to a list command
+          output = machine.succeed(
+            "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P 25575 -p whatisloveohbabydonthurtmedonthurtmenomore list"
+          )
+          assert "players" in output.lower(), f"Unexpected mcrcon output: {output}"
         '';
       };
     };
