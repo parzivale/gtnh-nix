@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/AppliedEnergistics2/AppliedEnergistics2.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/AppliedEnergistics2/AppliedEnergistics2.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         automation = lib.mkOption {
           default = {};
@@ -23,8 +23,8 @@
                 default = 128;
               };
               networkBytesUpdateFrequency = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "#Network bytes information update Frequency(s) default:1.0";
               };
             };
@@ -800,7 +800,7 @@
             options = {
               grinderOres = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
               };
               oreDoublePercentage = lib.mkOption {
                 type = lib.types.str;
@@ -1008,28 +1008,28 @@
           type = lib.types.submodule {
             options = {
               IC2 = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
               };
               Mekanism = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
               };
               RotaryCraft = lib.mkOption {
-                type = lib.types.str;
-                default = "8.884150675195451E-5";
+                type = lib.types.float;
+                default = 8.884150675195451E-5;
               };
               ThermalExpansion = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
               };
               TunnelPowerLoss = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
               };
               UsageMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
             };
           };
@@ -1039,12 +1039,12 @@
           type = lib.types.submodule {
             options = {
               spatialPowerExponent = lib.mkOption {
-                type = lib.types.str;
-                default = "1.35";
+                type = lib.types.float;
+                default = 1.35;
               };
               spatialPowerMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1250.0";
+                type = lib.types.float;
+                default = 1250.0;
               };
               storageBiomeID = lib.mkOption {
                 type = lib.types.int;
@@ -1193,36 +1193,36 @@
           type = lib.types.submodule {
             options = {
               WirelessBaseCost = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               WirelessBaseRange = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               WirelessBoosterExp = lib.mkOption {
-                type = lib.types.str;
-                default = "1.5";
+                type = lib.types.float;
+                default = 1.5;
               };
               WirelessBoosterRangeMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               WirelessConnectorPowerBase = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               WirelessConnectorPowerDistanceMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
               };
               WirelessCostMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               WirelessTerminalDrainMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
             };
           };
@@ -1233,23 +1233,23 @@
             options = {
               meteoriteDimensionWhitelist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "0, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT" "29, GalacticraftMars:tile.mars:9, GalacticraftMars:tile.mars:4, GalacticraftMars:tile.mars:6, minecraft:sand:1, GalacticraftMars:tile.mars:5" ];
+                default = ["0, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT" "29, GalacticraftMars:tile.mars:9, GalacticraftMars:tile.mars:4, GalacticraftMars:tile.mars:6, minecraft:sand:1, GalacticraftMars:tile.mars:5"];
               };
               meteoriteInvalidSpawnBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
               };
               meteoriteSpawnChance = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "0=0.3" ];
+                default = ["0=0.3"];
               };
               meteoriteValidSpawnBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "GalacticraftMars:tile.mars" ];
+                default = ["GalacticraftMars:tile.mars"];
               };
               minMeteoriteDistance = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "0=707" ];
+                default = ["0=707"];
               };
               quartzOresClusterAmount = lib.mkOption {
                 type = lib.types.int;
@@ -1260,8 +1260,8 @@
                 default = 4;
               };
               spawnChargedChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.07999998331069946";
+                type = lib.types.float;
+                default = 0.07999998331069946;
               };
             };
           };
@@ -1275,14 +1275,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/AppliedEnergistics2/extracells.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/AppliedEnergistics2/extracells.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         integration = lib.mkOption {
           default = {};

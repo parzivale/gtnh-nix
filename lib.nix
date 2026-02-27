@@ -9,11 +9,6 @@
     then "I"
     else if builtins.isFloat v
     then "D"
-    # D/F values are stored as strings to preserve precision (e.g. scientific
-    # notation). Detect float-shaped strings and emit D: so Forge mods that
-    # expect DOUBLE don't crash on a STRING-prefixed value.
-    else if builtins.isString v && builtins.match "-?[0-9]*\\.[0-9]+([Ee][+\\-]?[0-9]+)?" v != null
-    then "D"
     else "S";
 
   mkValue = v:
@@ -31,7 +26,10 @@
     # Empty-string key represents a top-level anonymous section.
     # Writing `"" {` would produce an unmatched-quote parse error in Forge;
     # write bare `{` instead, which Forge accepts as an anonymous section.
-    then if k == "" then "{\n${mkCfg v}\n}" else "\"${k}\" {\n${mkCfg v}\n}"
+    then
+      if k == ""
+      then "{\n${mkCfg v}\n}"
+      else "\"${k}\" {\n${mkCfg v}\n}"
     else if builtins.isList v
     then let
       prefix =
