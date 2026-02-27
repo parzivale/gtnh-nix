@@ -191,7 +191,7 @@
                             cp "$entry" "$rel"
                             chmod 644 "$rel"
                             ;;
-                          *.json)
+                          *.json|*.cache)
                             if [[ ! -f "$rel" ]]; then
                               cp "$entry" "$rel"
                               chmod 644 "$rel"
