@@ -8,7 +8,7 @@
     # nixosTest only runs on Linux (requires QEMU)
     checks = lib.optionalAttrs (builtins.elem system ["x86_64-linux" "aarch64-linux"]) {
       nixos-service = pkgs.testers.nixosTest {
-        name = "gtnh-service-wiring";
+        name = "gtnh-service";
 
         nodes.machine = {lib, ...}: {
           imports = [
@@ -35,7 +35,7 @@
         };
 
         testScript = {nodes, ...}: let
-          cfg = nodes.machine.config.programs.gtnh.minecraft.server-properties;
+          cfg = nodes.machine.programs.gtnh.minecraft.server-properties;
           mcrcon = "${pkgs.mcrcon}/bin/mcrcon -H 127.0.0.1 -P ${toString cfg.rcon-port} -p ${cfg.rcon-password}";
         in ''
           machine.wait_for_unit("multi-user.target")
