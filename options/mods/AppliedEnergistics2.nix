@@ -1017,7 +1017,7 @@
               };
               RotaryCraft = lib.mkOption {
                 type = lib.types.float;
-                default = 0.000089;
+                default = 8.884150675195451E-5;
               };
               ThermalExpansion = lib.mkOption {
                 type = lib.types.float;
@@ -1261,7 +1261,7 @@
               };
               spawnChargedChance = lib.mkOption {
                 type = lib.types.float;
-                default = 0.07999998331069946;
+                default = 0.08;
               };
             };
           };
