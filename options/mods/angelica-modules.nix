@@ -114,7 +114,7 @@
                 description = "Hide downloading terrain screen. [From ArchaicFix] [default: true]";
               };
               hudCachingFPS = lib.mkOption {
-                type = lib.types.ints.betweem 1 60;
+                type = lib.types.ints.between 1 60;
                 default = 20;
                 description = "The amount of frames to wait before updating the HUD elements. [Experimental] [range: 1 ~ 60, default: 20]";
               };
