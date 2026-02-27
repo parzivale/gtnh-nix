@@ -152,7 +152,7 @@ in {
 
   jvmOptString = mkOption {
     type = with types; str;
-    default = mkJvmOptString config;
+    default = mkJvmOptString config.minecraft."instance-options";
     readOnly = true;
     description = ''
       The compiled value of $JVMOPTS, exported as a read-only value.
