@@ -803,8 +803,8 @@
                 default = [];
               };
               oreDoublePercentage = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
               };
             };
           };
@@ -1017,7 +1017,7 @@
               };
               RotaryCraft = lib.mkOption {
                 type = lib.types.float;
-                default = 8.884150675195451E-5;
+                default = 0.000089;
               };
               ThermalExpansion = lib.mkOption {
                 type = lib.types.float;

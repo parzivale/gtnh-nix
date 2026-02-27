@@ -90,6 +90,7 @@
                 default = 5;
                 description = "DO NOT CHANGE THIS IF YOU DONT KNOW WHAT YOU ARE DOING [range: 0 ~ 2147483647, default: 5]";
               };
+              # No idea why but this needs to be a string
               barWidth = lib.mkOption {
                 type = lib.types.str;
                 default = "176.0";
