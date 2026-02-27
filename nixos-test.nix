@@ -37,8 +37,8 @@
           machine.succeed("getent group gtnh")
 
           # Firewall ports are open (defaults: server/query 25565, rcon 25575)
-          machine.succeed("nft list ruleset | grep 25565")
-          machine.succeed("nft list ruleset | grep 25575")
+          machine.succeed("${pkgs.nftables}/bin/nft list ruleset | grep 25565")
+          machine.succeed("${pkgs.nftables}/bin/nft list ruleset | grep 25575")
 
           # Service unit is present and correctly defined
           machine.succeed("systemctl cat gtnh.service")
