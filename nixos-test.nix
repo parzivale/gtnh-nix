@@ -11,45 +11,15 @@
         name = "gtnh-service-wiring";
 
         nodes.machine = {lib, ...}: {
-          imports = [self.nixosModules.gtnh];
-          programs.gtnh.enable = true;
+          imports = [
+            self.nixosModules.gtnh
+            self.nixosModules."2.8.4"
+          ];
 
-          # Minimal fake pack — real pack would include config/ subdirs from the zip
-          programs.gtnh.minecraft.instance-options.gtnhPackage =
-            pkgs.runCommand "fake-gtnh-pack" {} ''
-              mkdir -p \
-                $out/serverutilities \
-                $out/config/GregTech \
-                $out/config/AppliedEnergistics2 \
-                $out/config/Betterloadingscreen \
-                $out/config/ClimateControl \
-                $out/config/GTNewHorizons \
-                $out/config/GTPlusPlus \
-                $out/config/GalacticGreg \
-                $out/config/HungerOverhaul \
-                $out/config/IguanaTinkerTweaks \
-                $out/config/NEI \
-                $out/config/RTG \
-                $out/config/SuperTiC \
-                $out/config/WitcheryExtras \
-                $out/config/betterquesting \
-                $out/config/biomesoplenty \
-                $out/config/bugtorch \
-                $out/config/buildcraft \
-                "$out/config/cofh/core" \
-                $out/config/endercore \
-                $out/config/enderio \
-                $out/config/enderzoo \
-                $out/config/etfuturum \
-                $out/config/forestry/gamemodes \
-                $out/config/kubatech \
-                $out/config/lootgames \
-                $out/config/mobsinfo \
-                $out/config/railcraft \
-                $out/config/roguelike_dungeons \
-                $out/config/salisarcana
-              touch $out/lwjgl3ify-forgePatches.jar
-            '';
+          # Expose gtnh-2.8.4 package via the flake overlay
+          nixpkgs.overlays = [self.overlays.default];
+
+          programs.gtnh.enable = true;
 
           # Stub JVM — avoids pulling in a real JDK
           programs.gtnh.minecraft.instance-options.jvmPackage =

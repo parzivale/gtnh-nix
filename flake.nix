@@ -219,14 +219,14 @@
                 config,
                 lib,
                 ...
-              }:
-                lib.mkIf config.programs.gtnh.enable {
-                  imports =
-                    if versionModules ? ${vKey}
-                    then [versionModules.${vKey}]
-                    else [];
-                  programs.gtnh.minecraft.instance-options.version = lib.mkDefault v.version;
-                };
+              }: {
+                imports =
+                  if versionModules ? ${vKey}
+                  then [versionModules.${vKey}]
+                  else [];
+                programs.gtnh.minecraft.instance-options.version =
+                  lib.mkIf config.programs.gtnh.enable (lib.mkDefault v.version);
+              };
             })
             version-list);
       };

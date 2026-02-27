@@ -68,7 +68,7 @@ in {
 
   gtnhPackage = mkOption {
     type = with types; package;
-    default = pkgs."gtnh-${config.version}";
+    default = pkgs."gtnh-${config.minecraft."instance-options".version}";
     description = ''
       GTNH package used for the server.
     '';
