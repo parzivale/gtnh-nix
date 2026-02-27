@@ -184,12 +184,18 @@
                         mkdir -p "$rel"
                       else
                         case "$rel" in
-                          config/*|*.json)
+                          config/*)
                             if [[ -f "$rel" ]]; then
                               mv -f "$rel" "$rel.bak"
                             fi
                             cp "$entry" "$rel"
                             chmod 644 "$rel"
+                            ;;
+                          *.json)
+                            if [[ ! -f "$rel" ]]; then
+                              cp "$entry" "$rel"
+                              chmod 644 "$rel"
+                            fi
                             ;;
                           *)
                             ln -sf "$entry" "$rel"
