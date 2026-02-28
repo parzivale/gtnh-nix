@@ -37,7 +37,9 @@
             | grep -v '^\s*$' \
             | grep -v '^\s*~' \
             | awk '{ if (prev != "" && /^\s*\{\s*$/) { print prev " {"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
-            | tr -d ' \t"' \
+            | sed 's/^[[:space:]]*//' \
+            | tr -d '"' \
+            | sed 's/ *= */=/' \
             | awk '/<$/{skip=1;next} skip&&/^>$/{skip=0;next} skip{next} {print}' \
             | awk 'match($0, /=[-]?[0-9]*[.]?[0-9]+[Ee][+-]?[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
             | awk 'match($0, /=[-]?[0-9]*\.[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
