@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/holoinventory.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/holoinventory.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         holoinventory = lib.mkOption {
           default = {};
@@ -20,12 +20,12 @@
             options = {
               bannedEntities = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "Use the ingame command '/holoinventory' to change this list easily.";
               };
               bannedTiles = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "com.jaquadro.minecraft.storagedrawers.block.tile.TileEntityController" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityAdvancedInfoPanel" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityInfoPanel" "jds.bibliocraft.tileentities.TileEntityClipboard" "crazypants.enderio.conduit.TileConduitBundle" ];
+                default = ["com.jaquadro.minecraft.storagedrawers.block.tile.TileEntityController" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityAdvancedInfoPanel" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityInfoPanel" "jds.bibliocraft.tileentities.TileEntityClipboard" "crazypants.enderio.conduit.TileConduitBundle"];
                 description = "Use the ingame command '/holoinventory' to change this list easily.";
               };
               colorAlpha = lib.mkOption {
@@ -103,7 +103,7 @@
               };
               overrideNameThings = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "Use the ingame command '/holoinventory' to change this list easily.";
               };
               renderMultiple = lib.mkOption {
@@ -117,8 +117,8 @@
                 description = "Renders the inv name above the hologram";
               };
               renderScaling = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Visual scale factor (0.0-1.0)";
               };
               renderSuffixDarkened = lib.mkOption {
