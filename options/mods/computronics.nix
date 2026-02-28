@@ -322,82 +322,82 @@
           type = lib.types.submodule {
             options = {
               cipherEnergyStorage = lib.mkOption {
-                type = lib.types.float;
-                default = 16000.0;
+                type = lib.types.str;
+                default = "16000.0";
                 description = "How much energy the Advanced Chipher Block can store [range: 0.0 ~ 100000.0, default: 16000.0]";
               };
               cipherKeyConsumption = lib.mkOption {
-                type = lib.types.float;
-                default = 16000.0;
+                type = lib.types.str;
+                default = "16000.0";
                 description = "How much energy the Advanced Cipher Block should consume for creating a key set [range: 0.0 ~ 100000.0, default: 16000.0]";
               };
               cipherWorkConsumption = lib.mkOption {
-                type = lib.types.float;
-                default = 160.0;
+                type = lib.types.str;
+                default = "160.0";
                 description = "How much base energy the Advanced Cipher Block should consume per encryption/decryption task. It will consume this value + 2*(number of characters in message) [range: 0.0 ~ 100000.0, default: 160.0]";
               };
               ocBeepCardCostPerSound = lib.mkOption {
-                type = lib.types.float;
-                default = 10.0;
+                type = lib.types.str;
+                default = "10.0";
                 description = "How much energy a single beep will cost for 1 second [range: 0.0 ~ 10000.0, default: 10.0]";
               };
               ocBoomBoardMaintenanceCost = lib.mkOption {
-                type = lib.types.float;
-                default = 0.2;
+                type = lib.types.str;
+                default = "0.2";
                 description = "How much energy will be consumed per tick to keep a Server Self-Destructor active. [range: 0.0 ~ 10000.0, default: 0.2]";
               };
               ocColorfulUpgradeColorChangeCost = lib.mkOption {
-                type = lib.types.float;
-                default = 2.0;
+                type = lib.types.str;
+                default = "2.0";
                 description = "How much energy changing the color of the Colorful Upgrade will cost [range: 0.0 ~ 10000.0, default: 2.0]";
               };
               ocLightBoardColorChangeCost = lib.mkOption {
-                type = lib.types.float;
-                default = 2.0;
+                type = lib.types.str;
+                default = "2.0";
                 description = "How much energy changing the color or state of a Light Board's light will cost [range: 0.0 ~ 10000.0, default: 2.0]";
               };
               ocLightBoardColorMaintenanceCost = lib.mkOption {
-                type = lib.types.float;
-                default = 0.2;
+                type = lib.types.str;
+                default = "0.2";
                 description = "How much energy will be consumed per tick to keep a Light Board's light running. Note that this value is consumed for each active light on the board. [range: 0.0 ~ 10000.0, default: 0.2]";
               };
               ocParticleCardCostPerParticle = lib.mkOption {
-                type = lib.types.float;
-                default = 2.0;
+                type = lib.types.str;
+                default = "2.0";
                 description = "How much energy 1 particle emission should take. Multiplied by the distance to the target. [range: 0.0 ~ 10000.0, default: 2.0]";
               };
               ocRackCapacitorCapacity = lib.mkOption {
-                type = lib.types.float;
-                default = 7500.0;
+                type = lib.types.str;
+                default = "7500.0";
                 description = "How much energy a Rack Capacitor can store. [range: 0.0 ~ 10000.0, default: 7500.0]";
               };
               ocSoundCardCostPerSecond = lib.mkOption {
-                type = lib.types.float;
-                default = 10.0;
+                type = lib.types.str;
+                default = "10.0";
                 description = "How much energy the sound card will consume per second of processed sound. [range: 0.0 ~ 10000.0, default: 10.0]";
               };
               ocSpoofingCardCostPerMessage = lib.mkOption {
-                type = lib.types.float;
-                default = 2.0;
+                type = lib.types.str;
+                default = "2.0";
                 description = "How much energy sending one spoofed message should take [range: 0.0 ~ 10000.0, default: 2.0]";
               };
               ocSwitchBoardMaintenanceCost = lib.mkOption {
-                type = lib.types.float;
-                default = 0.2;
+                type = lib.types.str;
+                default = "0.2";
                 description = "How much energy will be consumed per tick to keep a Switch Board's switch active. Note that this value is consumed for each active switch on the board. [range: 0.0 ~ 10000.0, default: 0.2]";
               };
               radarCostPerBlock = lib.mkOption {
-                type = lib.types.float;
-                default = 50.0;
+                type = lib.types.str;
+                default = "50.0";
                 description = "How much energy each 1-block distance takes by OpenComputers radars. [range: 0.0 ~ 10000.0, default: 50.0]";
               };
               railcraft = lib.mkOption {
                 default = {};
-                type = lib.types.submodule {
+                type = lib.types.str {
                   options = {
                     locomotiveRelayBasePower = lib.mkOption {
-                      type = lib.types.float;
-                      default = 20.0;
+                      type = "lib.types.str";
+                      default = "20.0";
                       description = "How much base energy the Locomotive Relay consumes per operation [range: 0.0 ~ 10000.0, default: 20.0]";
                     };
                   };
