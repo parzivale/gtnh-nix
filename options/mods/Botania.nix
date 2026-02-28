@@ -89,7 +89,7 @@
                 description = "Set this to true to enable the fancy skybox in custom dimension. (Does not require Garden of Glass loaded to use, needs 'fancySkybox.enable' to be true as well)";
               };
               "fancySkybox.customDimID" = lib.mkOption {
-                type = lib.types.listOf lib.types.int;
+                type = lib.types.listOf lib.types.str;
                 default = [];
                 description = "The ID of the dimension to use";
               };
@@ -274,7 +274,7 @@
                 description = "The density of each Botania flower patch generated, defaults to 2, the lower the number, the less each patch will have.";
               };
               "worldgen.flower.dimensionBlacklist" = lib.mkOption {
-                type = lib.types.listOf lib.types.int;
+                type = lib.types.listOf lib.types.str;
                 default = [];
                 description = "Blacklist of which dimension generates Botania flowers.";
               };
@@ -304,7 +304,7 @@
                 description = "The chance for a Botania flower generated in a patch to be a tall flower. 0.1 is 10%, 1 is 100%. Defaults to 0.05";
               };
               "worldgen.mushroom.dimensionBlacklist" = lib.mkOption {
-                type = lib.types.listOf lib.types.int;
+                type = lib.types.listOf lib.types.str;
                 default = [];
                 description = "Blacklist of which dimension generates Botania mushrooms.";
               };
