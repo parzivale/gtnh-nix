@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/EMT.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/EMT.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "essentia generator outputs" = lib.mkOption {
           default = {};
@@ -109,23 +109,23 @@
                 description = "Default is 32";
               };
               "Nano Boots of the Traveller Speed" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.25";
+                type = lib.types.float;
+                default = 0.25;
                 description = "Watch out, that goes up REALLY quickly.";
               };
               "Nano Boots of the Traveller jump" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6";
+                type = lib.types.float;
+                default = 0.6;
                 description = "Watch out, that goes up REALLY quickly.";
               };
               "Nano Boots of the Traveller maximum healthy drop" = lib.mkOption {
-                type = lib.types.str;
-                default = "35.0";
+                type = lib.types.float;
+                default = 35.0;
                 description = "Energy amount drained will tripled if player drops more than this amount of blocks";
               };
               "Nano Boots of the Traveller minimum drop" = lib.mkOption {
-                type = lib.types.str;
-                default = "6.0";
+                type = lib.types.float;
+                default = 6.0;
                 description = "The distance allowed to fall without any damage";
               };
               "Octtouple Compressed Solar Panel Output" = lib.mkOption {
@@ -143,23 +143,23 @@
                 description = "This is the number you have to modify if you want to make the Quadruple Compressed Solar Panel yield more or less EU per tick. Really, you shouldn't touch that, since it's pretty balanced as it is.";
               };
               "Quantum Boots of the Traveller Speed" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "Watch out, that goes up REALLY quickly.";
               };
               "Quantum Boots of the Traveller jump" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
                 description = "Watch out, that goes up REALLY quickly.";
               };
               "Quantum Boots of the Traveller maximum healthy drop" = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
                 description = "Energy amount drained will tripled if player drops more than this amount of blocks";
               };
               "Quantum Boots of the Traveller minimum drop" = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
                 description = "The distance allowed to fall without any damage";
               };
               "Quintouple Compressed Solar Panel Output" = lib.mkOption {
@@ -261,7 +261,7 @@
               };
               "White List for Ethereal Processor" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "ore" "cluster" ];
+                default = ["ore" "cluster"];
                 description = "The allowed ore dictionary prefix for Ethereal Processor.";
               };
             };
