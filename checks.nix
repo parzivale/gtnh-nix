@@ -233,11 +233,6 @@
         "emt-emt-cfg"
         moduleEval.config.programs.gtnh.mods.EMT.EMT
         "config/EMT.cfg";
-      ender-storage-ender-storage-cfg =
-        mkCfgCheck
-        "ender-storage-ender-storage-cfg"
-        moduleEval.config.programs.gtnh.mods.EnderStorage.EnderStorage
-        "config/EnderStorage.cfg";
       extended-pasupport-extended-pasupport-cfg =
         mkCfgCheck
         "extended-pasupport-extended-pasupport-cfg"
