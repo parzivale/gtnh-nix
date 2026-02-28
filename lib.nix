@@ -33,12 +33,12 @@
       then "{\n${mkCfg v}\n}"
       else "\"${k}\" {\n${mkCfg v}\n}"
     else if builtins.isList v
-    then let
-      prefix =
-        if v == []
-        then "S"
-        else mkTypePrefix (builtins.head v);
-    in "${prefix}:\"${k}\" <\n${lib.concatMapStrings (x: "${mkValue x}\n") v}>"
+    then
+      if v == []
+      then ""
+      else let
+        prefix = mkTypePrefix (builtins.head v);
+      in "${prefix}:\"${k}\" <\n${lib.concatMapStrings (x: "${mkValue x}\n") v}>"
     else "${mkTypePrefix v}:\"${k}\"=${mkValue v}";
 
   mkCfg = attrs:
