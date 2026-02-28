@@ -38,6 +38,7 @@
             | grep -v '^\s*~' \
             | awk '{ if (prev != "" && /^\s*\{\s*$/) { print prev " {"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
             | tr -d ' \t"' \
+            | awk '/<$/{skip=1;next} skip&&/^>$/{skip=0;next} skip{next} {print}' \
             | sed 's/[Ee]\([+-]\)0*\([0-9]\)/e\1\2/g' \
             | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
             | sort -u \
