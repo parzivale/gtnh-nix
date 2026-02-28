@@ -334,7 +334,7 @@
               };
               oilWellGenerationRate = lib.mkOption {
                 type = lib.types.float;
-                default = 0;
+                default = 0.0;
                 description = "How high should be the probability of an oil well generating?";
               };
               spawnOilSprings = lib.mkOption {
