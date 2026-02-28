@@ -64,12 +64,12 @@
           type = lib.types.submodule {
             options = {
               "Align X" = lib.mkOption {
-                type = lib.types.float;
-                default = 0.5;
+                type = lib.types.str;
+                default = "0.5";
               };
               "Align Y" = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
               };
               "Offset X" = lib.mkOption {
                 type = lib.types.int;
@@ -145,8 +145,8 @@
                 description = "Enabled the popup notices when quests are completed or updated [default: true]";
               };
               "Scroll multiplier" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
                 description = "Scrolling multiplier [range: 0.0 ~ 10.0, default: 1.0]";
               };
               "Skip home" = lib.mkOption {
@@ -167,8 +167,8 @@
                 default = "random.levelup";
               };
               "Text Width Correction" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
                 description = "Correcting the width of split text [range: 0.01 ~ 10.0, default: 1.0]";
               };
               Theme = lib.mkOption {
@@ -202,8 +202,8 @@
                 description = "If true, show view mode button. [default: false]";
               };
               "Zoom Speed" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.25;
+                type = lib.types.str;
+                default = "1.25";
                 description = "Zoom Speed [range: 1.05 ~ 3.0, default: 1.25]";
               };
               "Zoom in on cursor" = lib.mkOption {
@@ -217,8 +217,8 @@
                 description = "Zoom out on cursor. If false, zooms out on center of screen. [default: true]";
               };
               "Zoom smoothness in ms" = lib.mkOption {
-                type = lib.types.float;
-                default = 100.0;
+                type = lib.types.str;
+                default = "100.0";
                 description = "Zoom smoothness in ms [range: 0.0 ~ 2000.0, default: 100.0]";
               };
             };
