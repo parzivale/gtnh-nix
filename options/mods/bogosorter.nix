@@ -25,7 +25,7 @@
               };
               buttonColor = lib.mkOption {
                 type = lib.types.float;
-                default = -1;
+                default = -1.0;
                 description = "Value is displayed in decimal here but interpreted as hex internally. [range: -2147483648 ~ 2147483647, default: -1]";
               };
               buttonEnabled = lib.mkOption {
