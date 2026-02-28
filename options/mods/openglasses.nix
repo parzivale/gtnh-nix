@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/openglasses.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/openglasses.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         energy = lib.mkOption {
           default = {};
@@ -23,8 +23,8 @@
                 default = 100;
               };
               energyMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "PowerDrain= (NumberOfWidgets / 10) * energyMultiplier";
               };
             };
