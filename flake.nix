@@ -67,17 +67,31 @@
         modFileNames = builtins.filter (n: lib.hasSuffix ".nix" n)
           (builtins.attrNames (builtins.readDir modDir));
 
+        manpageUrls = pkgs.writeText "manpage-urls.json" "{}";
+
         mkModDoc = fileName: let
           modOpts = import "${modDir}/${fileName}" {inherit lib pkgs; config = {};};
           evaluated = lib.evalModules {
             modules = [{options = modOpts;}];
           };
-        in
-          (pkgs.nixosOptionsDoc {
+          optionsDoc = pkgs.nixosOptionsDoc {
             options = builtins.removeAttrs evaluated.options ["_module"];
             warningsAreErrors = false;
-          })
-          .optionsCommonMark;
+          };
+        in
+          pkgs.runCommand "options.md" {
+            nativeBuildInputs = [pkgs.nixos-render-docs pkgs.jq];
+          } ''
+            jq 'with_entries(select(
+              (.value.type != "submodule") and
+              ((.key | split(".") | last) | . != "path" and . != "kind")
+            ))' < ${optionsDoc.optionsJSON}/share/doc/nixos/options.json > filtered.json
+            nixos-render-docs options commonmark \
+              --manpage-urls ${manpageUrls} \
+              --revision "" \
+              filtered.json \
+              $out
+          '';
 
         modDocs = builtins.listToAttrs (map (fileName: {
             name = lib.removeSuffix ".nix" fileName;
