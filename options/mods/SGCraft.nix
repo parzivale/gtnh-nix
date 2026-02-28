@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/SGCraft.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/SGCraft.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         debug = lib.mkOption {
           default = {};
@@ -95,8 +95,8 @@
           type = lib.types.submodule {
             options = {
               wirelessRebroadcastStrength = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
             };
           };
@@ -145,12 +145,12 @@
                 default = true;
               };
               distanceFactorMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               energyPerFuelItem = lib.mkOption {
-                type = lib.types.str;
-                default = "96000.0";
+                type = lib.types.float;
+                default = 96000.0;
               };
               explosionFlame = lib.mkOption {
                 type = lib.types.bool;
@@ -169,12 +169,12 @@
                 default = 24;
               };
               interDimensionMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               maxEnergyBuffer = lib.mkOption {
-                type = lib.types.str;
-                default = "1000.0";
+                type = lib.types.float;
+                default = 1000.0;
               };
               minutesOpenPerFuelItem = lib.mkOption {
                 type = lib.types.int;
@@ -189,8 +189,8 @@
                 default = 300;
               };
               soundVolume = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               transparency = lib.mkOption {
                 type = lib.types.bool;
