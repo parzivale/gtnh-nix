@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/HardcoreEnderExpansion.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/HardcoreEnderExpansion.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         client = lib.mkOption {
           default = {};
@@ -47,7 +47,7 @@
             options = {
               IMC = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Write your message here" ];
+                default = ["Write your message here"];
                 description = "List of IMC/API messages, documentation can be found on http://hee-api.chylex.com";
               };
               achievementStartId = lib.mkOption {
@@ -95,8 +95,8 @@
                 description = "Prevents other mods from adding worldgen features to the End.";
               };
               overworldEndermanMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplies spawn weight of Endermen for each overworld biome.";
               };
             };
