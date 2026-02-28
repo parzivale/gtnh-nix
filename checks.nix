@@ -1065,11 +1065,6 @@
         "mobsinfo-mobsinfo-cfg"
         moduleEval.config.programs.gtnh.mods.mobsinfo.mobsinfo
         "config/mobsinfo/mobsinfo.cfg";
-      multipart-multipart-cfg =
-        mkCfgCheck
-        "multipart-multipart-cfg"
-        moduleEval.config.programs.gtnh.mods.multipart.multipart
-        "config/multipart.cfg";
       neiintegration-neiintegration-cfg =
         mkCfgCheck
         "neiintegration-neiintegration-cfg"
