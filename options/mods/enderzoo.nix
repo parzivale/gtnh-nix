@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/enderzoo/EnderZoo.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/enderzoo/EnderZoo.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         charges = lib.mkOption {
           default = {};
@@ -34,8 +34,8 @@
                 description = "If false Confusing Charges will be disabled [default: true]";
               };
               confusingChargeRange = lib.mkOption {
-                type = lib.types.str;
-                default = "6.0";
+                type = lib.types.float;
+                default = 6.0;
                 description = "The range of the confusion charges effect";
               };
               enderChargeEnabled = lib.mkOption {
@@ -49,8 +49,8 @@
                 description = "The max range effected entities will be teleported. Distance is randomised";
               };
               enderChargeRange = lib.mkOption {
-                type = lib.types.str;
-                default = "6.0";
+                type = lib.types.float;
+                default = 6.0;
                 description = "The range of the ender charges effect";
               };
             };
@@ -76,8 +76,8 @@
                 description = "The range of the 'teleport explosion'";
               };
               concussionCreeperHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
                 description = "Health of Concussion Creeper. 40=Enderman health, 20=Zombie health";
               };
               concussionCreeperMaxTeleportRange = lib.mkOption {
@@ -115,33 +115,33 @@
                 description = "When enabled health and base damage for all Ender Zoo mobs will be modified based on difficulty [default: true]";
               };
               enderZooEasyAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               enderZooEasyHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
                 description = "When in easy difficulty base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
               enderZooHardAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.1";
+                type = lib.types.float;
+                default = 1.1;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               enderZooHardHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.1";
+                type = lib.types.float;
+                default = 1.1;
                 description = "When in hard mode base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
               enderZooNormalAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               enderZooNormalHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "When in normal difficultry base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
               globalDifficultyModifierEnabled = lib.mkOption {
@@ -150,33 +150,33 @@
                 description = "When enabled health and base damage for all non Ender Zoo mobs will be modified based on difficulty [default: true]";
               };
               globalEasyAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               globalEasyHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
                 description = "When in easy difficulty base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
               globalHardAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.1";
+                type = lib.types.float;
+                default = 1.1;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               globalHardHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.1";
+                type = lib.types.float;
+                default = 1.1;
                 description = "When in hard mode base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
               globalNormalAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "When in easy difficulty base attack damage is multiplied by this value";
               };
               globalNormalHealthModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "When in normal difficultry base health is multiplied by this value, rounded to the nearest whole 'heart'";
               };
             };
@@ -187,33 +187,33 @@
           type = lib.types.submodule {
             options = {
               direSlimeAttackDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "Base attack damage of the dire slime.";
               };
               direSlimeAttackDamageLarge = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
                 description = "Base attack damage of the large dire slime.";
               };
               direSlimeAttackDamageMedium = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0";
+                type = lib.types.float;
+                default = 5.0;
                 description = "Base attack damage of the medium dire slime.";
               };
               direSlimeChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0";
+                type = lib.types.float;
+                default = 0;
                 description = "The chance that a Dire Slime will be spawned (0 = never, 1 = always).";
               };
               direSlimeChanceLarge = lib.mkOption {
-                type = lib.types.str;
-                default = "0";
+                type = lib.types.float;
+                default = 0;
                 description = "The chance a large will spawn when a medium Dire Slimes is killed (eg 0.02 for a 2% chance)";
               };
               direSlimeChanceMedium = lib.mkOption {
-                type = lib.types.str;
-                default = "0";
+                type = lib.types.float;
+                default = 0;
                 description = "The chance a medium will spawn when a small Dire Slimes is killed (eg 0.12 for a 12% chance).";
               };
               direSlimeEnabled = lib.mkOption {
@@ -222,18 +222,18 @@
                 description = "If false Dire Slime will be disabled [default: true]";
               };
               direSlimeHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "Base health of the Dire Slime.";
               };
               direSlimeHealthLarge = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
                 description = "Base health of the medium Dire Slime.";
               };
               direSlimeHealthMedium = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
                 description = "Base health of the medium Dire Slime.";
               };
             };
@@ -244,13 +244,13 @@
           type = lib.types.submodule {
             options = {
               direWolfAggresiveRange = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "If a player gets within this range they will be attacked";
               };
               direWolfAttackDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
                 description = "Base attack damage of the dire wolf";
               };
               direWolfEnabled = lib.mkOption {
@@ -259,18 +259,18 @@
                 description = "If false Dire Wolves will be disabled [default: true]";
               };
               direWolfHardAttackModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
-                description = "The increase to damage when playing on hard";
+                type = lib.types.float;
+                default = 1.0;
+                descripfloat = "The increase to damage when playing on hard";
               };
               direWolfHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
-                description = "Base health of the Dire Wolf";
+                type = lib.types.float;
+                default = 16.0;
+                descripfloat = "Base health of the Dire Wolf";
               };
               direWolfHowlChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.01";
+                type = lib.types.float;
+                default = 0.01;
                 description = "The chance a dire wolf will howl when it is asked to play a sound. Doubled at night, and doubled again near full moon. Defaults to 0.05 (5%)";
               };
               direWolfHowlDelay = lib.mkOption {
@@ -279,9 +279,9 @@
                 description = "Minimum time, in ticks, between dire wolf howls. This does not include pack howls. Defaults to 15 minutes";
               };
               direWolfHowlVolumeMult = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
-                description = "The volume multiplier for the dire wolf's howl. 12 is default.";
+                type = lib.types.float;
+                default = 2.0;
+                descripfloat = "The volume multiplier for the dire wolf's howl. 12 is default.";
               };
               direWolfPackAttackEnabled = lib.mkOption {
                 type = lib.types.bool;
@@ -294,9 +294,9 @@
                 description = "The amount of other dire wolves that will \"join in\" with the initial howl, per pack howl. 2x near full moon.";
               };
               direWolfPackHowlChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
-                description = "The chance that when a dire wolf howls, nearby dire wolves will \"join in\" to a pack howl. 4x near full moon. Defaults to 0.2 (20%)";
+                type = lib.types.float;
+                default = 0.1;
+                descripfloat = "The chance that when a dire wolf howls, nearby dire wolves will \"join in\" to a pack howl. 4x near full moon. Defaults to 0.2 (20%)";
               };
             };
           };
@@ -440,38 +440,38 @@
                 description = "When true archer knigts will switch to a sword when target is within melee range. Doesn't apply to mounted archers if fallKnightMountedArchesMaintainDistance is true [default: true]";
               };
               fallenKnightBaseDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "Base damage of a knight";
               };
               fallenKnightChanceArmorUpgrade = lib.mkOption {
-                type = lib.types.str;
-                default = "0.20000000298023224";
+                type = lib.types.float;
+                default = 0.20000000298023224;
                 description = "The chance the type of armor equipped will be improved";
               };
               fallenKnightChanceArmorUpgradeHard = lib.mkOption {
-                type = lib.types.str;
-                default = "0.4000000059604645";
+                type = lib.types.float;
+                default = 0.4000000059604645;
                 description = "The chance the type of armor equipped will be improved when dificult is hard";
               };
               fallenKnightChanceMounted = lib.mkOption {
-                type = lib.types.str;
-                default = "0.75";
+                type = lib.types.float;
+                default = 0.75;
                 description = "The chance a spawned knight will be mounted";
               };
               fallenKnightChancePerArmorPiece = lib.mkOption {
-                type = lib.types.str;
-                default = "0.699999988079071";
+                type = lib.types.float;
+                default = 0.699999988079071;
                 description = "The chance each armor piece has of being added to a spawned knight";
               };
               fallenKnightChancePerArmorPieceHard = lib.mkOption {
-                type = lib.types.str;
-                default = "0.8999999761581421";
+                type = lib.types.float;
+                default = 0.8999999761581421;
                 description = "The chance each armor piece has of being added to a spawned knight when difficulty is set to hard";
               };
               fallenKnightChargeSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "1.2";
+                type = lib.types.float;
+                default = 1.2;
                 description = "The speed at which a knight will charge its target";
               };
               fallenKnightEnabled = lib.mkOption {
@@ -480,13 +480,13 @@
                 description = "Wether Fallen Knights are enabled [default: true]";
               };
               fallenKnightFollowRange = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
                 description = "Follow range of a knight";
               };
               fallenKnightHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
                 description = "Health of a knight";
               };
               fallenKnightRangedMaxAttackPause = lib.mkOption {
@@ -495,8 +495,8 @@
                 description = "The max number of ticks between ranged attacks";
               };
               fallenKnightRangedMaxRange = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
                 description = "The max attack range when using a bow";
               };
               fallenKnightRangedMinAttackPause = lib.mkOption {
@@ -505,8 +505,8 @@
                 description = "The min number of ticks between ranged attacks";
               };
               fallenKnightRangedRatio = lib.mkOption {
-                type = lib.types.str;
-                default = "0.25";
+                type = lib.types.float;
+                default = 0.25;
                 description = "The precentage of spawned knoghts equipped with bows";
               };
             };
@@ -517,33 +517,33 @@
           type = lib.types.submodule {
             options = {
               fallenMountBaseAttackDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "Base attack damage of the mount";
               };
               fallenMountChanceArmorUpgrade = lib.mkOption {
-                type = lib.types.str;
-                default = "0.009999999776482582";
+                type = lib.types.float;
+                default = 0.009999999776482582;
                 description = "The chance a mount's armor will be upgraded";
               };
               fallenMountChanceArmorUpgradeHard = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "The chance a mount's armor will be upgraded when difficulty is hard";
               };
               fallenMountChanceArmored = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "The chance a spawned mount will be armored";
               };
               fallenMountChanceArmoredHard = lib.mkOption {
-                type = lib.types.str;
-                default = "0.8999999761581421";
+                type = lib.types.float;
+                default = 0.8999999761581421;
                 description = "The chance a spawned mount will be armored when difficult is hard";
               };
               fallenMountChargeSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "2.5";
+                type = lib.types.float;
+                default = 2.5;
                 description = "he speed at which a mount will charge its target";
               };
               fallenMountEnabled = lib.mkOption {
@@ -552,8 +552,8 @@
                 description = "If false fallen mounts will be disabled [default: true]";
               };
               fallenMountHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
                 description = "Base attack health of the mount";
               };
               fallenMountShadedByRider = lib.mkOption {
@@ -569,8 +569,8 @@
           type = lib.types.submodule {
             options = {
               guardiansBowDamageBonus = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "The damage bonus applied to arrows fire from the bow.";
               };
               guardiansBowDrawTime = lib.mkOption {
@@ -584,13 +584,13 @@
                 description = "If false the Guardians Bow will be disabled [default: true]";
               };
               guardiansBowForceMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "Effects the speed with which arrows leave the bow. A 'vanilla' bow has a multiplier of 2.";
               };
               guardiansBowFovMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.3499999940395355";
+                type = lib.types.float;
+                default = 0.3499999940395355;
                 description = "The reduction in FOV when the bow is fullen drawn (the zoom level). A 'vanilla' bow has a value of 0.15";
               };
             };
@@ -601,13 +601,13 @@
           type = lib.types.submodule {
             options = {
               witherCatAngryAttackDamageHardModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The increase to damage when playing on hard";
               };
               witherCatAttackDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "Base attack damage of the wither cat";
               };
               witherCatEnabled = lib.mkOption {
@@ -616,8 +616,8 @@
                 description = "If false Wither Cats will be disabled [default: true]";
               };
               witherCatHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
                 description = "Base health of the wither cat";
               };
             };
@@ -633,8 +633,8 @@
                 description = "If false Wither Witches will be disabled [default: true]";
               };
               witherWitchHealth = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
                 description = "Base attack damage of the mount";
               };
               witherWitchMaxCats = lib.mkOption {

@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/eternalsingularity.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/eternalsingularity.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               classNameList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "fox.spiteful.avaritia.items.ItemSingularity" "wealthyturtle.uiesingularities.UniversalSingularityItem" ];
+                default = ["fox.spiteful.avaritia.items.ItemSingularity" "wealthyturtle.uiesingularities.UniversalSingularityItem"];
               };
               easyMode = lib.mkOption {
                 type = lib.types.bool;
