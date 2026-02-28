@@ -3499,7 +3499,7 @@
               coolDownMillis = lib.mkOption {
                 type = lib.types.float;
                 default = 6000.0;
-                escription = "Time between ability uses";
+                description = "Time between ability uses";
               };
             };
           };
