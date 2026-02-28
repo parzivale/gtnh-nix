@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/chisel.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/chisel.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         block = lib.mkOption {
           default = {};
@@ -645,8 +645,8 @@
                 description = "Chisel stone to cobblestone and bricks by left clicking.";
               };
               concreteVelocityMult = lib.mkOption {
-                type = lib.types.str;
-                default = "1.35";
+                type = lib.types.float;
+                default = 1.35;
                 description = "The factor that concrete increases your velocity. Default is 1.35, set to 1 for no change.";
               };
               doesCloudRenderLikeGhost = lib.mkOption {

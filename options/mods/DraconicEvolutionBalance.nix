@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/DraconicEvolution.Balance.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/DraconicEvolution.Balance.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         energy = lib.mkOption {
           default = {};
@@ -291,32 +291,32 @@
                       default = 32000;
                     };
                     "Multiblock Energy Storage Tier 1: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.20E8";
+                      type = lib.types.float;
+                      default = 3.20E8;
                     };
                     "Multiblock Energy Storage Tier 2: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.24E9";
+                      type = lib.types.float;
+                      default = 2.24E9;
                     };
                     "Multiblock Energy Storage Tier 3: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.57E10";
+                      type = lib.types.float;
+                      default = 1.57E10;
                     };
                     "Multiblock Energy Storage Tier 4: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.00E11";
+                      type = lib.types.float;
+                      default = 2.00E11;
                     };
                     "Multiblock Energy Storage Tier 5: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.40E12";
+                      type = lib.types.float;
+                      default = 1.40E12;
                     };
                     "Multiblock Energy Storage Tier 6: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "9.80E12";
+                      type = lib.types.float;
+                      default = 9.80E12;
                     };
                     "Multiblock Energy Storage Tier 7: Energy buffer size (RF)" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.86E13";
+                      type = lib.types.float;
+                      default = 6.86E13;
                     };
                     "Wireless Energy Transceiver: Energy buffer size (RF)" = lib.mkOption {
                       type = lib.types.int;

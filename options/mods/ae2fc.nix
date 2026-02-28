@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/ae2fc.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/ae2fc.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "fluid craft for ae2" = lib.mkOption {
           default = {};
@@ -43,8 +43,8 @@
                 description = "Enable this to make normal ME Interface can emit fluid with fluid pattern, like the ME Dual Interface. [default: false]";
               };
               "Portable Fluid Cell Battery Capacity" = lib.mkOption {
-                type = lib.types.str;
-                default = "20000.0";
+                type = lib.types.float;
+                default = 20000.0;
               };
               fluidP2PInterface = lib.mkOption {
                 type = lib.types.bool;
