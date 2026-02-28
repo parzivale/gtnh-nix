@@ -1105,11 +1105,6 @@
         "railcraft-railcraft-cfg"
         moduleEval.config.programs.gtnh.mods.railcraft.railcraft
         "config/railcraft/railcraft.cfg";
-      roguelike_dungeons-roguelike-cfg =
-        mkCfgCheck
-        "roguelike_dungeons-roguelike-cfg"
-        moduleEval.config.programs.gtnh.mods.roguelike_dungeons.roguelike
-        "config/roguelike_dungeons/roguelike.cfg";
       salisarcana-bugfixes-cfg =
         mkCfgCheck
         "salisarcana-bugfixes-cfg"
