@@ -22,15 +22,15 @@
           programs.gtnh.enable = true;
 
           # Lower JVM heap so it fits inside the VM (default 6G would OOM)
-          programs.gtnh.minecraft.instance-options.jvmMaxAllocation = "3G";
-          programs.gtnh.minecraft.instance-options.jvmInitialAllocation = "3G";
+          programs.gtnh.minecraft.instance-options.jvmMaxAllocation = "4G";
+          programs.gtnh.minecraft.instance-options.jvmInitialAllocation = "4G";
 
           # Disable the tick watchdog — startup ticks are slow in QEMU and
           # would otherwise trigger a forced shutdown before RCON comes up.
           programs.gtnh.minecraft.server-properties.max-tick-time = -1;
 
           # Give the VM enough memory and disk for GTNH
-          virtualisation.memorySize = 6144;
+          virtualisation.memorySize = 8192;
           virtualisation.diskSize = 20480;
         };
 
