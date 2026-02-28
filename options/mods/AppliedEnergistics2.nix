@@ -1017,7 +1017,7 @@
               };
               RotaryCraft = lib.mkOption {
                 type = lib.types.float;
-                default = 0.000089;
+                default = 8.884150675195451e-5;
               };
               ThermalExpansion = lib.mkOption {
                 type = lib.types.float;
