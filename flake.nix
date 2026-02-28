@@ -43,6 +43,8 @@
         pkgs,
         ...
       }: let
+        lib = pkgs.lib;
+
         mkVersion = version:
           pkgs.stdenv.mkDerivation {
             name = "gtnh";
@@ -61,12 +63,82 @@
             '';
           };
 
-      in {
-        packages = builtins.listToAttrs (builtins.map (version: {
-            name = "gtnh-${version.version}";
-            value = mkVersion version;
+        modDir = ./options/mods;
+        modFileNames = builtins.filter (n: lib.hasSuffix ".nix" n)
+          (builtins.attrNames (builtins.readDir modDir));
+
+        mkModDoc = fileName: let
+          modOpts = import "${modDir}/${fileName}" {inherit lib pkgs; config = {};};
+          evaluated = lib.evalModules {
+            modules = [{options = modOpts;}];
+          };
+        in
+          (pkgs.nixosOptionsDoc {
+            options = builtins.removeAttrs evaluated.options ["_module"];
+            warningsAreErrors = false;
           })
-          version-list);
+          .optionsCommonMark;
+
+        modDocs = builtins.listToAttrs (map (fileName: {
+            name = lib.removeSuffix ".nix" fileName;
+            value = mkModDoc fileName;
+          })
+          modFileNames);
+
+        bookToml = pkgs.writeText "book.toml" ''
+          [book]
+          title = "GTNH Nix Configuration Options"
+          language = "en"
+          src = "src"
+
+          [output.html]
+          no-section-label = true
+          site-url = "/gtnh-nix/"
+        '';
+
+        summaryMd = pkgs.writeText "SUMMARY.md" ''
+          # Summary
+
+          [Introduction](index.md)
+
+          # Mods
+
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
+        '';
+
+        indexDoc = pkgs.writeText "index.md" ''
+          # GTNH Nix Configuration Options
+
+          Configuration options exposed by the gtnh-nix NixOS module,
+          organised by mod.
+
+          ## Mods
+
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
+        '';
+
+        allDocs = pkgs.runCommand "gtnh-docs" {
+          nativeBuildInputs = [pkgs.mdbook];
+        } ''
+          mkdir -p book/src
+          cp ${bookToml} book/book.toml
+          cp ${summaryMd} book/src/SUMMARY.md
+          cp ${indexDoc}  book/src/index.md
+          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
+            cp ${doc} book/src/${modName}.md
+          '') modDocs)}
+          mdbook build book --dest-dir $out
+        '';
+
+      in {
+        packages =
+          builtins.listToAttrs (builtins.map (version: {
+              name = "gtnh-${version.version}";
+              value = mkVersion version;
+            })
+            version-list)
+          // lib.mapAttrs' (modName: doc: lib.nameValuePair "docs-${modName}" doc) modDocs
+          // {docs = allDocs;};
 
         overlayAttrs = builtins.listToAttrs (builtins.map (version: {
             name = "gtnh-${version.version}";
