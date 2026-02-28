@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/InfernalMobs.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/InfernalMobs.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         entitiesalwaysinfernal = lib.mkOption {
           default = {};
@@ -1962,1212 +1962,1212 @@
           type = lib.types.submodule {
             options = {
               BabyHeatscarSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               BlueSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
               };
               EntityAfrit = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityAntlionMiniBoss = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityArix = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityArmorCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityBabyCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
               };
               EntityBabyGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "11.0";
+                type = lib.types.float;
+                default = 11.0;
               };
               EntityBabySpider = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
               };
               EntityBanshee = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityBlackWidow = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityBlackberrySlime = lib.mkOption {
-                type = lib.types.str;
-                default = "7.0";
+                type = lib.types.float;
+                default = 7.0;
               };
               EntityBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityBlindingEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "41.0";
+                type = lib.types.float;
+                default = 41.0;
               };
               EntityBlindingSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityBloodSnail = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0";
+                type = lib.types.float;
+                default = 5.0;
               };
               EntityBlueberrySlime = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
               };
               EntityBossDragon = lib.mkOption {
-                type = lib.types.str;
-                default = "250.0";
+                type = lib.types.float;
+                default = 250.0;
               };
               EntityBotFly = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityBrainyZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityBrutishPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityBrutishSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityBrutishZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityCaramelSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0";
+                type = lib.types.float;
+                default = 5.0;
               };
               EntityCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "24.0";
+                type = lib.types.float;
+                default = 24.0;
               };
               EntityCentipede = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityChameleonTick = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityCinder = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityCinderBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityClink = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityConcussionCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityConflagrationBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityCrawler = lib.mkOption {
-                type = lib.types.str;
-                default = "75.0";
+                type = lib.types.float;
+                default = 75.0;
               };
               EntityCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityCrushroom = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityCryptZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "27.5";
+                type = lib.types.float;
+                default = 27.5;
               };
               EntityCultistCleric = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityCultistKnight = lib.mkOption {
-                type = lib.types.str;
-                default = "36.0";
+                type = lib.types.float;
+                default = 36.0;
               };
               EntityCultistLeader = lib.mkOption {
-                type = lib.types.str;
-                default = "125.0";
+                type = lib.types.float;
+                default = 125.0;
               };
               EntityCursedEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "60.0";
+                type = lib.types.float;
+                default = 60.0;
               };
               EntityDarkCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityDeath = lib.mkOption {
-                type = lib.types.str;
-                default = "1100.0";
+                type = lib.types.float;
+                default = 1100.0;
               };
               EntityDeathCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityDesertSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityDireSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
               };
               EntityDireWolf = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityDirtCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "21.0";
+                type = lib.types.float;
+                default = 21.0;
               };
               EntityDominationWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityDoomCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityDragon = lib.mkOption {
-                type = lib.types.str;
-                default = "800.0";
+                type = lib.types.float;
+                default = 800.0;
               };
               EntityDragonfly = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityDrowningCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityDweller = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityEldritchGolem = lib.mkOption {
-                type = lib.types.str;
-                default = "250.0";
+                type = lib.types.float;
+                default = 250.0;
               };
               EntityEldritchGuardian = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
               EntityEldritchWarden = lib.mkOption {
-                type = lib.types.str;
-                default = "200.0";
+                type = lib.types.float;
+                default = 200.0;
               };
               EntityEmberBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityEnderCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityEnderminy = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityEnt = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityEpion = lib.mkOption {
-                type = lib.types.str;
-                default = "11.0";
+                type = lib.types.float;
+                default = 11.0;
               };
               EntityEttin = lib.mkOption {
-                type = lib.types.str;
-                default = "33.0";
+                type = lib.types.float;
+                default = 33.0;
               };
               EntityEvolvedBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityEvolvedBossCrab = lib.mkOption {
-                type = lib.types.str;
-                default = "300.0";
+                type = lib.types.float;
+                default = 300.0;
               };
               EntityEvolvedColdBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityEvolvedCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityEvolvedEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityEvolvedFireCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityEvolvedFireSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityEvolvedFireSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityEvolvedGiantSnail = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityEvolvedSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityEvolvedSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityEvolvedZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityFaintGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityFallenKnight = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityFallenMount = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityFighterGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "31.0";
+                type = lib.types.float;
+                default = 31.0;
               };
               EntityFireAnt = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityFireAntSoldier = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFireBat = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityFireCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFireSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFireZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFishingPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFishingSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityFishingZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityFlyingCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               EntityFlyingSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityFlyingSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityFrostweaver = lib.mkOption {
-                type = lib.types.str;
-                default = "66.0";
+                type = lib.types.float;
+                default = 66.0;
               };
               EntityGatlingSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityGeonach = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityGhostSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityGhoulZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityGiantBrainyZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "60.0";
+                type = lib.types.float;
+                default = 60.0;
               };
               EntityGiantPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityGiantSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityGiantSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "64.0";
+                type = lib.types.float;
+                default = 64.0;
               };
               EntityGiantZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityGlob = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               EntityGoblinGulg = lib.mkOption {
-                type = lib.types.str;
-                default = "400.0";
+                type = lib.types.float;
+                default = 400.0;
               };
               EntityGorgomite = lib.mkOption {
-                type = lib.types.str;
-                default = "5.5";
+                type = lib.types.float;
+                default = 5.5;
               };
               EntityGrapeSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityGravelCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityGravityCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityGrue = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityGuardian = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               EntityHellfireBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityHellhound = lib.mkOption {
-                type = lib.types.str;
-                default = "72.0";
+                type = lib.types.float;
+                default = 72.0;
               };
               EntityHungryPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityHungrySpider = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityHungryZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityIcyEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityIllusionCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityIllusionSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityIllusionZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityImp = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
               EntityInfernoBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityJoltBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityJumpingCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityJumpingSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityJungleSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "6.0";
+                type = lib.types.float;
+                default = 6.0;
               };
               EntityKingGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityKobold = lib.mkOption {
-                type = lib.types.str;
-                default = "44.0";
+                type = lib.types.float;
+                default = 44.0;
               };
               EntityLavaMonster = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityLavaWebSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "60.0";
+                type = lib.types.float;
+                default = 60.0;
               };
               EntityLeech = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityLemonSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "6.0";
+                type = lib.types.float;
+                default = 6.0;
               };
               EntityLeonard = lib.mkOption {
-                type = lib.types.str;
-                default = "600.0";
+                type = lib.types.float;
+                default = 600.0;
               };
               EntityLightningCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityLightningEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityLilith = lib.mkOption {
-                type = lib.types.str;
-                default = "200.0";
+                type = lib.types.float;
+                default = 200.0;
               };
               EntityLobber = lib.mkOption {
-                type = lib.types.str;
-                default = "33.0";
+                type = lib.types.float;
+                default = 33.0;
               };
               EntityLocust = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityLordOfTorment = lib.mkOption {
-                type = lib.types.str;
-                default = "500.0";
+                type = lib.types.float;
+                default = 500.0;
               };
               EntityMagmaCube = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               EntityMandrake = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityMidgeSwarm = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityMindSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               EntityMiniCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityMiniEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityMiniGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityMirageEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "60.0";
+                type = lib.types.float;
+                default = 60.0;
               };
               EntityMobAngryEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "32.0";
+                type = lib.types.float;
+                default = 32.0;
               };
               EntityMobBabyEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityMobEnderGuardian = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityMobEndermage = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityMobEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityMobFireGolem = lib.mkOption {
-                type = lib.types.str;
-                default = "24.0";
+                type = lib.types.float;
+                default = 24.0;
               };
               EntityMobHauntedMiner = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityMobHomelandEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityMobLouse = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityMobScorchingLens = lib.mkOption {
-                type = lib.types.str;
-                default = "18.0";
+                type = lib.types.float;
+                default = 18.0;
               };
               EntityMoneySpider = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityMosquito = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityMotherCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "28.0";
+                type = lib.types.float;
+                default = 28.0;
               };
               EntityMotherSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "33.0";
+                type = lib.types.float;
+                default = 33.0;
               };
               EntityNightmare = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityNinjaSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityPaleSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityPassiveCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "112.0";
+                type = lib.types.float;
+                default = 112.0;
               };
               EntityPech = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityPhantom = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityPlaguePigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityPlagueZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityPoisonSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityPoisonSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityPoisonSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityPoltergeist = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityPondSkater = lib.mkOption {
-                type = lib.types.str;
-                default = "15.0";
+                type = lib.types.float;
+                default = 15.0;
               };
               EntityPrayingMantis = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityPunchroom = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityQueenGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityRageWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityReflection = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityReiver = lib.mkOption {
-                type = lib.types.str;
-                default = "66.0";
+                type = lib.types.float;
+                default = 66.0;
               };
               EntityRemobra = lib.mkOption {
-                type = lib.types.str;
-                default = "11.0";
+                type = lib.types.float;
+                default = 11.0;
               };
               EntityRoc = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityScorpion = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityScytodes = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityShadowsWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityShambler = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntitySilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntitySkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntitySlime = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               EntitySludgeling = lib.mkOption {
-                type = lib.types.str;
-                default = "7.0";
+                type = lib.types.float;
+                default = 7.0;
               };
               EntitySmallSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "48.0";
+                type = lib.types.float;
+                default = 48.0;
               };
               EntitySmolderBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntitySnapper = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntitySniperSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntitySolifuge = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntitySolifugeSmall = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntitySpectre = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntitySpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntitySpirit = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntitySpitfireSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntitySplittingCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntitySpriggan = lib.mkOption {
-                type = lib.types.str;
-                default = "16.5";
+                type = lib.types.float;
+                default = 16.5;
               };
               EntityStrawberrySlime = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityStray = lib.mkOption {
-                type = lib.types.str;
-                default = "20.01";
+                type = lib.types.float;
+                default = 20.01;
               };
               EntityTFArmoredGiant = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityTFBlockGoblin = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTFDeathTome = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFFireBeetle = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityTFGiantMiner = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityTFGoblinKnightLower = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTFGoblinKnightUpper = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFHedgeSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityTFHelmetCrab = lib.mkOption {
-                type = lib.types.str;
-                default = "13.0";
+                type = lib.types.float;
+                default = 13.0;
               };
               EntityTFHostileWolf = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityTFIceCrystal = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityTFIceExploder = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityTFIceShooter = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityTFKingSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFKnightPhantom = lib.mkOption {
-                type = lib.types.str;
-                default = "35.0";
+                type = lib.types.float;
+                default = 35.0;
               };
               EntityTFKobold = lib.mkOption {
-                type = lib.types.str;
-                default = "13.0";
+                type = lib.types.float;
+                default = 13.0;
               };
               EntityTFLich = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityTFLichMinion = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityTFMiniGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityTFMinotaur = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFMistWolf = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityTFMosquitoSwarm = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               EntityTFPinchBeetle = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityTFRedcap = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTFRedcapSapper = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFSkeletonDruid = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTFSlimeBeetle = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityTFSnowGuardian = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               EntityTFSnowQueen = lib.mkOption {
-                type = lib.types.str;
-                default = "200.0";
+                type = lib.types.float;
+                default = 200.0;
               };
               EntityTFSwarmSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
               };
               EntityTFTowerBroodling = lib.mkOption {
-                type = lib.types.str;
-                default = "7.0";
+                type = lib.types.float;
+                default = 7.0;
               };
               EntityTFTowerGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFTowerGolem = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityTFTroll = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTFWinterWolf = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityTFWraith = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTFYeti = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTaintChicken = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityTaintCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTaintPig = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityTaintSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0";
+                type = lib.types.float;
+                default = 5.0;
               };
               EntityTaintSpore = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
               };
               EntityTaintSporeSwarmer = lib.mkOption {
-                type = lib.types.str;
-                default = "75.0";
+                type = lib.types.float;
+                default = 75.0;
               };
               EntityTaintSwarm = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTaintVillager = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTaintacle = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
               EntityTaintacleGiant = lib.mkOption {
-                type = lib.types.str;
-                default = "155.0";
+                type = lib.types.float;
+                default = 155.0;
               };
               EntityTaintacleSmall = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               EntityTarantula = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityTarantulaMiniboss = lib.mkOption {
-                type = lib.types.str;
-                default = "300.0";
+                type = lib.types.float;
+                default = 300.0;
               };
               EntityTentacles = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityThaumicSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               EntityThiefEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityThiefSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityToughCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "28.0";
+                type = lib.types.float;
+                default = 28.0;
               };
               EntityToughSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "28.0";
+                type = lib.types.float;
+                default = 28.0;
               };
               EntityToughSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "32.0";
+                type = lib.types.float;
+                default = 32.0;
               };
               EntityTreefyd = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               EntityUndeadWitch = lib.mkOption {
-                type = lib.types.str;
+                type = lib.types.float;
                 default = "187.1999969482422";
               };
               EntityUnholyGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               EntityVampirePigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityVelvetWorm = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               EntityVespid = lib.mkOption {
-                type = lib.types.str;
-                default = "5.5";
+                type = lib.types.float;
+                default = 5.5;
               };
               EntityWasp = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityWatermelonSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "24.0";
+                type = lib.types.float;
+                default = 24.0;
               };
               EntityWebCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               EntityWebSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityWendigo = lib.mkOption {
-                type = lib.types.str;
-                default = "33.0";
+                type = lib.types.float;
+                default = 33.0;
               };
               EntityWildfireBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               EntityWildsWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityWindWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityWisp = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityWitchCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               EntityWitchSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "17.0";
+                type = lib.types.float;
+                default = 17.0;
               };
               EntityWither = lib.mkOption {
-                type = lib.types.str;
-                default = "300.0";
+                type = lib.types.float;
+                default = 300.0;
               };
               EntityWitherCat = lib.mkOption {
-                type = lib.types.str;
-                default = "14.0";
+                type = lib.types.float;
+                default = 14.0;
               };
               EntityWitherSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               EntityWitherWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "30.0";
+                type = lib.types.float;
+                default = 30.0;
               };
               EntityWolfman = lib.mkOption {
-                type = lib.types.str;
-                default = "80.0";
+                type = lib.types.float;
+                default = 80.0;
               };
               EntityZoataur = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               EntityZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               EntityZombieAnt = lib.mkOption {
-                type = lib.types.str;
-                default = "25.0";
+                type = lib.types.float;
+                default = 25.0;
               };
               Entity_SpecialBlaze = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               Entity_SpecialCaveSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "14.0";
+                type = lib.types.float;
+                default = 14.0;
               };
               Entity_SpecialCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               Entity_SpecialEnderman = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
               };
               Entity_SpecialGhast = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               Entity_SpecialPigZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
               Entity_SpecialSilverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               Entity_SpecialSkeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "22.0";
+                type = lib.types.float;
+                default = 22.0;
               };
               Entity_SpecialSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               Entity_SpecialSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "16.0";
+                type = lib.types.float;
+                default = 16.0;
               };
               Entity_SpecialWitch = lib.mkOption {
-                type = lib.types.str;
-                default = "26.0";
+                type = lib.types.float;
+                default = 26.0;
               };
               Entity_SpecialZombie = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
               HeatscarSpider = lib.mkOption {
-                type = lib.types.str;
-                default = "50.0";
+                type = lib.types.float;
+                default = 50.0;
               };
               KingBlueSlime = lib.mkOption {
-                type = lib.types.str;
-                default = "100.0";
+                type = lib.types.float;
+                default = 100.0;
               };
               NitroCreeper = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
               };
             };
           };
