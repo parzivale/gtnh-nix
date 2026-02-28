@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/RandomThings.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/RandomThings.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         blocks = lib.mkOption {
           default = {};
@@ -217,8 +217,8 @@
                 description = "Whether fog will turn black on a Bloodmoon to look better with the red sky";
               };
               BloodMoonChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.01";
+                type = lib.types.float;
+                default = 0.01;
                 description = "The chance of a bloodmoon happening (0=Never;1=Every night;0.05=5% of all nights)";
               };
               BloodMoonCycle = lib.mkOption {
@@ -316,18 +316,18 @@
                 description = "The Dimension ID of the spectre World. On first run and when you set this setting to -1 RandomThings will try to find a dimensionID itself";
               };
               SpectreImbueChance = lib.mkOption {
-                type = lib.types.str;
-                default = "1";
+                type = lib.types.float;
+                default = 1.0;
                 description = "The chance of phasing through an attack while being imbued with spectre";
               };
               SpiritChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "The chance of a spirit spawning when you don't use a Spectre Sword (0-1)";
               };
               SpiritChanceSword = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
                 description = "The chance of a spirit spawning when you have a spirit binder in your inventory and kill the entity with a spectre sword. (0-1)";
               };
               WirelessLeverRange = lib.mkOption {
