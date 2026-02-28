@@ -23,7 +23,7 @@
     # Build a derivation that passes iff the rendered config file
     # semantically matches the corresponding file in the 2.8.4 pack.
     # Normalisation: strip comments, blank lines, whitespace, quotes, and
-    # type prefixes (B:/I:/D:/S:) then sort — so only key names and values
+    # then sort — so only key names and values
     # are compared, not formatting.
     mkCfgCheck = name: cfgValue: relPath: let
       rendered = mkConfigFile cfgValue;
@@ -54,7 +54,6 @@
           | awk 'match($0, /=[-]?[0-9]*[.]?[0-9]+[Ee][+-]?[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
           | awk 'match($0, /=[-]?[0-9]*\.[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
           | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
-          | sort -u \
           || true
         }
         normalize "${original}"  > orig_norm
