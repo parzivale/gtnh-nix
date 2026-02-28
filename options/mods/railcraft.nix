@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/railcraft/blocks.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/railcraft/blocks.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         blocks = lib.mkOption {
           default = {};
@@ -1341,14 +1341,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/railcraft/items.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/railcraft/items.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         items = lib.mkOption {
           default = {};
@@ -1686,14 +1686,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/railcraft/modules.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/railcraft/modules.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         modules = lib.mkOption {
           default = {};
@@ -1819,14 +1819,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/railcraft/railcraft.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/railcraft/railcraft.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         anchors = lib.mkOption {
           default = {};
@@ -1835,42 +1835,52 @@
               craftable = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "change to craftable=false to disable World Anchor crafting, they will still be available via Creative";
               };
               "delete.anchors" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
+                description = "change to 'delete.anchors=true' to delete every World Anchor or Anchor Cart in the world. Value resets to false after each session. To disable Anchors completely, disable the ChunkLoading Module from 'modules.cfg'";
               };
               "interact.with.pipes" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "change to interact.with.pipes=false to prevent pipes, tubes, or various other things from interacting with Anchors";
               };
               "passive.craftable" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "change to passive.craftable=false to disable Passive Anchor crafting, they will still be available via Creative";
               };
               "passive.fuel" = lib.mkOption {
                 type = lib.types.str;
                 default = "minecraft:ender_pearl=1, dreamcraft:item.CoinChunkloaderTierI=24, dreamcraft:item.CoinChunkloaderTierII=48, dreamcraft:item.CoinChunkloaderTierIII=96, dreamcraft:item.CoinChunkloaderTierIV=192, dreamcraft:item.CoinChunkloaderTierV=384";
+                description = "the number of hours that an item will power a Passive Anchor this is an approximation only, actual duration is affected by number of chunks loaded and tick rate if the list is empty, Passive Anchors will not require fuel, default = 12 Entry Format: <modid>:<itemname>#<metadata>=<value> Example: personal.fuel= minecraft:ender_pearl=12, minecraft:coal#0=4";
               };
               "personal.craftable" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "change to personal.craftable=false to disable Personal Anchor crafting, they will still be available via Creative";
               };
               "personal.fuel" = lib.mkOption {
                 type = lib.types.str;
                 default = "EnderZoo:enderFragment=1, minecraft:ender_pearl=4, dreamcraft:item.CoinChunkloaderTierI=48, dreamcraft:item.CoinChunkloaderTierII=96, dreamcraft:item.CoinChunkloaderTierIII=192,dreamcraft:item.CoinChunkloaderTierIV=364, dreamcraft:item.CoinChunkloaderTierV=768";
+                description = "the number of hours that an item will power a Personal Anchor or Personal Anchor Cart this is an approximation only, actual duration is affected by number of chunks loaded and tick rate if the list is empty, Personal Anchors will not require fuel, default = 12 Entry Format: <modid>:<itemname>#<metadata>=<value> Example: personal.fuel= minecraft:ender_pearl=12, minecraft:coal#0=4";
               };
               "print.debug" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
+                description = "change to 'print.debug=true' to log debug info for Anchors";
               };
               "print.locations" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
+                description = "change to print.locations=true to print Anchor locations to the log on startup";
               };
               "world.fuel" = lib.mkOption {
                 type = lib.types.str;
                 default = "dreamcraft:item.CoinChunkloaderTierI=12, dreamcraft:item.CoinChunkloaderTierII=24, dreamcraft:item.CoinChunkloaderTierIII=48, dreamcraft:item.CoinChunkloaderTierIV=96, dreamcraft:item.CoinChunkloaderTierV=192";
+                description = "the number of hours that an item will power a World Anchor or World Anchor Cart this is an approximation only, actual duration is affected by number of chunks loaded and tick rate if the list is empty, World Anchors will not require fuel, default = 12 Entry Format: <modid>:<itemname>#<metadata>=<value> Example: personal.fuel= minecraft:ender_pearl=12, minecraft:coal#0=4";
               };
             };
           };
@@ -2015,18 +2025,22 @@
               cannotMobsSpawnOnDecorBlocks = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "Cannot mobs Spawn on decor blocks";
               };
               cannotMobsSpawnOnMechanism = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "Cannot mobs Spawn on Mechanism";
               };
               "check.version.online" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
+                description = "change to 'check.version.online=false' to disable latest version checking";
               };
               "play.sounds" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
+                description = "change to 'play.sounds=false' to prevent all mod sounds from playing";
               };
             };
           };
@@ -2181,6 +2195,7 @@
                           creosote = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'creosote=true' to add smelting recipes for Creosote Oil to the vanilla furnace";
                           };
                         };
                       };
@@ -2199,6 +2214,7 @@
                           useAltRecipes = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'useAltRecipes=true' to use track recipes more similar to vanilla minecraft";
                           };
                         };
                       };
@@ -2210,6 +2226,7 @@
                           ores = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'ores=false' to prevent the game from crushing ores into dusts (only available if IC2 installed)";
                           };
                         };
                       };
@@ -2221,14 +2238,17 @@
                           "coalcoke.torches" = lib.mkOption {
                             type = lib.types.int;
                             default = 8;
+                            description = "set the output of the coalcoke and stick recipe for torches, setting to 0 will disable' min=0, default=8, max=32";
                           };
                           "creosote.torches" = lib.mkOption {
                             type = lib.types.int;
                             default = 2;
+                            description = "set the output of the creosote and woool recipe for torches, setting to 0 will disable' min=0, default=6, max=16";
                           };
                           gunpowder = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'gunpowder=false' to disable the sulfur, saltpeter, charcoal dust recipe for gunpowder";
                           };
                         };
                       };
@@ -2240,14 +2260,17 @@
                           bronze = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'bronze=false' to disable the bronze recipe for minecarts";
                           };
                           furnace = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'furnace=true' to enable the Furnace Minecart recipe";
                           };
                           steel = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'steel=false' to disable the steel recipe for minecarts";
                           };
                         };
                       };
@@ -2266,30 +2289,37 @@
                           blaze = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'blaze=false' to disable the IC2 Macerator recipe for Blaze Powder";
                           };
                           bones = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'bones=false' to disable the IC2 Macerator recipe for Bonemeal";
                           };
                           charcoal = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'charcoal=false' to disable the IC2 Macerator recipe for Charcoal Dust";
                           };
                           cobble = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'cobble=false' to disable the IC2 Macerator recipes for Cobblestone";
                           };
                           dirt = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'dirt=false' to disable the IC2 Macerator recipe for Dirt";
                           };
                           obsidian = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'obsidian=false' to disable the IC2 Macerator recipes for Cushed Obsidian and Obsidian Dust";
                           };
                           ores = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'ores=false' to disable the IC2 Macerator recipes for Ore Dusts";
                           };
                         };
                       };
@@ -2308,6 +2338,7 @@
                           fertilizer = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'fertilizer=false' to disable the saltpeter recipe for Forestry Fertilizer";
                           };
                         };
                       };
@@ -2319,14 +2350,17 @@
                           "creosote.block" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'creosote.block=false' to disable the Carptenter Creosote Block recipe";
                           };
                           ties = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'ties=false' to disable the Carptenter Tie recipe";
                           };
                           torches = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'torches=false' to disable the Carptenter Creosote Torch recipe";
                           };
                         };
                       };
@@ -2352,6 +2386,7 @@
                           delay = lib.mkOption {
                             type = lib.types.int;
                             default = 0;
+                            description = "set the minimum number of seconds between cart dispensing, default=0";
                           };
                         };
                       };
@@ -2363,10 +2398,12 @@
                           "allow.stacking" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "Change to 'allow.stacking=false' to disable the stacking of Iron Tanks";
                           };
                           maxsize = lib.mkOption {
                             type = lib.types.int;
                             default = 9;
+                            description = "Allows you to set the max Iron Tank base dimension, valid values are 3, 5, 7, and 9";
                           };
                         };
                       };
@@ -2378,10 +2415,12 @@
                           printDebug = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'printDebug=true' to log debug info for Signal Blocks";
                           };
                           "update.interval" = lib.mkOption {
                             type = lib.types.int;
                             default = 4;
+                            description = "measured in tick, smaller numbers update more often, resulting in more sensitive signals, but cost more cpu power, default = 4";
                           };
                         };
                       };
@@ -2393,6 +2432,7 @@
                           requirePower = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'requirePower=false' to disable the Power Requirements for most machines";
                           };
                         };
                       };
@@ -2404,10 +2444,12 @@
                           biofuelMultiplier = lib.mkOption {
                             type = lib.types.float;
                             default = 1.0;
+                            description = "adjust the heat value of BioFuel in a Boiler";
                           };
                           fuelMultiplier = lib.mkOption {
                             type = lib.types.float;
                             default = 1.0;
+                            description = "adjust the heat value of Fuel in a Boiler";
                           };
                         };
                       };
@@ -2422,6 +2464,7 @@
                     fuelPerSteamMultiplier = lib.mkOption {
                       type = lib.types.float;
                       default = 1.0;
+                      description = "adjust the amount of fuel used to create Steam, min=0.2, default=1.0, max=6.0";
                     };
                   };
                 };
@@ -2437,6 +2480,7 @@
                           trackingAura = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "Change to 'trackingAura=false' to disable the Tracking Aura";
                           };
                         };
                       };
@@ -2448,6 +2492,7 @@
                           firestoneIgnitesBlocks = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "Change to 'firestoneIgnitesBlocks=false' to disabled Firestone items igniting blocks around players";
                           };
                         };
                       };
@@ -2465,11 +2510,13 @@
                         options = {
                           "entities.excluded" = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
-                            default = [];
+                            default = [ ];
+                            description = "add entity names to exclude them from explosions caused by high speed collisions";
                           };
                           "max.speed" = lib.mkOption {
                             type = lib.types.float;
                             default = 0.800000011920929;
+                            description = "change 'max.speed' to limit max speed on high speed rails, useful if your computer can't keep up with chunk loading, min=0.6, default=0.8, max=1.2";
                           };
                         };
                       };
@@ -2481,6 +2528,7 @@
                           "force.max" = lib.mkOption {
                             type = lib.types.int;
                             default = 50;
+                            description = "change the value to your desired max launch rail force, min=5, default=30, max=50";
                           };
                         };
                       };
@@ -2495,6 +2543,7 @@
                     "ops.only" = lib.mkOption {
                       type = lib.types.bool;
                       default = false;
+                      description = "change to 'ops.only=true' to limit the editing of Golden Tickets to server admins only";
                     };
                   };
                 };
@@ -2510,26 +2559,32 @@
                           breakOnDrop = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'breakOnDrop=true' to restore vanilla behavior";
                           };
                           collideWithItems = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'collideWithItems=true' to restore minecart collisions with dropped items, ignored if 'register.collision.handler=false'";
                           };
                           maxStackSize = lib.mkOption {
                             type = lib.types.int;
                             default = 3;
+                            description = "change the value to your desired minecart stack size, vanilla=1, default=3, max=64";
                           };
                           printLinkingDebug = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'printLinkingDebug=true' to log debug info for Cart Linking";
                           };
                           "register.collision.handler" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'register.collision.handler=false' to use a minecart collision handler from a different mod or vanilla behavior";
                           };
                           "solid.carts" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'solid.carts=false' to return minecarts to vanilla player vs cart collision behavior in vanilla minecarts are ghost like can be walked through but making carts solid also makes them hard to push by hand this setting is ignored if aren't using the Railcraft Collision Handler";
                           };
                         };
                       };
@@ -2541,6 +2596,7 @@
                           adjustDrag = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'adjustDrag=false' to give basic carts the original vanilla drag values, after changing you may need to replace the carts to see any change in game";
                           };
                         };
                       };
@@ -2552,6 +2608,7 @@
                           allowLiquids = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'allowLiquids=true' to allow you put cans/capsules in Chest Carts";
                           };
                         };
                       };
@@ -2563,18 +2620,22 @@
                           destroyBlocks = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'destroyBlocks=true' to cause the Bore to destroy the blocks it mines instead of dropping them";
                           };
                           mineAllBlocks = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'mineAllBlocks=false' to enable mining checks, use true setting with caution, especially on servers";
                           };
                           mineableBlocks = lib.mkOption {
                             type = lib.types.str;
                             default = "{}";
+                            description = "add block ids to 'mineableBlocks' in a common seperated list to define non-vanilla blocks mineable by the tunnel bore ignored if 'tweaks.carts.bore.mineAllBlocks=true' metadata sensative entries can be defined in the form 'modid:blockname#metadata' Example:mineableBlocks= { minecraft:stone, minecraft:stonebrick#3 }";
                           };
                           miningSpeed = lib.mkOption {
                             type = lib.types.float;
                             default = 1.0;
+                            description = "adjust the speed at which the Bore mines blocks, min=0.1, default=1.0, max=50.0";
                           };
                         };
                       };
@@ -2586,10 +2647,12 @@
                           damageMobs = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
+                            description = "change to 'damageMobs=false' to disable Locomotive damage on mobs, they will still knockback mobs";
                           };
                           horsepower = lib.mkOption {
                             type = lib.types.int;
                             default = 15;
+                            description = "controls how much power locomotives have and how many carts they can pull be warned, longer trains have a greater chance for glitches as such it HIGHLY recommended you do not change this";
                           };
                           steam = lib.mkOption {
                             default = {};
@@ -2598,6 +2661,7 @@
                                 efficiencyMulitplier = lib.mkOption {
                                   type = lib.types.float;
                                   default = 3.0;
+                                  description = "adjust the multiplier used when calculating fuel use, min=0.2, default=3.0, max=12.0";
                                 };
                               };
                             };
@@ -2612,14 +2676,17 @@
                           capacity = lib.mkOption {
                             type = lib.types.int;
                             default = 32;
+                            description = "change the value to your desired Tank Cart capacity in buckets, min=4, default=32, max=64, ignored if 'tweaks.minecarts.tank.useCustomValues=false'";
                           };
                           fillrate = lib.mkOption {
                             type = lib.types.int;
                             default = 32;
+                            description = "change the value to your desired Tank Cart fill rate in milli-buckets per tick, min=4, default=32, max=64 there are 1000 milli-buckets in a bucket, ignored if 'tweaks.minecarts.tank.useCustomValues=false'";
                           };
                           useCustomValues = lib.mkOption {
                             type = lib.types.bool;
                             default = false;
+                            description = "change to 'useCustomValues=true' to adjust the Tank Cart's capacity and fill rate";
                           };
                         };
                       };

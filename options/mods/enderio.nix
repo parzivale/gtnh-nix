@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/enderio/EnderIO.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/enderio/EnderIO.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "advanced settings" = lib.mkOption {
           default = {};
@@ -38,7 +38,7 @@
               conduitScale = lib.mkOption {
                 type = lib.types.float;
                 default = 0.6;
-                description = "In SMP, all clients must be using the same value as the server.";
+                description = "Valid values are between 0-1, smallest conduits at 0, largest at 1. In SMP, all clients must be using the same value as the server.";
               };
               useAlternateTransceiverModel = lib.mkOption {
                 type = lib.types.bool;
@@ -227,8 +227,8 @@
                 description = "Power use (RF) per damage/durability point avoided.";
               };
               darkSteelPowerDamgeAbsorptionRatios = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = ["0.5" "0.6" "0.7" "0.85" "0.95"];
+                type = lib.types.listOf lib.types.float;
+                default = [ 0.5 0.6 0.7 0.85 0.95 ];
                 description = "A list of the amount of durability damage absorbed when items are powered. In order of upgrade level. 1=100% so items take no durability damage when powered.";
               };
               darkSteelPowerStorage = lib.mkOption {
@@ -684,7 +684,7 @@
               };
               farmHoes = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["minecraft:wooden_hoe" "minecraft:stone_hoe" "minecraft:iron_hoe" "minecraft:diamond_hoe" "minecraft:golden_hoe" "MekanismTools:ObsidianHoe" "MekanismTools:LapisLazuliHoe" "MekanismTools:OsmiumHoe" "MekanismTools:BronzeHoe" "MekanismTools:GlowstoneHoe" "MekanismTools:SteelHoe" "Steamcraft:hoeBrass" "Steamcraft:hoeGildedGold" "Railcraft:tool.steel.hoe" "TConstruct:mattock" "appliedenergistics2:item.ToolCertusQuartzHoe" "appliedenergistics2:item.ToolNetherQuartzHoe" "ProjRed|Exploration:projectred.exploration.hoeruby" "ProjRed|Exploration:projectred.exploration.hoesapphire" "ProjRed|Exploration:projectred.exploration.hoeperidot" "magicalcrops:magicalcrops_AccioHoe" "magicalcrops:magicalcrops_CrucioHoe" "magicalcrops:magicalcrops_ImperioHoe" "BiomesOPlenty:hoeAmethyst" "BiomesOPlenty:hoeMud" "Eln:Eln.Copper Hoe" "Thaumcraft:ItemHoeThaumium" "Thaumcraft:ItemHoeElemental" "Thaumcraft:ItemHoeVoid" "ThermalFoundation:tool.hoeInvar" "ThermalFoundation:tool.hoeCopper" "ThermalFoundation:tool.hoeBronze" "ThermalFoundation:tool.hoeSilver" "ThermalFoundation:tool.hoeElectrum" "ThermalFoundation:tool.hoeTin" "ThermalFoundation:tool.hoeLead" "ThermalFoundation:tool.hoeNickel" "ThermalFoundation:tool.hoePlatinum" "TwilightForest:item.steeleafHoe" "TwilightForest:item.ironwoodHoe" "IC2:itemToolBronzeHoe"];
+                default = [ "minecraft:wooden_hoe" "minecraft:stone_hoe" "minecraft:iron_hoe" "minecraft:diamond_hoe" "minecraft:golden_hoe" "MekanismTools:ObsidianHoe" "MekanismTools:LapisLazuliHoe" "MekanismTools:OsmiumHoe" "MekanismTools:BronzeHoe" "MekanismTools:GlowstoneHoe" "MekanismTools:SteelHoe" "Steamcraft:hoeBrass" "Steamcraft:hoeGildedGold" "Railcraft:tool.steel.hoe" "TConstruct:mattock" "appliedenergistics2:item.ToolCertusQuartzHoe" "appliedenergistics2:item.ToolNetherQuartzHoe" "ProjRed|Exploration:projectred.exploration.hoeruby" "ProjRed|Exploration:projectred.exploration.hoesapphire" "ProjRed|Exploration:projectred.exploration.hoeperidot" "magicalcrops:magicalcrops_AccioHoe" "magicalcrops:magicalcrops_CrucioHoe" "magicalcrops:magicalcrops_ImperioHoe" "BiomesOPlenty:hoeAmethyst" "BiomesOPlenty:hoeMud" "Eln:Eln.Copper Hoe" "Thaumcraft:ItemHoeThaumium" "Thaumcraft:ItemHoeElemental" "Thaumcraft:ItemHoeVoid" "ThermalFoundation:tool.hoeInvar" "ThermalFoundation:tool.hoeCopper" "ThermalFoundation:tool.hoeBronze" "ThermalFoundation:tool.hoeSilver" "ThermalFoundation:tool.hoeElectrum" "ThermalFoundation:tool.hoeTin" "ThermalFoundation:tool.hoeLead" "ThermalFoundation:tool.hoeNickel" "ThermalFoundation:tool.hoePlatinum" "TwilightForest:item.steeleafHoe" "TwilightForest:item.ironwoodHoe" "IC2:itemToolBronzeHoe" ];
                 description = "Use this to specify items that can be hoes in the farming station. Use the registry name (eg. modid:name).";
               };
               farmManaBeansEnabled = lib.mkOption {
@@ -976,7 +976,7 @@
               };
               magnetBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["appliedenergistics2:item.ItemCrystalSeed" "Botania:livingrock" "Botania:manaTablet"];
+                default = [ "appliedenergistics2:item.ItemCrystalSeed" "Botania:livingrock" "Botania:manaTablet" ];
                 description = "These items will not be picked up by the magnet. [default: [appliedenergistics2:item.ItemCrystalSeed], [Botania:livingrock], [Botania:manaTablet]]";
               };
               magnetMaxItems = lib.mkOption {
@@ -1223,7 +1223,7 @@
               yetaWrenchOverlayMode = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "2 - Old-style group of icons in bottom right [range: 0 ~ 2, default: 0]";
+                description = "What kind of overlay to use when holding the yeta wrench 0 - Sideways scrolling in ceter of screen 1 - Vertical icon bar in bottom right 2 - Old-style group of icons in bottom right [range: 0 ~ 2, default: 0]";
               };
             };
           };
@@ -1374,7 +1374,7 @@
               };
               powerConduitTiersEndergy = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [20 40 80 160 320 1280 2560 10240 40960 81920 327680 2000000000];
+                default = [ 20 40 80 160 320 1280 2560 10240 40960 81920 327680 2000000000 ];
                 description = "The maximum IO for the endergy power conduit";
               };
               rocketFuelPowerPerCycleRF = lib.mkOption {
@@ -1458,8 +1458,8 @@
                 description = "[Deprecated]Burn time multiplier for the Stirling Generator, Tier 3 machine";
               };
               stirlingGeneratorBurnTimeMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = ["0.5" "0.6666666865348816"];
+                type = lib.types.listOf lib.types.float;
+                default = [ 0.5 0.6666666865348816 ];
                 description = "Burn time multipliers for the Stirling Generator";
               };
               stirlingGeneratorEnergyMultiplierT1 = lib.mkOption {
@@ -1478,8 +1478,8 @@
                 description = "[Deprecated]Energy multiplier for the Stirling Generator, Tier 3 machine";
               };
               stirlingGeneratorEnergyMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = ["1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0"];
+                type = lib.types.listOf lib.types.float;
+                default = [ 1.0 2.0 3.0 5.0 8.0 13.0 21.0 ];
                 description = "Energy multipliers for the Stirling Generator";
               };
               transceiverEnergyLoss = lib.mkOption {
@@ -1518,13 +1518,13 @@
                 description = "The number of ticks one bucket of fuel lasts.";
               };
               zombieGeneratorsBurnTimeMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = ["0.5" "0.6666666865348816"];
+                type = lib.types.listOf lib.types.float;
+                default = [ 0.5 0.6666666865348816 ];
                 description = "Burn time multipliers for the Zombie-Type Generators";
               };
               zombieGeneratorsEnergyMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = ["1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0"];
+                type = lib.types.listOf lib.types.float;
+                default = [ 1.0 2.0 3.0 5.0 8.0 13.0 21.0 ];
                 description = "Energy multipliers for the Zombie-Type Generators";
               };
             };
@@ -1541,7 +1541,7 @@
               };
               brokenSpawnerToolBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["RotaryCraft:rotarycraft_item_bedpick"];
+                default = [ "RotaryCraft:rotarycraft_item_bedpick" ];
                 description = "When a spawner is broken with these tools they will not drop a broken spawner [default: [RotaryCraft:rotarycraft_item_bedpick]]";
               };
               powerSpawnerAddSpawnerCost = lib.mkOption {
@@ -1872,7 +1872,7 @@
               };
               soulVesselBlackList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "Entities listed here will can not be captured in a Soul Vial [default: ]";
               };
               soulVesselCapturesBosses = lib.mkOption {
@@ -1890,7 +1890,7 @@
               teleportStaffAction = lib.mkOption {
                 type = lib.types.int;
                 default = 3;
-                description = "3: Teleport to anchor, or look if no anchor (default)";
+                description = "Sets the action for right-click with the staff of teleportation. Values: 0: Do nothing 1: Teleport to look 2: Teleport to anchor 3: Teleport to anchor, or look if no anchor (default)";
               };
               teleportStaffFailedBlinkDistance = lib.mkOption {
                 type = lib.types.int;
@@ -1910,7 +1910,7 @@
               teleportStaffSneakAction = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
-                description = "3: Teleport to anchor, or look if no anchor";
+                description = "Sets the action for sneak right-click with the staff of teleportation. Values: 0: Do nothing 1: Teleport to look (default) 2: Teleport to anchor 3: Teleport to anchor, or look if no anchor";
               };
               travelAnchorZoomScale = lib.mkOption {
                 type = lib.types.str;
@@ -1929,7 +1929,7 @@
               };
               travelStaffBlinkBlackList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["minecraft:bedrock" "Thaumcraft:blockWarded"];
+                default = [ "minecraft:bedrock" "Thaumcraft:blockWarded" ];
                 description = "Lists the blocks that cannot be teleported through in the form 'modID:blockName' [default: [minecraft:bedrock], [Thaumcraft:blockWarded]]";
               };
               travelStaffBlinkEnabled = lib.mkOption {
@@ -2002,7 +2002,7 @@
               powerCoefficient = lib.mkOption {
                 type = lib.types.int;
                 default = 100000;
-                description = "power = [this value] * ln(0.005*distance + 1)";
+                description = "Power for a teleport is calculated by the formula: power = [this value] * ln(0.005*distance + 1)";
               };
               powerInterdimensional = lib.mkOption {
                 type = lib.types.int;

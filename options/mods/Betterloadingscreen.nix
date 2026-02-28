@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/Betterloadingscreen/betterloadingscreen.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/Betterloadingscreen/betterloadingscreen.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "changing background" = lib.mkOption {
           default = {};
@@ -60,7 +60,7 @@
               font = lib.mkOption {
                 type = lib.types.str;
                 default = "textures/font/ascii.png";
-                description = "Note: if a resourcepack adds a font, it will be used by BLS. [default: textures/font/ascii.png]";
+                description = "What font texture to use? Special Cases: - If you use the Russian mod \"Client Fixer\" then change this to \"textures/font/ascii_fat.png\" Note: if a resourcepack adds a font, it will be used by BLS. [default: textures/font/ascii.png]";
               };
               playSound = lib.mkOption {
                 type = lib.types.bool;
@@ -75,7 +75,7 @@
               useMinecraft = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Note: IIRC, setting this to false makes the screen black [default: true]";
+                description = "Whether or not to use minecraft's display to show the progress. This looks better, but there is a possibility of not being compatible, so if you do have any strange crash reports or compatibility issues, try setting this to false Note: IIRC, setting this to false makes the screen black [default: true]";
               };
             };
           };
@@ -113,12 +113,12 @@
               background = lib.mkOption {
                 type = lib.types.str;
                 default = "betterloadingscreen:textures/backgrounds/background1.png";
-                description = "You can use a resourcepack or resource loader for custom resources. [default: betterloadingscreen:textures/backgrounds/01.png]";
+                description = "Path to background resource. You can use a resourcepack or resource loader for custom resources. [default: betterloadingscreen:textures/backgrounds/01.png]";
               };
               backgroundList = lib.mkOption {
                 type = lib.types.str;
                 default = "{betterloadingscreen:textures/backgrounds/background1.png, betterloadingscreen:textures/backgrounds/background2.png, betterloadingscreen:textures/backgrounds/background3.png, betterloadingscreen:textures/backgrounds/background4.png, betterloadingscreen:textures/backgrounds/background5.png, betterloadingscreen:textures/backgrounds/background6.png, betterloadingscreen:textures/backgrounds/background7.png, betterloadingscreen:textures/backgrounds/background8.png, betterloadingscreen:textures/backgrounds/background9.png, betterloadingscreen:textures/backgrounds/background10.png, betterloadingscreen:textures/backgrounds/background11.png, betterloadingscreen:textures/backgrounds/background12.png, betterloadingscreen:textures/backgrounds/background14.png, betterloadingscreen:textures/backgrounds/background15.png, betterloadingscreen:textures/backgrounds/background16.png, betterloadingscreen:textures/backgrounds/background17.png, betterloadingscreen:textures/backgrounds/background18.png, betterloadingscreen:textures/backgrounds/background19.png, betterloadingscreen:textures/backgrounds/background20.png, betterloadingscreen:textures/backgrounds/background13.png, betterloadingscreen:textures/backgrounds/background21.png, betterloadingscreen:textures/backgrounds/background22.png, betterloadingscreen:textures/backgrounds/background23.png, betterloadingscreen:textures/backgrounds/background24.png, betterloadingscreen:textures/backgrounds/background25.png, betterloadingscreen:textures/backgrounds/background26.png, betterloadingscreen:textures/backgrounds/background27.png, betterloadingscreen:textures/backgrounds/background28.png, betterloadingscreen:textures/backgrounds/background29.png, betterloadingscreen:textures/backgrounds/background30.png, betterloadingscreen:textures/backgrounds/background31.png, betterloadingscreen:textures/backgrounds/background32.png, betterloadingscreen:textures/backgrounds/background33.png, betterloadingscreen:textures/backgrounds/background34.png, betterloadingscreen:textures/backgrounds/background35.png}";
-                description = "The paths must be separated by commas. [default: {betterloadingscreen:textures/backgrounds/01.png, betterloadingscreen:textures/backgrounds/02.png}]";
+                description = "List of paths to backgrounds that will be used if randomBackgrounds is true. The paths must be separated by commas. [default: {betterloadingscreen:textures/backgrounds/01.png, betterloadingscreen:textures/backgrounds/02.png}]";
               };
               loadingBarsAlpha = lib.mkOption {
                 type = lib.types.str;
@@ -213,7 +213,7 @@
               titlePos = lib.mkOption {
                 type = lib.types.str;
                 default = "[0, 0, 256, 256, 0, 50, 187, 145]";
-                description = "an image, a transparent one if you want even. BLS provides 'transparent.png' [default: [0, 0, 256, 256, 0, 50, 187, 145]]";
+                description = "Logo coordinates in image and position. the first four values indicate where the logo is located on the image (you could use a spritesheet), the four next ones tell where the image will be located on screen like this: [xLocation, yLocation, xWidth, yWidth, xLocation, yLocation, xWidth, yWidth] The same is used for other images, except the background, which is fullscreen. Please ALWAYS provide an image, a transparent one if you want even. BLS provides 'transparent.png' [default: [0, 0, 256, 256, 0, 50, 187, 145]]";
               };
             };
           };
@@ -237,12 +237,12 @@
               baseTipsTextPos = lib.mkOption {
                 type = lib.types.str;
                 default = "BOTTOM_CENTER";
-                description = "Note: Other elements use CENTER, if you really need, ask to implement this base position option for any other element. [default: BOTTOM_CENTER]";
+                description = "Base text position. Can be TOP_CENTER, TOP_RIGHT, CENTER_LEFT, CENTER, CENTER_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER or BOTTOM_RIGHT. Note: Other elements use CENTER, if you really need, ask to implement this base position option for any other element. [default: BOTTOM_CENTER]";
               };
               customTipFilename = lib.mkOption {
                 type = lib.types.str;
                 default = "en_US";
-                description = "Don't include the \".txt\". Example: \"myTipFile\" [default: en_US]";
+                description = "Custom tips file name, place it in config/Betterloadingscreen/tips. Don't include the \".txt\". Example: \"myTipFile\" [default: en_US]";
               };
               tipsChangeFrequency = lib.mkOption {
                 type = lib.types.int;

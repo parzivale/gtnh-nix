@@ -11,7 +11,7 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge";
+        default = "forge_untyped";
         readOnly = true;
         };
       };

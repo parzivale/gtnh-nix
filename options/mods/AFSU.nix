@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/AFSU.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/AFSU.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         containergui = lib.mkOption {
           default = {};
@@ -90,10 +90,9 @@
                 default = 5;
                 description = "DO NOT CHANGE THIS IF YOU DONT KNOW WHAT YOU ARE DOING [range: 0 ~ 2147483647, default: 5]";
               };
-              # Original AFSU.cfg uses S: (String) for this field despite the numeric value
               barWidth = lib.mkOption {
                 type = lib.types.str;
-                default = "176";
+                default = "176.0";
                 description = "DO NOT CHANGE THIS IF YOU DONT KNOW WHAT YOU ARE DOING [range: 0.0 ~ 2.1474836E9, default: 176.0]";
               };
               barXLocation = lib.mkOption {

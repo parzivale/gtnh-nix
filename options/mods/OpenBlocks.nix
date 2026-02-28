@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/OpenBlocks.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/OpenBlocks.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         additional = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               disableMobNames = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
               };
               dumpDeadPlayersInventories = lib.mkOption {
                 type = lib.types.bool;
@@ -206,7 +206,7 @@
             options = {
               blockBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["\"Natura:Cloud\""];
+                default = [ "\"Natura:Cloud\"" ];
               };
               reportInvalidRequest = lib.mkOption {
                 type = lib.types.bool;
@@ -321,7 +321,7 @@
               };
               specialBlockRules = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
               };
             };
           };
@@ -397,7 +397,7 @@
             options = {
               BlacklistedDimensions = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [95 94 93 92 86 85 84 83 82 81 77 74 71 69 63 54 51 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 33 32 31 30 29 28 25];
+                default = [ 95 94 93 92 86 85 84 83 82 81 77 74 71 69 63 54 51 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 33 32 31 30 29 28 25 ];
                 description = "List of dimension IDs where the glider doesn't work";
               };
             };
@@ -829,7 +829,7 @@
               };
               flimFlamBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
               };
               reverseBlacklist = lib.mkOption {
                 type = lib.types.bool;

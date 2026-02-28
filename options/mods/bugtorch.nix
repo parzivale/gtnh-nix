@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/bugtorch/base.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/bugtorch/base.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "backported features" = lib.mkOption {
           default = {};
@@ -21,7 +21,7 @@
               freeFloatingTrapDoors = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9 [default: true]";
+                description = "Trapdoors no longer require attachment blocks. From MC 1.9 [default: true]";
               };
             };
           };
@@ -53,7 +53,7 @@
               fixSnowBlocksRandomlyTicking = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.14, fixes MC-88097 [default: true]";
+                description = "Non-layered snow blocks will no longer randomly tick. From MC 1.14, fixes MC-88097 [default: true]";
               };
               fixTorchBlocksRandomlyTicking = lib.mkOption {
                 type = lib.types.bool;
@@ -94,14 +94,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/bugtorch/mixins.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/bugtorch/mixins.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "backported features" = lib.mkOption {
           default = {};
@@ -110,27 +110,27 @@
               cobwebsCanBeSheared = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9, fixes MC-93001 [default: true]";
+                description = "Cobwebs can be collected with Shears without Silk Touch. From MC 1.9, fixes MC-93001 [default: true]";
               };
               deadBushesDropSticks = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9 [default: true]";
+                description = "Dead Bushes drop 0-2 Sticks. From MC 1.9 [default: true]";
               };
               fireArrowsDetonateTNTCarts = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8, fixes MC-8987 [default: true]";
+                description = "Minecarts with TNT explode when hit by fire arrows. From MC 1.8, fixes MC-8987 [default: true]";
               };
               fixPumpkinPlacementCheck = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.13, fixes MC-1947 [default: true]";
+                description = "Pumpkins and Jack O' Lanterns can be placed without a solid block below them. From MC 1.13, fixes MC-1947 [default: true]";
               };
               fixRedstoneTorchMemoryLeak = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Fixes MC-101233 [default: true]";
+                description = "Stops Redstone Torches from causing a memory leak by making them use a weak hash map to store burnt out torches. Fixes MC-101233 [default: true]";
               };
               fixShearedBlocksDropExtraItems = lib.mkOption {
                 type = lib.types.bool;
@@ -139,7 +139,7 @@
               throwEnderPearlsInCreativeMode = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9, fixes MC-438 [default: true]";
+                description = "Ender Pearls can be thrown in creative mode. From MC 1.9, fixes MC-438 [default: true]";
               };
             };
           };
@@ -151,7 +151,7 @@
               fixAnvilSoundTypeStepSound = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Also prevents log errors when walking on anvils. [default: true]";
+                description = "Makes the anvil sound type step a valid sound Also prevents log errors when walking on anvils. [default: true]";
               };
               fixDarkOakRemovingBlocks = lib.mkOption {
                 type = lib.types.bool;
@@ -161,12 +161,12 @@
               fixEnchantmentBlendFunc = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if NotFine is installed, it implements this fix. [default: true]";
+                description = "Fixes rendering issues caused by enchantments changing glBlendFunc and never reverting it. Disabled if NotFine is installed, it implements this fix. [default: true]";
               };
               fixFireChargeUseSound = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Disabled if TX Loader is not installed. [default: true]";
+                description = "Fire Charges have the correct use sound. From MC 1.8, fixes MC-1831 Disabled if TX Loader is not installed. [default: true]";
               };
               fixLWJGL2OpenALCrash = lib.mkOption {
                 type = lib.types.bool;
@@ -176,7 +176,7 @@
               fixLavaHissOnAirReplace = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8, fixes MC-32301 [default: true]";
+                description = "Lava will only hiss when mixing with water. From MC 1.8, fixes MC-32301 [default: true]";
               };
               fixLeadsBreakingOnSomeFenceInstances = lib.mkOption {
                 type = lib.types.bool;
@@ -196,7 +196,7 @@
               fixMergeItemStack = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "An alternate version is used if CoFHCore is installed to fix dupes and item deletion it introduces. [default: true]";
+                description = "Fixes edge case bugs when shift clicking item stacks. An alternate version is used if CoFHCore is installed to fix dupes and item deletion it introduces. [default: true]";
               };
               fixMineshaftAirPockets = lib.mkOption {
                 type = lib.types.bool;
@@ -211,7 +211,7 @@
               fixParticleDepthSorting = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if NotFine is installed, it implements this fix. [default: true]";
+                description = "Fixes particle depth being incorrectly calculated. Disabled if NotFine is installed, it implements this fix. [default: true]";
               };
               fixShearedGrassDropDupe = lib.mkOption {
                 type = lib.types.bool;
@@ -226,42 +226,42 @@
               fixShearsNotTakingDamageFromNormalBlocks = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9, fixes MC-8180 [default: true]";
+                description = "Shears will take damage when used to mine any block. Also stops Forge shearing logic from dropping things in creative mode. From MC 1.9, fixes MC-8180 [default: true]";
               };
               fixSignPacketChatMessages = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.9, fixes MC-3564 [default: true]";
+                description = "Sign update packets for signs in unloaded chunks will not send chat messages. From MC 1.9, fixes MC-3564 [default: true]";
               };
               fixStoneMonsterEggDoubleSpawns = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8, fixes MC-31081 [default: true]";
+                description = "Stone Monster Eggs only spawn one Silverfish when broken. From MC 1.8, fixes MC-31081 [default: true]";
               };
               fixStructureComponentFillReplacement = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Mostly prevents tall grass and flowers from embedding in structure foundations and keeps trees from having random holes. [default: true]";
+                description = "Makes structure component filling also replace blocks flagged as replaceable and not partially trees. Mostly prevents tall grass and flowers from embedding in structure foundations and keeps trees from having random holes. [default: true]";
               };
               fixVillagePathsHavePlantsOnTop = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.10, fixes MC-3437 [default: true]";
+                description = "Village paths will not have flowers or grass on top of them. From MC 1.10, fixes MC-3437 [default: true]";
               };
               fixVillageSieges = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8, fixes MC-7432 and MC-7488 [default: true]";
+                description = "Zombies will siege villages that are large enough at night. From MC 1.8, fixes MC-7432 and MC-7488 [default: true]";
               };
               fixVillageWellDesertMaterial = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8, fixes MC-32514 [default: true]";
+                description = "Wells in desert villages will use the correct material. From MC 1.8, fixes MC-32514 [default: true]";
               };
               fixVillagerTradeMetadataDetection = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "From MC 1.8 [default: true]";
+                description = "Villager trades will respect metadata. Currently unfinished and disabled internally. From MC 1.8 [default: true]";
               };
             };
           };
@@ -288,7 +288,7 @@
               fasterEntityLivingBaseIsPotionActiveAndSetAir = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "setAir only updates its datawatcher when needed. [default: true]";
+                description = "isPotionActive returns immediately if there are no active potions. setAir only updates its datawatcher when needed. [default: true]";
               };
               fasterGetBlockByIdForAirBlocks = lib.mkOption {
                 type = lib.types.bool;
@@ -298,12 +298,12 @@
               fasterOptionInteractions = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if Optifine is installed to prevent conflicts. [default: false]";
+                description = "Makes several functions used by option buttons faster. Disabled if Optifine is installed to prevent conflicts. [default: false]";
               };
               fasterOptionLoading = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if Optifine is installed to prevent conflicts. [default: false]";
+                description = "Makes the function that reads options.txt much faster. Disabled if Optifine is installed to prevent conflicts. [default: false]";
               };
               fasterSnowBlockTicks = lib.mkOption {
                 type = lib.types.bool;
@@ -313,7 +313,7 @@
               moreAccurateLayeredSnowFaceCulling = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if NotFine is installed, it has a superior implementation. [default: true]";
+                description = "The faces of layered snow get culled more accurately when chunk meshes are created. Disabled if NotFine is installed, it has a superior implementation. [default: true]";
               };
               replaceRandomInEffectRenderer = lib.mkOption {
                 type = lib.types.bool;
@@ -343,12 +343,12 @@
               replaceRandomInWorld = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "!This impacts world generation slightly! [default: false]";
+                description = "Makes World.class use a faster implementation of random. !This impacts world generation slightly! [default: false]";
               };
               replaceRandomInWorldClient = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if NotFine is installed, it implements this optimization. [default: true]";
+                description = "Makes WorldClient.class use a faster implementation of random. Disabled if NotFine is installed, it implements this optimization. [default: true]";
               };
               skipInitialWorldChunkLoad = lib.mkOption {
                 type = lib.types.bool;
@@ -365,12 +365,12 @@
               enchantmentParticlesForPowerAboveZero = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if NotFine is loaded, it implements this fix. [default: true]";
+                description = "Makes Enchantment Tables emit particles for any block with enchantment power. Disabled if NotFine is loaded, it implements this fix. [default: true]";
               };
               excludeLogsFromTopSolidOrLiquidBlock = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Should prevent structures and from generating in trees among other issues. [default: true]";
+                description = "Makes getTopSolidOrLiquidBlock treat logs as non-solid. Should prevent structures and from generating in trees among other issues. [default: true]";
               };
               farmlandHydroponics = lib.mkOption {
                 type = lib.types.bool;
@@ -390,7 +390,7 @@
               lanPortOverride = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Disabled if Hodgepodge is installed, use its defaultLanPort setting instead. [default: false]";
+                description = "Override the port used when opening singleplayer to LAN. Disabled if Hodgepodge is installed, use its defaultLanPort setting instead. [default: false]";
               };
               lanPortToUseForOverride = lib.mkOption {
                 type = lib.types.int;
@@ -425,7 +425,7 @@
               reduceLightningVolume = lib.mkOption {
                 type = lib.types.str;
                 default = "10000.0";
-                description = "Set to 10,000 to disable. [range: 2.0 ~ 10000.0, default: 10000.0]";
+                description = "Reduces lightning volume and effective range. Set to 10,000 to disable. [range: 2.0 ~ 10000.0, default: 10000.0]";
               };
               removeEntityDuplicateExtendedPropertiesIdentifierSpam = lib.mkOption {
                 type = lib.types.bool;
@@ -435,72 +435,72 @@
               scaledDrowningDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each drowning tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledDrowningDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each drowning tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each fire tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each fire tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each lava tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each lava tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each poison effect tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each poison effect tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each starvation tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each starvation tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each suffocation tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each suffocation tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each wither effect tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each wither effect tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               useAnyDyeOnLeatherArmor = lib.mkOption {
                 type = lib.types.bool;
@@ -519,14 +519,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/bugtorch/mixinsModSupport.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/bugtorch/mixinsModSupport.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "bug fixes" = lib.mkOption {
           default = {};
@@ -560,7 +560,7 @@
               fixWitcheryLeavesOptifineRendering = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Disabled if NotFine is installed, it implements this fix. [default: true]";
+                description = "Makes Witchery Leaves respect Optifine-like render settings. Disabled if NotFine is installed, it implements this fix. [default: true]";
               };
               fixWitcheryLeavesShearDupe = lib.mkOption {
                 type = lib.types.bool;
@@ -593,7 +593,7 @@
               };
               extraUtilitiesGoldenLassoBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["noppes.npcs.entity.EntityCustomNpc"];
+                default = [ "noppes.npcs.entity.EntityCustomNpc" ];
                 description = "Blacklist entities from Extra Utilities Golden Lasso. [default: [noppes.npcs.entity.EntityCustomNpc]]";
               };
               extraUtilitiesTradingPostVillageNamesNitwitFilter = lib.mkOption {
@@ -609,12 +609,12 @@
               scaledExtraUtilitiesDarknessDamageMaxHealthFlat = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
+                description = "Amount of flat player health to remove each darkness tick. Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledExtraUtilitiesDarknessDamageMaxHealthMult = lib.mkOption {
                 type = lib.types.str;
                 default = "0.0";
-                description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
+                description = "Portion of max player health to remove each darkness tick. Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
             };
           };
@@ -628,14 +628,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/bugtorch/modSupport.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/bugtorch/modSupport.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "bug fixes" = lib.mkOption {
           default = {};
@@ -698,7 +698,7 @@
               enableVillageNamesMetadataSensitiveTrades = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Does nothing if fixVillagerTradeMetadataDetection in \"bugtorch\\mixins.cfg\" is not enabled. [default: true]";
+                description = "Enables metadata sensitive trades in Village Names. Does nothing if fixVillagerTradeMetadataDetection in \"bugtorch\\mixins.cfg\" is not enabled. [default: true]";
               };
               reverseCraftThaumcraftSlabs = lib.mkOption {
                 type = lib.types.bool;

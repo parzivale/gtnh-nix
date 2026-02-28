@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/MagicBees.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/MagicBees.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         botaniaplugin = lib.mkOption {
           default = {};
@@ -97,7 +97,7 @@
               "backpack.forestry.addThaumcraftItems" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Set to false to disable.";
+                description = "Set to true if you want MagicBees to add several Thaumcraft blocks & items to Forestry backpacks. Set to false to disable.";
               };
               "backpack.thaumaturge.active" = lib.mkOption {
                 type = lib.types.bool;
@@ -107,12 +107,12 @@
               "backpack.thaumaturge.additionalItems" = lib.mkOption {
                 type = lib.types.str;
                 default = "minecraft:paper;TaintedMagic:ItemMaterial:*;ThaumicTinkerer:kamiResource:*;Thaumcraft:ItemZombieBrain;Thaumcraft:ItemResource:*;Thaumcraft:blockCrystal:*;Thaumcraft:ItemShard:*;Thaumcraft:blockCosmeticSolid:*;Thaumcraft:blockCosmeticOpaque:*;Thaumcraft:ItemEssence:*;Thaumcraft:ItemInkwell:*;Thaumcraft:blockTube:*;Thaumcraft:blockMagicalLog:*;Thaumcraft:blockWoodenDevice:*;Thaumcraft:blockStoneDevice:*;Thaumcraft:blockMetalDevice:*;Thaumcraft:blockMirror:*;Thaumcraft:blockTable:*;Thaumcraft:ItemResearchNotes:*;Thaumcraft:ItemThaumometer;Thaumcraft:WandCasting:*;Thaumcraft:ItemThaumonomicon;Thaumcraft:ItemGoggles;Thaumcraft:ItemGolemPlacer:*;Thaumcraft:ItemGolemCore:*;Thaumcraft:ItemGolemUpgrade:*;Thaumcraft:ItemGolemDecoration:*;Thaumcraft:ItemLootBag:*;Thaumcraft:ItemEldritchObject:*;witchery:ingredient:*;witchery:garlic;witchery:witchsapling:*;witchery:witchlog:*;witchery:poppet:*;witchery:chalkritual;witchery:chalkotherwhere;witchery:chalkinfernal;witchery:chalkheart;ForbiddenMagic:NetherShard:*;ForbiddenMagic:GluttonyShard";
-                description = "Format is the same as Forestry's: id:meta;id;id:meta (etc)";
+                description = "Add additional items to the Thaumaturge's Backpack. Format is the same as Forestry's: id:meta;id;id:meta (etc)";
               };
               capsuleStackSize = lib.mkOption {
                 type = lib.types.int;
                 default = 64;
-                description = "or the reduced capsule size in Forestry & Railcraft. Default: 64";
+                description = "Allows you to edit the stack size of the capsules in MagicBees if using GregTech, or the reduced capsule size in Forestry & Railcraft. Default: 64";
               };
               disableVersionNotification = lib.mkOption {
                 type = lib.types.bool;

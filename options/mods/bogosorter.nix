@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/bogosorter.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/bogosorter.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -25,8 +25,8 @@
               };
               buttonColor = lib.mkOption {
                 type = lib.types.str;
-                default = "-1.0";
-                description = "Value is displayed in decimal here but interpreted as hex internally. [range: -2147483648 ~ 2147483647, default: -1]";
+                default = "-1";
+                description = "The color of the sort button. Display format: 0xAARRGGBB (e.g. 0xFFFFFFFF for white, 0xFF0000FF for red). Value is displayed in decimal here but interpreted as hex internally. [range: -2147483648 ~ 2147483647, default: -1]";
               };
               buttonEnabled = lib.mkOption {
                 type = lib.types.bool;
@@ -56,7 +56,7 @@
               preventSplit = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "will not be split when sorting. This helps avoid cluttering the inventory with duplicate single-item stacks. [default: true]";
+                description = "If enabled, items with max stack size of 1 (e.g., tools, armor, etc.) will not be split when sorting. This helps avoid cluttering the inventory with duplicate single-item stacks. [default: true]";
               };
               sortSound = lib.mkOption {
                 type = lib.types.str;
@@ -94,7 +94,7 @@
                     };
                     dropoffTargetNames = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["Chest" "Barrel" "Drawer" "Crate"];
+                      default = [ "Chest" "Barrel" "Drawer" "Crate" ];
                       description = "Valid inventory names for drop-off targeting (substring match). [default: [Chest], [Barrel], [Drawer], [Crate]]";
                     };
                     enableDropOff = lib.mkOption {

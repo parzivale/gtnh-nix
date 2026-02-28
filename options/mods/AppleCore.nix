@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/AppleCore.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/AppleCore.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         client = lib.mkOption {
           default = {};
@@ -57,7 +57,7 @@
             options = {
               "required.mods" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["Minecraft" "CodeChickenLib" "Pam's Harvestcraft" "Natura"];
+                default = [ "Minecraft" "CodeChickenLib" "Pam's Harvestcraft" "Natura" ];
                 description = "Subset of TargetMods that are required";
               };
             };
@@ -70,7 +70,7 @@
               "exhaustion.sync.threshold" = lib.mkOption {
                 type = lib.types.float;
                 default = 0.01;
-                description = "Raising this value will cause fewer packets to be sent, but will make the client's exhaustion values appear more choppy";
+                description = "The maximum difference between the server's value for exhaustion and the client's before the value is syncronized from the server to the client. Raising this value will cause fewer packets to be sent, but will make the client's exhaustion values appear more choppy";
               };
             };
           };

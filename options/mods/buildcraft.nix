@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/buildcraft/main.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/buildcraft/main.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         blueprints = lib.mkOption {
           default = {};
@@ -25,12 +25,12 @@
               };
               excludedBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "blocks that should be excluded from the builder.";
               };
               excludedMods = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "mods that should be excluded from the builder.";
               };
               serverDatabaseDirectory = lib.mkOption {
@@ -109,7 +109,7 @@
             options = {
               "boards.blacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["buildcraft:boardRobotBomber"];
+                default = [ "buildcraft:boardRobotBomber" ];
                 description = "Blacklisted robots boards";
               };
               builderMaxIterationsPerItemFactor = lib.mkOption {
@@ -180,7 +180,7 @@
               pumpDimensionControl = lib.mkOption {
                 type = lib.types.str;
                 default = "+/*/*,+/-1/lava";
-                description = "Entries are comma seperated, banned fluids have precedence over allowed ones.Default is \"+/*/*,+/-1/Lava\" - the second redundant entry (\"+/-1/lava\") is there to show the format.";
+                description = "Allows admins to whitelist or blacklist pumping of specific fluids in specific dimensions. Eg. \"-/-1/Lava\" will disable lava in the nether. \"-/*/Lava\" will disable lava in any dimension. \"+/0/*\" will enable any fluid in the overworld. Entries are comma seperated, banned fluids have precedence over allowed ones.Default is \"+/*/*,+/-1/Lava\" - the second redundant entry (\"+/-1/lava\") is there to show the format.";
               };
               pumpsConsumeWater = lib.mkOption {
                 type = lib.types.bool;
@@ -234,7 +234,7 @@
                     };
                     facadeBlacklist = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["minecraft:end_portal_frame" "minecraft:grass" "minecraft:leaves" "minecraft:leaves2" "minecraft:lit_pumpkin" "minecraft:lit_redstone_lamp" "minecraft:mob_spawner" "minecraft:monster_egg" "minecraft:redstone_lamp" "minecraft:double_stone_slab" "minecraft:double_wooden_slab" "minecraft:sponge"];
+                      default = [ "minecraft:end_portal_frame" "minecraft:grass" "minecraft:leaves" "minecraft:leaves2" "minecraft:lit_pumpkin" "minecraft:lit_redstone_lamp" "minecraft:mob_spawner" "minecraft:monster_egg" "minecraft:redstone_lamp" "minecraft:double_stone_slab" "minecraft:double_wooden_slab" "minecraft:sponge" ];
                       description = "What block types should be blacklisted from being a facade?";
                     };
                     facadeBlacklistAsWhitelist = lib.mkOption {
@@ -358,17 +358,17 @@
                     };
                     excessiveOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["SANDY"];
+                      default = [ "SANDY" ];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that should have GREATLY increased oil generation rates.";
                     };
                     excludeOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["Sky" "Hell"];
+                      default = [ "Sky" "Hell" ];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that are excluded from generating oil.";
                     };
                     increasedOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["SANDY" "Taiga"];
+                      default = [ "SANDY" "Taiga" ];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that should have increased oil generation rates.";
                     };
                   };

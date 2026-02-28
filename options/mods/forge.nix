@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/forge.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/forge.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -50,7 +50,7 @@
               };
               biomeSkyBlendRange = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34];
+                default = [ 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 ];
                 description = "Control the range of sky blending for colored skies in biomes.";
               };
               zombieBaseSummonChance = lib.mkOption {

@@ -47,7 +47,7 @@
                     landerType = lib.mkOption {
                       type = lib.types.str;
                       default = "AsteroidsLander";
-                      description = "[default: AsteroidsLander]";
+                      description = "1 = Moon Lander, 2 = Landing Balloons, 3 = Asteroid Lander Possible values: [MoonLander, LandingBalloons, AsteroidsLander] [default: AsteroidsLander]";
                     };
                     ross128BAID = lib.mkOption {
                       type = lib.types.int;
@@ -84,7 +84,7 @@
                     voidMinerBlacklist = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
                       default = [ ];
-                      description = "For example: gregtech:gt.blockores:32 [default: ]";
+                      description = "This is a blacklist for the Void Miner, blacklisted ores will not enter the drop prize pool. Please fill in the Unique Identifier of Ore and connect Damage with a colon, For example: gregtech:gt.blockores:32 [default: ]";
                     };
                   };
                 };

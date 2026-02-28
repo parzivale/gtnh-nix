@@ -36,7 +36,7 @@
               "Scroll item scaling" = lib.mkOption {
                 type = lib.types.str;
                 default = "PROPORTIONAL";
-                description = "[default: PROPORTIONAL]";
+                description = "This determines how many items are moved when you scroll. On some setups (notably macOS), scrolling the wheel with different speeds results in different distances scrolled per wheel \"bump\". To make those setups play nicely with Mouse Tweaks, set this option to \"Always exactly one item\". Possible values: [PROPORTIONAL, ALWAYS_ONE] [default: PROPORTIONAL]";
               };
               "Wheel tweak" = lib.mkOption {
                 type = lib.types.bool;
@@ -46,12 +46,12 @@
               "Wheel tweak scroll direction" = lib.mkOption {
                 type = lib.types.str;
                 default = "NORMAL";
-                description = "[default: NORMAL]";
+                description = "Inventory position aware means scroll up to push items from the bottom inventory and pull into the top inventory, and vice versa. Possible values: [NORMAL, INVERTED, INVENTORY_POSITION_AWARE, INVENTORY_POSITION_AWARE_INVERTED] [default: NORMAL]";
               };
               "Wheel tweak search order" = lib.mkOption {
                 type = lib.types.str;
                 default = "LAST_TO_FIRST";
-                description = "[default: LAST_TO_FIRST]";
+                description = "How to pick the source slot when pulling items via scrolling. Possible values: [FIRST_TO_LAST, LAST_TO_FIRST] [default: LAST_TO_FIRST]";
               };
             };
           };

@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/NEI/client.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/NEI/client.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge_untyped";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
         };
         checkUpdates = lib.mkOption {
           type = lib.types.str;
@@ -73,7 +73,7 @@
         "inventory.lockmode" = lib.mkOption {
           type = lib.types.str;
           default = "-1";
-          description = "Set this to a mode and you will be unable to change it ingame";
+          description = "For those who can't help themselves. Set this to a mode and you will be unable to change it ingame";
         };
         "inventory.optimize_gui_overlap_computation" = lib.mkOption {
           type = lib.types.str;
@@ -681,76 +681,76 @@
       };
     };
   };
-  # collapsibleitems = lib.mkOption {
-  #   description = "collapsibleitems configuration (./config/NEI/collapsibleitems.cfg)";
-  #   default = {};
-  #   type = lib.types.submodule {
-  #     options = {
-  #       path = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "./config/NEI/collapsibleitems.cfg";
-  #         readOnly = true;
-  #       };
-  #       kind = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "forge";
-  #         readOnly = true;
-  #       };
-  #     };
-  #   };
-  # };
-  # heighthackhandlers = lib.mkOption {
-  #   description = "heighthackhandlers configuration (./config/NEI/heighthackhandlers.cfg)";
-  #   default = {};
-  #   type = lib.types.submodule {
-  #     options = {
-  #       path = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "./config/NEI/heighthackhandlers.cfg";
-  #         readOnly = true;
-  #       };
-  #       kind = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "forge";
-  #         readOnly = true;
-  #       };
-  #     };
-  #   };
-  # };
-  # hiddenitems = lib.mkOption {
-  #   description = "hiddenitems configuration (./config/NEI/hiddenitems.cfg)";
-  #   default = {};
-  #   type = lib.types.submodule {
-  #     options = {
-  #       path = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "./config/NEI/hiddenitems.cfg";
-  #         readOnly = true;
-  #       };
-  #       kind = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "forge";
-  #         readOnly = true;
-  #       };
-  #     };
-  #   };
-  # };
-  # serialhandlers = lib.mkOption {
-  #   description = "serialhandlers configuration (./config/NEI/serialhandlers.cfg)";
-  #   default = {};
-  #   type = lib.types.submodule {
-  #     options = {
-  #       path = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "./config/NEI/serialhandlers.cfg";
-  #         readOnly = true;
-  #       };
-  #       kind = lib.mkOption {
-  #         type = lib.types.str;
-  #         default = "forge";
-  #         readOnly = true;
-  #       };
-  #     };
-  #   };
-  # };
+  collapsibleitems = lib.mkOption {
+    description = "collapsibleitems configuration (./config/NEI/collapsibleitems.cfg)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/NEI/collapsibleitems.cfg";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
+        };
+      };
+    };
+  };
+  heighthackhandlers = lib.mkOption {
+    description = "heighthackhandlers configuration (./config/NEI/heighthackhandlers.cfg)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/NEI/heighthackhandlers.cfg";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
+        };
+      };
+    };
+  };
+  hiddenitems = lib.mkOption {
+    description = "hiddenitems configuration (./config/NEI/hiddenitems.cfg)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/NEI/hiddenitems.cfg";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
+        };
+      };
+    };
+  };
+  serialhandlers = lib.mkOption {
+    description = "serialhandlers configuration (./config/NEI/serialhandlers.cfg)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/NEI/serialhandlers.cfg";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
+        };
+      };
+    };
+  };
 }

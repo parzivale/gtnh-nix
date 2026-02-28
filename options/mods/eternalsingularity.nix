@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/eternalsingularity.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/eternalsingularity.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               classNameList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["fox.spiteful.avaritia.items.ItemSingularity" "wealthyturtle.uiesingularities.UniversalSingularityItem"];
+                default = [ "fox.spiteful.avaritia.items.ItemSingularity" "wealthyturtle.uiesingularities.UniversalSingularityItem" ];
               };
               easyMode = lib.mkOption {
                 type = lib.types.bool;
@@ -30,7 +30,7 @@
               useCompoundSingularities = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "[If there are > 81 Basic Singularities, this Config Option will be Set to True Automatically] [default: false]";
+                description = "When useCompoundSingularities is Enabled, Basic Singularities will Need to be Crafted into Compound Singularities First. [If there are > 81 Basic Singularities, this Config Option will be Set to True Automatically] [default: false]";
               };
             };
           };

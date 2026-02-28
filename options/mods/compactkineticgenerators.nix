@@ -29,23 +29,23 @@
                 description = "Extreme Kinetic Generator energy tier, default 7 = max 131,072 EU/t [range: 7 ~ 13, default: 7]";
               };
               "Water Output Scale" = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "4.0" "16.0" "64.0" "256.0" ];
+                type = lib.types.listOf lib.types.float;
+                default = [ 4.0 16.0 64.0 256.0 ];
                 description = "output scale vs classic water generator";
               };
               "Water Rotor Damage Scale" = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "4.0" "16.0" "64.0" "256.0" ];
+                type = lib.types.listOf lib.types.float;
+                default = [ 4.0 16.0 64.0 256.0 ];
                 description = "rotor damage scale vs classic water generator";
               };
               "Wind Output Scale" = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "4.0" "16.0" "64.0" "256.0" ];
+                type = lib.types.listOf lib.types.float;
+                default = [ 4.0 16.0 64.0 256.0 ];
                 description = "output scale vs classic wind generator";
               };
               "Wind Rotor Damage Scale" = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "4.0" "16.0" "64.0" "256.0" ];
+                type = lib.types.listOf lib.types.float;
+                default = [ 4.0 16.0 64.0 256.0 ];
                 description = "rotor damage scale vs classic wind generator";
               };
             };

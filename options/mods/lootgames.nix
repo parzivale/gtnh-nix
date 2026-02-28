@@ -44,7 +44,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -71,7 +71,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -98,7 +98,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -125,7 +125,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -159,7 +159,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -186,7 +186,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -213,7 +213,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };
@@ -240,7 +240,7 @@
                           per_dim_configs = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
                             default = [ ];
-                            description = "General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
+                            description = "Here you can add different loot tables to each dimension. If dimension isn't in this list, then game will take default loot table for this stage. Syntax: <dimension_key>|<loottable_name> <loottable_name> - The loottable name for the chest in this stage. General Example: [ \"0|minecraft:chests/simple_dungeon\" ] [default: ]";
                           };
                         };
                       };

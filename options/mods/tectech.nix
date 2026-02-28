@@ -49,7 +49,7 @@
                     EOH_NOTATION = lib.mkOption {
                       type = lib.types.str;
                       default = "Scientific";
-                      description = "[default: Scientific]";
+                      description = "Eye of Harmony energy input and output display: - 'Numerical': Shows the entire number - 'Scientific': Uses scientific notation - 'SI': Uses the SI notation Possible values: [Numerical, Scientific, SI] [default: Scientific]";
                     };
                   };
                 };

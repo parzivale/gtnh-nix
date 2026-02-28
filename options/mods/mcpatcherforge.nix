@@ -36,7 +36,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
               skybox = lib.mkOption {
                 type = lib.types.bool;
@@ -78,7 +78,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
               maxRecursion = lib.mkOption {
                 type = lib.types.int;
@@ -145,7 +145,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
               map = lib.mkOption {
                 type = lib.types.bool;
@@ -247,7 +247,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
             };
           };
@@ -294,7 +294,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
               maxMipMapLevel = lib.mkOption {
                 type = lib.types.int;
@@ -341,7 +341,7 @@
               logging = lib.mkOption {
                 type = lib.types.str;
                 default = "INFO";
-                description = "[default: INFO]";
+                description = "logging level Possible values: [OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL] [default: INFO]";
               };
             };
           };

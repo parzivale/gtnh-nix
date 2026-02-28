@@ -50,7 +50,7 @@
                     "No Offhand Torch At All" = lib.mkOption {
                       type = lib.types.bool;
                       default = false;
-                      description = "Note: This overrides all other options [default: false]";
+                      description = "Don't place torches from the offhand at all Note: This overrides all other options [default: false]";
                     };
                     "No Offhand Torch With Block" = lib.mkOption {
                       type = lib.types.bool;
@@ -70,12 +70,12 @@
                     "Offhand Torch With Tool Only" = lib.mkOption {
                       type = lib.types.bool;
                       default = false;
-                      description = "Modded tools include Tinker's Construct tools (not weapons) [default: false]";
+                      description = "Don't place torches from the offhand unless the main hand contains a tool Vanilla tools include swords, hoes, axes, and pickaxes Modded tools include Tinker's Construct tools (not weapons) [default: false]";
                     };
                     torch_items = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
                       default = [ "minecraft:torch" "minecraft:redstone_torch" "Automagy:blockTorchInversion" "BloodArsenal:blood_torch" "CarpentersBlocks:blockCarpentersTorch" "TConstruct:decoration.stonetorch" "etfuturum:soul_torch" "GalacticraftCore:glowstoneTorch" "chisel:torch1" "chisel:torch2" "chisel:torch3" "chisel:torch4" "chisel:torch5" "chisel:torch6" "chisel:torch7" "chisel:torch8" "chisel:torch9" "chisel:torch10" "harvestcraft:pamcandleDeco1" "harvestcraft:pamcandleDeco2" "harvestcraft:pamcandleDeco3" "harvestcraft:pamcandleDeco4" "harvestcraft:pamcandleDeco5" "harvestcraft:pamcandleDeco6" "harvestcraft:pamcandleDeco7" "harvestcraft:pamcandleDeco8" "harvestcraft:pamcandleDeco9" "harvestcraft:pamcandleDeco10" "harvestcraft:pamcandleDeco11" "harvestcraft:pamcandleDeco12" "harvestcraft:pamcandleDeco13" "harvestcraft:pamcandleDeco14" "harvestcraft:pamcandleDeco15" "harvestcraft:pamcandleDeco16" ];
-                      description = "[default: [minecraft:torch], [minecraft:redstone_torch]]";
+                      description = "These items will be count as torches Formatting of an item should be: modid:itemname These should all be placed on separate lines between the provided '<' and '>'. [default: [minecraft:torch], [minecraft:redstone_torch]]";
                     };
                   };
                 };
@@ -110,7 +110,7 @@
               offhandBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ ];
-                description = "[default: ]";
+                description = "These items will be unable to be swapped into the offhand. Formatting of an item should be: modid:itemname These should all be placed on separate lines between the provided '<' and '>'. [default: ]";
               };
             };
           };

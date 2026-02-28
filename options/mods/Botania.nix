@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/Botania.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/Botania.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -90,7 +90,7 @@
               };
               "fancySkybox.customDimID" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [];
+                default = [ ];
                 description = "The ID of the dimension to use";
               };
               "fancySkybox.enable" = lib.mkOption {
@@ -275,12 +275,12 @@
               };
               "worldgen.flower.dimensionBlacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [];
+                default = [ ];
                 description = "Blacklist of which dimension generates Botania flowers.";
               };
               "worldgen.flower.dimensionWhitelist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [64];
+                default = [ 64 ];
                 description = "Whitelist of which dimension generates Botania flowers. Empty means any dimension can.";
               };
               "worldgen.flower.patchChance" = lib.mkOption {
@@ -305,12 +305,12 @@
               };
               "worldgen.mushroom.dimensionBlacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [];
+                default = [ ];
                 description = "Blacklist of which dimension generates Botania mushrooms.";
               };
               "worldgen.mushroom.dimensionWhitelist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [7 64];
+                default = [ 7 64 ];
                 description = "Whitelist of which dimension generates Botania mushrooms. Empty means any dimension can.";
               };
               "worldgen.mushroom.quantity" = lib.mkOption {

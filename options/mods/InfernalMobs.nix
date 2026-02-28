@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/InfernalMobs.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/InfernalMobs.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         entitiesalwaysinfernal = lib.mkOption {
           default = {};

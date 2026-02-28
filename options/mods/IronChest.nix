@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/IronChest.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/IronChest.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -20,8 +20,8 @@
             options = {
               blocklistUpgrades = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "Example: IRON:GOLD [default: ]";
+                default = [ ];
+                description = "Disallowed upgrades. All upgrades listed here will not be registred and no recipes will be generated for it. Example: IRON:GOLD [default: ]";
               };
               cacheRenderingInformation = lib.mkOption {
                 type = lib.types.bool;

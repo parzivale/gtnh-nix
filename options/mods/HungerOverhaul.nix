@@ -187,12 +187,12 @@
               foodHungerToSaturationDivider = lib.mkOption {
                 type = lib.types.str;
                 default = "20.0";
-                description = "Set to 0 to disable [vanilla: 0.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 20.0]";
+                description = "Food values not manually set (see 'useHOFoodValues') will have their saturation modifier set to <modified hunger> divided by this ('modifyFoodValues' must be true) Set to 0 to disable [vanilla: 0.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 20.0]";
               };
               foodSaturationDivider = lib.mkOption {
                 type = lib.types.str;
                 default = "1.0";
-                description = "Note: Gets applied after 'foodHungerToSaturationDivider' [vanilla: 1.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 1.0]";
+                description = "Food values not manually set (see 'useHOFoodValues') will have their saturation modifier divided by this ('modifyFoodValues' must be true) Note: Gets applied after 'foodHungerToSaturationDivider' [vanilla: 1.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 1.0]";
               };
               foodStackSizeMultiplier = lib.mkOption {
                 type = lib.types.int;
@@ -521,7 +521,7 @@
               removeNaturaFlourCraftingRecipes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Note: These recipes are always removed if 'addSeedsCraftingRecipe' in 'getting seeds' is true because otherwise they'd conflict. [vanilla: false] [default: true]";
+                description = "Removes the default barley/wheat -> flour recipes. Note: These recipes are always removed if 'addSeedsCraftingRecipe' in 'getting seeds' is true because otherwise they'd conflict. [vanilla: false] [default: true]";
               };
               removeNaturaFlourSmeltingRecipe = lib.mkOption {
                 type = lib.types.bool;
@@ -729,12 +729,12 @@
               foodHungerToSaturationDivider = lib.mkOption {
                 type = lib.types.str;
                 default = "20.0";
-                description = "Set to 0 to disable [vanilla: 0.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 20.0]";
+                description = "Food values not manually set (see 'useHOFoodValues') will have their saturation modifier set to <modified hunger> divided by this ('modifyFoodValues' must be true) Set to 0 to disable [vanilla: 0.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 20.0]";
               };
               foodSaturationDivider = lib.mkOption {
                 type = lib.types.str;
                 default = "1.0";
-                description = "Note: Gets applied after 'foodHungerToSaturationDivider' [vanilla: 1.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 1.0]";
+                description = "Food values not manually set (see 'useHOFoodValues') will have their saturation modifier divided by this ('modifyFoodValues' must be true) Note: Gets applied after 'foodHungerToSaturationDivider' [vanilla: 1.0] [range: -3.4028235E38 ~ 3.4028235E38, default: 1.0]";
               };
               foodStackSizeMultiplier = lib.mkOption {
                 type = lib.types.int;
@@ -1063,7 +1063,7 @@
               removeNaturaFlourCraftingRecipes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Note: These recipes are always removed if 'addSeedsCraftingRecipe' in 'getting seeds' is true because otherwise they'd conflict. [vanilla: false] [default: true]";
+                description = "Removes the default barley/wheat -> flour recipes. Note: These recipes are always removed if 'addSeedsCraftingRecipe' in 'getting seeds' is true because otherwise they'd conflict. [vanilla: false] [default: true]";
               };
               removeNaturaFlourSmeltingRecipe = lib.mkOption {
                 type = lib.types.bool;

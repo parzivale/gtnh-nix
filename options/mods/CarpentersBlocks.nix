@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/CarpentersBlocks.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/CarpentersBlocks.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         blocks = lib.mkOption {
           default = {};
@@ -95,8 +95,8 @@
             options = {
               "Cover Exceptions" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["Silverwood Planks" "Greatwood Planks" "Thatch"];
-                description = "Add your own by supplying the display name for the block (en_US only).";
+                default = [ "Silverwood Planks" "Greatwood Planks" "Thatch" ];
+                description = "This allows restricted blocks to be used as covers. Add your own by supplying the display name for the block (en_US only).";
               };
               "Enable Chisel Designs" = lib.mkOption {
                 type = lib.types.bool;
@@ -131,12 +131,12 @@
               "Enable Ownership" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Note: this does not protect objects against destruction (intentional), and may allow activation if appropriate. Also, the Carpenter's Safe is not affected by this.";
+                description = "This will prevent players besides you and server operators from editing your objects. Note: this does not protect objects against destruction (intentional), and may allow activation if appropriate. Also, the Carpenter's Safe is not affected by this.";
               };
               "Enable Pane Alpha Rendering" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "This is needed to allow translucent window glass, for instance.";
+                description = "This controls whether panes (used in doors, hatches, and other blocks) should render on alpha pass. This is needed to allow translucent window glass, for instance.";
               };
               "Enable Rail Slope Fill" = lib.mkOption {
                 type = lib.types.bool;
@@ -155,22 +155,22 @@
               "MultiBlock Size Limit" = lib.mkOption {
                 type = lib.types.int;
                 default = 500;
-                description = "Note: only applies to Garage Doors.";
+                description = "This controls how many blocks can be connected as a single entity. Note: only applies to Garage Doors.";
               };
               "Overlay Definitions" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["Seeds:grass" "Snowball:snow" "String:web" "Vines:vine" "Wheat:hay" "Mushroom:mycelium"];
-                description = "Overlay suffixes are :grass, :snow, :web, :vine, :hay, :mycelium";
+                default = [ "Seeds:grass" "Snowball:snow" "String:web" "Vines:vine" "Wheat:hay" "Mushroom:mycelium" ];
+                description = "This maps items to overlays. Items are prefixed with display names (en_US only). Overlay suffixes are :grass, :snow, :web, :vine, :hay, :mycelium";
               };
               "Routable Fluids" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Note: when enabled, you may experience noticeable chunk update lag spikes.";
+                description = "When enabled, unobstructed stationary fluid adjacent to block will render in the block space. Note: when enabled, you may experience noticeable chunk update lag spikes.";
               };
               Smoothness = lib.mkOption {
                 type = lib.types.int;
                 default = 4;
-                description = "Note: smoothness of 2 is similar to stairs, while a value above 25 is generally fluid.";
+                description = "This controls the smoothness of the slope faces. Note: smoothness of 2 is similar to stairs, while a value above 25 is generally fluid.";
               };
             };
           };

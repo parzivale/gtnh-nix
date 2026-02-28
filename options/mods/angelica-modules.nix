@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/angelica-modules.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/angelica-modules.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -24,7 +24,7 @@
                 description = "Enables PBR atlas dumping [default: false]";
               };
               droppedItemLimit = lib.mkOption {
-                type = lib.types.ints.between 32 2048;
+                type = lib.types.int;
                 default = 256;
                 description = "Max amount of dropped item rendered [range: 32 ~ 2048, default: 256]";
               };
@@ -114,7 +114,7 @@
                 description = "Hide downloading terrain screen. [From ArchaicFix] [default: true]";
               };
               hudCachingFPS = lib.mkOption {
-                type = lib.types.ints.between 1 60;
+                type = lib.types.int;
                 default = 20;
                 description = "The amount of frames to wait before updating the HUD elements. [Experimental] [range: 1 ~ 60, default: 20]";
               };
@@ -124,7 +124,7 @@
                 description = "Inject QuadProvider rendering into some vanilla blocks [default: false]";
               };
               itemRendererDisplayListCacheSize = lib.mkOption {
-                type = lib.types.ints.between 64 1024;
+                type = lib.types.int;
                 default = 256;
                 description = "Max amount of display lists to cache for optimized item rendering. Higher number will use more VRAM [range: 64 ~ 1024, default: 256]";
               };

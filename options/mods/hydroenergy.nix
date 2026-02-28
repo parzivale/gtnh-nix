@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/hydroenergy.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/hydroenergy.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "energy balance" = lib.mkOption {
           default = {};
@@ -30,7 +30,7 @@
               };
               enabledTiers = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["mv" "hv" "ev" "iv" "luv" "zpm" "uv"];
+                default = [ "mv" "hv" "ev" "iv" "luv" "zpm" "uv" ];
                 description = "[SERVER] A list of all tiers that should have a Hydro Pump and Hydro Turbine generated. ULV is ignored since it is disabled.";
               };
               milliBucketPerEU = lib.mkOption {
@@ -72,7 +72,7 @@
               };
               dimensionIdWhitelist = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [0];
+                default = [ 0 ];
                 description = "[SERVER] List of dimension a player is allowed to place a controller";
               };
               forceOpenGL = lib.mkOption {

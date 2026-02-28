@@ -31,7 +31,7 @@
               newBoatEntityBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ ];
-                description = "It's a little hard to explain, a more detailed explanation and list of examples can be found here: https://gist.github.com/Roadhog360/0a9975d113217e65cc6b06c494454e4f";
+                description = "What entities shouldn't be able to sit in the boat? This is ONLY for new boats. You can either provide an entity ID (modid.entityid, for vanilla entities type just entity ID), or search for a string in the classpath (classpath:stringtofind). Separate entries in the list by a new line. Note that players can always sit even if blacklisted, and some entities, like horses, water mobs or nonliving entities, will never be allowed to sit in boats. It's a little hard to explain, a more detailed explanation and list of examples can be found here: https://gist.github.com/Roadhog360/0a9975d113217e65cc6b06c494454e4f";
               };
               newBoatEntityBlacklistAsWhitelist = lib.mkOption {
                 type = lib.types.bool;
@@ -41,7 +41,7 @@
               newBoatMaxLandSpeed = lib.mkOption {
                 type = lib.types.str;
                 default = "0.986";
-                description = "The speed values are just block slipperiness values, and are averaged by the slippery blocks around the bottom of the boat. This option does nothing to old boats. [range: 0.1 ~ 1.0, default: 0.986]";
+                description = "The maximum speed a boat can travel by while on land. This option exists because boats are very very fast when travelling on slippery blocks. Land speed = 0.6, Regular/Packed Ice Speed = 0.98, Packed Ice Speed = 0.986. Anything smaller than 0.6 is really, REALLY slow on land. The speed values are just block slipperiness values, and are averaged by the slippery blocks around the bottom of the boat. This option does nothing to old boats. [range: 0.1 ~ 1.0, default: 0.986]";
               };
               newBoatPassengerSeat = lib.mkOption {
                 type = lib.types.bool;
@@ -56,7 +56,7 @@
               replaceOldBoats = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "THIS WILL NOT WORK PROPERLY WITH BETTER BOATS INSTALLED [default: true]";
+                description = "If true, old boats will be replaced with the new oak boat and the item sprite will also be changned. False means the new and old boat and item for it exists separately, and the new boats will use a wooden shovel in their crafting recipe. If this is enabled, a boat that has an entity in it will not be replaced until the entity gets out. THIS WILL NOT WORK PROPERLY WITH BETTER BOATS INSTALLED [default: true]";
               };
             };
           };
@@ -175,7 +175,7 @@
               enableBlastFurnace = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Compatible with CraftTweaker. In the same way that you'd use furnace.addRecipe or furnace.remove, you can use \"mods.etfuturum.blastFurnace\" instead of \"furnace\". [default: true]";
+                description = "Will attempt to seek and auto-add recipes to itself. Look at ConfigFunctions.cfg \"autoAddBlastFurance\" for more info. Compatible with CraftTweaker. In the same way that you'd use furnace.addRecipe or furnace.remove, you can use \"mods.etfuturum.blastFurnace\" instead of \"furnace\". [default: true]";
               };
               enableCartographyTable = lib.mkOption {
                 type = lib.types.bool;
@@ -185,7 +185,7 @@
               enableComposter = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "By default bone meal is the only item in this loot table, with a weight of 10. You can learn more about CraftTweaker loot table modification here: https://www.mcdrama.net/archiveformal/MineTweaker3/wiki/tutorials/1710/loot_and_seeds.html [default: true]";
+                description = "Allows certain items to be composted, which has a chance of adding a layer to the compost bin. Once full, bone meal may be harvested. It is compatible with CraftTweaker. A value greater than 100 can add more than one layer to the composter. (The composter has 6 layers so max value is 600) EG 150 = 1 layer guaranteed and a 50% chance to fill another layer. And 600 = instantly fill the whole composter, or any remaining layers. The mod prefix is \"mods.etfuturum.composting\", and the function is \"addCompostable\" and an ItemStack or OreDictionary tag, then an integer for how likely the item is to add a compost layer. 100 = 100%, or guaranteed. You can remove compostables using the \"remove\" function and an ItemStack or an OreDictionary tag. You can use the \"removeAll\" function to remove all composting recipes, if you wanted to overhaul the composter's useage. Examples: mods.etfuturum.composting.addCompostable(<minecraft:planks:*>, 100); //(Makes all planks have a 100% chance to fill one layer.) mods.etfuturum.composting.addCompostable(<minecraft:bedrock>, 150); //(Makes bedrock fill one layer and have a 50% chance to fill another layer.) mods.etfuturum.composting.remove(<minecraft:leaves:*>); //(Removes all leaves as a compostable item) Additionally the bone meal drop when harvesting a full composting bin can be changed. It drops one item from the \"composting\" loot table, and can be modified with CraftTweaker's \"addChestLoot\" function. By default bone meal is the only item in this loot table, with a weight of 10. You can learn more about CraftTweaker loot table modification here: https://www.mcdrama.net/archiveformal/MineTweaker3/wiki/tutorials/1710/loot_and_seeds.html [default: true]";
               };
               enableDyedBeds = lib.mkOption {
                 type = lib.types.bool;
@@ -230,7 +230,7 @@
               enableNewBrewingStand = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "mods.etfuturum.brewingFuel.remove(<minecraft:blaze_powder>); //(Removes blaze powder as a brewing fuel) [default: true]";
+                description = "Makes the brewing stand have a fuel slot like in 1.9+. The fuel slot is compatible with CraftTweaker and takes blaze powder by default. Blaze powder can brew 30 potion cycles. The mod prefix is \"mods.etfuturum.brewingFuel\", and the function is \"addFuel\" and an ItemStack or OreDictionary tag, then an integer for how many brew cycles. (Any brewing, regardless of if 1 or all 3 slots are filled, is still one \"cycle\") You can remove fuels using the \"remove\" function and an ItemStack or an OreDictionary tag. Examples: mods.etfuturum.brewingFuel.addFuel(<minecraft:gunpowder>, 10); //(Makes gunpowder have 10 brewing cycles) mods.etfuturum.brewingFuel.remove(<minecraft:blaze_powder>); //(Removes blaze powder as a brewing fuel) [default: true]";
               };
               enableNewDoors = lib.mkOption {
                 type = lib.types.bool;
@@ -240,7 +240,7 @@
               enableNewEnchantingTable = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "mods.etfuturum.enchantingFuel.remove(<minecraft:dye:4>); //(Removes lapis lazuli as an enchanting fuel) [default: true]";
+                description = "Uses lapis as payment and has enchant previews and adjusted level costs. Requires tile entity replacement to be enabled in \"function.cfg\". It is compatible with CraftTweaker for adding and removing fuels. The mod prefix is \"mods.etfuturum.enchantingFuel\", and the function is \"addFuel\" and an ItemStack or OreDictionary tag. You can remove fuels using the \"remove\" function and an ItemStack or an OreDictionary tag. Examples: mods.etfuturum.enchantingFuel.addFuel(<etfuturum:amethyst_shard>); //(Adds amethyst shards as an enchanting fuel) mods.etfuturum.enchantingFuel.remove(<minecraft:dye:4>); //(Removes lapis lazuli as an enchanting fuel) [default: true]";
               };
               enableNewSigns = lib.mkOption {
                 type = lib.types.bool;
@@ -280,12 +280,12 @@
               enableSmithingTable = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "mods.etfuturum.smithingTable.addRecipeNoNBT(<etfuturum:sponge:1>, <minecraft:sponge>, <minecraft:water_bucket>); //Take a vanilla sponge and a water bucket, you will get an Et Futurum Requiem wet sponge. [default: true]";
+                description = "If this is disabled, netherite items will not be craftable unless added by CraftTweaker. This introduces the smithing GUI from versions prior to 1.20. It is compatible with CraftTweaker. The mod prefix is \"mods.etfuturum.smithingTable\", and the functions are \"addRecipe\" or \"addRecipeNoNBT\". \"addRecipe\" will copy all NBT data from the first slot to the output. (and damage if the first slot and output are damageable items) You can remove recipes using the \"remove\" function and an ItemStack. Currently CraftTweaker support is limited, so some features from CraftTweaker may not work. .noReturn() and .anyDamage().onlyDamaged() are known to not work. However anyDamage() by itself does work, and is required for tool inputs to actually copy their damage over to the output. Examples: mods.etfuturum.smithingTable.addRecipe(<IC2:itemToolBronzeSword>, <minecraft:iron_sword>.anyDamage(), <ore:ingotBronze>); //(Use \"ingotBronze\" on iron sword to convert it to a bronze sword) mods.etfuturum.smithingTable.addRecipeNoNBT(<etfuturum:sponge:1>, <minecraft:sponge>, <minecraft:water_bucket>); //Take a vanilla sponge and a water bucket, you will get an Et Futurum Requiem wet sponge. [default: true]";
               };
               enableSmoker = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Compatible with CraftTweaker. In the same way that you'd use furnace.addRecipe or furnace.remove, you can use \"mods.etfuturum.smoker\" instead of \"furnace\". [default: true]";
+                description = "Will attempt to seek and auto-add recipes to itself. Look at ConfigFunctions.cfg \"autoAddSmoker\" for more info. Compatible with CraftTweaker. In the same way that you'd use furnace.addRecipe or furnace.remove, you can use \"mods.etfuturum.smoker\" instead of \"furnace\". [default: true]";
               };
               enableSponge = lib.mkOption {
                 type = lib.types.bool;
@@ -666,7 +666,7 @@
               masterNetherToggle = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "This also turns off Nether wart blocks even though they are older, because Netherlicious also has those. [default: true]";
+                description = "NOTE: Currently the content below is referring to some things which are behind an experimental toggle. Additionally the new nether is NOT compatible with Netherlicious yet. The comment below refers to the plans for when the features below are complete. Set this to false to easily turn off all Nether blocks. This also turns off all Nether biomes because they require the blocks to generate. My biomes have compat with Netherlicious (read world.cfg for more info) but if you don't want any compat or EFR Nether stuff at all turn this off. This disables the following toggles: enableCrimsonBlocks, enableWarpedBlocks, enableBlackstone, enableSoulSoil, enableSoulLighting and enableBasalt. Amethyst geodes use smooth basalt so go to world.cfg to change the outer block to something else or they won't generate. This also turns off Nether wart blocks even though they are older, because Netherlicious also has those. [default: true]";
               };
             };
           };
@@ -896,7 +896,7 @@
               enableCrimsonBlocks = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "The nether wart block is still a separate toggle, both this and the wart toggle must be turned off to disable the nether wart block, because crimson trees need the wart blocks. [default: false]";
+                description = "Enables the crimson nylium, wood, and plants. This must be on for the crimson forest biome to generate unless Netherlicious is installed. The nether wart block is still a separate toggle, both this and the wart toggle must be turned off to disable the nether wart block, because crimson trees need the wart blocks. [default: false]";
               };
               enableDripstone = lib.mkOption {
                 type = lib.types.bool;
@@ -936,7 +936,7 @@
               netherDimensionProvider = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "This is so you can have vanilla-style biomes in Netherlicious while Requiem is installed. Turning this off or setting each individual biome ID to -1 will prevent my version of Nether biomes from generating. Don't forget to turn off my Nether blocks in blocksitems.cfg since my biomes will generate with Netherlicious blocks if available. [not implemented yet] [default: false]";
+                description = "Enables the Nether dimension provider override needed for supplying custom biomes. This is partially ignored if Netherlicious is installed. Netherlicious has compat to generate Et Futurum Requiem biomes with Netherlicious blocks. This is so you can have vanilla-style biomes in Netherlicious while Requiem is installed. Turning this off or setting each individual biome ID to -1 will prevent my version of Nether biomes from generating. Don't forget to turn off my Nether blocks in blocksitems.cfg since my biomes will generate with Netherlicious blocks if available. [not implemented yet] [default: false]";
               };
             };
           };
@@ -1130,7 +1130,7 @@
               elytraDataWatcherFlag = lib.mkOption {
                 type = lib.types.int;
                 default = 7;
-                description = "Do not change this value if you don't need to, or do not know what you're doing. [range: 0 ~ 31, default: 7]";
+                description = "The data watcher flag for the Elytra, used to sync the elytra animation with other players. In vanilla the max value is 7, players use 0-4, so you can set this to 6 or 7 by default. ASJCore increases the max value to 31. Do not change this value if you don't need to, or do not know what you're doing. [range: 0 ~ 31, default: 7]";
               };
               enableAutoAddBlastFurnace = lib.mkOption {
                 type = lib.types.bool;
@@ -1170,7 +1170,7 @@
               registerRawItemAsOre = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Turn this off if you have an ore dictionary converter mod or experience other issues. [default: true]";
+                description = "Register the raw ore items in the OreDictionary as if they were the actual ore block. Such as raw iron being registered as an iron ore, etc... Turn this off if you have an ore dictionary converter mod or experience other issues. [default: true]";
               };
               shulkerBans = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
@@ -1215,37 +1215,37 @@
               adjustedAttenuation = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.audio.SoundManager [default: true]";
+                description = "Adjusts the attenuation distance of certain sounds. This needs to be a separate mixin due to the way it works. Currently changes portal abience, and beacon ambience to have an attenuation distance of 8 blocks away, instead of 16. Modified Client Classes: net.minecraft.client.audio.SoundManager [default: true]";
               };
               avoidDroppingItemsWhenClosing = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Modified Classes: net.minecraft.entity.player.EntityPlayerMP [default: false]";
+                description = "Experimental: avoid dropping items when closing an inventory, like in modern versions. Modified Classes: net.minecraft.entity.player.EntityPlayerMP [default: false]";
               };
               betterPistons = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.block.BlockPistonBase [default: true]";
+                description = "A port of Back in Slime, similar to how the elytra is a port of Backlytra. Allows pistons to interact with slime blocks. The original author of this is DonBruce64: https://legacy.curseforge.com/minecraft/mc-mods/back-in-slime-slime-blocks-for-1-7. Modified Classes: net.minecraft.block.BlockPistonBase [default: true]";
               };
               blockHopperInteraction = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.tileentity.TileEntityHopper [default: true]";
+                description = "Allows some blocks without tile entities (e.g. composters) to interact with hoppers. May still not interact with modded pipes. Modified Classes: net.minecraft.tileentity.TileEntityHopper [default: true]";
               };
               bouncyBeds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.block.BlockBed [default: true]";
+                description = "Makes beds bouncy. Should work with most modded beds. For continuity disabling this also disables EFR beds being bouncy. Modified Classes: net.minecraft.block.BlockBed [default: true]";
               };
               boundedBlockBreakingParticles = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Mofified Client Classes: net.minecraft.client.particle.EffectRenderer [default: true]";
+                description = "In 1.14+, when breaking a block, the block break particles stay within the outline, instead of always occupying the whole block space. Mofified Client Classes: net.minecraft.client.particle.EffectRenderer [default: true]";
               };
               colorGrassBlockItemSides = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
+                description = "Grass block sides are colored in the player's inventory Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
               };
               creativeFlightSpeedModifier = lib.mkOption {
                 type = lib.types.str;
@@ -1255,7 +1255,7 @@
               dustUnderFallingBlocks = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.block.BlockFalling [default: true]";
+                description = "Spawns a particle under falling blocks like sand or gravel that are suspended mid-air. Modified Classes: net.minecraft.block.BlockFalling [default: true]";
               };
               enableDoWeatherCycle = lib.mkOption {
                 type = lib.types.bool;
@@ -1265,7 +1265,7 @@
               enableElytra = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Mod Classes: thaumcraft.common.lib.events.EventHandlerEntity [default: true]";
+                description = "A port of Backlytra with various fixes. The original author of this is unascribed: https://legacy.curseforge.com/minecraft/mc-mods/backlytra If you're getting crash related to the DataWatcher, try changing \"elytraDataWatcherFlag\" in functions.cfg and don't open an issue if changing that value fixes it. Modified Classes: net.minecraft.entity.EntityLivingBase net.minecraft.entity.player.EntityPlayer net.minecraft.entity.EntityTrackerEntry net.minecraft.network.NetHandlerPlayServer Modified Client Classes: net.minecraft.client.entity.AbstractClientPlayer net.minecraft.client.entity.EntityPlayerSP net.minecraft.client.model.ModelBiped net.minecraft.client.renderer.entity.RenderPlayer Modified Mod Classes: thaumcraft.common.lib.events.EventHandlerEntity [default: true]";
               };
               enableNewElytraTakeoffLogic = lib.mkOption {
                 type = lib.types.bool;
@@ -1290,17 +1290,17 @@
               enableSpectatorMode = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.renderer.EntityRenderer net.minecraft.entity.player.EntityPlayer net.minecraft.client.renderer.WorldRenderer [default: true]";
+                description = "VERY EXPERIMENTAL! Modified Classes: net.minecraft.world.WorldSettings.GameType net.minecraft.entity.Entity net.minecraft.world.World net.minecraft.entity.player.EntityPlayer net.minecraft.network.NetHandlerPlayServer net.minecraft.entity.player.InventoryPlayer net.minecraft.inventory.ContainerChest Modified Client Classes: net.minecraft.client.renderer.EntityRenderer net.minecraft.entity.player.EntityPlayer net.minecraft.client.renderer.WorldRenderer [default: true]";
               };
               endPortalFix = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified classes: net.minecraft.block.BlockEndPortal [default: true]";
+                description = "Makes the End Portal block (the actual portal, not the frame) have an item icon, proper hitbox and will not instantly destroy itself in other dimensions. Modified classes: net.minecraft.block.BlockEndPortal [default: true]";
               };
               fenceWallConnectFix = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified classes: net.minecraft.block.BlockFence net.minecraft.block.BlockWall [default: true]";
+                description = "Makes vanilla fences connect to modded ones of the same material. Might have connection issue with mods that don't reference BlockFence super code. Modified classes: net.minecraft.block.BlockFence net.minecraft.block.BlockWall [default: true]";
               };
               fireproofItems = lib.mkOption {
                 type = lib.types.bool;
@@ -1310,47 +1310,47 @@
               floorCeilingButtons = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.block.BlockButton [default: true]";
+                description = "Allows ability to place buttons on the floor and ceiling. Note: Due to metadata limits, they won't rotate to face the player like how they were made to in more modern versions. Modified Classes: net.minecraft.block.BlockButton [default: true]";
               };
               furnaceCrackle = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.block.BlockFurnace [default: true]";
+                description = "Allows vanilla furnaces to have crackling sounds. Modified Client Classes: net.minecraft.block.BlockFurnace [default: true]";
               };
               hoeTilling = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.item.ItemHoe [default: true]";
+                description = "Sounds for hoes tilling farmland. Modified Classes: net.minecraft.item.ItemHoe [default: true]";
               };
               ladderTrapdoors = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.block.BlockLadder net.minecraft.block.BlockTrapdoor [default: true]";
+                description = "Trapdoors that are clapped open against a block with a ladder below them can be climbed up as if they themselves were a ladder. Also expands the ladder hitbox to match the width of trapdoors. Modified Classes: net.minecraft.block.BlockLadder net.minecraft.block.BlockTrapdoor [default: true]";
               };
               newBeaconSounds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.tileentity.TileEntityBeacon [default: true]";
+                description = "Allows beacon ambience to play for beacons. Should include most modded beacons. Modified Classes: net.minecraft.tileentity.TileEntityBeacon [default: true]";
               };
               newEnchantingSounds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.inventory.ContainerEnchantment [default: true]";
+                description = "Allows an enchantment sound to play on the vanilla enchantment table, and possibly a few modded ones...? This option does nothing to the Et Futurum Requiem enchantment tables. Modified Classes: net.minecraft.inventory.ContainerEnchantment [default: true]";
               };
               newEnderEyeSounds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.entity.item.EntityEnderEye net.minecraft.item.ItemEnderEye [default: true]";
+                description = "New sounds for throwing an eye of ender, and for them breaking or dropping. Modified Classes: net.minecraft.entity.item.EntityEnderEye net.minecraft.item.ItemEnderEye [default: true]";
               };
               newFishingRodSounds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.item.ItemFishingRod [default: true]";
+                description = "New sounds for casting and reeling in fishing rods. Modified Classes: net.minecraft.item.ItemFishingRod [default: true]";
               };
               newHurtSounds = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.entity.player.EntityPlayer net.minecraft.client.entity.EntityClientPlayerMP [default: true]";
+                description = "Damage sounds for walking into a berry bush, drowning or burning Modified Classes: net.minecraft.entity.player.EntityPlayer net.minecraft.client.entity.EntityClientPlayerMP [default: true]";
               };
               newMobSounds = lib.mkOption {
                 type = lib.types.bool;
@@ -1360,17 +1360,17 @@
               postTreeGenEvent = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.world.gen.feature.WorldGenAbstractTree [default: true]";
+                description = "Fires an event after a tree generates, mainly for beehives to accurately know where most trees are. For now this option is disabled if bees are disabled. Modified Classes: net.minecraft.world.gen.feature.WorldGenAbstractTree [default: true]";
               };
               soulFire = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
+                description = "Is not a new block, but rather a mixin for fire. Allows fire to stay ignited on soul soil. Does double damage when standing in it, and does not spread to other blocks. Even if this is off fire can still stay ignited on soul soil, but do be mindful that fire will spread from soul soil if this option is disabled. Modified Classes: net.minecraft.block.BlockFire net.minecraft.entity.Entity Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
               };
               thinPanes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
+                description = "Panes [Iron Bars, Glass Panes, etc] are changed to a single post if they are not connected to any other blocks Modified Classes: net.minecraft.block.BlockPane Modified Client Classes: net.minecraft.client.renderer.RenderBlocks [default: true]";
               };
             };
           };
@@ -1382,27 +1382,27 @@
               arrowFallingFix = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified classes: net.minecraft.entity.EntityArrow [default: true]";
+                description = "Prevents arrows from falling off of blocks too easily Modified classes: net.minecraft.entity.EntityArrow [default: true]";
               };
               collidedThrowableFix = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified classes: net.minecraft.entity.projectile.EntityThrowable [default: true]";
+                description = "Fixes EntityThrowable entities not calling onEntityCollidedWithBlock, causing them to not trigger target blocks or chime amethyst. Modified classes: net.minecraft.entity.projectile.EntityThrowable [default: true]";
               };
               flowerPotFixes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Client Classes: net.minecraft.client.renderer.RenderBlock [default: true]";
+                description = "Fixes flower pots having several restrictions limiting what they'll render inside of them. Required for crimson roots or azalea to render correctly in the flower pot, among other custom blocks. Modified Client Classes: net.minecraft.client.renderer.RenderBlock [default: true]";
               };
               hideSingleLevelEnchants = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Modified Classes: net.minecraft.enchantment.Enchantment [default: true]";
+                description = "Fixes enchantments with only one possible level displaying a level in their name. E.G. \"Silk Touch I\" becomes \"Silk Touch\". Modified Classes: net.minecraft.enchantment.Enchantment [default: true]";
               };
               stepHeightFix = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Modified classes: net.minecraft.entity.Entity [default: true]";
+                description = "Makes the player able to step up even if a block would be above their head at the destination. Modified classes: net.minecraft.entity.Entity [default: true]";
               };
             };
           };
@@ -1437,12 +1437,12 @@
               disableBaseBountifulStonesOnly = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Useful if you have mods like Chisel or Botania which feature these same stones but not the stairs and other variants. [default: false]";
+                description = "Disables just the andesite, granite, and diorite full blocks, but leaves their stairs and slabs, etc enabled. Useful if you have mods like Chisel or Botania which feature these same stones but not the stairs and other variants. [default: false]";
               };
               disableCopperOreAndIngotOnly = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Useful if you prefer another mod's copper, but want to use the oxidizing copper building blocks. [default: false]";
+                description = "Disables copper ingots and ores, but leaves the blocks and other stuff. Useful if you prefer another mod's copper, but want to use the oxidizing copper building blocks. [default: false]";
               };
               elytraBaublesExpandedCompat = lib.mkOption {
                 type = lib.types.int;
@@ -1484,7 +1484,7 @@
               soulFireColor = lib.mkOption {
                 type = lib.types.int;
                 default = 1178;
-                description = "Does not have any effect on the color of soul lanterns or soul torches. Check the RPLE colors config for those. [range: 0 ~ 4095, default: 1178]";
+                description = "The color of soul fire. Needs to be a separate option because it's a mixin for fire and not a meta state. Does not have any effect on the color of soul lanterns or soul torches. Check the RPLE colors config for those. [range: 0 ~ 4095, default: 1178]";
               };
             };
           };
@@ -1632,7 +1632,7 @@
               armorEquipCustomRules = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ "leather:thermal_padding" "leather:wool" "chain:cultist" "gold:alloy" "gold:angmallen" "gold:astral_silver" "gold:carmot" "gold:copper" "gold:efrine" "gold:electrum" "gold:hepatizon" "gold:midasium" "gold:orichalcum" "gold:oureclase" "gold:platinum" "gold:silver" "iron:amordrine" "iron:brass" "iron:bronze" "iron:celenegil" "iron:ceruclase" "iron:desh" "iron:endium" "iron:inolashite" "iron:invar" "iron:kalendrite" "iron:lead" "iron:nickel" "iron:nickle" "iron:prometheum" "iron:solar" "iron:steel" "iron:thaumium" "iron:tin" "iron:titanium" "iron:vyroxeres" "diamond:adamantine" "diamond:amethyst" "diamond:atlarus" "diamond:desichalkos" "diamond:eximite" "diamond:mithril" "diamond:mythril" "diamond:void" "netherite:haderoth" "netherite:heavyblaze" "netherite:ignatius" "netherite:sanguinite" "netherite:tartarite" "netherite:fortress" "netherite:vulcanite" "turtle_helmet:wood" "elytra:hazmat" ];
-                description = "Available sounds are: 'leather, chain, gold, iron, diamond, netherite, elytra, turtle_helmet, generic, none'. If a modded armor is not on the list it will use generic equip sounds automatically unless it's given the \"none\" type. Non-armor gear will not play a sound unless specified to do so.";
+                description = "Used for custom armor to play custom equip sounds. First the sound you want to play, a colon, then a part of the unlocalized name. The string can be anywhere in the unlocalized name and is not case-sensitive. For example, one of the default custom rules below is \"gold:copper\", which means any armor with \"copper\" anywhere in its unlocalized name will get the gold equip sound. Available sounds are: 'leather, chain, gold, iron, diamond, netherite, elytra, turtle_helmet, generic, none'. If a modded armor is not on the list it will use generic equip sounds automatically unless it's given the \"none\" type. Non-armor gear will not play a sound unless specified to do so.";
               };
               bonemealing = lib.mkOption {
                 type = lib.types.bool;
@@ -1726,7 +1726,7 @@
               shulkersSpawnAnywhere = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Shulkers spawned in this way will despawn naturally, unless seated, given armor through a dispenser, or name tagged. Right now Shulkers are otherwise inacessible. [default: false]";
+                description = "For compatibility reasons, you may want the Shulker to spawn anywhere in the End in random groups like Endermen. These are uncommon. Shulkers spawned in this way will despawn naturally, unless seated, given armor through a dispenser, or name tagged. Right now Shulkers are otherwise inacessible. [default: false]";
               };
               spawnAnywhereShulkerColors = lib.mkOption {
                 type = lib.types.bool;
@@ -1850,12 +1850,12 @@
               amethystMiddleBlockID = lib.mkOption {
                 type = lib.types.str;
                 default = "etfuturum:calcite";
-                description = "If the chosen block does not exist then amethyst geodes will not generate. [default: etfuturum:calcite]";
+                description = "Use a namespaced ID, + optionally meta (max 15) to choose the block that makes up the middle layer of amethyst geodes. If the chosen block does not exist then amethyst geodes will not generate. [default: etfuturum:calcite]";
               };
               amethystOuterBlockID = lib.mkOption {
                 type = lib.types.str;
                 default = "etfuturum:tuff";
-                description = "If the chosen block does not exist then amethyst geodes will not generate. [default: etfuturum:smooth_basalt]";
+                description = "Use a namespaced ID, + optionally meta (max 15) to choose the block that makes up the outer layer of amethyst geodes. The outer layer was formerly \"etfuturum:tuff\" before it was changed in later 1.17 snapshots. Netherlicious smooth basalt is \"netherlicious:BasaltBricks:6\" If the chosen block does not exist then amethyst geodes will not generate. [default: etfuturum:smooth_basalt]";
               };
               amethystRarity = lib.mkOption {
                 type = lib.types.int;
@@ -1870,7 +1870,7 @@
               buddingAmethystMode = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "2 = Budding amethyst does not need silk touch, just a pickaxe. [range: 0 ~ 2, default: 0]";
+                description = "0 = Budding amethyst cannot be obtained at all even with silk touch. When using this option, attempting to push them using a piston will break it. 1 = Budding amethyst will drop if you use a silk touch pickaxe. 2 = Budding amethyst does not need silk touch, just a pickaxe. [range: 0 ~ 2, default: 0]";
               };
               cherryTreeRarity = lib.mkOption {
                 type = lib.types.int;
@@ -1960,7 +1960,7 @@
               fossilBlockID = lib.mkOption {
                 type = lib.types.str;
                 default = "etfuturum:bone";
-                description = "If the chosen block does not exist then fossils will not generate. If Netherlicious is installed, its bone block will be used if this is set to \"etfutrum:bone\" and Et Futurum Requiem bone blocks are disabled. [default: etfuturum:bone]";
+                description = "Use a namespaced ID, + optionally meta (max 3) to choose the block that makes up fossils. The max meta is 3 because the rotations will change the meta. North/South is the meta + 4 and East/West is + 8. Netherlicious bone block is \"netherlicious:BoneBlock\" and UpToDate bone block is \"uptodate:bone_block\". If the chosen block does not exist then fossils will not generate. If Netherlicious is installed, its bone block will be used if this is set to \"etfutrum:bone\" and Et Futurum Requiem bone blocks are disabled. [default: etfuturum:bone]";
               };
               fossilDimensionBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
@@ -2012,17 +2012,17 @@
               oldHuskSpawning = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "OptiFine breaks the sky-exposure behavior so this option will be forced on when OptiFine is detected. [default: false]";
+                description = "Enables the old husk spawning logic. Instead of replacing 80% of zombies exposed to the sky in the right biomes, they'll reduce the spawn rate of normal zombies and spawn anywhere in the correct biomes. OptiFine breaks the sky-exposure behavior so this option will be forced on when OptiFine is detected. [default: false]";
               };
               oldStraySpawning = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "OptiFine breaks the sky-exposure behavior so this option will be forced on when OptiFine is detected. [default: false]";
+                description = "Enables the old stray spawning logic. Instead of replacing 80% of skeletons exposed to the sky in the right biomes, they'll reduce the spawn rate of normal skeletons and spawn anywhere in the correct biomes. OptiFine breaks the sky-exposure behavior so this option will be forced on when OptiFine is detected. [default: false]";
               };
               tileReplacementMode = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "1 = Convert Et Futurum replacement tile entities back to default ones. Useful if you want to turn those off. [range: -1 ~ 1, default: 0]";
+                description = "Replace old Brewing Stands/Enchanting Tables/Daylight Sensors/Beacons with new one on the fly. -1 = Disabled, no conversion even if the replacement tile entities are on 0 = Convert the vanilla tile entities to their Et Futurum versions 1 = Convert Et Futurum replacement tile entities back to default ones. Useful if you want to turn those off. [range: -1 ~ 1, default: 0]";
               };
             };
           };

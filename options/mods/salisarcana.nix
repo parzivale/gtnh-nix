@@ -840,17 +840,17 @@
               stabilizerAdditions = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ ];
-                description = "[default: ]";
+                description = "Requires useStabilizerRewrite=true. Blocks specified here will be factored into an infusion altar's symmetry, even if they normally would not. FORMAT: `modId:blockId` or `modId:blockId:metadata` or `modId:blockId:metadata:strength`. Metadata: * Defaults to 0 if not set. * If set to * or 32767, all metadata variants of the block will be included. Strength: * Defaults to `stabilizerStrength` if not set. * Range: -10000 ~ 10000. [default: ]";
               };
               stabilizerExclusions = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ ];
-                description = "[default: ]";
+                description = "Requires useStabilizerRewrite=true. Blocks specified here will NOT be factored into an infusion altar's symmetry even if they normally would. FORMAT: `modId:blockId` or `modId:blockId:metadata`. Metadata: * Defaults to 0 if not set. * If set to * or 32767, all metadata variants of the block will be included. [default: ]";
               };
               stabilizerStrength = lib.mkOption {
                 type = lib.types.int;
                 default = 10;
-                description = "[range: -10000 ~ 10000, default: 10]";
+                description = "Requires useStabilizerRewrite=true. The amount (in one-hundredths of a point) of symmetry each stabilizer block adds to an infusion altar. If a stabilizer doesn't have a symmetrical opposite, an equivalent amount of symmetry will be subtracted instead. [range: -10000 ~ 10000, default: 10]";
               };
               useStabilizerRewrite = lib.mkOption {
                 type = lib.types.bool;
@@ -983,7 +983,7 @@
               enforceWandCoreTypes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Disable to allow upgrading a wand to a staff and vice versa. [default: true]";
+                description = "If enabled, prevents swapping a wand core with a staff core or a staff core with a wand core. Disable to allow upgrading a wand to a staff and vice versa. [default: true]";
               };
               preserveWandVis = lib.mkOption {
                 type = lib.types.bool;
@@ -1191,7 +1191,7 @@
               "Enable biome_colors module" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Override the colors of TC4's biomes. [default: false]";
+                description = "Notice: This is broken for some users, and slated for removal in a future update. Override the colors of TC4's biomes. [default: false]";
               };
               "Enable bugfixes module" = lib.mkOption {
                 type = lib.types.bool;

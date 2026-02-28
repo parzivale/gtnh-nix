@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/WirelessRedstone.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/WirelessRedstone.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge_untyped";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge_untyped";
+        readOnly = true;
         };
         core = lib.mkOption {
           default = {};
@@ -39,27 +39,27 @@
                 type = lib.types.submodule {
                   options = {
                     blockdelay = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
+                      type = lib.types.str;
+                      default = "10";
                       description = "Delay in seconds before jamming the first time";
                     };
                     entitydelay = lib.mkOption {
-                      type = lib.types.int;
-                      default = 5;
+                      type = lib.types.str;
+                      default = "5";
                     };
                     entityretry = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
+                      type = lib.types.str;
+                      default = "10";
                       description = "Jam an entity again after x seconds";
                     };
                     range = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
+                      type = lib.types.str;
+                      default = "10";
                       description = "Range In Blocks";
                     };
                     timeout = lib.mkOption {
-                      type = lib.types.int;
-                      default = 60;
+                      type = lib.types.str;
+                      default = "60";
                       description = "Timeout In Seconds:Applies to both blocks and players";
                     };
                   };

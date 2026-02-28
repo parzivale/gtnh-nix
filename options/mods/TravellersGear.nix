@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/TravellersGear.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/TravellersGear.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         options = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               "Button Position" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [27 9];
+                default = [ 27 9 ];
                 description = "The position of the Equipment Button in the Inventory";
               };
               "Radial Speed" = lib.mkOption {

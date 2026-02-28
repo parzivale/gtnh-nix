@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/holoinventory.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/holoinventory.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         holoinventory = lib.mkOption {
           default = {};
@@ -20,13 +20,13 @@
             options = {
               bannedEntities = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "Use the ingame command '/holoinventory' to change this list easily.";
+                default = [ ];
+                description = "Banned inventories. Use the ingame command '/holoinventory' to change this list easily.";
               };
               bannedTiles = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["com.jaquadro.minecraft.storagedrawers.block.tile.TileEntityController" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityAdvancedInfoPanel" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityInfoPanel" "jds.bibliocraft.tileentities.TileEntityClipboard" "crazypants.enderio.conduit.TileConduitBundle"];
-                description = "Use the ingame command '/holoinventory' to change this list easily.";
+                default = [ "com.jaquadro.minecraft.storagedrawers.block.tile.TileEntityController" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityAdvancedInfoPanel" "shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityInfoPanel" "jds.bibliocraft.tileentities.TileEntityClipboard" "crazypants.enderio.conduit.TileConduitBundle" ];
+                description = "Banned inventories. Use the ingame command '/holoinventory' to change this list easily.";
               };
               colorAlpha = lib.mkOption {
                 type = lib.types.int;
@@ -89,7 +89,7 @@
               keyMode = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
-                description = "3: Don't render hologram while key pressed.";
+                description = "Valid modes: 0: Always display hologram. 1: The key toggles the rendering. 2: Only render hologram while key pressed. 3: Don't render hologram while key pressed.";
               };
               keyState = lib.mkOption {
                 type = lib.types.bool;
@@ -99,12 +99,12 @@
               mode = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "6: Same as 1, but with 9 items.";
+                description = "Valid modes: 0: Default mode (Display all items). 1: Sorting mode, biggest stack size first. 2: Most abundant mode (Only display the item the most abundant in the chest. 3: Same as 1, but with 3 items. 4: Same as 1, but with 5 items. 5: Same as 1, but with 7 items. 6: Same as 1, but with 9 items.";
               };
               overrideNameThings = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "Use the ingame command '/holoinventory' to change this list easily.";
+                default = [ ];
+                description = "Name overrides. Use the ingame command '/holoinventory' to change this list easily.";
               };
               renderMultiple = lib.mkOption {
                 type = lib.types.bool;

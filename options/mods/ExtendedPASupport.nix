@@ -21,12 +21,12 @@
               debug = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "available values: [true, false]";
+                description = "whether to turn on debuggin (extended logging) available values: [true, false]";
               };
               enabled = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "available values: [true, false]";
+                description = "whether this addon should do stuff available values: [true, false]";
               };
             };
           };

@@ -53,7 +53,7 @@
               forced_blocks = lib.mkOption {
                 type = lib.types.str;
                 default = "minecraft:lapis_ore/0=>1*minecraft:lapis_ore/4=>minecraft:lapis_ore/0,minecraft:lit_redstone_ore/0=>1*minecraft:redstone_ore/0=>minecraft:lit_redstone_ore/0,IC2:blockRubWood/2=>1*IC2:blockRubWood/0=>IC2:blockRubWood/0,IC2:blockRubWood/3=>1*IC2:blockRubWood/0=>IC2:blockRubWood/0,IC2:blockRubWood/4=>1*IC2:blockRubWood/0=>IC2:blockRubWood/0,IC2:blockRubWood/5=>1*IC2:blockRubWood/0=>IC2:blockRubWood/0,thaumicbases:ashroom/1=>1*thaumicbases:ashroom/0=>thaumicbases:ashroom/0,thaumicbases:ashroom/2=>1*thaumicbases:ashroom/0=>thaumicbases:ashroom/0,thaumicbases:ashroom/3=>1*thaumicbases:ashroom/0=>thaumicbases:ashroom/0,thaumicbases:ashroom/4=>1*thaumicbases:ashroom/0=>thaumicbases:ashroom/0";
-                description = "(what you are looking at)=>(number required)*(item required)=>(block to build)";
+                description = "Specify forced mappings for what to build from certain blocks. (what you are looking at)=>(number required)*(item required)=>(block to build)";
               };
               no_assumption_blocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;

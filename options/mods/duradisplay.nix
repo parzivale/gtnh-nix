@@ -94,9 +94,9 @@
                       description = "Color of the Overlay (hex code, no prefix) [default: ff55ff]";
                     };
                     ColorThresholds = lib.mkOption {
-                      type = lib.types.listOf lib.types.str;
-                      default = [ "30.0" "70.0" ];
-                      description = "By default from Red -> Yellow -> Green by default";
+                      type = lib.types.listOf lib.types.float;
+                      default = [ 30.0 70.0 ];
+                      description = "List of numbers in ascending order from 0-100 that set the thresholds for durability color mapping. Colors are the list of colors in ThreeColors By default from Red -> Yellow -> Green by default";
                     };
                     ColorType = lib.mkOption {
                       type = lib.types.str;
@@ -194,9 +194,9 @@
                       description = "Color of the Overlay (hex code, no prefix) [default: ff00]";
                     };
                     ColorThresholds = lib.mkOption {
-                      type = lib.types.listOf lib.types.str;
-                      default = [ "30.0" "70.0" ];
-                      description = "By default from Red -> Yellow -> Green by default";
+                      type = lib.types.listOf lib.types.float;
+                      default = [ 30.0 70.0 ];
+                      description = "List of numbers in ascending order from 0-100 that set the thresholds for durability color mapping. Colors are the list of colors in ThreeColors By default from Red -> Yellow -> Green by default";
                     };
                     ColorType = lib.mkOption {
                       type = lib.types.str;
@@ -294,9 +294,9 @@
                       description = "Color of the Overlay (hex code, no prefix) [default: ffffff]";
                     };
                     ColorThresholds = lib.mkOption {
-                      type = lib.types.listOf lib.types.str;
-                      default = [ "30.0" "70.0" ];
-                      description = "By default from Red -> Yellow -> Green by default";
+                      type = lib.types.listOf lib.types.float;
+                      default = [ 30.0 70.0 ];
+                      description = "List of numbers in ascending order from 0-100 that set the thresholds for durability color mapping. Colors are the list of colors in ThreeColors By default from Red -> Yellow -> Green by default";
                     };
                     ColorType = lib.mkOption {
                       type = lib.types.str;
@@ -406,9 +406,9 @@
                       description = "Color of the Overlay (hex code, no prefix) [default: ffffff]";
                     };
                     ColorThresholds = lib.mkOption {
-                      type = lib.types.listOf lib.types.str;
-                      default = [ "30.0" "70.0" ];
-                      description = "By default from Red -> Yellow -> Green by default";
+                      type = lib.types.listOf lib.types.float;
+                      default = [ 30.0 70.0 ];
+                      description = "List of numbers in ascending order from 0-100 that set the thresholds for durability color mapping. Colors are the list of colors in ThreeColors By default from Red -> Yellow -> Green by default";
                     };
                     ColorType = lib.mkOption {
                       type = lib.types.str;

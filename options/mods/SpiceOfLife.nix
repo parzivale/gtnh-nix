@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/SpiceOfLife.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/SpiceOfLife.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "carrot module" = lib.mkOption {
           default = {};
@@ -101,22 +101,22 @@
               "affect.food.hunger.values" = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "Setting this to false and affect.food.saturation.modifiers to true will make diminishing returns affect saturation only";
+                description = "If true, foods' hunger value will be multiplied by the current nutritional value Setting this to false and affect.food.saturation.modifiers to true will make diminishing returns affect saturation only";
               };
               "affect.food.saturation.modifiers" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "Setting this to true and affect.food.hunger.values to false will make diminishing returns affect saturation only";
+                description = "If true, foods' saturation modifier will be multiplied by the current nutritional value NOTE: When affect.food.hunger.values is true, saturation bonuses of foods will automatically decrease as the hunger value of the food decreases Setting this to true when affect.food.hunger.values is true will make saturation bonuses decrease disproportionately more than hunger values Setting this to true and affect.food.hunger.values to false will make diminishing returns affect saturation only";
               };
               "affect.negative.food.hunger.values" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "NOTE: affect.food.hunger.values must be true for this to have any affect";
+                description = "If true, foods with negative hunger values will be made more negative as nutritional value decreases NOTE: affect.food.hunger.values must be true for this to have any affect";
               };
               "affect.negative.food.saturation.modifiers" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "NOTE: affect.food.saturation.modifiers must be true for this to have any affect";
+                description = "If true, foods with negative saturation modifiers will be made more negative as nutritional value decreases NOTE: affect.food.saturation.modifiers must be true for this to have any affect";
               };
               "clear.history.after.food.eaten.threshold.reached" = lib.mkOption {
                 type = lib.types.bool;
@@ -134,12 +134,12 @@
               "food.eating.duration.max" = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "Note: If this is set to 0 and food.eating.speed.modifier is > 0, a food with 0% nutrtional value will take nearly infinite time to eat";
+                description = "The maximum time it takes to eat a food after being modified by food.eating.speed.modifier The default eating duration is 32. Set this to 0 to remove the limit on eating speed. Note: If this is set to 0 and food.eating.speed.modifier is > 0, a food with 0% nutrtional value will take nearly infinite time to eat";
               };
               "food.eating.speed.modifier" = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
-                description = "Eating duration is calcualted using the formula (eating_duration / (nutritional_value^eating_speed_modifier))";
+                description = "If set to greater than zero, food eating speed will be affected by nutritional value (meaning the lower the nutrtional value, the longer it will take to eat it) Eating duration is calcualted using the formula (eating_duration / (nutritional_value^eating_speed_modifier))";
               };
               "food.history.length" = lib.mkOption {
                 type = lib.types.int;
@@ -154,11 +154,12 @@
               "food.hunger.rounding.mode" = lib.mkOption {
                 type = lib.types.str;
                 default = "floor";
-                description = "Valid options: 'round', 'floor', 'ceiling'";
+                description = "Rounding mode used on the hunger value of foods Valid options: 'round', 'floor', 'ceiling'";
               };
               "food.modifier.formula" = lib.mkOption {
                 type = lib.types.str;
                 default = "MAX(IF(count>=4 && distinct_food_groups_eaten<=5,(1 - (count - 4)/8),1), IF((count - 8) < food_hunger_value, 1/MAX(food_hunger_value,2), 0))";
+                description = "Uses the EvalEx expression parser See: https://github.com/uklimaschewski/EvalEx for syntax/function documentation Available variables: count : The number of times the food (or its food group) has been eaten within the food history hunger_count : The total amount of hunger that the food (or its food group) has restored within the food history (1 hunger unit = 1/2 hunger bar) saturation_count : The total amount of saturation that the food (or its food group) has restored within the food history (1 saturation unit = 1/2 saturation bar) max_history_length : The maximum length of the food history (see food.history.length) cur_history_length : The current length of the food history (<= max_history_length) food_hunger_value : The default amount of hunger the food would restore in hunger units (1 hunger unit = 1/2 hunger bar) food_saturation_mod : The default saturation modifier of the food cur_hunger : The current hunger value of the player in hunger units (20 = full) cur_saturation : The current saturation value of the player total_food_eaten : The all-time total number of times any food has been eaten by the player food_group_count : The number of food groups that the food belongs to distinct_food_groups_eaten : The number of distinct food groups in the player's current food history total_food_groups : The total number of enabled food groups exact_count : The number of times the food (ignoring food groups) has been eaten within the food history";
               };
               "give.food.journal.as.starting.item" = lib.mkOption {
                 type = lib.types.bool;
@@ -182,7 +183,7 @@
               "use.hunger.restored.for.food.history.length" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "NOTE: food.history.length uses hunger units, where 1 hunger unit = 1/2 hunger bar";
+                description = "If true, food.history.length will use amount of hunger restored instead of number of foods eaten for its maximum length For example, a food.history.length length of 12 will store a max of 2 foods that restored 6 hunger each, 3 foods that restored 4 hunger each, 12 foods that restored 1 hunger each, etc NOTE: food.history.length uses hunger units, where 1 hunger unit = 1/2 hunger bar";
               };
               "use.time.for.food.history.length" = lib.mkOption {
                 type = lib.types.bool;

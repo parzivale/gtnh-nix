@@ -26,7 +26,7 @@
         "dev.runtimePublic" = lib.mkOption {
           type = lib.types.str;
           default = "false";
-          description = "Such mods are doing the wrong thing and should be fixed.";
+          description = "Enabling this setting will make all minecraft classes public at runtime in MCP just as they are in modloader. You should ONLY use this when you are testing with a mod that relies on runtime publicity and doesn't include access transformers. Such mods are doing the wrong thing and should be fixed.";
         };
         checks = lib.mkOption {
           default = {};

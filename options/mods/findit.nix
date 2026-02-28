@@ -41,7 +41,7 @@
               ItemHighlightingEmptyItemStacks = lib.mkOption {
                 type = lib.types.str;
                 default = "true";
-                description = "This is useful when working with barrels or storage drawers.";
+                description = "If true, the item stack size is ignored. If false, items are only highlighted if their stack size is greater than zero. This is useful when working with barrels or storage drawers.";
               };
               MaxResponseSize = lib.mkOption {
                 type = lib.types.str;

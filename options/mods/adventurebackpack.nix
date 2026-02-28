@@ -5,21 +5,21 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/adventurebackpack.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/adventurebackpack.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         experimental = lib.mkOption {
           default = {};
           type = lib.types.submodule {
             options = {
               "Boss Bar Indent" = lib.mkOption {
-                type = lib.types.ints.between 0 500;
+                type = lib.types.int;
                 default = 0;
                 description = "Boss health bar indent from top border, 0 = standard Forge render [range: 0 ~ 500, default: 0]";
               };
@@ -118,7 +118,7 @@
                 description = "Whether or not to render the backpack when wearing it. [default: true]";
               };
               "Tank Render Type" = lib.mkOption {
-                type = lib.types.ints.between 1 3;
+                type = lib.types.int;
                 default = 3;
                 description = "1,2 or 3 for different rendering of fluids in the Backpack GUI [range: 1 ~ 3, default: 3]";
               };
@@ -132,12 +132,12 @@
                       description = "Show player status effects on screen? [default: true]";
                     };
                     "Indent Horizontal" = lib.mkOption {
-                      type = lib.types.ints.between 0 1000;
+                      type = lib.types.int;
                       default = 2;
                       description = "Horizontal indent from the window border [range: 0 ~ 1000, default: 2]";
                     };
                     "Indent Vertical" = lib.mkOption {
-                      type = lib.types.ints.between 0 500;
+                      type = lib.types.int;
                       default = 2;
                       description = "Vertical indent from the window border [range: 0 ~ 500, default: 2]";
                     };
@@ -169,12 +169,12 @@
                       description = "Show the different wearable overlays on screen? [default: true]";
                     };
                     "Indent Horizontal" = lib.mkOption {
-                      type = lib.types.ints.between 0 1000;
+                      type = lib.types.int;
                       default = 2;
                       description = "Horizontal indent from the window border [range: 0 ~ 1000, default: 2]";
                     };
                     "Indent Vertical" = lib.mkOption {
-                      type = lib.types.ints.between 0 500;
+                      type = lib.types.int;
                       default = 1;
                       description = "Vertical indent from the window border [range: 0 ~ 500, default: 1]";
                     };
@@ -205,12 +205,12 @@
               };
               "Forbidden Dimensions" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["55"];
+                default = [ "55" ];
                 description = "Disallow opening backpack inventory for specific dimension ID [default: ]";
               };
               "Valid Copter Fuels" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["biodiesel, 1.0" "biofuel, 1.0" "bioethanol, 1.5" "creosote, 7.0" "fuel, 0.8" "lava, 5.0" "liquid_light_oil, 3.0" "liquid_medium_oil, 3.0" "liquid_heavy_oil, 3.0" "liquid_light_fuel, 1.0" "liquid_heavy_fuel, 1.3" "nitrofuel, 0.4" "oil, 3.0" "rocket_fuel, 0.8"];
+                default = [ "biodiesel, 1.0" "biofuel, 1.0" "bioethanol, 1.5" "creosote, 7.0" "fuel, 0.8" "lava, 5.0" "liquid_light_oil, 3.0" "liquid_medium_oil, 3.0" "liquid_heavy_oil, 3.0" "liquid_light_fuel, 1.0" "liquid_heavy_fuel, 1.3" "nitrofuel, 0.4" "oil, 3.0" "rocket_fuel, 0.8" ];
                 description = "List of valid fuels for Copter. Consumption rate range: 0.05 ~ 20.0. Format: 'fluid, rate', ex.: 'water, 0.0' [default: [biodiesel, 1.0], [biofuel, 1.0], [bioethanol, 1.5], [creosote, 7.0], [fuel, 0.8], [highoctanegasoline, 0.16], [lava, 5.0], [liquid_light_oil, 3.0], [liquid_medium_oil, 3.0], [liquid_heavy_oil, 3.0], [liquid_light_fuel, 1.0], [liquid_heavy_fuel, 1.3], [nitrofuel, 0.4], [oil, 3.0], [rocket_fuel, 0.8]]";
               };
               recipes = lib.mkOption {
@@ -276,22 +276,22 @@
                   options = {
                     "By Displayed Name" = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [];
+                      default = [ ];
                       description = "Disallow items by displayed (localized) name. Not case sensitive. Worst option, use only when there is no choice. Example: Dirt [default: ]";
                     };
                     "By Internal ID" = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = ["etfuturum:shulker_box"];
+                      default = [ "etfuturum:shulker_box" ];
                       description = "Disallow items by internal ID. Case sensitive. Example: minecraft:dirt [default: ]";
                     };
                     "By Internal IDs" = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [];
+                      default = [ ];
                       description = "Disallow items by internal ID. Case sensitive. Will be disallowed all items containing that word in their IDs. Use with caution. Example: minecraft:di [default: ]";
                     };
                     "By Internal Name" = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [];
+                      default = [ ];
                       description = "Disallow items by internal (unlocalized) name. Not case sensitive. Example: tile.dirt [default: ]";
                     };
                   };

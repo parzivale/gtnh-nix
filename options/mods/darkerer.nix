@@ -41,7 +41,7 @@
               mode = lib.mkOption {
                 type = lib.types.str;
                 default = "EVERYWHERE";
-                description = "[default: EVERYWHERE]";
+                description = "How Darkerer should behave EVERYWHERE: complete darkness at night, except near block light sources (torches, lava, etc.) ONLY_INSIDE: a small amount of light remains at the surface, even during the night MOON_PHASE: like ONLY_INSIDE but the remaining light depends on the moon phase Possible values: [EVERYWHERE, ONLY_INSIDE, MOON_PHASE] [default: EVERYWHERE]";
               };
               removeBlueSkyLight = lib.mkOption {
                 type = lib.types.bool;

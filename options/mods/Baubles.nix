@@ -21,12 +21,12 @@
               useOldGuiButton = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "[default: false]";
+                description = "Use the old Baubles Button texture and location instead. [default: false]";
               };
               useOldRendering = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "[default: false]";
+                description = "Display the old Bauble GUI instead of the new sidebar. [default: false]";
               };
             };
           };
@@ -38,7 +38,7 @@
               hideDebugItem = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "[default: true]";
+                description = "Hides the Bauble debug item from the creative menu. [default: true]";
               };
             };
           };
@@ -62,12 +62,12 @@
               manualSlotSelection = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
-                description = "[default: false]";
+                description = "Manually override slot assignments. !Bauble slot types must be configured manually with this option enabled! [default: false]";
               };
               showUnusedSlots = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
-                description = "[default: false]";
+                description = "Display unused Bauble slots. [default: false]";
               };
             };
           };
@@ -79,12 +79,12 @@
               defualtSlotTypes = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ "amulet" "ring" "ring" "belt" "Terminal" "quiver" "charm_pouch" "wings" "focus_pouch" "cape" "gauntlet" "charm" "title" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ];
-                description = "!This config option automatically changes to reflect what Baubles and its addons assigned each time the game is launched! [default: ]";
+                description = "Baubles and its addons assigned the folowing types to the bauble slots. !This config option automatically changes to reflect what Baubles and its addons assigned each time the game is launched! [default: ]";
               };
               slotTypeOverrides = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ "amulet" "ring" "ring" "belt" "Terminal" "quiver" "charm_pouch" "wings" "focus_pouch" "cape" "gauntlet" "charm" "title" ];
-                description = "[default: [amulet], [ring], [ring], [belt]]";
+                description = "Slot assignments to use if manualSlotSelection is enabled. Any assignments after the first 20 will be ignored. !Adding, moving, or removing slots of the amulet, ring, or belt types will reduce compatibility with mods made for original Baubles versions! [default: [amulet], [ring], [ring], [belt]]";
               };
             };
           };

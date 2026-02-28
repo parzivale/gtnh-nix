@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/AWWayofTime.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/AWWayofTime.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "alchemy potion blacklist" = lib.mkOption {
           default = {};
@@ -131,31 +131,31 @@
             options = {
               fifthTierBeacons = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["minecraft:beacon" "etfuturum:beacon" "chisel:beacon:*"];
+                default = [ "minecraft:beacon" "etfuturum:beacon" "chisel:beacon:*" ];
               };
               fourthTierCaps = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:largeBloodStoneBrick"];
+                default = [ "AWWayofTime:largeBloodStoneBrick" ];
               };
               fourthTierPillars = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["dreamcraft:tile.BloodyVoid:0"];
+                default = [ "dreamcraft:tile.BloodyVoid:0" ];
               };
               sixthTierCaps = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:blockCrystal"];
+                default = [ "AWWayofTime:blockCrystal" ];
               };
               sixthTierPillars = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["dreamcraft:tile.BloodyIchorium:0"];
+                default = [ "dreamcraft:tile.BloodyIchorium:0" ];
               };
               thirdTierCaps = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["minecraft:glowstone" "BloodArsenal:blood_infused_glowstone" "Botania:seaLamp" "chisel:glowstone:*" "etfuturum:sea_lantern" "etfuturum:shroomlight" "ExtraUtilities:color_lightgem:*"];
+                default = [ "minecraft:glowstone" "BloodArsenal:blood_infused_glowstone" "Botania:seaLamp" "chisel:glowstone:*" "etfuturum:sea_lantern" "etfuturum:shroomlight" "ExtraUtilities:color_lightgem:*" ];
               };
               thirdTierPillars = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["dreamcraft:tile.BloodyThaumium:0"];
+                default = [ "dreamcraft:tile.BloodyThaumium:0" ];
               };
             };
           };
@@ -245,7 +245,7 @@
               };
               "dimension blacklist for the demon portal activation" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [0];
+                default = [ 0 ];
               };
               tunnelIfObstructed = lib.mkOption {
                 type = lib.types.bool;
@@ -438,43 +438,43 @@
               };
               "Aura of Expulsion" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000000 1000];
+                default = [ 1000000 1000 ];
               };
               "Ballad of Alchemy" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [20000 10];
+                default = [ 20000 10 ];
               };
               "Blood of the New Moon" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [10000 0];
+                default = [ 10000 0 ];
               };
               "Call of the Zephyr" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [25000 5];
+                default = [ 25000 5 ];
               };
               "Convocation of the Damned" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [15000000 0];
+                default = [ 15000000 0 ];
               };
               "Cry of the Eternal Soul" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [2000000 0];
+                default = [ 2000000 0 ];
               };
               "Dome of Suppression" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [10000 2];
+                default = [ 10000 2 ];
               };
               "Duet of the Fused Souls" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [15000000 5000];
+                default = [ 15000000 5000 ];
               };
               "Focus of the Ellipsoid" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [25000 0];
+                default = [ 25000 0 ];
               };
               "Gaia's Transformation" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000000 0];
+                default = [ 1000000 0 ];
               };
               "Harvest Goddess Sigil" = lib.mkOption {
                 type = lib.types.int;
@@ -482,7 +482,7 @@
               };
               "Interdiction Ritual" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000 1];
+                default = [ 1000 1 ];
               };
               "Lava Sigil" = lib.mkOption {
                 type = lib.types.int;
@@ -490,83 +490,83 @@
               };
               "Mark of the Falling Tower" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [100000 0];
+                default = [ 100000 0 ];
               };
               "Orchestra of the Phantom Hands" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [10000 0];
+                default = [ 10000 0 ];
               };
               "Reap of the Harvest Moon" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [20000 20];
+                default = [ 20000 20 ];
               };
               "Requiem of the Satiated Stomach" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [100000 100];
+                default = [ 100000 100 ];
               };
               "Reverence of the Condor" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000000 0];
+                default = [ 1000000 0 ];
               };
               "Rhythm of the Beating Anvil" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [15000 10];
+                default = [ 15000 10 ];
               };
               "Ritual of Binding" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [5000 0];
+                default = [ 5000 0 ];
               };
               "Ritual of Containment" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [2000 1];
+                default = [ 2000 1 ];
               };
               "Ritual of Magnetism" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [5000 50];
+                default = [ 5000 50 ];
               };
               "Ritual of Regeneration" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [25000 20];
+                default = [ 25000 20 ];
               };
               "Ritual of Speed" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000 5];
+                default = [ 1000 5 ];
               };
               "Ritual of Unbinding" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [30000 0];
+                default = [ 30000 0 ];
               };
               "Ritual of the Crusher" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [2500 7];
+                default = [ 2500 7 ];
               };
               "Ritual of the Feathered Earth" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [100000 0];
+                default = [ 100000 0 ];
               };
               "Ritual of the Feathered Knife" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [50000 20];
+                default = [ 50000 20 ];
               };
               "Ritual of the Full Spring" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [500 25];
+                default = [ 500 25 ];
               };
               "Ritual of the Green Grove" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000 20];
+                default = [ 1000 20 ];
               };
               "Ritual of the High Jump" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1000 5];
+                default = [ 1000 5 ];
               };
               "Ritual of the Shepherd" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [10000 2];
+                default = [ 10000 2 ];
               };
               "Serenade of the Nether" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [10000 500];
+                default = [ 10000 500 ];
               };
               "Sigil of Compression" = lib.mkOption {
                 type = lib.types.int;
@@ -614,15 +614,15 @@
               };
               "Song of Evaporation" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [20000 0];
+                default = [ 20000 0 ];
               };
               "Symmetry of the Omega" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [15000000 0];
+                default = [ 15000000 0 ];
               };
               "Veil of Evil" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [150000 20];
+                default = [ 150000 20 ];
               };
               "Void Sigil" = lib.mkOption {
                 type = lib.types.int;
@@ -630,7 +630,7 @@
               };
               "Ward of Sacrosanctity" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [150000 15];
+                default = [ 150000 15 ];
               };
               "Water Sigil" = lib.mkOption {
                 type = lib.types.int;
@@ -638,7 +638,7 @@
               };
               "Well of Suffering" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [50000 2];
+                default = [ 50000 2 ];
               };
               "[Weak Ritual] Night" = lib.mkOption {
                 type = lib.types.int;
@@ -666,12 +666,12 @@
               defaultMeteorBlock = lib.mkOption {
                 type = lib.types.str;
                 default = "";
-                description = "Defaults to minecraft:stone:0 if no block is provided or the provided block cannot be found. [default: ]";
+                description = "The block to use for filler in meteors if none is provided in the meteor's config file and that meteor's fillerChance is greater than 0. Also used as a fallback for empty ore lists in meteor configs. Specify the block with the format: \"modId:itemName:meta\" Defaults to minecraft:stone:0 if no block is provided or the provided block cannot be found. [default: ]";
               };
               defaultMeteorCost = lib.mkOption {
                 type = lib.types.int;
                 default = 1000000;
-                description = "[range: 0 ~ 2147483647, default: 1000000]";
+                description = "The default LP cost to use for meteors if the \"cost\" property is not present in its config file. [range: 0 ~ 2147483647, default: 1000000]";
               };
               doMeteorsDestroyBlocks = lib.mkOption {
                 type = lib.types.bool;
@@ -690,7 +690,7 @@
             options = {
               allowedOres = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["iron" "gold" "copper" "tin" "lead" "silver" "osmium"];
+                default = [ "iron" "gold" "copper" "tin" "lead" "silver" "osmium" ];
               };
             };
           };
@@ -950,23 +950,23 @@
             options = {
               fifthTier = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6"];
+                default = [ "AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6" ];
               };
               fourthTier = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6"];
+                default = [ "AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6" ];
               };
               secondTier = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6"];
+                default = [ "AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6" ];
               };
               sixthTier = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6"];
+                default = [ "AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6" ];
               };
               thirdTier = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6"];
+                default = [ "AWWayofTime:AlchemicalWizardrybloodRune:0" "AWWayofTime:speedRune:0" "AWWayofTime:efficiencyRune:0" "AWWayofTime:runeOfSacrifice:0" "AWWayofTime:runeOfSelfSacrifice:0" "AWWayofTime:AlchemicalWizardrybloodRune:1" "AWWayofTime:AlchemicalWizardrybloodRune:2" "AWWayofTime:AlchemicalWizardrybloodRune:3" "AWWayofTime:AlchemicalWizardrybloodRune:4" "AWWayofTime:AlchemicalWizardrybloodRune:5" "AWWayofTime:AlchemicalWizardrybloodRune:6" ];
               };
             };
           };
@@ -2947,8 +2947,8 @@
             options = {
               Blacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["minecraft:bedrock" "minecraft:end_portal" "minecraft:end_portal_frame" "HardcoreEnderExpansion:transport_beacon" "Thaumcraft:blockPortalEldritch" "Thaumcraft:blockEldritchNothing" "ThaumicHorizons:vortexTH" "appliedenergistics2:tile.BlockMatrixFrame" "avaritiaddons:CompressedChest" "avaritiaddons:InfinityChest" "gregtech:gt.blockmachines"];
-                description = "modid:blockname:meta";
+                default = [ "minecraft:bedrock" "minecraft:end_portal" "minecraft:end_portal_frame" "HardcoreEnderExpansion:transport_beacon" "Thaumcraft:blockPortalEldritch" "Thaumcraft:blockEldritchNothing" "ThaumicHorizons:vortexTH" "appliedenergistics2:tile.BlockMatrixFrame" "avaritiaddons:CompressedChest" "avaritiaddons:InfinityChest" "gregtech:gt.blockmachines" ];
+                description = "Stops specified blocks from being teleposed. Put entries on new lines. Valid syntax is: modid:blockname:meta";
               };
             };
           };

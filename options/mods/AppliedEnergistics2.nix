@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/AppliedEnergistics2/AppliedEnergistics2.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/AppliedEnergistics2/AppliedEnergistics2.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         automation = lib.mkOption {
           default = {};
@@ -800,7 +800,7 @@
             options = {
               grinderOres = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
               };
               oreDoublePercentage = lib.mkOption {
                 type = lib.types.float;
@@ -1017,7 +1017,7 @@
               };
               RotaryCraft = lib.mkOption {
                 type = lib.types.float;
-                default = 8.884150675195451e-5;
+                default = 8.884150675195451E-5;
               };
               ThermalExpansion = lib.mkOption {
                 type = lib.types.float;
@@ -1233,23 +1233,23 @@
             options = {
               meteoriteDimensionWhitelist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["0, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT" "29, GalacticraftMars:tile.mars:9, GalacticraftMars:tile.mars:4, GalacticraftMars:tile.mars:6, minecraft:sand:1, GalacticraftMars:tile.mars:5"];
+                default = [ "0, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT" "29, GalacticraftMars:tile.mars:9, GalacticraftMars:tile.mars:4, GalacticraftMars:tile.mars:6, minecraft:sand:1, GalacticraftMars:tile.mars:5" ];
               };
               meteoriteInvalidSpawnBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
               };
               meteoriteSpawnChance = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["0=0.3"];
+                default = [ "0=0.3" ];
               };
               meteoriteValidSpawnBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["GalacticraftMars:tile.mars"];
+                default = [ "GalacticraftMars:tile.mars" ];
               };
               minMeteoriteDistance = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["0=707"];
+                default = [ "0=707" ];
               };
               quartzOresClusterAmount = lib.mkOption {
                 type = lib.types.int;
@@ -1275,14 +1275,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/AppliedEnergistics2/extracells.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/AppliedEnergistics2/extracells.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         integration = lib.mkOption {
           default = {};

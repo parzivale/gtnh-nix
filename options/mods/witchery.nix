@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/witchery.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/witchery.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -228,11 +228,11 @@
               };
               MutandisAdditionalBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["witchery:glintweed,0" "tallgrass,2"];
+                default = [ "witchery:glintweed,0" "tallgrass,2" ];
               };
               NaturesPowerReplaceableBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["mycelium"];
+                default = [ "mycelium" ];
               };
               NewFairestOfThemAllSpawnChance = lib.mkOption {
                 type = lib.types.float;
@@ -284,7 +284,7 @@
               };
               StrawmanSpawnerRules = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["Zombie" "Zombie" "Skeleton"];
+                default = [ "Zombie" "Zombie" "Skeleton" ];
               };
               TormentDimensionID = lib.mkOption {
                 type = lib.types.int;
@@ -344,7 +344,7 @@
               };
               TownBookshopAllowedBooks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["book" "witchery:ingredient,46" "witchery:ingredient,47" "witchery:ingredient,48" "witchery:ingredient,49" "witchery:ingredient,81" "witchery:ingredient,106" "witchery:ingredient,107" "witchery:ingredient,127" "witchery:bookbiomes2" "witchery:cauldronbook" "Thaumcraft:ItemThaumonomicon" "TConstruct:manualBook" "TConstruct:manualBook,1" "TConstruct:manualBook,2" "TConstruct:manualBook,3"];
+                default = [ "book" "witchery:ingredient,46" "witchery:ingredient,47" "witchery:ingredient,48" "witchery:ingredient,49" "witchery:ingredient,81" "witchery:ingredient,106" "witchery:ingredient,107" "witchery:ingredient,127" "witchery:bookbiomes2" "witchery:cauldronbook" "Thaumcraft:ItemThaumonomicon" "TConstruct:manualBook" "TConstruct:manualBook,1" "TConstruct:manualBook,2" "TConstruct:manualBook,3" ];
               };
               TownChurchClusterGroups = lib.mkOption {
                 type = lib.types.int;

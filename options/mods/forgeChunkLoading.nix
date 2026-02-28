@@ -43,12 +43,12 @@
               maximumChunksPerTicket = lib.mkOption {
                 type = lib.types.int;
                 default = 25;
-                description = "for a mod without an override. This is the maximum number of chunks a single ticket can force.";
+                description = "The default maximum number of chunks a mod can force, per ticket, for a mod without an override. This is the maximum number of chunks a single ticket can force.";
               };
               maximumTicketCount = lib.mkOption {
                 type = lib.types.int;
                 default = 200;
-                description = "in this file. This is the number of chunk loading requests a mod is allowed to make.";
+                description = "The default maximum ticket count for a mod which does not have an override in this file. This is the number of chunk loading requests a mod is allowed to make.";
               };
               playerTicketCount = lib.mkOption {
                 type = lib.types.int;
@@ -58,7 +58,7 @@
               dormantChunkCacheSize = lib.mkOption {
                 type = lib.types.int;
                 default = 0;
-                description = "loading times. Specify the size (in chunks) of that cache here";
+                description = "Unloaded chunks can first be kept in a dormant cache for quicker loading times. Specify the size (in chunks) of that cache here";
               };
             };
           };

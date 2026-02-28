@@ -131,7 +131,7 @@
               additionalSuns = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ "tbn36b:0/0.1/1" "selpin:0/0.1/1" "tbn36a:1/0/0" "centaurib:1/0.7/0.8" "vega:0.8/0.8/1" "sirius:0.6/0.8/1" "siriusb:1/1/1" "dark:0.1/0.1/0.1" "kapteyn:0.70/0.1/0.1" "CentauriA:0.9411765/0.8627451/0.8627451" "Barnarda:1/0.5647059/0.19607843" "TCetiA:1/0.7607843/0.7058824" "Vega:0.5882353/0.8352941/1" ];
-                description = "Example: 'myPlanet:1/0.6/0.1' [default: [tbn36b:0/0.1/1], [selpin:0/0.1/1], [tbn36a:1/0/0], [centaurib:1/0.7/0.8], [vega:0.8/0.8/1], [sirius:0.6/0.8/1], [siriusb:1/1/1], [dark:0.1/0.1/0.1], [kapteyn:0.70/0.1/0.1]]";
+                description = "Additional bodies to render with a colored aura, or set the aura of a specific star. The bodies in here will be considered stars on motherships as well. Format: '<bodyName>:<r>/<g>/<b>' with the colors as floats between 0 and 1. Example: 'myPlanet:1/0.6/0.1' [default: [tbn36b:0/0.1/1], [selpin:0/0.1/1], [tbn36a:1/0/0], [centaurib:1/0.7/0.8], [vega:0.8/0.8/1], [sirius:0.6/0.8/1], [siriusb:1/1/1], [dark:0.1/0.1/0.1], [kapteyn:0.70/0.1/0.1]]";
               };
               asteroidBelts = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
@@ -151,7 +151,7 @@
               planetsWithRings = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
                 default = [ "barnarda5:171:301:galaxyspace:textures/gui/celestialbodies/barnardaRings.png" "barnarda6:177:305:galaxyspace:textures/gui/celestialbodies/barnardaRings2.png" "appleapachia:8:20:extendedplanets:textures/gui/celestialbodies/appleapachiaRings.png" ];
-                description = "Example: 'uranus:8:20:galacticraftcore:textures/gui/celestialbodies/uranusRings.png' [default: [barnarda5:171:301:galaxyspace:textures/gui/celestialbodies/barnardaRings.png], [barnarda6:177:305:galaxyspace:textures/gui/celestialbodies/barnardaRings2.png], [appleapachia:8:20:extendedplanets:textures/gui/celestialbodies/appleapachiaRings.png]]";
+                description = "Bodies to render with rings. The format is: <bodyName>:<gapStart>:<gapEnd>:<Mod_Asset_Prefix>:<textureName>. The 'gapStart' and 'gapEnd' is the number of pixels from the left or the top to the start of the gap for the planet and the end, respectively. Example: 'uranus:8:20:galacticraftcore:textures/gui/celestialbodies/uranusRings.png' [default: [barnarda5:171:301:galaxyspace:textures/gui/celestialbodies/barnardaRings.png], [barnarda6:177:305:galaxyspace:textures/gui/celestialbodies/barnardaRings2.png], [appleapachia:8:20:extendedplanets:textures/gui/celestialbodies/appleapachiaRings.png]]";
               };
               skyRenderExclude = lib.mkOption {
                 type = lib.types.listOf lib.types.str;

@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/coretweaks.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/coretweaks.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         _categories = lib.mkOption {
           default = {};
@@ -88,7 +88,7 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "true";
-                      description = "Compatibility note: Not compatible with `fixUrlDetection` in Hodgepodge 1.6.14 and higher, which does the same (this feature will be disabled). [default: true]";
+                      description = "Fixes crash when certain invalid URLs appear in chat. Compatibility note: Not compatible with `fixUrlDetection` in Hodgepodge 1.6.14 and higher, which does the same (this feature will be disabled). [default: true]";
                     };
                   };
                 };
@@ -100,7 +100,7 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "true";
-                      description = "Compatibility note: Not compatible with LUMINA, which ostensibly accomplishes the same thing (this feature will be disabled). [default: true]";
+                      description = "Fixes heightmap calculation not including the top layer of 16x16x16 regions, causing lighting errors (MC-7508) Compatibility note: Not compatible with LUMINA, which ostensibly accomplishes the same thing (this feature will be disabled). [default: true]";
                     };
                   };
                 };
@@ -236,8 +236,8 @@
                     };
                     excludeLibraryTransformationPackages = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [":resetOnLoad" "com.google.gson." "joptsimple." "io.netty." "gnu.trove." "kotlin."];
-                      description = "(This list will be reset every time the config is loaded if the first element is ':resetOnLoad') [default: [:resetOnLoad], [com.google.gson.], [joptsimple.], [io.netty.], [gnu.trove.], [kotlin.]]";
+                      default = [ ":resetOnLoad" "com.google.gson." "joptsimple." "io.netty." "gnu.trove." "kotlin." ];
+                      description = "Packages that should be added as class transformer exclusions. (This list will be reset every time the config is loaded if the first element is ':resetOnLoad') [default: [:resetOnLoad], [com.google.gson.], [joptsimple.], [io.netty.], [gnu.trove.], [kotlin.]]";
                     };
                   };
                 };
@@ -333,7 +333,7 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "true";
-                      description = "Compatibility note: Not compatible with `jarDiscovererMemoryLeakFix` in FoamFix, which is a subset of this fix (we will attempt to disable their feature - if this fails, this feature will be disabled). [default: true]";
+                      description = "Cache jar discoverer results (and fix a memory leak as a nice bonus). Compatibility note: Not compatible with `jarDiscovererMemoryLeakFix` in FoamFix, which is a subset of this fix (we will attempt to disable their feature - if this fails, this feature will be disabled). [default: true]";
                     };
                     jarDiscovererCacheMaxAge = lib.mkOption {
                       type = lib.types.int;
@@ -350,7 +350,7 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "true";
-                      description = "Compatibility note: Not compatible with OptiFine, which does the same thing (this feature will be disabled). [default: true]";
+                      description = "Optimizes WorldServer#getPendingBlockUpdates. Speeds up chunk unloading. Compatibility note: Not compatible with OptiFine, which does the same thing (this feature will be disabled). [default: true]";
                     };
                   };
                 };
@@ -379,7 +379,7 @@
                     transformerCacheMode = lib.mkOption {
                       type = lib.types.str;
                       default = "LITE";
-                      description = "* FULL: Cache the entire transformer chain. Reduces startup time further, but breaks with many mods. [default: LITE]";
+                      description = "The type of transformer caching to use. * LITE: Cache individual transformations of select transformers. Reduces startup time. Safe. * FULL: Cache the entire transformer chain. Reduces startup time further, but breaks with many mods. [default: LITE]";
                     };
                     full = lib.mkOption {
                       default = {};
@@ -388,27 +388,27 @@
                           badClasses = lib.mkOption {
                             type = lib.types.str;
                             default = "net.eq2online.macros.permissions.MacroModPermissions";
-                            description = "[default: net.eq2online.macros.permissions.MacroModPermissions]";
+                            description = "Sometimes caching classes can cause problems. Classes in this list will not be cached. [default: net.eq2online.macros.permissions.MacroModPermissions]";
                           };
                           badTransformers = lib.mkOption {
                             type = lib.types.str;
                             default = "org.spongepowered.asm.mixin.transformer.Proxy,appeng.transformer.asm.ApiRepairer,com.mumfrey.liteloader.transformers.ClassOverlayTransformer+";
-                            description = "[default: org.spongepowered.asm.mixin.transformer.Proxy,appeng.transformer.asm.ApiRepairer,com.mumfrey.liteloader.transformers.ClassOverlayTransformer+]";
+                            description = "Comma-separated list of transformers for which the view of the transformer chain should be restored. The caching class transformer replaces the transformer chain with just itself. This creates conflicts with certain other transformers which also access the transformer chain, which can result in the game crashing. To solve this, our transformer will restore the view of the transformer chain while these transformers are running. How to find bad transformers? If you see another transformer's name in your crash log, or see its name in one of the iterator stack traces printed in debug mode, adding it to this list may solve the problem. [default: org.spongepowered.asm.mixin.transformer.Proxy,appeng.transformer.asm.ApiRepairer,com.mumfrey.liteloader.transformers.ClassOverlayTransformer+]";
                           };
                           modFilesToIgnore = lib.mkOption {
                             type = lib.types.str;
                             default = "CMD files.jar";
-                            description = "If your cache keeps getting rebuilt even though you haven't changed any mods, look for deranged mod files and add them to this list. [default: CMD files.jar]";
+                            description = "Comma-separated list of mod files to ignore modifications of when deciding if a cache rebuild should be triggered. If your cache keeps getting rebuilt even though you haven't changed any mods, look for deranged mod files and add them to this list. [default: CMD files.jar]";
                           };
                           recentCacheSize = lib.mkOption {
                             type = lib.types.int;
                             default = 512;
-                            description = "(Set to -1 to keep class bytecode in RAM forever) [range: -1 ~ 2147483647, default: 512]";
+                            description = "Cached class bytecode is removed from memory after being used, but the most recent N are kept around because the same class is often transformed more than once. This option sets the value of that N. (Set to -1 to keep class bytecode in RAM forever) [range: -1 ~ 2147483647, default: 512]";
                           };
                           verbosity = lib.mkOption {
                             type = lib.types.int;
                             default = 1;
-                            description = "* 2: Debug mode. Turn this on to log a bunch of stuff that can help find the cause of a crash. [range: 0 ~ 2, default: 1]";
+                            description = "* 0: Only print the essential messages. * 1: Print when the cache gets saved. * 2: Debug mode. Turn this on to log a bunch of stuff that can help find the cause of a crash. [range: 0 ~ 2, default: 1]";
                           };
                         };
                       };
@@ -429,13 +429,13 @@
                           };
                           transformersToCache = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
-                            default = ["cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer" "codechicken.core.asm.MCPDeobfuscationTransformer" "net.minecraftforge.classloading.FluidIdTransformer" "cpw.mods.fml.common.asm.transformers.SideTransformer" "cpw.mods.fml.common.asm.transformers.TerminalTransformer"];
+                            default = [ "cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer" "codechicken.core.asm.MCPDeobfuscationTransformer" "net.minecraftforge.classloading.FluidIdTransformer" "cpw.mods.fml.common.asm.transformers.SideTransformer" "cpw.mods.fml.common.asm.transformers.TerminalTransformer" ];
                             description = "Canonical class names of the transformers that should be cached. [default: [cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer], [codechicken.core.asm.MCPDeobfuscationTransformer], [net.minecraftforge.classloading.FluidIdTransformer], [cpw.mods.fml.common.asm.transformers.SideTransformer], [cpw.mods.fml.common.asm.transformers.TerminalTransformer]]";
                           };
                           useDiffsInTransformerCache = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
-                            description = "Disable this if you want to maximize speed at the cost of increased disk and memory usage. [default: true]";
+                            description = "Only store the difference made by a transformation rather than the entire result. Greatly reduces cache size (by ~40-70%) but makes transformation slightly (~25%) slower in the cached case and ~50-100% slower when the cache is first created. Disable this if you want to maximize speed at the cost of increased disk and memory usage. [default: true]";
                           };
                         };
                       };
@@ -505,7 +505,7 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "false";
-                      description = "Compatibility note: Not compatible BetterCrashes and CrashGuard, which do the same thing (this feature will be disabled). [default: true]";
+                      description = "Lets you survive crashes without the game exiting, usually. Compatibility note: Not compatible BetterCrashes and CrashGuard, which do the same thing (this feature will be disabled). [default: true]";
                     };
                   };
                 };
@@ -577,12 +577,12 @@
                     _enabled = lib.mkOption {
                       type = lib.types.str;
                       default = "true";
-                      description = "Compatibility note: Not compatible with NotFine, which has a setting to control the same thing (this feature will be disabled). [default: true]";
+                      description = "If enabled, the condition used to decide whether to render opaque or transparent clouds will be set based on the value of `cloudHeightCheckMode`. Compatibility note: Not compatible with NotFine, which has a setting to control the same thing (this feature will be disabled). [default: true]";
                     };
                     cloudHeightCheckMode = lib.mkOption {
                       type = lib.types.str;
                       default = "VARIABLE_CORRECTED";
-                      description = "* ALWAYS_OPAQUE: Always render clouds as opaque [default: VARIABLE_CORRECTED]";
+                      description = "Lets you tweak the condition used to decide whether to render opaque or transparent clouds. * VARIABLE_CORRECTED: Keep vanilla behavior of rendering clouds as opaque when the player is below them and transparent otherwise, but with the turning point corrected to match the cloud height even when the world provider has a different cloud height than 128. Also provides a fix for OptiFine's bug where clouds disappear when the player is between Y=128 and the cloud height level when they are raised. * ALWAYS_TRANSPARENT: Always render clouds as transparent (how it is in b1.7.3 and 1.15+) * ALWAYS_OPAQUE: Always render clouds as opaque [default: VARIABLE_CORRECTED]";
                     };
                   };
                 };

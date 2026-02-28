@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/EMT.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/EMT.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "essentia generator outputs" = lib.mkOption {
           default = {};
@@ -261,7 +261,7 @@
               };
               "White List for Ethereal Processor" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["ore" "cluster"];
+                default = [ "ore" "cluster" ];
                 description = "The allowed ore dictionary prefix for Ethereal Processor.";
               };
             };

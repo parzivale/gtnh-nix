@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/battlegear2.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/battlegear2.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         coremod = lib.mkOption {
           default = {};
@@ -71,13 +71,13 @@
               };
               "Disabled Items" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "flagpole, bow,";
+                default = [ ];
+                description = "This will disable completely the provided item, along with their renderers and recipes including them. These should all be placed on separate lines between the provided '<' and '>'. The valid values are: heraldric, chain, quiver, dagger, waraxe, mace, spear, shield, knight.armour, mb.arrow, flagpole, bow,";
               };
               "Disabled Recipies" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "mb.arrow.piercing, mb.arrow.poison, mb.arrow.mystery, mb.arrow.leech, chain.armour";
+                default = [ ];
+                description = "This will disable the crafting recipe for the provided item/blocks. It should be noted that this WILL NOT remove the item from the game, it will only disable the recipe. In this way the items may still be obtained through creative mode and cheats, but players will be unable to craft them. These should all be placed on separate lines between the provided '<' and '>'. The valid values are: chain, quiver, dagger, waraxe, mace, spear, shield, knight.armour, flagpole, bow, mb.arrow.holy, mb.arrow.ice, mb.arrow.explosive, mb.arrow.ender, mb.arrow.flame, mb.arrow.piercing, mb.arrow.poison, mb.arrow.mystery, mb.arrow.leech, chain.armour";
               };
               "Enable GUI Buttons" = lib.mkOption {
                 type = lib.types.bool;
@@ -101,8 +101,8 @@
               };
               "Disabled Renderers" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
-                description = "spear, shield, bow, quiver, flagpole,";
+                default = [ ];
+                description = "This will disable the special rendering for the provided item. These should all be placed on separate lines between the provided '<' and '>'. The valid values are: spear, shield, bow, quiver, flagpole,";
               };
               "Force screen components rendering" = lib.mkOption {
                 type = lib.types.bool;

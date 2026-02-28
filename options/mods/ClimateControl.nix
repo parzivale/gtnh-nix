@@ -1279,8 +1279,8 @@
                 description = "force small continent near origin";
               };
               maxChasm = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
                 description = "max height value for allowing rivers; 10.0 allows everything; 0.75 is plains but no hills";
               };
               rescueLimit = lib.mkOption {
