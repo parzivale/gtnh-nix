@@ -396,8 +396,8 @@
                 type = lib.types.submodule {
                   options = {
                     locomotiveRelayBasePower = lib.mkOption {
-                      type = lib.types.float;
-                      default = 20.0;
+                      type = lib.types.str;
+                      default = "20.0";
                       description = "How much base energy the Locomotive Relay consumes per operation [range: 0.0 ~ 10000.0, default: 20.0]";
                     };
                   };
