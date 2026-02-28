@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/hydroenergy.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/hydroenergy.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "energy balance" = lib.mkOption {
           default = {};
@@ -24,28 +24,28 @@
                 description = "[SERVER] How many EU a dam will provide as Pressurized Water for turbines per tick.";
               };
               efficiencyLossPerTier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.029999999329447746";
+                type = lib.types.float;
+                default = 0.029999999329447746;
                 description = "[SERVER] Efficiency for Hydro Pump and Hydro Turbine in voltage variants and beginning from LV with '(1.0 - efficiencyLossPerTier)'.";
               };
               enabledTiers = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "mv" "hv" "ev" "iv" "luv" "zpm" "uv" ];
+                default = ["mv" "hv" "ev" "iv" "luv" "zpm" "uv"];
                 description = "[SERVER] A list of all tiers that should have a Hydro Pump and Hydro Turbine generated. ULV is ignored since it is disabled.";
               };
               milliBucketPerEU = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "[SERVER] Conversion ratio between Pressurized Water and EU on pressure 1. Affects the throughput on pipes between multi blocks and how much energy is stored in each Hydro Dam.";
               };
               pressureIncreasePerTier = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "[SERVER] Hydro Pump height limit for voltage variants in blocks and beginning from LV with '1 * pressureIncreasePerTier'.";
               };
               waterBonusPerSurfaceBlockPerRainTick = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "[SERVER] How many EU are added to a dam during rain for each water block on the highest Y coordinate aka water surface when full.";
               };
             };
@@ -61,8 +61,8 @@
                 description = "[SERVER + CLIENT] Offset of blockIds for GregTech block registration";
               };
               clippingOffset = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "[SERVER + CLIENT] If water is sitting too narrow over a block there are graphical issues (Depth buffer resolution). To fix this, the game will not render a waterLevel that sits lower then the specified value over a block. This value is also used for physics calculation and is synced from the server all clients.";
               };
               delayBetweenSpreadingChunks = lib.mkOption {
@@ -72,7 +72,7 @@
               };
               dimensionIdWhitelist = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 0 ];
+                default = [0];
                 description = "[SERVER] List of dimension a player is allowed to place a controller";
               };
               forceOpenGL = lib.mkOption {
