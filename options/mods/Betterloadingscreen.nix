@@ -5,22 +5,22 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/Betterloadingscreen/betterloadingscreen.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/Betterloadingscreen/betterloadingscreen.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "changing background" = lib.mkOption {
           default = {};
           type = lib.types.submodule {
             options = {
               alphaDecreaseStep = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
               };
               backgroundChanging = lib.mkOption {
                 type = lib.types.bool;
@@ -28,8 +28,8 @@
                 description = "Whether backgrounds should change randomly during loading. They are taken from the random background list [default: true]";
               };
               blendTimeMilliseconds = lib.mkOption {
-                type = lib.types.str;
-                default = "2000.0";
+                type = lib.types.float;
+                default = 2000.0;
                 description = "Time in milliseconds between each image change (smooth blend). [range: 0.0 ~ 30000.0, default: 2000.0]";
               };
               changeFrequency = lib.mkOption {

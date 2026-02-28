@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/coretweaks.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/coretweaks.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         _categories = lib.mkOption {
           default = {};
@@ -236,7 +236,7 @@
                     };
                     excludeLibraryTransformationPackages = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ ":resetOnLoad" "com.google.gson." "joptsimple." "io.netty." "gnu.trove." "kotlin." ];
+                      default = [":resetOnLoad" "com.google.gson." "joptsimple." "io.netty." "gnu.trove." "kotlin."];
                       description = "(This list will be reset every time the config is loaded if the first element is ':resetOnLoad') [default: [:resetOnLoad], [com.google.gson.], [joptsimple.], [io.netty.], [gnu.trove.], [kotlin.]]";
                     };
                   };
@@ -429,7 +429,7 @@
                           };
                           transformersToCache = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
-                            default = [ "cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer" "codechicken.core.asm.MCPDeobfuscationTransformer" "net.minecraftforge.classloading.FluidIdTransformer" "cpw.mods.fml.common.asm.transformers.SideTransformer" "cpw.mods.fml.common.asm.transformers.TerminalTransformer" ];
+                            default = ["cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer" "codechicken.core.asm.MCPDeobfuscationTransformer" "net.minecraftforge.classloading.FluidIdTransformer" "cpw.mods.fml.common.asm.transformers.SideTransformer" "cpw.mods.fml.common.asm.transformers.TerminalTransformer"];
                             description = "Canonical class names of the transformers that should be cached. [default: [cpw.mods.fml.common.asm.transformers.DeobfuscationTransformer], [codechicken.core.asm.MCPDeobfuscationTransformer], [net.minecraftforge.classloading.FluidIdTransformer], [cpw.mods.fml.common.asm.transformers.SideTransformer], [cpw.mods.fml.common.asm.transformers.TerminalTransformer]]";
                           };
                           useDiffsInTransformerCache = lib.mkOption {
@@ -491,8 +491,8 @@
                       description = "If enabled, the distance of the view fustrum's far plane will be clamped above `minFarPlaneDistance`. Setting it to 180 or higher fixes clipping in OptiFine's custom skybox that happens when using lower render distances. [default: true]";
                     };
                     minFarPlaneDistance = lib.mkOption {
-                      type = lib.types.str;
-                      default = "180.0";
+                      type = lib.types.float;
+                      default = 180.0;
                       description = "See `clampFarPlaneDistance`. [range: 0.0 ~ 3.4028235E38, default: 180.0]";
                     };
                   };

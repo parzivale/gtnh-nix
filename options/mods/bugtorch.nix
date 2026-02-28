@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/bugtorch/base.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/bugtorch/base.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "backported features" = lib.mkOption {
           default = {};
@@ -94,14 +94,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/bugtorch/mixins.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/bugtorch/mixins.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "backported features" = lib.mkOption {
           default = {};
@@ -423,8 +423,8 @@
                 description = "Potion particles coming off of the player entity you control are always clear. [default: false]";
               };
               reduceLightningVolume = lib.mkOption {
-                type = lib.types.str;
-                default = "10000.0";
+                type = lib.types.float;
+                default = 10000.0;
                 description = "Set to 10,000 to disable. [range: 2.0 ~ 10000.0, default: 10000.0]";
               };
               removeEntityDuplicateExtendedPropertiesIdentifierSpam = lib.mkOption {
@@ -433,73 +433,73 @@
                 description = "Removes \"An attempt was made to register extended properties using an existing key\" log spam caused by some mods. [default: true]";
               };
               scaledDrowningDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledDrowningDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               useAnyDyeOnLeatherArmor = lib.mkOption {
@@ -519,14 +519,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/bugtorch/mixinsModSupport.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/bugtorch/mixinsModSupport.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "bug fixes" = lib.mkOption {
           default = {};
@@ -593,7 +593,7 @@
               };
               extraUtilitiesGoldenLassoBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "noppes.npcs.entity.EntityCustomNpc" ];
+                default = ["noppes.npcs.entity.EntityCustomNpc"];
                 description = "Blacklist entities from Extra Utilities Golden Lasso. [default: [noppes.npcs.entity.EntityCustomNpc]]";
               };
               extraUtilitiesTradingPostVillageNamesNitwitFilter = lib.mkOption {
@@ -607,13 +607,13 @@
                 description = "Use a pastebin proxy to keep LLibrary from crashing with some regional blocks. [default: false]";
               };
               scaledExtraUtilitiesDarknessDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledExtraUtilitiesDarknessDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
             };
@@ -628,14 +628,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/bugtorch/modSupport.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/bugtorch/modSupport.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "bug fixes" = lib.mkOption {
           default = {};

@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/bogosorter.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/bogosorter.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -24,8 +24,8 @@
                 description = "The damage threshold for auto-refill. If the item has less than this amount of durability, it will be refilled. [range: -2147483648 ~ 2147483647, default: 1]";
               };
               buttonColor = lib.mkOption {
-                type = lib.types.str;
-                default = "-1";
+                type = lib.types.float;
+                default = -1;
                 description = "Value is displayed in decimal here but interpreted as hex internally. [range: -2147483648 ~ 2147483647, default: -1]";
               };
               buttonEnabled = lib.mkOption {
@@ -94,7 +94,7 @@
                     };
                     dropoffTargetNames = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ "Chest" "Barrel" "Drawer" "Crate" ];
+                      default = ["Chest" "Barrel" "Drawer" "Crate"];
                       description = "Valid inventory names for drop-off targeting (substring match). [default: [Chest], [Barrel], [Drawer], [Crate]]";
                     };
                     enableDropOff = lib.mkOption {

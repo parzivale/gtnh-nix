@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/Botania.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/Botania.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -90,7 +90,7 @@
               };
               "fancySkybox.customDimID" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ ];
+                default = [];
                 description = "The ID of the dimension to use";
               };
               "fancySkybox.enable" = lib.mkOption {
@@ -119,8 +119,8 @@
                 description = "Turn this off ONLY IF you're on an extremely large world with an exaggerated count of Mana Spreaders/Mana Pools and are experiencing TPS lag. This toggles whether flowers are strict with their checking for connecting to pools/spreaders or just check whenever possible.";
               };
               "flowerParticles.frequency" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.75";
+                type = lib.types.float;
+                default = 0.75;
                 description = "The frequency in which particles spawn from normal (worldgen) mystical flowers";
               };
               "flowerTextures.alt" = lib.mkOption {
@@ -275,12 +275,12 @@
               };
               "worldgen.flower.dimensionBlacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ ];
+                default = [];
                 description = "Blacklist of which dimension generates Botania flowers.";
               };
               "worldgen.flower.dimensionWhitelist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 64 ];
+                default = [64];
                 description = "Whitelist of which dimension generates Botania flowers. Empty means any dimension can.";
               };
               "worldgen.flower.patchChance" = lib.mkOption {
@@ -299,18 +299,18 @@
                 description = "The quantity of Botania flower patches to generate in the world, defaults to 2, the lower the number the less patches generate.";
               };
               "worldgen.flower.tallChance" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "The chance for a Botania flower generated in a patch to be a tall flower. 0.1 is 10%, 1 is 100%. Defaults to 0.05";
               };
               "worldgen.mushroom.dimensionBlacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ ];
+                default = [];
                 description = "Blacklist of which dimension generates Botania mushrooms.";
               };
               "worldgen.mushroom.dimensionWhitelist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 7 64 ];
+                default = [7 64];
                 description = "Whitelist of which dimension generates Botania mushrooms. Empty means any dimension can.";
               };
               "worldgen.mushroom.quantity" = lib.mkOption {

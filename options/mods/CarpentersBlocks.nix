@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/CarpentersBlocks.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/CarpentersBlocks.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         blocks = lib.mkOption {
           default = {};
@@ -95,7 +95,7 @@
             options = {
               "Cover Exceptions" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Silverwood Planks" "Greatwood Planks" "Thatch" ];
+                default = ["Silverwood Planks" "Greatwood Planks" "Thatch"];
                 description = "Add your own by supplying the display name for the block (en_US only).";
               };
               "Enable Chisel Designs" = lib.mkOption {
@@ -159,7 +159,7 @@
               };
               "Overlay Definitions" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Seeds:grass" "Snowball:snow" "String:web" "Vines:vine" "Wheat:hay" "Mushroom:mycelium" ];
+                default = ["Seeds:grass" "Snowball:snow" "String:web" "Vines:vine" "Wheat:hay" "Mushroom:mycelium"];
                 description = "Overlay suffixes are :grass, :snow, :web, :vine, :hay, :mycelium";
               };
               "Routable Fluids" = lib.mkOption {
@@ -200,16 +200,16 @@
                 default = true;
               };
               itemHammerDamageChanceFromCollapsible = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
               };
               itemHammerDamageChanceFromSlopes = lib.mkOption {
-                type = lib.types.str;
-                default = "0.75";
+                type = lib.types.float;
+                default = 0.75;
               };
               itemHammerDamageChanceFromStairs = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
             };
           };

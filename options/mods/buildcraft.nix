@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/buildcraft/main.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/buildcraft/main.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         blueprints = lib.mkOption {
           default = {};
@@ -25,12 +25,12 @@
               };
               excludedBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "blocks that should be excluded from the builder.";
               };
               excludedMods = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "mods that should be excluded from the builder.";
               };
               serverDatabaseDirectory = lib.mkOption {
@@ -109,7 +109,7 @@
             options = {
               "boards.blacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "buildcraft:boardRobotBomber" ];
+                default = ["buildcraft:boardRobotBomber"];
                 description = "Blacklisted robots boards";
               };
               builderMaxIterationsPerItemFactor = lib.mkOption {
@@ -123,8 +123,8 @@
                 description = "Should engines explode upon overheat?";
               };
               "fuel.fuel.combustion" = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "adjust energy value of Fuel in Combustion Engines";
               };
               "fuel.fuel.combustion.energyOutput" = lib.mkOption {
@@ -133,8 +133,8 @@
                 description = "adjust output energy by Fuel in Combustion Engines";
               };
               "fuel.oil.combustion" = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "adjust energy value of Oil in Combustion Engines";
               };
               "fuel.oil.combustion.energyOutput" = lib.mkOption {
@@ -234,7 +234,7 @@
                     };
                     facadeBlacklist = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ "minecraft:end_portal_frame" "minecraft:grass" "minecraft:leaves" "minecraft:leaves2" "minecraft:lit_pumpkin" "minecraft:lit_redstone_lamp" "minecraft:mob_spawner" "minecraft:monster_egg" "minecraft:redstone_lamp" "minecraft:double_stone_slab" "minecraft:double_wooden_slab" "minecraft:sponge" ];
+                      default = ["minecraft:end_portal_frame" "minecraft:grass" "minecraft:leaves" "minecraft:leaves2" "minecraft:lit_pumpkin" "minecraft:lit_redstone_lamp" "minecraft:mob_spawner" "minecraft:monster_egg" "minecraft:redstone_lamp" "minecraft:double_stone_slab" "minecraft:double_wooden_slab" "minecraft:sponge"];
                       description = "What block types should be blacklisted from being a facade?";
                     };
                     facadeBlacklistAsWhitelist = lib.mkOption {
@@ -253,8 +253,8 @@
                       description = "Should all BC facades be shown in Creative/NEI, or just a few carefully chosen ones?";
                     };
                     hardness = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.00";
+                      type = lib.types.float;
+                      default = 5.00;
                       description = "How hard to break should a pipe be?";
                     };
                     slimeballWaterproofRecipe = lib.mkOption {
@@ -290,18 +290,18 @@
           type = lib.types.submodule {
             options = {
               chipsetCostMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "The cost multiplier for Chipsets";
               };
               gateCostMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "What should be the multiplier of all gate power costs?";
               };
               miningUsageMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "What should the multiplier of all mining-related power usage be?";
               };
             };
@@ -333,8 +333,8 @@
                 description = "Should BuildCraft generate water springs?";
               };
               oilWellGenerationRate = lib.mkOption {
-                type = lib.types.str;
-                default = "0";
+                type = lib.types.float;
+                default = 0;
                 description = "How high should be the probability of an oil well generating?";
               };
               spawnOilSprings = lib.mkOption {
@@ -358,17 +358,17 @@
                     };
                     excessiveOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ "SANDY" ];
+                      default = ["SANDY"];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that should have GREATLY increased oil generation rates.";
                     };
                     excludeOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ "Sky" "Hell" ];
+                      default = ["Sky" "Hell"];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that are excluded from generating oil.";
                     };
                     increasedOilIDs = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
-                      default = [ "SANDY" "Taiga" ];
+                      default = ["SANDY" "Taiga"];
                       description = "IDs or Biome Types (e.g. SANDY,OCEAN) of biomes that should have increased oil generation rates.";
                     };
                   };
