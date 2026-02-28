@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/railcraft/blocks.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/railcraft/blocks.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         blocks = lib.mkOption {
           default = {};
@@ -1341,14 +1341,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/railcraft/items.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/railcraft/items.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         items = lib.mkOption {
           default = {};
@@ -1686,14 +1686,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/railcraft/modules.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/railcraft/modules.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         modules = lib.mkOption {
           default = {};
@@ -1819,14 +1819,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/railcraft/railcraft.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/railcraft/railcraft.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         anchors = lib.mkOption {
           default = {};
@@ -2402,12 +2402,12 @@
                       type = lib.types.submodule {
                         options = {
                           biofuelMultiplier = lib.mkOption {
-                            type = lib.types.str;
-                            default = "1.0";
+                            type = lib.types.float;
+                            default = 1.0;
                           };
                           fuelMultiplier = lib.mkOption {
-                            type = lib.types.str;
-                            default = "1.0";
+                            type = lib.types.float;
+                            default = 1.0;
                           };
                         };
                       };
@@ -2420,8 +2420,8 @@
                 type = lib.types.submodule {
                   options = {
                     fuelPerSteamMultiplier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -2465,11 +2465,11 @@
                         options = {
                           "entities.excluded" = lib.mkOption {
                             type = lib.types.listOf lib.types.str;
-                            default = [ ];
+                            default = [];
                           };
                           "max.speed" = lib.mkOption {
-                            type = lib.types.str;
-                            default = "0.800000011920929";
+                            type = lib.types.float;
+                            default = 0.800000011920929;
                           };
                         };
                       };
@@ -2573,8 +2573,8 @@
                             default = "{}";
                           };
                           miningSpeed = lib.mkOption {
-                            type = lib.types.str;
-                            default = "1.0";
+                            type = lib.types.float;
+                            default = 1.0;
                           };
                         };
                       };
@@ -2596,8 +2596,8 @@
                             type = lib.types.submodule {
                               options = {
                                 efficiencyMulitplier = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "3.0";
+                                  type = lib.types.float;
+                                  default = 3.0;
                                 };
                               };
                             };
