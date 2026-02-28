@@ -73797,12 +73797,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73824,8 +73824,8 @@
                       default = 455;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0999999046325684";
+                      type = lib.types.float;
+                      default = 2.0999999046325684;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73840,12 +73840,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73867,8 +73867,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73883,12 +73883,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73910,8 +73910,8 @@
                       default = 900;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73926,12 +73926,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73953,8 +73953,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73969,12 +73969,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73996,8 +73996,8 @@
                       default = 135;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.100000023841858";
+                      type = lib.types.float;
+                      default = 1.100000023841858;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74012,12 +74012,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74039,8 +74039,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74055,12 +74055,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74082,8 +74082,8 @@
                       default = 285;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.25";
+                      type = lib.types.float;
+                      default = 1.25;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74098,12 +74098,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74125,8 +74125,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74141,12 +74141,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74168,8 +74168,8 @@
                       default = 413;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.2999999523162842";
+                      type = lib.types.float;
+                      default = 1.2999999523162842;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74184,12 +74184,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74211,8 +74211,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74227,12 +74227,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74254,8 +74254,8 @@
                       default = 300;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.2999999523162842";
+                      type = lib.types.float;
+                      default = 1.2999999523162842;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74270,12 +74270,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74297,8 +74297,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74313,12 +74313,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74340,8 +74340,8 @@
                       default = 900;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74356,12 +74356,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74383,8 +74383,8 @@
                       default = 1728;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74399,12 +74399,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74426,8 +74426,8 @@
                       default = 500;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.350000023841858";
+                      type = lib.types.float;
+                      default = 1.350000023841858;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74442,12 +74442,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74469,8 +74469,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74485,12 +74485,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74512,8 +74512,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74528,12 +74528,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74555,8 +74555,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74571,12 +74571,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74598,8 +74598,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74614,12 +74614,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74641,8 +74641,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74657,12 +74657,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74684,8 +74684,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74700,12 +74700,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74727,8 +74727,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74743,12 +74743,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74770,8 +74770,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74786,12 +74786,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74813,8 +74813,8 @@
                       default = 2592;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74829,12 +74829,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74856,8 +74856,8 @@
                       default = 1440;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74872,12 +74872,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74899,8 +74899,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74915,12 +74915,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74942,8 +74942,8 @@
                       default = 1920;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -74958,12 +74958,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -74985,8 +74985,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75001,12 +75001,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75028,8 +75028,8 @@
                       default = 150;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.1799999475479126";
+                      type = lib.types.float;
+                      default = 1.1799999475479126;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75044,12 +75044,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75071,8 +75071,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75087,12 +75087,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75114,8 +75114,8 @@
                       default = 2250;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75130,12 +75130,12 @@
                       default = 3;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75157,8 +75157,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75173,12 +75173,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75200,8 +75200,8 @@
                       default = 72;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75216,12 +75216,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75243,8 +75243,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75259,12 +75259,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75286,8 +75286,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75302,12 +75302,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75329,8 +75329,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75345,12 +75345,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75372,8 +75372,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75388,12 +75388,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75415,8 +75415,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75431,12 +75431,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75458,8 +75458,8 @@
                       default = 33;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.009999999776482582";
+                      type = lib.types.float;
+                      default = 0.009999999776482582;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75474,12 +75474,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75501,8 +75501,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75517,12 +75517,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75544,8 +75544,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75560,12 +75560,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75587,8 +75587,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75603,12 +75603,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75630,8 +75630,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75646,12 +75646,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75673,8 +75673,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75689,12 +75689,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75716,8 +75716,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75732,12 +75732,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75759,8 +75759,8 @@
                       default = 12;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-0.5";
+                      type = lib.types.float;
+                      default = -0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75775,12 +75775,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75802,8 +75802,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75818,12 +75818,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75845,8 +75845,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75861,12 +75861,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75888,8 +75888,8 @@
                       default = 360;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75904,12 +75904,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75931,8 +75931,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75947,12 +75947,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -75974,8 +75974,8 @@
                       default = 72;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -75990,12 +75990,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76017,8 +76017,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76033,12 +76033,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76060,8 +76060,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76076,12 +76076,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76103,8 +76103,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76119,12 +76119,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76146,8 +76146,8 @@
                       default = 18;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-0.5";
+                      type = lib.types.float;
+                      default = -0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76162,12 +76162,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76189,8 +76189,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76205,12 +76205,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76232,8 +76232,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76248,12 +76248,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76275,8 +76275,8 @@
                       default = 75;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.6000000238418579";
+                      type = lib.types.float;
+                      default = 0.6000000238418579;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76291,12 +76291,12 @@
                       default = 4;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76318,8 +76318,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76334,12 +76334,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76361,8 +76361,8 @@
                       default = 5625;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.75";
+                      type = lib.types.float;
+                      default = 1.75;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76377,12 +76377,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76404,8 +76404,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76420,12 +76420,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76447,8 +76447,8 @@
                       default = 73;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76463,12 +76463,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76490,8 +76490,8 @@
                       default = 12;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76506,12 +76506,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76533,8 +76533,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76549,12 +76549,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76576,8 +76576,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76592,12 +76592,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76619,8 +76619,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76635,12 +76635,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76662,8 +76662,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76678,12 +76678,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76705,8 +76705,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76721,12 +76721,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76748,8 +76748,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76764,12 +76764,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76791,8 +76791,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76807,12 +76807,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76834,8 +76834,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76850,12 +76850,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76877,8 +76877,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76893,12 +76893,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76920,8 +76920,8 @@
                       default = 672;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76936,12 +76936,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -76963,8 +76963,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -76979,12 +76979,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77006,8 +77006,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77022,12 +77022,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77049,8 +77049,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77065,12 +77065,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77092,8 +77092,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77108,12 +77108,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77135,8 +77135,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77151,12 +77151,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77178,8 +77178,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77194,12 +77194,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77221,8 +77221,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77237,12 +77237,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77264,8 +77264,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77280,12 +77280,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77307,8 +77307,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77323,12 +77323,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77350,8 +77350,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77366,12 +77366,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77393,8 +77393,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77409,12 +77409,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77436,8 +77436,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77452,12 +77452,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77479,8 +77479,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77495,12 +77495,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77522,8 +77522,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77538,12 +77538,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77565,8 +77565,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77581,12 +77581,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77608,8 +77608,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77624,12 +77624,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77651,8 +77651,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77667,12 +77667,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77694,8 +77694,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77710,12 +77710,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77737,8 +77737,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77753,12 +77753,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77780,8 +77780,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77796,12 +77796,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77823,8 +77823,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77839,12 +77839,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77866,8 +77866,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77882,12 +77882,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77909,8 +77909,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77925,12 +77925,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77952,8 +77952,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -77968,12 +77968,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -77995,8 +77995,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78011,12 +78011,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78038,8 +78038,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78054,12 +78054,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78081,8 +78081,8 @@
                       default = 61440;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78097,12 +78097,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78124,8 +78124,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78140,12 +78140,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78167,8 +78167,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78183,12 +78183,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78210,8 +78210,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78226,12 +78226,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78253,8 +78253,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78269,12 +78269,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78296,8 +78296,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78312,12 +78312,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78339,8 +78339,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78355,12 +78355,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78382,8 +78382,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78398,12 +78398,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78425,8 +78425,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78441,12 +78441,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78468,8 +78468,8 @@
                       default = 1920;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78484,12 +78484,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78511,8 +78511,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78527,12 +78527,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78554,8 +78554,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78570,12 +78570,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-1.0";
+                      type = lib.types.float;
+                      default = -1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78597,8 +78597,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78613,12 +78613,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-1.0";
+                      type = lib.types.float;
+                      default = -1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78640,8 +78640,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78656,12 +78656,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78683,8 +78683,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78699,12 +78699,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78726,8 +78726,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78742,12 +78742,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78769,8 +78769,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78785,12 +78785,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78812,8 +78812,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78828,12 +78828,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78855,8 +78855,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78871,12 +78871,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78898,8 +78898,8 @@
                       default = 3072;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78914,12 +78914,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78941,8 +78941,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -78957,12 +78957,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -78984,8 +78984,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79000,12 +79000,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79027,8 +79027,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79043,12 +79043,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79070,8 +79070,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79086,12 +79086,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79113,8 +79113,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79129,12 +79129,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79156,8 +79156,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79172,12 +79172,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79199,8 +79199,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79215,12 +79215,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79242,8 +79242,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79258,12 +79258,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79285,8 +79285,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79301,12 +79301,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79328,8 +79328,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79344,12 +79344,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79371,8 +79371,8 @@
                       default = 1440;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79387,12 +79387,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79414,8 +79414,8 @@
                       default = 3000;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79430,12 +79430,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79457,8 +79457,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79473,12 +79473,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79500,8 +79500,8 @@
                       default = 2250;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79516,12 +79516,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79543,8 +79543,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79559,12 +79559,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79586,8 +79586,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79602,12 +79602,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79629,8 +79629,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79645,12 +79645,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79672,8 +79672,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79688,12 +79688,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79715,8 +79715,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79731,12 +79731,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79758,8 +79758,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79774,12 +79774,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79801,8 +79801,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79817,12 +79817,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79844,8 +79844,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79860,12 +79860,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79887,8 +79887,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79903,12 +79903,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79930,8 +79930,8 @@
                       default = 5400;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79946,12 +79946,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -79973,8 +79973,8 @@
                       default = 2700;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -79989,12 +79989,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80016,8 +80016,8 @@
                       default = 360;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80032,12 +80032,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80059,8 +80059,8 @@
                       default = 5400;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80075,12 +80075,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80102,8 +80102,8 @@
                       default = 2700;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80118,12 +80118,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80145,8 +80145,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80161,12 +80161,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80188,8 +80188,8 @@
                       default = 1800;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80204,12 +80204,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80231,8 +80231,8 @@
                       default = 7500;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "10.0";
+                      type = lib.types.float;
+                      default = 10.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80247,12 +80247,12 @@
                       default = 10;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80274,8 +80274,8 @@
                       default = 24576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80290,12 +80290,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80317,8 +80317,8 @@
                       default = 49152;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.5";
+                      type = lib.types.float;
+                      default = 7.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80333,12 +80333,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80360,8 +80360,8 @@
                       default = 617;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.600000023841858";
+                      type = lib.types.float;
+                      default = 1.600000023841858;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80376,12 +80376,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80403,8 +80403,8 @@
                       default = 75;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80419,12 +80419,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80446,8 +80446,8 @@
                       default = 450;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.600000023841858";
+                      type = lib.types.float;
+                      default = 1.600000023841858;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80462,12 +80462,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-2.0";
+                      type = lib.types.float;
+                      default = -2.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80489,8 +80489,8 @@
                       default = 38;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80505,12 +80505,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80532,8 +80532,8 @@
                       default = 38;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80548,12 +80548,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80575,8 +80575,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80591,12 +80591,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80618,8 +80618,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80634,12 +80634,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80661,8 +80661,8 @@
                       default = 288;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80677,12 +80677,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80704,8 +80704,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80720,12 +80720,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80747,8 +80747,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80763,12 +80763,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80790,8 +80790,8 @@
                       default = 1536;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80806,12 +80806,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80833,8 +80833,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80849,12 +80849,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80876,8 +80876,8 @@
                       default = 6144;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80892,12 +80892,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80919,8 +80919,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80935,12 +80935,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -80962,8 +80962,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -80978,12 +80978,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81005,8 +81005,8 @@
                       default = 7680;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81021,12 +81021,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81048,8 +81048,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81064,12 +81064,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81091,8 +81091,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81107,12 +81107,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81134,8 +81134,8 @@
                       default = 24570;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.5";
+                      type = lib.types.float;
+                      default = 7.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81150,12 +81150,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81177,8 +81177,8 @@
                       default = 6144;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81193,12 +81193,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81220,8 +81220,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81236,12 +81236,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81263,8 +81263,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81279,12 +81279,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81306,8 +81306,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81322,12 +81322,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81349,8 +81349,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81365,12 +81365,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81392,8 +81392,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81408,12 +81408,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81435,8 +81435,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81451,12 +81451,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81478,8 +81478,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81494,12 +81494,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81521,8 +81521,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81537,12 +81537,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81564,8 +81564,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-0.5";
+                      type = lib.types.float;
+                      default = -0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81580,12 +81580,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81607,8 +81607,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81623,12 +81623,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81650,8 +81650,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81666,12 +81666,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81693,8 +81693,8 @@
                       default = 983040;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81709,12 +81709,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81736,8 +81736,8 @@
                       default = 1966080;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.5";
+                      type = lib.types.float;
+                      default = 7.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81752,12 +81752,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81779,8 +81779,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81795,12 +81795,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81822,8 +81822,8 @@
                       default = 0;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.5";
+                      type = lib.types.float;
+                      default = 7.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81838,12 +81838,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81865,8 +81865,8 @@
                       default = 88;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81881,12 +81881,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81908,8 +81908,8 @@
                       default = 137;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "11.5";
+                      type = lib.types.float;
+                      default = 11.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81924,12 +81924,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81951,8 +81951,8 @@
                       default = 240;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -81967,12 +81967,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -81994,8 +81994,8 @@
                       default = 3000;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82010,12 +82010,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82037,8 +82037,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82053,12 +82053,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82080,8 +82080,8 @@
                       default = 1500;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82096,12 +82096,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82123,8 +82123,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82139,12 +82139,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82166,8 +82166,8 @@
                       default = 768;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82182,12 +82182,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82209,8 +82209,8 @@
                       default = 7680;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82225,12 +82225,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82252,8 +82252,8 @@
                       default = 384;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82268,12 +82268,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82295,8 +82295,8 @@
                       default = 576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82311,12 +82311,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82338,8 +82338,8 @@
                       default = 637500;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "11.5";
+                      type = lib.types.float;
+                      default = 11.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82354,12 +82354,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82381,8 +82381,8 @@
                       default = 637500;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "11.5";
+                      type = lib.types.float;
+                      default = 11.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82397,12 +82397,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82424,8 +82424,8 @@
                       default = 110;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82440,12 +82440,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82467,8 +82467,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82483,12 +82483,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82510,8 +82510,8 @@
                       default = 3;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82526,12 +82526,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82553,8 +82553,8 @@
                       default = 3;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82569,12 +82569,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82596,8 +82596,8 @@
                       default = 3;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82612,12 +82612,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82639,8 +82639,8 @@
                       default = 2;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82655,12 +82655,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82682,8 +82682,8 @@
                       default = 40;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82698,12 +82698,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82725,8 +82725,8 @@
                       default = 35;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82741,12 +82741,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82768,8 +82768,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82784,12 +82784,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82811,8 +82811,8 @@
                       default = 20;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82827,12 +82827,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82854,8 +82854,8 @@
                       default = 1954;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.5";
+                      type = lib.types.float;
+                      default = 7.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82870,12 +82870,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82897,8 +82897,8 @@
                       default = 20;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82913,12 +82913,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82940,8 +82940,8 @@
                       default = 80;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "15.5";
+                      type = lib.types.float;
+                      default = 15.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82956,12 +82956,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -82983,8 +82983,8 @@
                       default = 1694;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "8.5";
+                      type = lib.types.float;
+                      default = 8.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -82999,12 +82999,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83026,8 +83026,8 @@
                       default = 464;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83042,12 +83042,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83069,8 +83069,8 @@
                       default = 1975;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83085,12 +83085,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83112,8 +83112,8 @@
                       default = 1728;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83128,12 +83128,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83155,8 +83155,8 @@
                       default = 886;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83171,12 +83171,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83198,8 +83198,8 @@
                       default = 4401;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "11.5";
+                      type = lib.types.float;
+                      default = 11.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83214,12 +83214,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83241,8 +83241,8 @@
                       default = 1474;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83257,12 +83257,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83284,8 +83284,8 @@
                       default = 70;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83300,12 +83300,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83327,8 +83327,8 @@
                       default = 2189;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "12.5";
+                      type = lib.types.float;
+                      default = 12.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83343,12 +83343,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83370,8 +83370,8 @@
                       default = 4608;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83386,12 +83386,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83413,8 +83413,8 @@
                       default = 2526;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "10.5";
+                      type = lib.types.float;
+                      default = 10.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83429,12 +83429,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83456,8 +83456,8 @@
                       default = 2258;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "9.5";
+                      type = lib.types.float;
+                      default = 9.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83472,12 +83472,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83499,8 +83499,8 @@
                       default = 135168;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "10.5";
+                      type = lib.types.float;
+                      default = 10.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83515,12 +83515,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83542,8 +83542,8 @@
                       default = 619;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83558,12 +83558,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83585,8 +83585,8 @@
                       default = 8;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83601,12 +83601,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83628,8 +83628,8 @@
                       default = 8;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83644,12 +83644,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83671,8 +83671,8 @@
                       default = 43;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83687,12 +83687,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83714,8 +83714,8 @@
                       default = 76800;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83730,12 +83730,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83757,8 +83757,8 @@
                       default = 52;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83773,12 +83773,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83800,8 +83800,8 @@
                       default = 153600;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83816,12 +83816,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83843,8 +83843,8 @@
                       default = 88;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83859,12 +83859,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83886,8 +83886,8 @@
                       default = 585;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83902,12 +83902,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83929,8 +83929,8 @@
                       default = 255;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83945,12 +83945,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -83972,8 +83972,8 @@
                       default = 188;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "17.5";
+                      type = lib.types.float;
+                      default = 17.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -83988,12 +83988,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84015,8 +84015,8 @@
                       default = 154;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84031,12 +84031,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84058,8 +84058,8 @@
                       default = 134;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "13.5";
+                      type = lib.types.float;
+                      default = 13.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84074,12 +84074,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84101,8 +84101,8 @@
                       default = 110;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "12.5";
+                      type = lib.types.float;
+                      default = 12.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84117,12 +84117,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84144,8 +84144,8 @@
                       default = 191;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84160,12 +84160,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84187,8 +84187,8 @@
                       default = 1838;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84203,12 +84203,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84230,8 +84230,8 @@
                       default = 852;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.5";
+                      type = lib.types.float;
+                      default = 5.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84246,12 +84246,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84273,8 +84273,8 @@
                       default = 24255;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "23.5";
+                      type = lib.types.float;
+                      default = 23.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84289,12 +84289,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84316,8 +84316,8 @@
                       default = 11796480;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "25.5";
+                      type = lib.types.float;
+                      default = 25.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84332,12 +84332,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84359,8 +84359,8 @@
                       default = 3840;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84375,12 +84375,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84402,8 +84402,8 @@
                       default = 7680;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.5";
+                      type = lib.types.float;
+                      default = 4.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84418,12 +84418,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84445,8 +84445,8 @@
                       default = 24576;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.5";
+                      type = lib.types.float;
+                      default = 6.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84461,12 +84461,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -84488,8 +84488,8 @@
                       default = 4608;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.5";
+                      type = lib.types.float;
+                      default = 3.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84504,12 +84504,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
