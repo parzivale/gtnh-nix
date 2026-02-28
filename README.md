@@ -2,6 +2,8 @@
 
 HEAVILY based on [nixos-modded-minecraft-servers](https://github.com/mkaito/nixos-modded-minecraft-servers/tree/master) (Most of the service config is from their repo)
 
+**[Documentation](https://parzivale.github.io/gtnh-nix/)**
+
 ## Known TODOs
 
 The following mods are not yet managed through Nix options because they use config formats incompatible with the Forge key=value renderer:
