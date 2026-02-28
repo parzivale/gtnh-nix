@@ -24,8 +24,8 @@
                 description = "The position of the Equipment Button in the Inventory";
               };
               "Radial Speed" = lib.mkOption {
-                type = lib.types.float;
-                default = 0.30;
+                type = lib.types.str;
+                default = "0.30";
                 description = "The speed at which the radial for active abilities opens. Default is 15% per tick, minimum is 5%, maximum is 100% [range: 0.05 ~ 1.0, default: 0.15]";
               };
               "Title Offset" = lib.mkOption {
