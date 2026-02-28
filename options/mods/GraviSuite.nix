@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/GraviSuite.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/GraviSuite.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "additional tweaks" = lib.mkOption {
           default = {};
@@ -20,22 +20,22 @@
             options = {
               AdvChainsawAdditionalMineableBlocks = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "minecraft:leaves" "minecraft:wool" "minecraft:melon_block" "minecraft:cactus" "minecraft:snow" "IC2:blockRubLeaves" ];
+                default = ["minecraft:leaves" "minecraft:wool" "minecraft:melon_block" "minecraft:cactus" "minecraft:snow" "IC2:blockRubLeaves"];
                 description = "List of blocks the Advanced Chainsaw should be able to break. (Note: The Advanced Chainsaw can also break the same blocks as Diamond Axe and Diamond Sword) [default: [minecraft:leaves], [minecraft:wool], [minecraft:melon_block], [minecraft:cactus], [minecraft:snow], [IC2:blockRubLeaves]]";
               };
               AllowedShieldBoots = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "EMT:QuantumBootsTraveller" "thaumicboots:item.ItemQuantumComet" "thaumicboots:item.ItemQuantumVoid" "thaumicboots:item.ItemQuantumMeteor" ];
+                default = ["EMT:QuantumBootsTraveller" "thaumicboots:item.ItemQuantumComet" "thaumicboots:item.ItemQuantumVoid" "thaumicboots:item.ItemQuantumMeteor"];
                 description = "These items can be used in place of the Quantum Boots and still allow the usage of the Quantum Shield [default: [EMT:QuantumBootsTraveller]]";
               };
               AllowedShieldHelmets = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "AdvancedSolarPanel:hybrid_solar_helmet" "AdvancedSolarPanel:ultimate_solar_helmet" "EMT:QuantumGogglesRevealing" "EMT:SolarHelmetRevealing" ];
+                default = ["AdvancedSolarPanel:hybrid_solar_helmet" "AdvancedSolarPanel:ultimate_solar_helmet" "EMT:QuantumGogglesRevealing" "EMT:SolarHelmetRevealing"];
                 description = "These items can be used in place of the Quantum Helmet and still allow the usage of the Quantum Shield [default: [AdvancedSolarPanel:hybrid_solar_helmet], [AdvancedSolarPanel:ultimate_solar_helmet], [EMT:QuantumGogglesRevealing], [EMT:SolarHelmetRevealing]]";
               };
               AllowedShieldLeggins = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "These items can be used in place of the Quantum Leggins and still allow the usage of the Quantum Shield [default: ]";
               };
               EpicLapPackChargeTickChance = lib.mkOption {
@@ -50,7 +50,7 @@
               };
               PlasmaLauncherFluids = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "List of fluids usable in the Plasma Launcher. Formatting: fluidName:damageMultiplier [default: ]";
               };
               ThisIsAHackedMod = lib.mkOption {
@@ -58,8 +58,8 @@
                 default = "i know and its ok";
               };
               hoverModeFallSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Max speed at which the player falls when wearing an Advanced Jetpack using hover-mode (GS default is 0.03) [range: 0.0 ~ 1.0, default: 0.0]";
               };
               xpGainFactor = lib.mkOption {
@@ -79,8 +79,8 @@
                 type = lib.types.submodule {
                   options = {
                     absorptionRatio = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                       description = "How much damage this armor pieve can absorb [range: 0.0 ~ 1.0, default: 0.0]";
                     };
                   };
@@ -91,8 +91,8 @@
                 type = lib.types.submodule {
                   options = {
                     absorptionRatio = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                       description = "How much damage this armor pieve can absorb [range: 0.0 ~ 1.0, default: 0.0]";
                     };
                   };
@@ -103,8 +103,8 @@
                 type = lib.types.submodule {
                   options = {
                     absorptionRatio = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.36";
+                      type = lib.types.float;
+                      default = 0.36;
                       description = "How much damage this armor pieve can absorb [range: 0.0 ~ 1.0, default: 0.36]";
                     };
                   };
@@ -115,8 +115,8 @@
                 type = lib.types.submodule {
                   options = {
                     absorptionRatio = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.44";
+                      type = lib.types.float;
+                      default = 0.44;
                       description = "How much damage this armor pieve can absorb [range: 0.0 ~ 1.0, default: 0.44]";
                     };
                   };
