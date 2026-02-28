@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/openmodularturrets.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/openmodularturrets.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         addons = lib.mkOption {
           default = {};
@@ -151,8 +151,8 @@
                 default = true;
               };
               "EU to RF Ratio" = lib.mkOption {
-                type = lib.types.str;
-                default = "8.0";
+                type = lib.types.float;
+                default = 8.0;
               };
               "Enable offline mode support?(warning, makes turrets fairly unsafe)" = lib.mkOption {
                 type = lib.types.bool;
@@ -658,13 +658,13 @@
           type = lib.types.submodule {
             options = {
               accuracy = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
                 description = "Increases accuracy linearly";
               };
               efficiency = lib.mkOption {
-                type = lib.types.str;
-                default = "0.08";
+                type = lib.types.float;
+                default = 0.08;
                 description = "Reduces power consumption linearly";
               };
               range = lib.mkOption {
@@ -673,8 +673,8 @@
                 description = "Increases range in blocks linearly";
               };
               rateOfFire = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "It's a double for some reason, reduces cooldown";
               };
             };
