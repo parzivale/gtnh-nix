@@ -732,13 +732,13 @@
           type = lib.types.submodule {
             options = {
               extractCostPerItem = lib.mkOption {
-                type = lib.types.float;
-                default = 12.0;
+                type = lib.types.str;
+                default = "12.0";
                 description = "Internal power used per item extracted (not a stack of items) [range: 0.0 ~ 10.0, default: 12.0]";
               };
               extractCostPerOperation = lib.mkOption {
-                type = lib.types.float;
-                default = 32.0;
+                type = lib.types.str;
+                default = "32.0";
                 description = "Internal power used per extract operation (independent of stack size) [range: 0.0 ~ 10000.0, default: 32.0]";
               };
               inventoryPanelFree = lib.mkOption {
@@ -747,13 +747,13 @@
                 description = "If true, the inv panel will not accept fluids and will be active permanently. [default: false]";
               };
               powerPerMB = lib.mkOption {
-                type = lib.types.float;
-                default = 800.0;
+                type = lib.types.str;
+                default = "800.0";
                 description = "Internal power generated per mB. The default of 800/mB matches the RF generation of the Zombie generator. A panel tries to refill only once every second - setting this value too low slows down the scanning speed. [range: 1.0 ~ 10000.0, default: 800.0]";
               };
               scanCostPerSlot = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
                 description = "Internal power used for scanning a slot [range: 0.0 ~ 10.0, default: 0.1]";
               };
             };
@@ -1027,8 +1027,8 @@
                 description = "Enables emptying vanilla water bottles without breaking the bottle. In combination with a water source block this allows duping of water without cost.";
               };
               fusedQuartzExplosionResistance = lib.mkOption {
-                type = lib.types.float;
-                default = 20.0;
+                type = lib.types.str;
+                default = "20.0";
                 description = "How blast resistant the three Fused Quartz blocks should be. [range: 0.0 ~ 3.4028235E38, default: 2000.0]";
               };
               killerJoeMaxXpLevel = lib.mkOption {
@@ -1913,8 +1913,8 @@
                 description = "3: Teleport to anchor, or look if no anchor";
               };
               travelAnchorZoomScale = lib.mkOption {
-                type = lib.types.float;
-                default = 0.2;
+                type = lib.types.str;
+                default = "0.2";
                 description = "Set the max zoomed size of a travel anchor as an aprox. percentage of screen height [range: 0.0 ~ 1.0, default: 0.2]";
               };
               travelStaffAllowInBaublesSlot = lib.mkOption {
