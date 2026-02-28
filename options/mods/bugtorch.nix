@@ -607,13 +607,13 @@
                 description = "Use a pastebin proxy to keep LLibrary from crashing with some regional blocks. [default: false]";
               };
               scaledExtraUtilitiesDarknessDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledExtraUtilitiesDarknessDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
             };
