@@ -45,7 +45,7 @@
               };
               hiveacynthPristineRate = lib.mkOption {
                 type = lib.types.float;
-                default = 0;
+                default = 0.0;
                 description = "Rate at which the Hiveacynth will produce a Pristine Princess, when it produces a princess. Default: 0.15. Setting to 0 will disable, setting to 1 will make every Princess produced pristine..";
               };
               hiveacynthRainResistRate = lib.mkOption {
