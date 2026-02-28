@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/LogisticsPipes.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/LogisticsPipes.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -94,8 +94,8 @@
                 description = "Disable the power usage trough LogisticsPipes";
               };
               powerUsageMultiplyer = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "A Multiplyer for the power usage.";
               };
               reDetectionFrequency = lib.mkOption {
