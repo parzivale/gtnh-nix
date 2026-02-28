@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/forge.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/forge.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -50,17 +50,17 @@
               };
               biomeSkyBlendRange = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 ];
+                default = [2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34];
                 description = "Control the range of sky blending for colored skies in biomes.";
               };
               zombieBaseSummonChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "Base zombie summoning spawn chance. Allows changing the bonus zombie summoning mechanic.";
               };
               zombieBabyChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "Chance that a zombie (or subclass) is a baby. Allows changing the zombie spawning mechanic.";
               };
               defaultSpawnFuzz = lib.mkOption {
