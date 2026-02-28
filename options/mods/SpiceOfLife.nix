@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/SpiceOfLife.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/SpiceOfLife.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "carrot module" = lib.mkOption {
           default = {};
@@ -123,8 +123,8 @@
                 default = false;
               };
               "food.containers.chance.to.drop.food" = lib.mkOption {
-                type = lib.types.str;
-                default = "0.25";
+                type = lib.types.float;
+                default = 0.25;
               };
               "food.containers.max.stacksize" = lib.mkOption {
                 type = lib.types.int;
@@ -137,8 +137,8 @@
                 description = "Note: If this is set to 0 and food.eating.speed.modifier is > 0, a food with 0% nutrtional value will take nearly infinite time to eat";
               };
               "food.eating.speed.modifier" = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Eating duration is calcualted using the formula (eating_duration / (nutritional_value^eating_speed_modifier))";
               };
               "food.history.length" = lib.mkOption {
