@@ -218,11 +218,6 @@
         "climate-control-biomesoplenty-in-cc-cfg"
         moduleEval.config.programs.gtnh.mods.ClimateControl.biomesoplentyInCC
         "config/ClimateControl/biomesoplentyInCC.cfg";
-      code-chicken-core-code-chicken-core-cfg =
-        mkCfgCheck
-        "code-chicken-core-code-chicken-core-cfg"
-        moduleEval.config.programs.gtnh.mods.CodeChickenCore.CodeChickenCore
-        "config/CodeChickenCore.cfg";
       draconic-evolution-draconic-evolution-cfg =
         mkCfgCheck
         "draconic-evolution-draconic-evolution-cfg"
