@@ -203,17 +203,17 @@
               };
               direSlimeChance = lib.mkOption {
                 type = lib.types.float;
-                default = 0;
+                default = 0.0;
                 description = "The chance that a Dire Slime will be spawned (0 = never, 1 = always).";
               };
               direSlimeChanceLarge = lib.mkOption {
                 type = lib.types.float;
-                default = 0;
+                default = 0.0;
                 description = "The chance a large will spawn when a medium Dire Slimes is killed (eg 0.02 for a 2% chance)";
               };
               direSlimeChanceMedium = lib.mkOption {
                 type = lib.types.float;
-                default = 0;
+                default = 0.0;
                 description = "The chance a medium will spawn when a small Dire Slimes is killed (eg 0.12 for a 12% chance).";
               };
               direSlimeEnabled = lib.mkOption {
@@ -261,12 +261,12 @@
               direWolfHardAttackModifier = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
-                descripfloat = "The increase to damage when playing on hard";
+                description = "The increase to damage when playing on hard";
               };
               direWolfHealth = lib.mkOption {
                 type = lib.types.float;
                 default = 16.0;
-                descripfloat = "Base health of the Dire Wolf";
+                description = "Base health of the Dire Wolf";
               };
               direWolfHowlChance = lib.mkOption {
                 type = lib.types.float;
@@ -281,7 +281,7 @@
               direWolfHowlVolumeMult = lib.mkOption {
                 type = lib.types.float;
                 default = 2.0;
-                descripfloat = "The volume multiplier for the dire wolf's howl. 12 is default.";
+                description = "The volume multiplier for the dire wolf's howl. 12 is default.";
               };
               direWolfPackAttackEnabled = lib.mkOption {
                 type = lib.types.bool;
@@ -296,7 +296,7 @@
               direWolfPackHowlChance = lib.mkOption {
                 type = lib.types.float;
                 default = 0.1;
-                descripfloat = "The chance that when a dire wolf howls, nearby dire wolves will \"join in\" to a pack howl. 4x near full moon. Defaults to 0.2 (20%)";
+                description = "The chance that when a dire wolf howls, nearby dire wolves will \"join in\" to a pack howl. 4x near full moon. Defaults to 0.2 (20%)";
               };
             };
           };
