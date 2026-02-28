@@ -145,13 +145,13 @@
                 description = "Maximum level of the magnets.";
               };
               magnetRangeBase = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "Base range (in blocks) of the Mysterious Magnet";
               };
               magnetRangeMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.75";
+                type = lib.types.float;
+                default = 0.75;
                 description = "Range multiplier per level of the Mysterious Magnet. Total range = base range + level * multiplier";
               };
               moonDialShowText = lib.mkOption {
