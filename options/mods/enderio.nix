@@ -1458,8 +1458,8 @@
                 description = "[Deprecated]Burn time multiplier for the Stirling Generator, Tier 3 machine";
               };
               stirlingGeneratorBurnTimeMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.float;
-                default = [0.5 "0.6666666865348816"];
+                type = lib.types.listOf lib.types.str;
+                default = ["0.5" "0.6666666865348816"];
                 description = "Burn time multipliers for the Stirling Generator";
               };
               stirlingGeneratorEnergyMultiplierT1 = lib.mkOption {
