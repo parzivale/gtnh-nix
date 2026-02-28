@@ -17,26 +17,25 @@ These mods fall back to the pack's default config files. Contributions welcome.
 
 # Usage
 Add the following to your flake.nix inputs
-´´´nix
+
+```nix
   gtnh-nix = {
     url = "github:parzivale/gtnh-nix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
-
-´´´
+```
 
 And add the overlay to your overlays
 
-´´´nix
+```nix
 nixpkgs.overlays = [
   inputs.niri-flake.overlays.niri
   inputs.gtnh-nix.overlays.default
 ];
-´´´
+```
 
 And then enable GTNH!
 
-´´´nix
+```nix
 programs.gtnh.enable = true;
-
-´´´
+```
