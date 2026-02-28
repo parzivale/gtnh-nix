@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IronChest.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IronChest.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               blocklistUpgrades = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "Example: IRON:GOLD [default: ]";
               };
               cacheRenderingInformation = lib.mkOption {
@@ -52,8 +52,8 @@
                 default = true;
               };
               transparentRenderDistance = lib.mkOption {
-                type = lib.types.str;
-                default = "128.0";
+                type = lib.types.float;
+                default = 128.0;
               };
               transparentRenderInside = lib.mkOption {
                 type = lib.types.bool;
