@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/enderio/EnderIO.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/enderio/EnderIO.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "advanced settings" = lib.mkOption {
           default = {};
@@ -36,8 +36,8 @@
                 description = "If set to true: fluid will not be shown in combustion generator tanks. Improves FPS.";
               };
               conduitScale = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6";
+                type = lib.types.float;
+                default = 0.6;
                 description = "In SMP, all clients must be using the same value as the server.";
               };
               useAlternateTransceiverModel = lib.mkOption {
@@ -97,8 +97,8 @@
           type = lib.types.submodule {
             options = {
               darkSteelAnvilDamageChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.024000000208616257";
+                type = lib.types.float;
+                default = 0.024000000208616257;
                 description = "Chance that the dark steel anvil will take damage after repairing something.";
               };
               darkSteelApiaristArmorCost = lib.mkOption {
@@ -107,8 +107,8 @@
                 description = "Number of levels required for the Apiarist Armor upgrade.";
               };
               darkSteelAxeEffeciencyBoostWhenPowered = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The increase in efficiency when powered.";
               };
               darkSteelAxePowerUsePerDamagePoint = lib.mkOption {
@@ -117,13 +117,13 @@
                 description = "Power use (RF) per damage/durability point avoided.";
               };
               darkSteelAxeSpeedPenaltyMultiHarvest = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "How much slower shift-harvesting logs is.";
               };
               darkSteelBootsJumpModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.5";
+                type = lib.types.float;
+                default = 1.5;
                 description = "Jump height modifier applied when jumping with Dark Steel Boots equipped";
               };
               darkSteelBootsJumpPowerCost = lib.mkOption {
@@ -147,18 +147,18 @@
                 description = "Number of levels required for the 'Glider' upgrade.";
               };
               darkSteelGliderHorizontalSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "0.03";
+                type = lib.types.float;
+                default = 0.03;
                 description = "Horizontal movement speed modifier when gliding.";
               };
               darkSteelGliderVerticalSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "-0.05";
+                type = lib.types.float;
+                default = -0.05;
                 description = "Rate of altitude loss when gliding.";
               };
               darkSteelGliderVerticalSpeedSprinting = lib.mkOption {
-                type = lib.types.str;
-                default = "-0.15";
+                type = lib.types.float;
+                default = -0.15;
                 description = "Rate of altitude loss when sprinting and gliding.";
               };
               darkSteelGogglesOfRevealingCost = lib.mkOption {
@@ -182,8 +182,8 @@
                 description = "Number of levels required for the 'Jump 2' upgrade.";
               };
               darkSteelLadderSpeedBoost = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05999999865889549";
+                type = lib.types.float;
+                default = 0.05999999865889549;
                 description = "Speed boost, in blocks per tick, that the DS ladder gives over the vanilla ladder.";
               };
               darkSteelNightVisionCost = lib.mkOption {
@@ -192,8 +192,8 @@
                 description = "Number of levels required for the 'Night Vision' upgrade.";
               };
               darkSteelPickApplyObsidianEffeciencyAtHardess = lib.mkOption {
-                type = lib.types.str;
-                default = "40.0";
+                type = lib.types.float;
+                default = 40.0;
                 description = "If set to a value > 0, the obsidian speed and power use will be used for all blocks with hardness >= to this value.";
               };
               darkSteelPickAxeUsePerDamagePointMultiHarvest = lib.mkOption {
@@ -202,8 +202,8 @@
                 description = "Power use (RF) per damage/durability point avoided when shift-harvesting multiple logs";
               };
               darkSteelPickEffeciencyBoostWhenPowered = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The increase in efficiency when powered.";
               };
               darkSteelPickEffeciencyObsidian = lib.mkOption {
@@ -228,7 +228,7 @@
               };
               darkSteelPowerDamgeAbsorptionRatios = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "0.5" "0.6" "0.7" "0.85" "0.95" ];
+                default = ["0.5" "0.6" "0.7" "0.85" "0.95"];
                 description = "A list of the amount of durability damage absorbed when items are powered. In order of upgrade level. 1=100% so items take no durability damage when powered.";
               };
               darkSteelPowerStorage = lib.mkOption {
@@ -272,13 +272,13 @@
                 description = "How much more durable as vanilla shears they are.";
               };
               darkSteelShearsEffeciencyBoostWhenPowered = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The increase in efficiency when powered.";
               };
               darkSteelShearsEntityAreaBoostWhenPowered = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "The increase in effected area (radius) when powered and used on sheep.";
               };
               darkSteelShearsPowerUsePerDamagePoint = lib.mkOption {
@@ -332,13 +332,13 @@
                 description = "Number of levels required for the 'Speed 1' upgrade.";
               };
               darkSteelSpeedOneSprintModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.10000000149011612";
+                type = lib.types.float;
+                default = 0.10000000149011612;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpeedOneWalkModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.10000000149011612";
+                type = lib.types.float;
+                default = 0.10000000149011612;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpeedThreeCost = lib.mkOption {
@@ -347,13 +347,13 @@
                 description = "Number of levels required for the 'Speed 3' upgrade.";
               };
               darkSteelSpeedThreeSprintMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpeedThreeWalkMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.30000001192092896";
+                type = lib.types.float;
+                default = 0.30000001192092896;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpeedTwoCost = lib.mkOption {
@@ -362,13 +362,13 @@
                 description = "Number of levels required for the 'Speed 2' upgrade.";
               };
               darkSteelSpeedTwoSprintMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.30000001192092896";
+                type = lib.types.float;
+                default = 0.30000001192092896;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpeedTwoWalkMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.20000000298023224";
+                type = lib.types.float;
+                default = 0.20000000298023224;
                 description = "Speed modifier applied when walking in the Dark Steel Boots with Speed I.";
               };
               darkSteelSpoonCost = lib.mkOption {
@@ -387,13 +387,13 @@
                 description = "Number of levels required for the 'Swim' upgrade.";
               };
               darkSteelSwordEnderPearlDropChance = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "The chance that an ender pearl will be dropped when using a dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelSwordEnderPearlDropChancePerLooting = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "The chance for each looting level that an additional ender pearl will be dropped when using a dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelSwordPowerUsePerHit = lib.mkOption {
@@ -402,23 +402,23 @@
                 description = "The amount of power (RF) used per hit.";
               };
               darkSteelSwordSkullChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.10000000149011612";
+                type = lib.types.float;
+                default = 0.10000000149011612;
                 description = "The base chance that a skull will be dropped when using a powered dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelSwordSkullLootingModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.07500000298023224";
+                type = lib.types.float;
+                default = 0.07500000298023224;
                 description = "The chance per looting level that a skull will be dropped when using a powered dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelSwordWitherSkullChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "The base chance that a wither skull will be dropped when using a powered dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelSwordWitherSkullLootingModifie = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "The chance per looting level that a wither skull will be dropped when using a powered dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               darkSteelTrackmanGogglesCost = lib.mkOption {
@@ -462,8 +462,8 @@
                 description = "Amount of power stored (RF) per block walked when wearing the dark steel boots.";
               };
               fakePlayerSkullChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "The ratio of skull drops when a mob is killed by a 'FakePlayer', such as Killer Joe. When set to 0 no skulls will drop, at 1 the rate of skull drops is not modified";
               };
               shouldSlotZeroWrap = lib.mkOption {
@@ -472,13 +472,13 @@
                 description = "Should the dark steel placement, when in the first (0th) slot, place the item in the last slot. If false, will place what's in the second slot.";
               };
               ticCleaverSkullDropChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.10000000149011612";
+                type = lib.types.float;
+                default = 0.10000000149011612;
                 description = "The base chance that an Enderman Skull will be dropped when using TiC Cleaver";
               };
               vanillaSwordSkullChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "The base chance that a skull will be dropped when using a non dark steel sword (0 = no chance, 1 = 100% chance)";
               };
             };
@@ -684,7 +684,7 @@
               };
               farmHoes = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "minecraft:wooden_hoe" "minecraft:stone_hoe" "minecraft:iron_hoe" "minecraft:diamond_hoe" "minecraft:golden_hoe" "MekanismTools:ObsidianHoe" "MekanismTools:LapisLazuliHoe" "MekanismTools:OsmiumHoe" "MekanismTools:BronzeHoe" "MekanismTools:GlowstoneHoe" "MekanismTools:SteelHoe" "Steamcraft:hoeBrass" "Steamcraft:hoeGildedGold" "Railcraft:tool.steel.hoe" "TConstruct:mattock" "appliedenergistics2:item.ToolCertusQuartzHoe" "appliedenergistics2:item.ToolNetherQuartzHoe" "ProjRed|Exploration:projectred.exploration.hoeruby" "ProjRed|Exploration:projectred.exploration.hoesapphire" "ProjRed|Exploration:projectred.exploration.hoeperidot" "magicalcrops:magicalcrops_AccioHoe" "magicalcrops:magicalcrops_CrucioHoe" "magicalcrops:magicalcrops_ImperioHoe" "BiomesOPlenty:hoeAmethyst" "BiomesOPlenty:hoeMud" "Eln:Eln.Copper Hoe" "Thaumcraft:ItemHoeThaumium" "Thaumcraft:ItemHoeElemental" "Thaumcraft:ItemHoeVoid" "ThermalFoundation:tool.hoeInvar" "ThermalFoundation:tool.hoeCopper" "ThermalFoundation:tool.hoeBronze" "ThermalFoundation:tool.hoeSilver" "ThermalFoundation:tool.hoeElectrum" "ThermalFoundation:tool.hoeTin" "ThermalFoundation:tool.hoeLead" "ThermalFoundation:tool.hoeNickel" "ThermalFoundation:tool.hoePlatinum" "TwilightForest:item.steeleafHoe" "TwilightForest:item.ironwoodHoe" "IC2:itemToolBronzeHoe" ];
+                default = ["minecraft:wooden_hoe" "minecraft:stone_hoe" "minecraft:iron_hoe" "minecraft:diamond_hoe" "minecraft:golden_hoe" "MekanismTools:ObsidianHoe" "MekanismTools:LapisLazuliHoe" "MekanismTools:OsmiumHoe" "MekanismTools:BronzeHoe" "MekanismTools:GlowstoneHoe" "MekanismTools:SteelHoe" "Steamcraft:hoeBrass" "Steamcraft:hoeGildedGold" "Railcraft:tool.steel.hoe" "TConstruct:mattock" "appliedenergistics2:item.ToolCertusQuartzHoe" "appliedenergistics2:item.ToolNetherQuartzHoe" "ProjRed|Exploration:projectred.exploration.hoeruby" "ProjRed|Exploration:projectred.exploration.hoesapphire" "ProjRed|Exploration:projectred.exploration.hoeperidot" "magicalcrops:magicalcrops_AccioHoe" "magicalcrops:magicalcrops_CrucioHoe" "magicalcrops:magicalcrops_ImperioHoe" "BiomesOPlenty:hoeAmethyst" "BiomesOPlenty:hoeMud" "Eln:Eln.Copper Hoe" "Thaumcraft:ItemHoeThaumium" "Thaumcraft:ItemHoeElemental" "Thaumcraft:ItemHoeVoid" "ThermalFoundation:tool.hoeInvar" "ThermalFoundation:tool.hoeCopper" "ThermalFoundation:tool.hoeBronze" "ThermalFoundation:tool.hoeSilver" "ThermalFoundation:tool.hoeElectrum" "ThermalFoundation:tool.hoeTin" "ThermalFoundation:tool.hoeLead" "ThermalFoundation:tool.hoeNickel" "ThermalFoundation:tool.hoePlatinum" "TwilightForest:item.steeleafHoe" "TwilightForest:item.ironwoodHoe" "IC2:itemToolBronzeHoe"];
                 description = "Use this to specify items that can be hoes in the farming station. Use the registry name (eg. modid:name).";
               };
               farmManaBeansEnabled = lib.mkOption {
@@ -698,8 +698,8 @@
                 description = "The number of particles produces by farm action.";
               };
               farmParticlesMaxRange = lib.mkOption {
-                type = lib.types.str;
-                default = "64.0";
+                type = lib.types.float;
+                default = 64.0;
                 description = "The max range of the farm action particles.";
               };
               farmSaplingReserveAmount = lib.mkOption {
@@ -708,8 +708,8 @@
                 description = "The amount of saplings the farm has to have in reserve to switch to shearing all leaves. If there are less saplings in store, it will only shear part the leaves and break the others for spalings. Set this to 0 to always shear all leaves.";
               };
               farmToolTakeDamageChance = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "The chance that a tool in the farm will take damage.";
               };
             };
@@ -720,8 +720,8 @@
           type = lib.types.submodule {
             options = {
               nutrientFluidFoodBoostDelay = lib.mkOption {
-                type = lib.types.str;
-                default = "400.0";
+                type = lib.types.float;
+                default = 400.0;
                 description = "The delay in ticks between when nutrient distillation boosts your food value.";
               };
             };
@@ -732,13 +732,13 @@
           type = lib.types.submodule {
             options = {
               extractCostPerItem = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
                 description = "Internal power used per item extracted (not a stack of items) [range: 0.0 ~ 10.0, default: 12.0]";
               };
               extractCostPerOperation = lib.mkOption {
-                type = lib.types.str;
-                default = "32.0";
+                type = lib.types.float;
+                default = 32.0;
                 description = "Internal power used per extract operation (independent of stack size) [range: 0.0 ~ 10000.0, default: 32.0]";
               };
               inventoryPanelFree = lib.mkOption {
@@ -747,13 +747,13 @@
                 description = "If true, the inv panel will not accept fluids and will be active permanently. [default: false]";
               };
               powerPerMB = lib.mkOption {
-                type = lib.types.str;
-                default = "800.0";
+                type = lib.types.float;
+                default = 800.0;
                 description = "Internal power generated per mB. The default of 800/mB matches the RF generation of the Zombie generator. A panel tries to refill only once every second - setting this value too low slows down the scanning speed. [range: 1.0 ~ 10000.0, default: 800.0]";
               };
               scanCostPerSlot = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "Internal power used for scanning a slot [range: 0.0 ~ 10.0, default: 0.1]";
               };
             };
@@ -831,28 +831,28 @@
           type = lib.types.submodule {
             options = {
               killerJoeAttackHeight = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The reach of attacks above and bellow Joe.";
               };
               killerJoeAttackLength = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "The reach of attacks in front of Joe.";
               };
               killerJoeAttackWidth = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "The reach of attacks to each side of Joe.";
               };
               killerJoeHooverXpLength = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
                 description = "The distance from which XP will be gathered to each side of Joe.";
               };
               killerJoeHooverXpWidth = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0";
+                type = lib.types.float;
+                default = 5.0;
                 description = "The distance from which XP will be gathered in front of Joe.";
               };
               killerJoeMustSee = lib.mkOption {
@@ -976,7 +976,7 @@
               };
               magnetBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "appliedenergistics2:item.ItemCrystalSeed" "Botania:livingrock" "Botania:manaTablet" ];
+                default = ["appliedenergistics2:item.ItemCrystalSeed" "Botania:livingrock" "Botania:manaTablet"];
                 description = "These items will not be picked up by the magnet. [default: [appliedenergistics2:item.ItemCrystalSeed], [Botania:livingrock], [Botania:manaTablet]]";
               };
               magnetMaxItems = lib.mkOption {
@@ -1027,8 +1027,8 @@
                 description = "Enables emptying vanilla water bottles without breaking the bottle. In combination with a water source block this allows duping of water without cost.";
               };
               fusedQuartzExplosionResistance = lib.mkOption {
-                type = lib.types.str;
-                default = "20.0";
+                type = lib.types.float;
+                default = 20.0;
                 description = "How blast resistant the three Fused Quartz blocks should be. [range: 0.0 ~ 3.4028235E38, default: 2000.0]";
               };
               killerJoeMaxXpLevel = lib.mkOption {
@@ -1181,8 +1181,8 @@
                 description = "If false: you will not be able to access a ME access or crafting terminal using the Ender IO.";
               };
               machineSoundVolume = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Volume of machine sounds.";
               };
               renderChargeBar = lib.mkOption {
@@ -1196,8 +1196,8 @@
                 description = "If true, render the bar when an item is damaged";
               };
               ticBeheadingSkullModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.07500000298023224";
+                type = lib.types.float;
+                default = 0.07500000298023224;
                 description = "The chance per level of Beheading that a skull will be dropped when using a TiC weapon";
               };
               useMachineSounds = lib.mkOption {
@@ -1216,8 +1216,8 @@
                 description = "If true, shift-clicking the YetaWrench on a null or non wrenchable object will change the conduit display mode.";
               };
               vanillaSwordSkullLootingModifier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05000000074505806";
+                type = lib.types.float;
+                default = 0.05000000074505806;
                 description = "The chance per looting level that a skull will be dropped when using a non-dark steel sword (0 = no chance, 1 = 100% chance)";
               };
               yetaWrenchOverlayMode = lib.mkOption {
@@ -1374,7 +1374,7 @@
               };
               powerConduitTiersEndergy = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 20 40 80 160 320 1280 2560 10240 40960 81920 327680 2000000000 ];
+                default = [20 40 80 160 320 1280 2560 10240 40960 81920 327680 2000000000];
                 description = "The maximum IO for the endergy power conduit";
               };
               rocketFuelPowerPerCycleRF = lib.mkOption {
@@ -1443,48 +1443,48 @@
                 description = "The amount of power generated per tick.";
               };
               stirlingGeneratorBurnTimeMultiplierT1 = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "[Deprecated]Burn time multiplier for the Stirling Generator, Tier 1 machine";
               };
               stirlingGeneratorBurnTimeMultiplierT2 = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6666666865348816";
+                type = lib.types.float;
+                default = 0.6666666865348816;
                 description = "[Deprecated]Burn time multiplier for the Stirling Generator, Tier 2 machine";
               };
               stirlingGeneratorBurnTimeMultiplierT3 = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6666666865348816";
+                type = lib.types.float;
+                default = 0.6666666865348816;
                 description = "[Deprecated]Burn time multiplier for the Stirling Generator, Tier 3 machine";
               };
               stirlingGeneratorBurnTimeMultipliers = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "0.5" "0.6666666865348816" ];
+                type = lib.types.listOf lib.types.float;
+                default = [0.5 "0.6666666865348816"];
                 description = "Burn time multipliers for the Stirling Generator";
               };
               stirlingGeneratorEnergyMultiplierT1 = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "[Deprecated]Energy multiplier for the Stirling Generator, Tier 1 machine";
               };
               stirlingGeneratorEnergyMultiplierT2 = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "[Deprecated]Energy multiplier for the Stirling Generator, Tier 2 machine";
               };
               stirlingGeneratorEnergyMultiplierT3 = lib.mkOption {
-                type = lib.types.str;
-                default = "4.0";
+                type = lib.types.float;
+                default = 4.0;
                 description = "[Deprecated]Energy multiplier for the Stirling Generator, Tier 3 machine";
               };
               stirlingGeneratorEnergyMultipliers = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0" ];
+                default = ["1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0"];
                 description = "Energy multipliers for the Stirling Generator";
               };
               transceiverEnergyLoss = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "Amount of energy lost when transferred by Dimensional Transceiver; 0 is no loss, 1 is 100% loss";
               };
               transceiverInternalBuffer = lib.mkOption {
@@ -1519,12 +1519,12 @@
               };
               zombieGeneratorsBurnTimeMultipliers = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "0.5" "0.6666666865348816" ];
+                default = ["0.5" "0.6666666865348816"];
                 description = "Burn time multipliers for the Zombie-Type Generators";
               };
               zombieGeneratorsEnergyMultipliers = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0" ];
+                default = ["1.0" "2.0" "3.0" "5.0" "8.0" "13.0" "21.0"];
                 description = "Energy multipliers for the Zombie-Type Generators";
               };
             };
@@ -1535,13 +1535,13 @@
           type = lib.types.submodule {
             options = {
               brokenSpawnerDropChance = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "The chance a broken spawner will be dropped when a spawner is broken. 1 = 100% chance, 0 = 0% chance";
               };
               brokenSpawnerToolBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "RotaryCraft:rotarycraft_item_bedpick" ];
+                default = ["RotaryCraft:rotarycraft_item_bedpick"];
                 description = "When a spawner is broken with these tools they will not drop a broken spawner [default: [RotaryCraft:rotarycraft_item_bedpick]]";
               };
               powerSpawnerAddSpawnerCost = lib.mkOption {
@@ -1872,7 +1872,7 @@
               };
               soulVesselBlackList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "Entities listed here will can not be captured in a Soul Vial [default: ]";
               };
               soulVesselCapturesBosses = lib.mkOption {
@@ -1913,8 +1913,8 @@
                 description = "3: Teleport to anchor, or look if no anchor";
               };
               travelAnchorZoomScale = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
                 description = "Set the max zoomed size of a travel anchor as an aprox. percentage of screen height [range: 0.0 ~ 1.0, default: 0.2]";
               };
               travelStaffAllowInBaublesSlot = lib.mkOption {
@@ -1929,7 +1929,7 @@
               };
               travelStaffBlinkBlackList = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "minecraft:bedrock" "Thaumcraft:blockWarded" ];
+                default = ["minecraft:bedrock" "Thaumcraft:blockWarded"];
                 description = "Lists the blocks that cannot be teleported through in the form 'modID:blockName' [default: [minecraft:bedrock], [Thaumcraft:blockWarded]]";
               };
               travelStaffBlinkEnabled = lib.mkOption {
@@ -1968,8 +1968,8 @@
                 description = "Maximum number of blocks that can be traveled using the Staff of Traveling.";
               };
               travelStaffPowerPerBlockRF = lib.mkOption {
-                type = lib.types.str;
-                default = "250.0";
+                type = lib.types.float;
+                default = 250.0;
                 description = "Number of RF required per block traveled using the Staff of Traveling.";
               };
               travelStaffSearchOptimize = lib.mkOption {
