@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/TGregworks.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/TGregworks.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         enable = lib.mkOption {
           default = {};
@@ -1313,36 +1313,36 @@
           type = lib.types.submodule {
             options = {
               arrowfragility = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9";
+                type = lib.types.float;
+                default = 0.9;
               };
               arrowmass = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               attack = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               bowdrawspeed = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               bowflightspeed = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               durability = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               handlemodifier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
               miningspeed = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
               };
             };
           };
@@ -1356,1064 +1356,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5625";
+                      type = lib.types.float;
+                      default = 1.5625;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.065";
+                      type = lib.types.float;
+                      default = 4.065;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.4";
+                      type = lib.types.float;
+                      default = 1.4;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.35";
+                      type = lib.types.float;
+                      default = 2.35;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.1354";
+                      type = lib.types.float;
+                      default = 2.1354;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.066";
+                      type = lib.types.float;
+                      default = 2.066;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.33";
+                      type = lib.types.float;
+                      default = 1.33;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5695";
+                      type = lib.types.float;
+                      default = 2.5695;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.73";
+                      type = lib.types.float;
+                      default = 5.73;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.25";
+                      type = lib.types.float;
+                      default = 1.25;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.742";
+                      type = lib.types.float;
+                      default = 2.742;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.4";
+                      type = lib.types.float;
+                      default = 1.4;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.3385";
+                      type = lib.types.float;
+                      default = 5.3385;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -2423,1064 +2423,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.3";
+                      type = lib.types.float;
+                      default = 2.3;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.154";
+                      type = lib.types.float;
+                      default = 2.154;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.625";
+                      type = lib.types.float;
+                      default = 1.625;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.7";
+                      type = lib.types.float;
+                      default = 2.7;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.25";
+                      type = lib.types.float;
+                      default = 2.25;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.715";
+                      type = lib.types.float;
+                      default = 1.715;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.0";
+                      type = lib.types.float;
+                      default = 6.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -3490,1064 +3490,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.8";
+                      type = lib.types.float;
+                      default = 4.8;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.8";
+                      type = lib.types.float;
+                      default = 1.8;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.786";
+                      type = lib.types.float;
+                      default = 1.786;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.666";
+                      type = lib.types.float;
+                      default = 3.666;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.333";
+                      type = lib.types.float;
+                      default = 2.333;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.0";
+                      type = lib.types.float;
+                      default = 6.0;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "6.667";
+                      type = lib.types.float;
+                      default = 6.667;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "8.0";
+                      type = lib.types.float;
+                      default = 8.0;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.2";
+                      type = lib.types.float;
+                      default = 1.2;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.25";
+                      type = lib.types.float;
+                      default = 1.25;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.33";
+                      type = lib.types.float;
+                      default = 5.33;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "7.0";
+                      type = lib.types.float;
+                      default = 7.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "4.8";
+                      type = lib.types.float;
+                      default = 4.8;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -4557,1064 +4557,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.333";
+                      type = lib.types.float;
+                      default = 1.333;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.6";
+                      type = lib.types.float;
+                      default = 1.6;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0909";
+                      type = lib.types.float;
+                      default = 1.0909;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.715";
+                      type = lib.types.float;
+                      default = 1.715;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.4";
+                      type = lib.types.float;
+                      default = 1.4;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.285714";
+                      type = lib.types.float;
+                      default = 1.285714;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -7766,1064 +7766,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.8";
+                      type = lib.types.float;
+                      default = 0.8;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.85";
+                      type = lib.types.float;
+                      default = 0.85;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.6";
+                      type = lib.types.float;
+                      default = 0.6;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.75";
+                      type = lib.types.float;
+                      default = 0.75;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.667";
+                      type = lib.types.float;
+                      default = 0.667;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.9";
+                      type = lib.types.float;
+                      default = 0.9;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.466";
+                      type = lib.types.float;
+                      default = 0.466;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -8833,1064 +8833,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.666";
+                      type = lib.types.float;
+                      default = 2.666;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "3.2";
+                      type = lib.types.float;
+                      default = 3.2;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.25714";
+                      type = lib.types.float;
+                      default = 1.25714;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.92";
+                      type = lib.types.float;
+                      default = 1.92;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.84";
+                      type = lib.types.float;
+                      default = 1.84;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.22";
+                      type = lib.types.float;
+                      default = 2.22;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "5.6";
+                      type = lib.types.float;
+                      default = 5.6;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.68";
+                      type = lib.types.float;
+                      default = 1.68;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -9900,1064 +9900,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.204";
+                      type = lib.types.float;
+                      default = 0.204;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.16";
+                      type = lib.types.float;
+                      default = 0.16;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.066";
+                      type = lib.types.float;
+                      default = 0.066;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.204";
+                      type = lib.types.float;
+                      default = 0.204;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.010204";
+                      type = lib.types.float;
+                      default = 0.010204;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.21408";
+                      type = lib.types.float;
+                      default = 0.21408;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.048";
+                      type = lib.types.float;
+                      default = 0.048;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.21428";
+                      type = lib.types.float;
+                      default = 0.21428;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.010204";
+                      type = lib.types.float;
+                      default = 0.010204;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.188679";
+                      type = lib.types.float;
+                      default = 0.188679;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.305";
+                      type = lib.types.float;
+                      default = 0.305;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.025641";
+                      type = lib.types.float;
+                      default = 0.025641;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "15.0";
+                      type = lib.types.float;
+                      default = 15.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "15.0";
+                      type = lib.types.float;
+                      default = 15.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -10967,1064 +10967,1064 @@
                 type = lib.types.submodule {
                   options = {
                     Adamantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     AdamantiumAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AdemicSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alduorite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Aluminium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Alumite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Amethyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Angmallen = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ardite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Artherium-Sn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AstralSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Atlarus = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     AtomicSeparationCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BArTiMaEuSNeK = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Basalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Beryllium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismuth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BismuthBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bismutite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackBronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackPlutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlackSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Blaze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     BlueTopaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Brass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Bronze = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Californium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CallistoIce = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carbon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Carmot = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Celenegil = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CertusQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ceruclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chromo-Alumino-Povondraite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Chrysotile = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cobalt = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CobaltBrass = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConductiveIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ConstructionFoam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CosmicNeutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrudeSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallineAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CrystallinePinkSlime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     CubicZirconia = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Cupronickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dalisenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DamascusSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DarkSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DeepIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Desh = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     Diamond = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Draconium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     DraconiumAwakened = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Dreamwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duralumin = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Duranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectricalSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Electrum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElectrumFlux = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ElvenElementium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Emerald = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EndSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Enderium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnderiumBase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnergeticAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     EnergeticSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnhancedGalgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EnrichedNaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Epoxid = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     EpoxidFiberReinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Eximite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ExtremelyUnstableNaquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fayalite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     FierySteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Firestone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flerovium_GT5U = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Flint = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluor-Buergerite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Fluorspar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Force = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Forsterite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GaiaSpirit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Galgadorian = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GarnetYellow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Gold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteBlack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GraniteRed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Graphite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     GreenSapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSLA = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSE = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSG = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HSSS = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Haderoth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hedenbergite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HeeEndium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hepatizon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     HighDurabilityCompoundSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Hikarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ichorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Incoloy-903 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infinity = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfinityCatalyst = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Infuscolium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedAir = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEarth = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedEntropy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedFire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedOrder = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     InfusedWater = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Inolashite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Invar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Iron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     IronWood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jade = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Jasper = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Kanthal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Knightmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     LanthanumHexaboride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lead = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ledox = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     LithiumChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingrock = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Livingwood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Lumiium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-Ce-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MAR-M200Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Magnalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetoResonatic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MagnetohydrodynamicallyConstrainedStarMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manganese = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Manyullyn = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Marble = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MelodicAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MetastableOganesson = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MeteoricSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     Midasium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mithril = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Molybdenum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mu-metal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     MysteriousCrystal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Mytryl = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadah = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NaquadahEnriched = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Naquadria = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neodymium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NeodymiumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherQuartz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NetherStar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Neutronium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nichrome = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Nickel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     NickelZincFerrite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olenite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Olivine = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Opal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orichalcum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oriharukon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Orundum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Osmiridium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     Osmium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Oureclase = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Palladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     Permalloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PigIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plastic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Platinum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Plutonium241 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polybenzimidazole = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polycaprolactam = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyphenyleneSulfide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polystyrene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Polytetrafluoroethylene = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PolyvinylChloride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prasiolite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PreciousMetalsAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Prometheum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     PulsatingIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Quantium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Realgar = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedZircon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RedstoneAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Reinforced = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rhodium-PlatedPalladium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     RoseGold = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Rubracium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruby = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruridit = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ruthenium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SamariumMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sapphire = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shadow = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     ShadowSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Shirabon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Signalium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silicone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Silver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Soularium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SpaceTime = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StainlessSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SteelMagnetic = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Steeleaf = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.01";
+                      type = lib.types.float;
+                      default = 0.01;
                     };
                     StellarAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     SterlingSilver = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Stone = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     StyreneButadieneRubber = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Sunnarium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TPVAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tairitsu = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TanmolyiumBeta-C = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TantalumHafniumCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tanzanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Terrasteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thaumium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Thorium232 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tiberium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TinAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Titanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Topaz = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TranscendentMetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Trinium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tritanium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Tungsten = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenCarbide = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     TungstenSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Ultimet = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Universium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Uranium235 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vanadio-Oxy-Dravite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VanadiumSteel = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VibrantAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vinteum = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     VividAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Void = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Voidmetal = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vulcanite = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Vyroxeres = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WhiteDwarfMatter = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Wood = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WoodSealed = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     WroughtIron = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-2 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zircaloy-4 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     Zn-ThAlloy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
