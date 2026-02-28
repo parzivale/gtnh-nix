@@ -5,52 +5,52 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/MagicBees.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/MagicBees.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         botaniaplugin = lib.mkOption {
           default = {};
           type = lib.types.submodule {
             options = {
               beegoniaManaMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplier for the Beegonia's mana generation. Default: 1.0 (Affects duration, not throughput)";
               };
               hibeescusManaCostMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplier on Hibeescus mana cost, base 10,000. Default 1.0. Setting to 0 makes you a huge cheater. <3";
               };
               hibeescusTicksMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplier for Hibeescus operation tick time. Multiplied against 1.5 Minecraft days with some extra randomness. Default: 1.0. Setting to 0 makes you a huge cheater. <3";
               };
               hiveacynthManaMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplier for the Hiveacynth's mana consumption. Default: 1.0";
               };
               hiveacynthPrincessSpawnRate = lib.mkOption {
-                type = lib.types.str;
-                default = "0.09";
+                type = lib.types.float;
+                default = 0.09;
                 description = "Rate at which the Hiveacynth will spawn a Princess instead of a Drone. Default: 0.09. Setting to 0 will disable.";
               };
               hiveacynthPristineRate = lib.mkOption {
-                type = lib.types.str;
-                default = "0";
+                type = lib.types.float;
+                default = 0;
                 description = "Rate at which the Hiveacynth will produce a Pristine Princess, when it produces a princess. Default: 0.15. Setting to 0 will disable, setting to 1 will make every Princess produced pristine..";
               };
               hiveacynthRainResistRate = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "Rate at which the Hiveacynth applies rain resist to spawned bees. Default: 0.1 Setting to 0 will disable.";
               };
             };
@@ -160,8 +160,8 @@
                 description = "set to true to show the current moon phase in mouse-over text.";
               };
               thaumCraftSaplingDroprate = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
               };
               thaumcraftNodeMaxSize = lib.mkOption {
                 type = lib.types.int;
@@ -169,8 +169,8 @@
                 description = "The maximum aspect amount Nexus bees can grow a node to";
               };
               thaumcraftSaplingDroprate = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "The chance for thaumcraft saplings using the thaumium grafter";
               };
               useImpregnatedStickInTools = lib.mkOption {
