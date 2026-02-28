@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/BlockDefaults.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/BlockDefaults.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         blocks_axe = lib.mkOption {
           default = {};
@@ -71566,14 +71566,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/BlockOverride.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/BlockOverride.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         info = lib.mkOption {
           default = {};
@@ -71676,14 +71676,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/BonusModifierDefaults.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/BonusModifierDefaults.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         ammoweights = lib.mkOption {
           default = {};
@@ -72338,14 +72338,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/BonusModifierOverride.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/BonusModifierOverride.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         info = lib.mkOption {
           default = {};
@@ -72719,14 +72719,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/HarvestLevelNamesDefaults.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/HarvestLevelNamesDefaults.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         harvestlevelnames = lib.mkOption {
           default = {};
@@ -72780,14 +72780,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/HarvestLevelNamesOverride.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/HarvestLevelNamesOverride.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         HarvestLevelNames = lib.mkOption {
           default = {};
@@ -72805,14 +72805,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/MaterialDefaults.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/MaterialDefaults.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         materials = lib.mkOption {
           default = {};
@@ -72835,8 +72835,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -72851,12 +72851,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -72878,8 +72878,8 @@
                       default = 38;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -72894,12 +72894,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -72921,8 +72921,8 @@
                       default = 1920;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -72937,12 +72937,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -72964,8 +72964,8 @@
                       default = 75;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.30000001192092896";
+                      type = lib.types.float;
+                      default = 0.30000001192092896;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -72980,12 +72980,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73007,8 +73007,8 @@
                       default = 192;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73023,12 +73023,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73050,8 +73050,8 @@
                       default = 188;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.2000000476837158";
+                      type = lib.types.float;
+                      default = 1.2000000476837158;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73066,12 +73066,12 @@
                       default = 1;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73093,8 +73093,8 @@
                       default = 960;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73109,12 +73109,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73136,8 +73136,8 @@
                       default = 113;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73152,12 +73152,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73179,8 +73179,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73195,12 +73195,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73222,8 +73222,8 @@
                       default = 83;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73238,12 +73238,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "-1.0";
+                      type = lib.types.float;
+                      default = -1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73265,8 +73265,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73281,12 +73281,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73308,8 +73308,8 @@
                       default = 151;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0800000429153442";
+                      type = lib.types.float;
+                      default = 1.0800000429153442;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73324,12 +73324,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73351,8 +73351,8 @@
                       default = 24;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.5";
+                      type = lib.types.float;
+                      default = 0.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73367,12 +73367,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73394,8 +73394,8 @@
                       default = 67;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.800000011920929";
+                      type = lib.types.float;
+                      default = 0.800000011920929;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73410,12 +73410,12 @@
                       default = 3;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73437,8 +73437,8 @@
                       default = 2400;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73453,12 +73453,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73480,8 +73480,8 @@
                       default = 92;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.2000000476837158";
+                      type = lib.types.float;
+                      default = 1.2000000476837158;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73496,12 +73496,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73523,8 +73523,8 @@
                       default = 96;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73539,12 +73539,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73566,8 +73566,8 @@
                       default = 375;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.0";
+                      type = lib.types.float;
+                      default = 2.0;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73582,12 +73582,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73609,8 +73609,8 @@
                       default = 375;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73625,12 +73625,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73652,8 +73652,8 @@
                       default = 16;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.30000001192092896";
+                      type = lib.types.float;
+                      default = 0.30000001192092896;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73668,12 +73668,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73695,8 +73695,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.5";
+                      type = lib.types.float;
+                      default = 1.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73711,12 +73711,12 @@
                       default = 0;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73738,8 +73738,8 @@
                       default = 600;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.75";
+                      type = lib.types.float;
+                      default = 1.75;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -73754,12 +73754,12 @@
                       default = 2;
                     };
                     shoddy = lib.mkOption {
-                      type = lib.types.str;
-                      default = "0.0";
+                      type = lib.types.float;
+                      default = 0.0;
                     };
                     xpAmount = lib.mkOption {
-                      type = lib.types.str;
-                      default = "1.0";
+                      type = lib.types.float;
+                      default = 1.0;
                     };
                   };
                 };
@@ -73781,8 +73781,8 @@
                       default = 48;
                     };
                     handleModifier = lib.mkOption {
-                      type = lib.types.str;
-                      default = "2.5";
+                      type = lib.types.float;
+                      default = 2.5;
                     };
                     harvestLevel = lib.mkOption {
                       type = lib.types.int;
@@ -84526,14 +84526,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/MaterialOverride.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/MaterialOverride.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         info = lib.mkOption {
           default = {};
@@ -84568,14 +84568,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/Modules.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/Modules.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "tinker's construct addon: iguana tweaks for tinkers construct" = lib.mkOption {
           default = {};
@@ -84648,14 +84648,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/ToolDefaults.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/ToolDefaults.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         appliedenergistics2 = lib.mkOption {
           default = {};
@@ -90688,14 +90688,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/ToolOverride.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/ToolOverride.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         info = lib.mkOption {
           default = {};
@@ -91713,14 +91713,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/main.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/main.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         allowedtools = lib.mkOption {
           default = {};
@@ -91728,7 +91728,7 @@
             options = {
               bows = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "Bows that are excluded if the option to nerf non-tinkers bows is enabled. [default: ]";
               };
               exclusionType = lib.mkOption {
@@ -91738,22 +91738,22 @@
               };
               hoes = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Steamcraft:hoeGildedGold" "Steamcraft:hoeBrass" ];
+                default = ["Steamcraft:hoeGildedGold" "Steamcraft:hoeBrass"];
                 description = "Hoes that are excluded if the option to nerf non-tinkers hoes is enabled. [default: [Steamcraft:hoeGildedGold], [Steamcraft:hoeBrass], [IC2:itemToolBronzeHoe], [Railcraft:tool.steel.hoe]]";
               };
               mods = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Metallurgy" "Natura" "BiomesOPlenty" "ProjRed|Exploration" "appliedenergistics2" "MekanismTool" ];
+                default = ["Metallurgy" "Natura" "BiomesOPlenty" "ProjRed|Exploration" "appliedenergistics2" "MekanismTool"];
                 description = "Here you can exclude entire mods by adding their mod-id (the first part of the string). [default: [minecraft], [Metallurgy], [Natura], [BiomesOPlenty], [ProjRed|Exploration], [appliedenergistics2], [MekanismTool], [ThermalFoundation]]";
               };
               swords = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Steamcraft:swordGildedGold" "Steamcraft:swordBrass" "ThermalExpansion:tool.battleWrenchInvar" ];
+                default = ["Steamcraft:swordGildedGold" "Steamcraft:swordBrass" "ThermalExpansion:tool.battleWrenchInvar"];
                 description = "Swords that are excluded if the option to nerf non-tinkers swords is enabled. [default: [Botania:manasteelSword], [Steamcraft:swordGildedGold], [Steamcraft:swordBrass], [ThermalExpansion:tool.battleWrenchInvar], [IC2:itemToolBronzeSword], [Railcraft:tool.steel.sword]]";
               };
               tools = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Steamcraft:axeGildedGold" "Steamcraft:pickGildedGold" "Steamcraft:shovelGildedGold" "Steamcraft:axeBrass" "Steamcraft:pickBrass" "Steamcraft:shovelBrass" "IC2:itemToolBronzePickaxe" "IC2:itemToolBronzeSpade" "Railcraft:tool.steel.pickaxe" "Railcraft:tool.steel.shovel" "minecraft:diamond_pickaxe" "minecraft:golden_pickaxe" "minecraft:iron_pickaxe" "minecraft:stone_pickaxe" "minecraft:diamond_shovel" "minecraft:golden_shovel" "minecraft:iron_shovel" "minecraft:stone_shovel" "gregtech:gt.metatool.01" ];
+                default = ["Steamcraft:axeGildedGold" "Steamcraft:pickGildedGold" "Steamcraft:shovelGildedGold" "Steamcraft:axeBrass" "Steamcraft:pickBrass" "Steamcraft:shovelBrass" "IC2:itemToolBronzePickaxe" "IC2:itemToolBronzeSpade" "Railcraft:tool.steel.pickaxe" "Railcraft:tool.steel.shovel" "minecraft:diamond_pickaxe" "minecraft:golden_pickaxe" "minecraft:iron_pickaxe" "minecraft:stone_pickaxe" "minecraft:diamond_shovel" "minecraft:golden_shovel" "minecraft:iron_shovel" "minecraft:stone_shovel" "gregtech:gt.metatool.01"];
                 description = "Tools that are excluded if the option to nerf non-tinkers tools is enabled. [default: [Botania:manasteelAxe], [Botania:manasteelPick], [Botania:manasteelShovel], [Steamcraft:axeGildedGold], [Steamcraft:pickGildedGold], [Steamcraft:shovelGildedGold], [Steamcraft:axeBrass], [Steamcraft:pickBrass], [Steamcraft:shovelBrass], [IC2:itemToolBronzeAxe], [IC2:itemToolBronzePickaxe], [IC2:itemToolBronzeSpade], [Railcraft:tool.steel.axe], [Railcraft:tool.steel.pickaxe], [Railcraft:tool.steel.shovel]]";
               };
             };
@@ -91974,7 +91974,7 @@
             options = {
               BonusesAtLevels = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 2 3 4 5 6 ];
+                default = [2 3 4 5 6];
                 description = "Adds a random bonus on these levelups if 'RandomBonuses' is enabled";
               };
               CompletelyRandomBonuses = lib.mkOption {
@@ -91989,7 +91989,7 @@
               };
               ModifiersAtLevels = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 2 3 5 7 9 11 14 17 20 24 28 32 36 40 45 50 55 60 65 70 75 80 85 90 95 99 ];
+                default = [2 3 5 7 9 11 14 17 20 24 28 32 36 40 45 50 55 60 65 70 75 80 85 90 95 99];
                 description = "Adds an extra modifier on these levelups if 'ExtraModifiers' is enabled";
               };
               RandomBonuses = lib.mkOption {
@@ -92186,14 +92186,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/IguanaTinkerTweaks/restrictions.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/IguanaTinkerTweaks/restrictions.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         toolparts = lib.mkOption {
           default = {};
@@ -92201,12 +92201,12 @@
             options = {
               allowed = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Wood:rod" "Wood:crossbar" "Wood:binding" "Wood:sign" "Wood:bowlimb" "Wood:crossbowlimb" "Wood:crossbowbody" "Flint:pickaxe" "Flint:shovel" "Flint:axe" "Flint:swordblade" "Flint:knifeblade" "Flint:arrowhead" "Flint:shuriken" "Bone:rod" "Bone:shovel" "Bone:axe" "Bone:largeguard" "Bone:crossbar" "Bone:knifeblade" "Bone:arrowhead" "Bone:bowlimb" "Bone:crossbowlimb" "Bone:crossbowbody" "Cactus:rod" "Cactus:binding" "Cactus:knifeblade" "Cactus:shuriken" "Paper:rod" "Paper:binding" "Slime:rod" "Slime:sign" "Slime:binding" "Slime:bowlimb" "Slime:crossbowlimb" "Slime:crossbowbody" "BlueSlime:rod" "BlueSlime:binding" "BlueSlime:bowlimb" "BlueSlime:crossbowlimb" "BlueSlime:crossbowbody" "Netherrack:rod" "Netherrack:pickaxe" "Netherrack:shovel" "Netherrack:axe" "Netherrack:largeguard" "Netherrack:mediumguard" "Netherrack:crossbar" "Netherrack:binding" "Netherrack:sign" "Netherrack:largerod" "Netherrack:toughbinding" "Netherrack:largeplate" "Netherrack:broadaxe" "Netherrack:scythe" "Netherrack:excavator" "Netherrack:fullguard" "Netherrack:arrowhead" "Netherrack:crossbowbody" "Obsidian:rod" "Obsidian:pickaxe" "Obsidian:shovel" "Obsidian:axe" "Obsidian:largeguard" "Obsidian:mediumguard" "Obsidian:crossbar" "Obsidian:binding" "Obsidian:sign" "Obsidian:largerod" "Obsidian:toughbinding" "Obsidian:largeplate" "Obsidian:broadaxe" "Obsidian:scythe" "Obsidian:excavator" "Obsidian:hammerhead" "Obsidian:fullguard" "Obsidian:arrowhead" "Obsidian:crossbowbody" "Obsidian:shuriken" ];
+                default = ["Wood:rod" "Wood:crossbar" "Wood:binding" "Wood:sign" "Wood:bowlimb" "Wood:crossbowlimb" "Wood:crossbowbody" "Flint:pickaxe" "Flint:shovel" "Flint:axe" "Flint:swordblade" "Flint:knifeblade" "Flint:arrowhead" "Flint:shuriken" "Bone:rod" "Bone:shovel" "Bone:axe" "Bone:largeguard" "Bone:crossbar" "Bone:knifeblade" "Bone:arrowhead" "Bone:bowlimb" "Bone:crossbowlimb" "Bone:crossbowbody" "Cactus:rod" "Cactus:binding" "Cactus:knifeblade" "Cactus:shuriken" "Paper:rod" "Paper:binding" "Slime:rod" "Slime:sign" "Slime:binding" "Slime:bowlimb" "Slime:crossbowlimb" "Slime:crossbowbody" "BlueSlime:rod" "BlueSlime:binding" "BlueSlime:bowlimb" "BlueSlime:crossbowlimb" "BlueSlime:crossbowbody" "Netherrack:rod" "Netherrack:pickaxe" "Netherrack:shovel" "Netherrack:axe" "Netherrack:largeguard" "Netherrack:mediumguard" "Netherrack:crossbar" "Netherrack:binding" "Netherrack:sign" "Netherrack:largerod" "Netherrack:toughbinding" "Netherrack:largeplate" "Netherrack:broadaxe" "Netherrack:scythe" "Netherrack:excavator" "Netherrack:fullguard" "Netherrack:arrowhead" "Netherrack:crossbowbody" "Obsidian:rod" "Obsidian:pickaxe" "Obsidian:shovel" "Obsidian:axe" "Obsidian:largeguard" "Obsidian:mediumguard" "Obsidian:crossbar" "Obsidian:binding" "Obsidian:sign" "Obsidian:largerod" "Obsidian:toughbinding" "Obsidian:largeplate" "Obsidian:broadaxe" "Obsidian:scythe" "Obsidian:excavator" "Obsidian:hammerhead" "Obsidian:fullguard" "Obsidian:arrowhead" "Obsidian:crossbowbody" "Obsidian:shuriken"];
                 description = "ATTENTION: THIS DOES NOT ALLOW YOU TO ADD NEW RECIPES. ONLY EXISTING ONES WORK. This exists purely for convenience.(materialnames and partnames are the same as restricted parts) [default: [Wood:rod], [Wood:crossbar], [Wood:binding], [Wood:sign], [Wood:bowlimb], [Wood:crossbowlimb], [Wood:crossbowbody], [Flint:pickaxe], [Flint:shovel], [Flint:axe], [Flint:knifeblade], [Flint:arrowhead], [Flint:shuriken], [Bone:rod], [Bone:shovel], [Bone:axe], [Bone:crossbar], [Bone:knifeblade], [Bone:arrowhead], [Bone:bowlimb], [Bone:crossbowlimb], [Bone:crossbowbody], [Cactus:rod], [Cactus:binding], [Cactus:knifeblade], [Cactus:shuriken], [Paper:rod], [Paper:binding], [Slime:rod], [Slime:sign], [Slime:binding], [Slime:bowlimb], [Slime:crossbowlimb], [Slime:crossbowbody], [BlueSlime:rod], [BlueSlime:binding], [BlueSlime:bowlimb], [BlueSlime:crossbowlimb], [BlueSlime:crossbowbody], [Netherrack:rod], [Netherrack:pickaxe], [Netherrack:shovel], [Netherrack:axe], [Netherrack:largeguard], [Netherrack:mediumguard], [Netherrack:crossbar], [Netherrack:binding], [Netherrack:sign], [Netherrack:largerod], [Netherrack:toughbinding], [Netherrack:largeplate], [Netherrack:broadaxe], [Netherrack:scythe], [Netherrack:excavator], [Netherrack:fullguard], [Netherrack:arrowhead], [Netherrack:crossbowbody], [Obsidian:rod], [Obsidian:pickaxe], [Obsidian:shovel], [Obsidian:axe], [Obsidian:largeguard], [Obsidian:mediumguard], [Obsidian:crossbar], [Obsidian:binding], [Obsidian:sign], [Obsidian:largerod], [Obsidian:toughbinding], [Obsidian:largeplate], [Obsidian:broadaxe], [Obsidian:scythe], [Obsidian:excavator], [Obsidian:hammerhead], [Obsidian:fullguard], [Obsidian:arrowhead], [Obsidian:crossbowbody], [Obsidian:shuriken]]";
               };
               restricted = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
                 description = "[default: ]";
               };
             };
