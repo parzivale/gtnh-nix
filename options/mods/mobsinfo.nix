@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/mobsinfo/mobsinfo.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/mobsinfo/mobsinfo.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         compatibility = lib.mkOption {
           default = {};
@@ -73,12 +73,12 @@
               };
               MobBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "Giant" "Thaumcraft.TravelingTrunk" "chisel.snowman" "OpenBlocks.Luggage" "OpenBlocks.MiniMe" "SpecialMobs.SpecialCreeper" "SpecialMobs.SpecialZombie" "SpecialMobs.SpecialPigZombie" "SpecialMobs.SpecialSlime" "SpecialMobs.SpecialSkeleton" "SpecialMobs.SpecialEnderman" "SpecialMobs.SpecialCaveSpider" "SpecialMobs.SpecialGhast" "SpecialMobs.SpecialWitch" "SpecialMobs.SpecialSpider" "TwilightForest.HydraHead" "TwilightForest.RovingCube" "TwilightForest.Harbinger Cube" "TwilightForest.Adherent" "SpecialMobs.SpecialSilverfish" ];
+                default = ["Giant" "Thaumcraft.TravelingTrunk" "chisel.snowman" "OpenBlocks.Luggage" "OpenBlocks.MiniMe" "SpecialMobs.SpecialCreeper" "SpecialMobs.SpecialZombie" "SpecialMobs.SpecialPigZombie" "SpecialMobs.SpecialSlime" "SpecialMobs.SpecialSkeleton" "SpecialMobs.SpecialEnderman" "SpecialMobs.SpecialCaveSpider" "SpecialMobs.SpecialGhast" "SpecialMobs.SpecialWitch" "SpecialMobs.SpecialSpider" "TwilightForest.HydraHead" "TwilightForest.RovingCube" "TwilightForest.Harbinger Cube" "TwilightForest.Adherent" "SpecialMobs.SpecialSilverfish"];
                 description = "These mobs will be skipped when generating recipe map";
               };
               MobTimeout = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
                 description = "Seconds to wait before skipping a mob's dropmap. If negative, will not timeout any mobs";
               };
             };
