@@ -9,6 +9,11 @@
     then "I"
     else if builtins.isFloat v
     then "D"
+    # D/F values are stored as strings to preserve precision. Detect numeric
+    # strings (integer or float) and emit D: prefix. The decimal point is
+    # optional: some D: fields have integer-looking values like 20000.
+    else if builtins.isString v && builtins.match "-?[0-9]+\\.?[0-9]*([Ee][+\\-]?[0-9]+)?" v != null
+    then "D"
     else "S";
 
   mkValue = v:
