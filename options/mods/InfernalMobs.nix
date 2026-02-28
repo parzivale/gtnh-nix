@@ -3498,7 +3498,7 @@
             options = {
               coolDownMillis = lib.mkOption {
                 type = lib.types.float;
-                efault = 6000.0;
+                default = 6000.0;
                 escription = "Time between ability uses";
               };
             };
