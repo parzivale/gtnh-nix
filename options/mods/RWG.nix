@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/RWG.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/RWG.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         "biome ids" = lib.mkOption {
           default = {};
@@ -151,8 +151,8 @@
           type = lib.types.submodule {
             options = {
               "Climate Distance" = lib.mkOption {
-                type = lib.types.str;
-                default = "1600.0";
+                type = lib.types.float;
+                default = 1600.0;
               };
               "Enable Cobblestone Boulders" = lib.mkOption {
                 type = lib.types.bool;
