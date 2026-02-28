@@ -423,8 +423,8 @@
                 description = "Potion particles coming off of the player entity you control are always clear. [default: false]";
               };
               reduceLightningVolume = lib.mkOption {
-                type = lib.types.float;
-                default = 10000.0;
+                type = lib.types.str;
+                default = "10000.0";
                 description = "Set to 10,000 to disable. [range: 2.0 ~ 10000.0, default: 10000.0]";
               };
               removeEntityDuplicateExtendedPropertiesIdentifierSpam = lib.mkOption {
@@ -433,73 +433,73 @@
                 description = "Removes \"An attempt was made to register extended properties using an existing key\" log spam caused by some mods. [default: true]";
               };
               scaledDrowningDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledDrowningDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledFireDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledLavaDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledPoisonDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledStarvationDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledSuffocationDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthFlat = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 20000.0, default: 0.0]";
               };
               scaledWitherDamageMaxHealthMult = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Set to 0 to disable. [range: 0.0 ~ 1.0, default: 0.0]";
               };
               useAnyDyeOnLeatherArmor = lib.mkOption {
