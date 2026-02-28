@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/TwilightForest.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/TwilightForest.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         biome = lib.mkOption {
           default = {};
@@ -166,8 +166,8 @@
           type = lib.types.submodule {
             options = {
               CanopyCoverage = lib.mkOption {
-                type = lib.types.str;
-                default = "1.7";
+                type = lib.types.float;
+                default = 1.7;
                 description = "Amount of canopy coverage, from 0.0 on up.  Lower numbers improve chunk generation speed at the cost of a thinner forest.";
               };
               TwilightOakChance = lib.mkOption {
