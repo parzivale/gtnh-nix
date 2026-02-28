@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/SpecialMobs.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/SpecialMobs.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         _enchants = lib.mkOption {
           default = {};
@@ -23,8 +23,8 @@
                 default = 160;
               };
               pain_damage = lib.mkOption {
-                type = lib.types.str;
-                default = "1.34";
+                type = lib.types.float;
+                default = 1.34;
                 description = "The amount of direct damage done by each level of the Pain enchant";
               };
               pain_sword = lib.mkOption {
@@ -99,8 +99,8 @@
                 description = "Comma-separated list of each dimension to prevent this mod from replacing mobs in. Default is none.";
               };
               random_scaling = lib.mkOption {
-                type = lib.types.str;
-                default = "0.3";
+                type = lib.types.float;
+                default = 0.3;
                 description = "The maximum magnitude for random size scaling (scaling * 50% = max difference %). Setting this to 0 disables random size scaling. Default is +/-15%";
               };
               spawn_eggs = lib.mkOption {
@@ -120,8 +120,8 @@
           type = lib.types.submodule {
             options = {
               baby_skeleton_chance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "(0 <= x <= 1) Chance that a skeleton will spawn as a baby. Default is 5%.";
               };
               blaze_snowball_hits = lib.mkOption {
@@ -130,23 +130,23 @@
                 description = "How many snowballs it takes to kill a blaze(does not account for cooldown or regen)";
               };
               bow_chance_pigzombie = lib.mkOption {
-                type = lib.types.str;
-                default = "0.25";
+                type = lib.types.float;
+                default = 0.25;
                 description = "(0 <= x <= 1) Chance that a zombie pigman will spawn with a bow, if possible. Default is 25%.";
               };
               bow_chance_skeleton = lib.mkOption {
-                type = lib.types.str;
-                default = "0.95";
+                type = lib.types.float;
+                default = 0.95;
                 description = "(0 <= x <= 1) Chance that a skeleton will spawn with a bow, if possible. Default is 95%.";
               };
               bow_chance_wither = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "(0 <= x <= 1) Chance that a wither skeleton will spawn with a bow, if possible. Default is 5%.";
               };
               bow_chance_zombie = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "(0 <= x <= 1) Chance that a zombie will spawn with a bow, if possible. Default is 5%.";
               };
               conflagration_snowball_hits = lib.mkOption {
@@ -155,8 +155,8 @@
                 description = "How many snowballs it takes to kill a conflagration(does not account for cooldown or regen)";
               };
               creeper_charge_chance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.01";
+                type = lib.types.float;
+                default = 0.01;
                 description = "(0 <= x <= 1) Chance that any creeper spawned during a thunderstorm will be charged. Default is 1%.";
               };
               enderman_griefing = lib.mkOption {
@@ -165,33 +165,33 @@
                 description = "(True/false) If true, endermen will pick up blocks and place them around randomly, as in vanilla. Default is true.";
               };
               hostile_cavespiders = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "(0 <= x <= 1) Chance that a cave spider will spawn aggressive in daylight. Default is 100%.";
               };
               hostile_pigzombies = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "(0 <= x <= 1) Chance that a zombie pigman will spawn already mad. Default is 5%.";
               };
               hostile_silverfish = lib.mkOption {
-                type = lib.types.str;
-                default = "0.2";
+                type = lib.types.float;
+                default = 0.2;
                 description = "(0 <= x <= 1) Chance that a silverfish will spawn already calling for reinforcements. Default is 20%.";
               };
               hostile_spiders = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "(0 <= x <= 1) Chance that a spider will spawn aggressive in daylight. Default is 10%.";
               };
               spit_chance_cavespider = lib.mkOption {
-                type = lib.types.str;
-                default = "0.1";
+                type = lib.types.float;
+                default = 0.1;
                 description = "(0 <= x <= 1) Chance that a cave spider will spawn with a spitting attack. Default is 10%.";
               };
               spit_chance_spider = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
                 description = "(0 <= x <= 1) Chance that a spider will spawn with a spitting attack. Default is 5%.";
               };
               tiny_slime_damage = lib.mkOption {
@@ -200,8 +200,8 @@
                 description = "If true, tiny special slimes (including vanilla replacements) will be able to deal damage to players. Default is true.";
               };
               villager_infection = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "(0 <= x <= 1) Chance that a villager will be infected when killed by a zombie. Default is 100%.";
               };
               xray_ghosts = lib.mkOption {
@@ -535,8 +535,8 @@
                 description = "Maximum half-hearts to heal when standing in lava. Useful to keep infernals reasonable";
               };
               lavamonster_heal_percent = lib.mkOption {
-                type = lib.types.str;
-                default = "0.25";
+                type = lib.types.float;
+                default = 0.25;
                 description = "Percent to heal when standing in lava";
               };
               lavamonster_heal_time = lib.mkOption {
@@ -545,8 +545,8 @@
                 description = "Average ticks between heal attempts when the lava monster is standing in lava.";
               };
               lavamonster_health = lib.mkOption {
-                type = lib.types.str;
-                default = "24.0";
+                type = lib.types.float;
+                default = 24.0;
                 description = "Lava monsters' maximum health.";
               };
             };
@@ -577,8 +577,8 @@
                 description = "If true, lava monsters will be able to spawn in lava one block deep.";
               };
               lavamonster_spawn_chance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "The chance for a lava monster spawn attempt to be tried in a chunk. Might not find lava anyways.";
               };
               lavamonster_spawn_frequency = lib.mkOption {
