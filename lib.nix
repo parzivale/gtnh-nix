@@ -47,6 +47,28 @@
   mkCfgFile = attrs:
     pkgs.writeText (builtins.baseNameOf attrs.path) (mkCfg (builtins.removeAttrs attrs ["kind" "path"]));
 
+  mkEntryUntyped = k: v:
+    if builtins.isAttrs v
+    # Empty-string key represents a top-level anonymous section.
+    # Writing `"" {` would produce an unmatched-quote parse error in Forge;
+    # write bare `{` instead, which Forge accepts as an anonymous section.
+    then
+      if k == ""
+      then "{\n${mkCfgUntyped v}\n}"
+      else "\"${k}\" {\n${mkCfgUntyped v}\n}"
+    else if builtins.isList v
+    then
+      if v == []
+      then ""
+      else "\"${k}\" <\n${lib.concatMapStrings (x: "${mkValue x}\n") v}>"
+    else "\"${k}\"=${mkValue v}";
+
+  mkCfgUntyped = attrs:
+    lib.concatStringsSep "\n" (lib.mapAttrsToList mkEntryUntyped attrs);
+
+  mkCfgFileUntyped = attrs:
+    pkgs.writeText (builtins.baseNameOf attrs.path) (mkCfgUntyped (builtins.removeAttrs attrs ["kind" "path"]));
+
   mkJsonFile = attrs:
     pkgs.writeText (builtins.baseNameOf attrs.path) (builtins.toJSON (builtins.removeAttrs attrs ["kind" "path"]));
 
@@ -56,6 +78,8 @@
   mkConfigFile = attrs:
     if attrs.kind == "forge"
     then mkCfgFile attrs
+    else if attrs.kind == "forge_untyped"
+    then mkCfgFileUntyped attrs
     else if attrs.kind == "json"
     then mkJsonFile attrs
     else if attrs.kind == "xml"
