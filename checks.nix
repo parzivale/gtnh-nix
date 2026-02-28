@@ -227,6 +227,11 @@
         "climate-control-biomesoplenty-in-cc-cfg"
         moduleEval.config.programs.gtnh.mods.ClimateControl.biomesoplentyInCC
         "config/ClimateControl/biomesoplentyInCC.cfg";
+      code-chicken-core-code-chicken-core-cfg =
+        mkCfgCheck
+        "code-chicken-core-code-chicken-core-cfg"
+        moduleEval.config.programs.gtnh.mods.CodeChickenCore.CodeChickenCore
+        "config/CodeChickenCore.cfg";
       draconic-evolution-draconic-evolution-cfg =
         mkCfgCheck
         "draconic-evolution-draconic-evolution-cfg"
@@ -242,6 +247,11 @@
         "emt-emt-cfg"
         moduleEval.config.programs.gtnh.mods.EMT.EMT
         "config/EMT.cfg";
+      ender-storage-ender-storage-cfg =
+        mkCfgCheck
+        "ender-storage-ender-storage-cfg"
+        moduleEval.config.programs.gtnh.mods.EnderStorage.EnderStorage
+        "config/EnderStorage.cfg";
       extended-pasupport-extended-pasupport-cfg =
         mkCfgCheck
         "extended-pasupport-extended-pasupport-cfg"
@@ -1074,6 +1084,11 @@
         "mobsinfo-mobsinfo-cfg"
         moduleEval.config.programs.gtnh.mods.mobsinfo.mobsinfo
         "config/mobsinfo/mobsinfo.cfg";
+      multipart-multipart-cfg =
+        mkCfgCheck
+        "multipart-multipart-cfg"
+        moduleEval.config.programs.gtnh.mods.multipart.multipart
+        "config/multipart.cfg";
       neiintegration-neiintegration-cfg =
         mkCfgCheck
         "neiintegration-neiintegration-cfg"
@@ -1114,6 +1129,11 @@
         "railcraft-railcraft-cfg"
         moduleEval.config.programs.gtnh.mods.railcraft.railcraft
         "config/railcraft/railcraft.cfg";
+      roguelike_dungeons-roguelike-cfg =
+        mkCfgCheck
+        "roguelike_dungeons-roguelike-cfg"
+        moduleEval.config.programs.gtnh.mods.roguelike_dungeons.roguelike
+        "config/roguelike_dungeons/roguelike.cfg";
       salisarcana-bugfixes-cfg =
         mkCfgCheck
         "salisarcana-bugfixes-cfg"

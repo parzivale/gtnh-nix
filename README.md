@@ -8,11 +8,6 @@ The following mods are not yet managed through Nix options because they use conf
 
 - **GenDustry** — recipe/upgrade/bee configs use a custom DSL format (`config/gendustry/`)
 - **OpenComputers** — uses HOCON format (`config/OpenComputers.cfg`)
-- **CodeChickenCore** - Doesn't use proper type specifiers???
-- **EnderStorage** - Same issue as CodeChickenCore
-- **multiPart** - Same issue as CodeChickenCore
-- **RougeLikeDungeons** - Same issue as CodeChickenCore
-
 These mods fall back to the pack's default config files. Contributions welcome.
 
 # Usage
