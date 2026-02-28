@@ -58,8 +58,8 @@
                 default = "i know and its ok";
               };
               hoverModeFallSpeed = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
                 description = "Max speed at which the player falls when wearing an Advanced Jetpack using hover-mode (GS default is 0.03) [range: 0.0 ~ 1.0, default: 0.0]";
               };
               xpGainFactor = lib.mkOption {
