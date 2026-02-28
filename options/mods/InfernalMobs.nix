@@ -3340,8 +3340,8 @@
                 description = "Maximum number of Modifiers an Inferno mob will receive";
               };
               maxOneShotDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "12.0";
+                type = lib.types.float;
+                default = 12.0;
               };
               maxUltraModifiers = lib.mkOption {
                 type = lib.types.int;
@@ -3364,8 +3364,8 @@
                 description = "Minimum number of Modifiers an Ultra mob will receive";
               };
               mobFarmDamageThreshold = lib.mkOption {
-                type = lib.types.str;
-                default = "150.0";
+                type = lib.types.float;
+                default = 150.0;
                 description = "Damage in chunk per interval that triggers anti farm effects";
               };
               mobHealthFactor = lib.mkOption {
@@ -3391,8 +3391,8 @@
           type = lib.types.submodule {
             options = {
               healAmountMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "1.0";
+                type = lib.types.float;
+                default = 1.0;
                 description = "Multiplies the mob maximum health when healing back up, cannot get past maximum mob health";
               };
             };
@@ -3403,8 +3403,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "6000.0";
+                type = lib.types.float;
+                default = 6000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3415,13 +3415,13 @@
           type = lib.types.submodule {
             options = {
               berserkMaxDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Maximum amount of damage that a mob with Berserk can deal (0, or less than zero for unlimited berserk damage)";
               };
               damageMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "2.0";
+                type = lib.types.float;
+                default = 2.0;
                 description = "Damage multiplier, limited by maxOneShotDamage";
               };
             };
@@ -3432,8 +3432,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "15000.0";
+                type = lib.types.float;
+                default = 15000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3444,8 +3444,8 @@
           type = lib.types.submodule {
             options = {
               damageMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "Damage (taken) multiplier, only makes sense for values < 1.0";
               };
             };
@@ -3456,13 +3456,13 @@
           type = lib.types.submodule {
             options = {
               cloakingDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "200.0";
+                type = lib.types.float;
+                default = 200.0;
                 description = "Time mob is cloaked";
               };
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "12000.0";
+                type = lib.types.float;
+                default = 12000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3473,8 +3473,8 @@
           type = lib.types.submodule {
             options = {
               darknessDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "120.0";
+                type = lib.types.float;
+                default = 120.0;
                 description = "Time attacker is darkened";
               };
             };
@@ -3485,8 +3485,8 @@
           type = lib.types.submodule {
             options = {
               fieryDurationSecs = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
                 description = "Time attacker is set on fire";
               };
             };
@@ -3497,9 +3497,9 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "6000.0";
-                description = "Time between ability uses";
+                type = lib.types.float;
+                efault = 6000.0;
+                escription = "Time between ability uses";
               };
             };
           };
@@ -3509,8 +3509,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "5000.0";
+                type = lib.types.float;
+                default = 5000.0;
                 description = "Time between ability uses";
               };
               maxDistance = lib.mkOption {
@@ -3526,8 +3526,8 @@
           type = lib.types.submodule {
             options = {
               poisonDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "120.0";
+                type = lib.types.float;
+                default = 120.0;
                 description = "Time attacker is poisoned";
               };
             };
@@ -3538,8 +3538,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "500.0";
+                type = lib.types.float;
+                default = 500.0;
                 description = "Time between ability uses";
               };
             };
@@ -3550,8 +3550,8 @@
           type = lib.types.submodule {
             options = {
               hungerDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "120.0";
+                type = lib.types.float;
+                default = 120.0;
                 description = "Time attacker is hungering";
               };
             };
@@ -3562,8 +3562,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "5000.0";
+                type = lib.types.float;
+                default = 5000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3574,8 +3574,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "15000.0";
+                type = lib.types.float;
+                default = 15000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3586,13 +3586,13 @@
           type = lib.types.submodule {
             options = {
               vengeanceMaxDamage = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
                 description = "Maximum amount of damage that is reflected (0, or less than zero for unlimited vengeance damage)";
               };
               vengeanceMultiplier = lib.mkOption {
-                type = lib.types.str;
-                default = "0.5";
+                type = lib.types.float;
+                default = 0.5;
                 description = "Multiplies damage received, result is subtracted from attacking entity's health";
               };
             };
@@ -3603,8 +3603,8 @@
           type = lib.types.submodule {
             options = {
               weaknessDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "120.0";
+                type = lib.types.float;
+                default = 120.0;
                 description = "Time attacker is weakened";
               };
             };
@@ -3615,8 +3615,8 @@
           type = lib.types.submodule {
             options = {
               coolDownMillis = lib.mkOption {
-                type = lib.types.str;
-                default = "15000.0";
+                type = lib.types.float;
+                default = 15000.0;
                 description = "Time between ability uses";
               };
             };
@@ -3627,8 +3627,8 @@
           type = lib.types.submodule {
             options = {
               witherDurationTicks = lib.mkOption {
-                type = lib.types.str;
-                default = "120.0";
+                type = lib.types.float;
+                default = 120.0;
                 description = "Time attacker is withered";
               };
             };
