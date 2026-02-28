@@ -34,18 +34,28 @@
       pkgs.runCommand "check-cfg-${name}" {} ''
         normalize() {
           grep -v '^\s*#' "$1" \
-            | grep -v '^\s*$' \
-            | grep -v '^\s*~' \
-            | awk '{ if (prev != "" && /^\s*\{\s*$/) { print prev " {"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
-            | sed 's/^[[:space:]]*//' \
-            | tr -d '"' \
-            | sed 's/ *= */=/; s/ *{$/{/; s/[[:space:]]*$//' \
-            | awk '/<$/{skip=1;next} skip&&/^>$/{skip=0;next} skip{next} {print}' \
-            | awk 'match($0, /=[-]?[0-9]*[.]?[0-9]+[Ee][+-]?[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
-            | awk 'match($0, /=[-]?[0-9]*\.[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
-            | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
-            | sort -u \
-            || true
+          | grep -v '^\s*$' \
+          | grep -v '^\s*~' \
+          | awk -F'"' '{
+              for (i=1; i<=NF; i++) {
+                  if (i % 2 != 0) {
+                      # Outside quotes: strip spaces around separators and remove extra padding
+                      gsub(/[[:space:]]*=[[:space:]]*/, "=", $i);
+                      gsub(/[[:space:]]*\{[[:space:]]*/, "{", $i);
+                      gsub(/[[:space:]]+/, "", $i);
+                  }
+                  # Reconstruct the line with the quotes we split on
+                  printf "%s%s", $i, (i < NF ? "\"" : "");
+              }
+              print ""
+          }' \
+          | awk '{ if (prev != "" && /^{$/) { print prev "{"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
+          | awk '/<$/{skip=1;next} skip&&/^>$/{skip=0;next} skip{next} {print}' \
+          | awk 'match($0, /=[-]?[0-9]*[.]?[0-9]+[Ee][+-]?[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
+          | awk 'match($0, /=[-]?[0-9]*\.[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
+          | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
+          | sort -u \
+          || true
         }
         normalize "${original}"  > orig_norm
         normalize "${rendered}" > rendered_norm
