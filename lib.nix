@@ -19,8 +19,6 @@
         then "true"
         else "false"
       )
-    else if builtins.isFloat v
-    then builtins.toJSON v
     else toString v;
 
   mkEntry = k: v:

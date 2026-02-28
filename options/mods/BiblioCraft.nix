@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/BiblioCraft.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/BiblioCraft.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "blocks enabled" = lib.mkOption {
           default = {};
@@ -334,8 +334,8 @@
                 description = "This will set the max number of uses an Enchanted Plate has before breaking. Default is 3.";
               };
               PaintingRenderDistance = lib.mkOption {
-                type = lib.types.float;
-                default = 64.0;
+                type = lib.types.str;
+                default = "64.0";
                 description = "This will adjust the maximium render distance at which paintings can be seen. The default is 64.0 blocks.";
               };
               RenderTextShadow = lib.mkOption {

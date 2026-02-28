@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/battlegear2.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/battlegear2.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         coremod = lib.mkOption {
           default = {};
@@ -71,12 +71,12 @@
               };
               "Disabled Items" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "flagpole, bow,";
               };
               "Disabled Recipies" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "mb.arrow.piercing, mb.arrow.poison, mb.arrow.mystery, mb.arrow.leech, chain.armour";
               };
               "Enable GUI Buttons" = lib.mkOption {
@@ -101,7 +101,7 @@
               };
               "Disabled Renderers" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "spear, shield, bow, quiver, flagpole,";
               };
               "Force screen components rendering" = lib.mkOption {
@@ -176,40 +176,40 @@
           type = lib.types.submodule {
             options = {
               ender = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
               };
               explosive = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
               flame = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
               holy = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
               ice = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
               };
               leech = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
               mystery = lib.mkOption {
-                type = lib.types.float;
-                default = 0.0;
+                type = lib.types.str;
+                default = "0.0";
               };
               piercing = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
               poison = lib.mkOption {
-                type = lib.types.float;
-                default = 0.1;
+                type = lib.types.str;
+                default = "0.1";
               };
             };
           };

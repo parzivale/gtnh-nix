@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/DraconicEvolution.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/DraconicEvolution.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         "draconic reactor" = lib.mkOption {
           default = {};
@@ -112,12 +112,12 @@
               };
               "Disabled Blocks & Items" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [];
+                default = [ ];
                 description = "add the unlocalized name of a block or item to this list to disable it [default: ]";
               };
               "Dragon egg spawn location" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [0 0 0];
+                default = [ 0 0 0 ];
                 description = "Sets the exact location to spawn the dragon egg and disables the portal spawn (dose not effect vanilla dragon)";
               };
               "Enable Flight" = lib.mkOption {
@@ -168,7 +168,7 @@
               };
               "Item Dislocator Blacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["appliedenergistics2:item.ItemCrystalSeed"];
+                default = [ "appliedenergistics2:item.ItemCrystalSeed" ];
                 description = "A list of items of items that should be ignored by the item dislocator. Use the items registry name e.g. minecraft:apple you can also add a meta value like so minecraft:wool|4 [default: [appliedenergistics2:item.ItemCrystalSeed]]";
               };
               "Item Dislocator Disable Sound" = lib.mkOption {
@@ -178,12 +178,12 @@
               };
               "Ore gen dimension blacklist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [7 100];
+                default = [ 7 100 ];
                 description = "Add the id's of dimensions you do not want draconium ore to spawn in";
               };
               "Ore gen dimension whitelist" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1];
+                default = [ 1 ];
                 description = "Add the id's of dimensions you do want draconium ore to spawn in (if empty, uses only the blacklist)";
               };
               "Pigmen Blood Rage" = lib.mkOption {
@@ -192,8 +192,8 @@
                 description = "Is Pigmen blood rage active";
               };
               "Player speed cap" = lib.mkOption {
-                type = lib.types.float;
-                default = 10.0;
+                type = lib.types.str;
+                default = "10.0";
                 description = "Limits the max speed of players. Recommend between 0.5 - 1.0 for servers";
               };
               "Rapidly despawn aoe mined items" = lib.mkOption {
@@ -208,7 +208,7 @@
               };
               "Speed limit Dim black lack list" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [1];
+                default = [ 1 ];
                 description = "A list of dimensions the speed limit will not effect (speed limit is not so really required in the end)";
               };
               "Speed limit effects ops" = lib.mkOption {
@@ -255,7 +255,7 @@
             options = {
               "HUD Settings" = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [996 825 69 907 90 100 3 0 1 1 1 1];
+                default = [ 996 825 69 907 90 100 3 0 1 1 1 1 ];
                 description = "Used to store the position of the armor ant tool HUD's. This should not be modified";
               };
             };
@@ -297,7 +297,7 @@
             options = {
               "Spawn List" = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = ["ExampleMob1" "ExampleMob2" "ExampleMob3 (these examples can be deleted)"];
+                default = [ "ExampleMob1" "ExampleMob2" "ExampleMob3 (these examples can be deleted)" ];
                 description = "List of names that will be ether accepted or rejected by the spawner depending on the list type [default: [ExampleMob1], [ExampleMob2], [ExampleMob3 (these examples can be deleted)]]";
               };
               listType = lib.mkOption {

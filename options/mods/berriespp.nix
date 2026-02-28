@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-          type = lib.types.str;
-          default = "./config/berriespp.cfg";
-          readOnly = true;
+        type = lib.types.str;
+        default = "./config/berriespp.cfg";
+        readOnly = true;
         };
         kind = lib.mkOption {
-          type = lib.types.str;
-          default = "forge";
-          readOnly = true;
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
         };
         crops = lib.mkOption {
           default = {};
@@ -306,16 +306,16 @@
           type = lib.types.submodule {
             options = {
               "All Crops" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
               };
               "All crops" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
               };
               "Primordial Berry" = lib.mkOption {
-                type = lib.types.float;
-                default = 0.5;
+                type = lib.types.str;
+                default = "0.5";
               };
               "Primordial Berry groth time" = lib.mkOption {
                 type = lib.types.int;
@@ -326,12 +326,12 @@
                 default = 125000;
               };
               "Tinker's Construct Berries" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
               };
               "Tinker's Construct berries" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
               };
             };
           };
@@ -368,8 +368,8 @@
                 default = false;
               };
               "Boots Damage Chance" = lib.mkOption {
-                type = lib.types.float;
-                default = 1.0;
+                type = lib.types.str;
+                default = "1.0";
               };
               Debug = lib.mkOption {
                 type = lib.types.bool;
