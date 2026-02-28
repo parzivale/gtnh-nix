@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/harvestcraft.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/harvestcraft.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         backports = lib.mkOption {
           default = {};
@@ -45,8 +45,8 @@
           type = lib.types.submodule {
             options = {
               candlelightLevel = lib.mkOption {
-                type = lib.types.str;
-                default = "0.9375";
+                type = lib.types.float;
+                default = 0.9375;
               };
               candlerecipeAmount = lib.mkOption {
                 type = lib.types.int;
@@ -64,8 +64,8 @@
                 default = 1;
               };
               cropsaturationRestore = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6000000238418579";
+                type = lib.types.float;
+                default = 0.6000000238418579;
               };
               cropsdropSeeds = lib.mkOption {
                 type = lib.types.bool;
@@ -76,12 +76,12 @@
                 default = false;
               };
               mealsaturation = lib.mkOption {
-                type = lib.types.str;
-                default = "1.2000000476837158";
+                type = lib.types.float;
+                default = 1.2000000476837158;
               };
               meatymealsaturation = lib.mkOption {
-                type = lib.types.str;
-                default = "1.600000023841858";
+                type = lib.types.float;
+                default = 1.600000023841858;
               };
               rightclickharvestCrop = lib.mkOption {
                 type = lib.types.bool;
@@ -92,8 +92,8 @@
                 default = false;
               };
               snacksaturation = lib.mkOption {
-                type = lib.types.str;
-                default = "0.6000000238418579";
+                type = lib.types.float;
+                default = 0.6000000238418579;
               };
             };
           };
