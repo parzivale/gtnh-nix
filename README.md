@@ -29,9 +29,14 @@ And add the overlay to your overlays
 
 ```nix
 nixpkgs.overlays = [
-  inputs.niri-flake.overlays.niri
   inputs.gtnh-nix.overlays.default
 ];
+```
+
+import the base module and whichever version module you like (currently only 2.8.4 is available)
+
+```nix
+imports = with inputs.gtnh-nix; [nixosModules.gtnh nixosModules."2.8.4"];
 ```
 
 And then enable GTNH!
