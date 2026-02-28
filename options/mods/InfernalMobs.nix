@@ -3011,7 +3011,7 @@
               };
               EntityUndeadWitch = lib.mkOption {
                 type = lib.types.float;
-                default = "187.1999969482422";
+                default = 187.1999969482422;
               };
               EntityUnholyGhast = lib.mkOption {
                 type = lib.types.float;
