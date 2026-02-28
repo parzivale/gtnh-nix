@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/malisisdoors.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/malisisdoors.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         general = lib.mkOption {
           default = {};
@@ -52,8 +52,8 @@
                 description = "nullEnables less fancy rendering for Mixed Blocks. Enable this option if you experience z-fighting issue or glitched rendering.";
               };
               "config.vanishingGlitchChance" = lib.mkOption {
-                type = lib.types.str;
-                default = "5.0E-4";
+                type = lib.types.float;
+                default = 5.0E-4;
                 description = "nullHow often the frame become unstable.";
               };
             };
