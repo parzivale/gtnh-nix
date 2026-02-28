@@ -5,14 +5,14 @@
     type = lib.types.submodule {
       options = {
         path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/OpenBlocks.cfg";
-        readOnly = true;
+          type = lib.types.str;
+          default = "./config/OpenBlocks.cfg";
+          readOnly = true;
         };
         kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
         };
         additional = lib.mkOption {
           default = {};
@@ -20,7 +20,7 @@
             options = {
               disableMobNames = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
               };
               dumpDeadPlayersInventories = lib.mkOption {
                 type = lib.types.bool;
@@ -206,7 +206,7 @@
             options = {
               blockBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ "\"Natura:Cloud\"" ];
+                default = ["\"Natura:Cloud\""];
               };
               reportInvalidRequest = lib.mkOption {
                 type = lib.types.bool;
@@ -236,12 +236,12 @@
                 default = false;
               };
               turtleMagnetDeactivateRange = lib.mkOption {
-                type = lib.types.str;
-                default = "3.0";
+                type = lib.types.float;
+                default = 3.0;
               };
               turtleMagnetRange = lib.mkOption {
-                type = lib.types.str;
-                default = "32.0";
+                type = lib.types.float;
+                default = 32.0;
               };
             };
           };
@@ -296,8 +296,8 @@
                 default = false;
               };
               elevatorXpDrainRatio = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0";
+                type = lib.types.float;
+                default = 0.0;
               };
               ignoreAllBlocks = lib.mkOption {
                 type = lib.types.bool;
@@ -321,7 +321,7 @@
               };
               specialBlockRules = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
               };
             };
           };
@@ -342,12 +342,12 @@
           type = lib.types.submodule {
             options = {
               fanForce = lib.mkOption {
-                type = lib.types.str;
-                default = "0.05";
+                type = lib.types.float;
+                default = 0.05;
               };
               fanRange = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
               isRedstoneActivated = lib.mkOption {
                 type = lib.types.bool;
@@ -397,7 +397,7 @@
             options = {
               BlacklistedDimensions = lib.mkOption {
                 type = lib.types.listOf lib.types.int;
-                default = [ 95 94 93 92 86 85 84 83 82 81 77 74 71 69 63 54 51 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 33 32 31 30 29 28 25 ];
+                default = [95 94 93 92 86 85 84 83 82 81 77 74 71 69 63 54 51 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 33 32 31 30 29 28 25];
                 description = "List of dimension IDs where the glider doesn't work";
               };
             };
@@ -408,8 +408,8 @@
           type = lib.types.submodule {
             options = {
               opacity = lib.mkOption {
-                type = lib.types.str;
-                default = "0.95";
+                type = lib.types.float;
+                default = 0.95;
               };
               useTexture = lib.mkOption {
                 type = lib.types.bool;
@@ -443,8 +443,8 @@
                 default = false;
               };
               skeletonSpawnRate = lib.mkOption {
-                type = lib.types.str;
-                default = "0.002";
+                type = lib.types.float;
+                default = 0.002;
               };
               spawnRange = lib.mkOption {
                 type = lib.types.int;
@@ -455,8 +455,8 @@
                 default = true;
               };
               specialActionFrequency = lib.mkOption {
-                type = lib.types.str;
-                default = "0.03";
+                type = lib.types.float;
+                default = 0.03;
               };
               storeContents = lib.mkOption {
                 type = lib.types.bool;
@@ -478,8 +478,8 @@
                 default = 1;
               };
               renderDistanceSq = lib.mkOption {
-                type = lib.types.str;
-                default = "65536.0";
+                type = lib.types.float;
+                default = 65536.0;
               };
               useAdvancedRenderer = lib.mkOption {
                 type = lib.types.bool;
@@ -515,12 +515,12 @@
           type = lib.types.submodule {
             options = {
               fadingSpeed = lib.mkOption {
-                type = lib.types.str;
-                default = "0.0075";
+                type = lib.types.float;
+                default = 0.0075;
               };
               numberOfUses = lib.mkOption {
-                type = lib.types.str;
-                default = "10.0";
+                type = lib.types.float;
+                default = 10.0;
               };
             };
           };
@@ -829,7 +829,7 @@
               };
               flimFlamBlacklist = lib.mkOption {
                 type = lib.types.listOf lib.types.str;
-                default = [ ];
+                default = [];
               };
               reverseBlacklist = lib.mkOption {
                 type = lib.types.bool;
@@ -855,8 +855,8 @@
           type = lib.types.submodule {
             options = {
               trophyDropChance = lib.mkOption {
-                type = lib.types.str;
-                default = "0.01";
+                type = lib.types.float;
+                default = 0.01;
               };
               trophyDropChanceFormula = lib.mkOption {
                 type = lib.types.str;
