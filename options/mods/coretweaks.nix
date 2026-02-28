@@ -491,8 +491,8 @@
                       description = "If enabled, the distance of the view fustrum's far plane will be clamped above `minFarPlaneDistance`. Setting it to 180 or higher fixes clipping in OptiFine's custom skybox that happens when using lower render distances. [default: true]";
                     };
                     minFarPlaneDistance = lib.mkOption {
-                      type = lib.types.float;
-                      default = 180.0;
+                      type = lib.types.str;
+                      default = "180.0";
                       description = "See `clampFarPlaneDistance`. [range: 0.0 ~ 3.4028235E38, default: 180.0]";
                     };
                   };
