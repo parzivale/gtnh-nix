@@ -14,12 +14,8 @@ with lib; {
       With allow-flight enabled, griefers may become more common, because
       it makes their work easier. In Creative mode, this has no effect.
 
-      <itemizedlist>
-      <listitem><emphasis>false</emphasis> - Flight is not allowed
-      (players in air for at least 5 seconds get kicked).</listitem>
-      <listitem><emphasis>true</emphasis> - Flight is allowed, and used
-      if the player has a fly mod installed.</listitem>
-      </itemizedlist>
+      - *false* - Flight is not allowed (players in air for at least 5 seconds get kicked).
+      - *true* - Flight is allowed, and used if the player has a fly mod installed.
     '';
   };
   allow-nether = mkOption {
@@ -28,12 +24,8 @@ with lib; {
     description = ''
       Allows players to travel to the Nether.
 
-      <itemizedlist>
-      <listitem><emphasis>false</emphasis> - Nether portals do not
-      work.</listitem>
-      <listitem><emphasis>true</emphasis> - The server allows portals to
-      send players to the Nether.</listitem>
-      </itemizedlist>
+      - *false* - Nether portals do not work.
+      - *true* - The server allows portals to send players to the Nether.
     '';
   };
   announce-player-achievements = mkOption {
@@ -42,10 +34,8 @@ with lib; {
     description = ''
       Whether to announce achievements in chat or not.
 
-      <itemizedlist>
-      <listitem><emphasis>false</emphasis> - Achievements are silenced.</listitem>
-      <listitem><emphasis>true</emphasis> - Achievements are logged in chat.</listitem>
-      </itemizedlist>
+      - *false* - Achievements are silenced.
+      - *true* - Achievements are logged in chat.
     '';
   };
   broadcast-console-to-ops = mkOption {
@@ -84,15 +74,14 @@ with lib; {
     default = false;
     description = ''
       Exposes an MBean with the Object name
-      <literal>net.minecraft.server:type=Server</literal> and two
-      attributes <literal>averageTickTime</literal> and
-      <literal>tickTimes</literal> exposing the tick times in
+      `net.minecraft.server:type=Server` and two
+      attributes `averageTickTime` and
+      `tickTimes` exposing the tick times in
       milliseconds.
 
       In order for enabling JMX on the Java runtime you also need to add
       a couple of JVM flags to the startup as documented
-      <link linkend="https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html">
-      here</link>.
+      [here](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html).
     '';
   };
   enable-rcon = mkOption {
@@ -103,7 +92,7 @@ with lib; {
       to be able to safely shut down the server.
 
       Note: By default, rcon is enabled, and its port is set to
-      <literal>server-port+1</literal>.  However, the rcon port does not get
+      `server-port+1`. However, the rcon port does not get
       opened in the firewall by default, meaning it can only be accessed from
       localhost.
     '';
@@ -153,10 +142,8 @@ with lib; {
     description = ''
       Force players to join in the default game mode.
 
-      <itemizedlist>
-      <listitem><emphasis>false</emphasis> - Players join in the gamemode they left in.</listitem>
-      <listitem><emphasis>true</emphasis> - Players always join in the default gamemode.</listitem>
-      </itemizedlist>
+      - *false* - Players join in the gamemode they left in.
+      - *true* - Players always join in the default gamemode.
     '';
   };
   function-permission-level = mkOption {
@@ -179,22 +166,19 @@ with lib; {
     description = ''
       Defines whether structures (such as villages) can be generated.
 
-      <itemizedlist>
-      <listitem><emphasis>false</emphasis> - Structures are not generated in new chunks.</listitem>
-      <listitem><emphasis>true</emphasis> - Structures are generated in new chunks.</listitem>
-      </itemizedlist>
+      - *false* - Structures are not generated in new chunks.
+      - *true* - Structures are generated in new chunks.
 
-      <emphasis>Note:</emphasis> Dungeons still generate if this is set to false.
+      *Note:* Dungeons still generate if this is set to false.
     '';
   };
   generator-settings = mkOption {
     type = with types; lines;
     default = "";
     description = ''
-      The settings used to customize world generation. Follow <link
-      linkend="https://minecraft.gamepedia.com/Java_Edition_level_format#generatorOptions_tag_format">its
-      format</link> and write the corresponding JSON string.
-      <literal>:</literal> are automatically escaped.
+      The settings used to customize world generation. Follow
+      [its format](https://minecraft.gamepedia.com/Java_Edition_level_format#generatorOptions_tag_format)
+      and write the corresponding JSON string. `:` are automatically escaped.
     '';
   };
   hardcore = mkOption {
@@ -233,30 +217,17 @@ with lib; {
     description = ''
       Determines the type of map that is generated.
 
-      <emphasis> DO NOT CHANGE THIS UNLESS YOU KNOW WHAT YOU ARE DOING </emphasis>
-      Gtnh expects the level type to be rwg for structure and ore generation, more info on the
-      <link linkend="https://wiki.gtnewhorizons.com/wiki/World_Generation"> wiki </link>
+      **DO NOT CHANGE THIS UNLESS YOU KNOW WHAT YOU ARE DOING**
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>rwg</emphasis> - The default gtnh level type
-      </listitem>
-      <listitem>
-      <emphasis>default</emphasis> - Standard world with hills, valleys, water, etc.
-      </listitem>
-      <listitem>
-      <emphasis>flat</emphasis> - A flat world with no features, can be modified with generator-settings.
-      </listitem>
-      <listitem>
-      <emphasis>largeBiomes</emphasis> - Same as default but all biomes are larger.
-      </listitem>
-      <listitem>
-      <emphasis>amplified</emphasis> - Same as default but world-generation height limit is increased.
-      </listitem>
-      <listitem>
-      <emphasis>buffet</emphasis> - Only for 1.15 or before. Same as default unless generator-settings is set.
-      </listitem>
-      </itemizedlist>
+      GTNH expects the level type to be rwg for structure and ore generation, more info on the
+      [wiki](https://wiki.gtnewhorizons.com/wiki/World_Generation).
+
+      - *rwg* - The default GTNH level type
+      - *default* - Standard world with hills, valleys, water, etc.
+      - *flat* - A flat world with no features, can be modified with generator-settings.
+      - *largeBiomes* - Same as default but all biomes are larger.
+      - *amplified* - Same as default but world-generation height limit is increased.
+      - *buffet* - Only for 1.15 or before. Same as default unless generator-settings is set.
     '';
   };
   max-build-height = mkOption {
@@ -294,11 +265,7 @@ with lib; {
       it to be crashed, server will forcibly shutdown. Once this
       criterion is met, it calls System.exit(1).
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>-1</emphasis> - disable watchdog entirely (this disable option was added in 14w32a)
-      </listitem>
-      </itemizedlist>
+      - *-1* - disable watchdog entirely (this disable option was added in 14w32a)
     '';
   };
   max-world-size = mkOption {
@@ -314,14 +281,8 @@ with lib; {
 
       Examples:
 
-      <itemizedlist>
-      <listitem>
-      Setting max-world-size to 1000 allows the player to have a 2000×2000 world border.
-      </listitem>
-      <listitem>
-      Setting max-world-size to 4000 gives the player an 8000×8000 world border
-      </listitem>
-      </itemizedlist>
+      - Setting max-world-size to 1000 allows the player to have a 2000×2000 world border.
+      - Setting max-world-size to 4000 gives the player an 8000×8000 world border.
     '';
   };
   motd = mkOption {
@@ -330,22 +291,11 @@ with lib; {
     description = ''
       This is the message that is displayed in the server list of the client, below the name.
 
-      <itemizedlist>
-      <listitem>
-      The MOTD supports <link
-      linkend="https://minecraft.gamepedia.com/Formatting_codes#Use_in_server.properties_and_pack.mcmeta">color
-      and formatting codes</link>.
-      </listitem>
-      <listitem>
-      The MOTD supports special characters, such as "♥". However, such
-      characters must be converted to escaped Unicode form. An online
-      converter can be found <link
-      linkend="http://www.freeformatter.com/string-utilities.html#charinfo">here</link>.
-      </listitem>
-      <listitem>
-      If the MOTD is over 59 characters, the server list may report a communication error.
-      </listitem>
-      </itemizedlist>
+      - The MOTD supports [color and formatting codes](https://minecraft.gamepedia.com/Formatting_codes#Use_in_server.properties_and_pack.mcmeta).
+      - The MOTD supports special characters, such as "♥". However, such
+        characters must be converted to escaped Unicode form. An online
+        converter can be found [here](http://www.freeformatter.com/string-utilities.html#charinfo).
+      - If the MOTD is over 59 characters, the server list may report a communication error.
     '';
   };
   network-compression-threshold = mkOption {
@@ -358,16 +308,10 @@ with lib; {
       amounts of bytes might actually end up with a larger result than
       what went in.
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>-1</emphasis> - disable compression entirely
-      </listitem>
-      <listitem>
-      <emphasis>0</emphasis> - compress everything
-      </listitem>
-      </itemizedlist>
+      - *-1* - disable compression entirely
+      - *0* - compress everything
 
-      <emphasis>Note:</emphasis> The Ethernet spec requires that packets
+      *Note:* The Ethernet spec requires that packets
       less than 64 bytes become padded to 64 bytes. Thus, setting a
       value lower than 64 may not be beneficial. It is also not
       recommended to exceed the MTU, typically 1500 bytes.
@@ -387,16 +331,8 @@ with lib; {
       servers, allowing players with unlicensed copies of Minecraft to
       join.
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>true</emphasis> - Enabled. The server assumes it has
-      an Internet connection and checks every connecting player.
-      </listitem>
-      <listitem>
-      <emphasis>false</emphasis> - Disabled. The server does not
-      attempt to check connecting players.
-      </listitem>
-      </itemizedlist>
+      - *true* - Enabled. The server assumes it has an Internet connection and checks every connecting player.
+      - *false* - Disabled. The server does not attempt to check connecting players.
     '';
   };
   op-permission-level = mkOption {
@@ -406,29 +342,13 @@ with lib; {
       Sets the default permission level for ops when using /op. All
       levels inherit abilities and commands from levels before them.
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>1</emphasis> - Ops can bypass spawn protection.
-      </listitem>
-      <listitem>
-      <emphasis>2</emphasis> - Ops can use all singleplayer cheats
-      commands (except <literal>/publish</literal>, as it is not on
-      servers; along with <literal>/debug</literal>) and use command
-      blocks. Command blocks, along with Realms owners/operators,
-      have the same permissions as this level.
-      </listitem>
-      <listitem>
-      <emphasis>3</emphasis> - Ops can use most
-      multiplayer-exclusive commands, including
-      <literal>/debug</literal>, and commands that manage players
-      (<literal>/ban</literal>, <literal>/op</literal>, etc).
-      </listitem>
-      <listitem>
-      <emphasis>4</emphasis> - Ops can use all commands including
-      <literal>/stop</literal>, <literal>/save-all</literal>,
-      <literal>/save-on</literal>, and <literal>/save-off</literal>.
-      </listitem>
-      </itemizedlist>
+      - *1* - Ops can bypass spawn protection.
+      - *2* - Ops can use all singleplayer cheats commands (except `/publish`, as it is not on
+        servers; along with `/debug`) and use command blocks. Command blocks, along with Realms
+        owners/operators, have the same permissions as this level.
+      - *3* - Ops can use most multiplayer-exclusive commands, including `/debug`, and commands
+        that manage players (`/ban`, `/op`, etc).
+      - *4* - Ops can use all commands including `/stop`, `/save-all`, `/save-on`, and `/save-off`.
     '';
   };
   player-idle-timeout = mkOption {
@@ -438,22 +358,19 @@ with lib; {
       If non-zero, players are kicked from the server if they are idle
       for more than that many minutes.
 
-      <emphasis>Note:</emphasis> Idle time is reset when the server
-      receives one of the following packets:
+      *Note:* Idle time is reset when the server receives one of the following packets:
 
-      <itemizedlist>
-      <listitem>Click Window</listitem>
-      <listitem>Enchant Item</listitem>
-      <listitem>Update Sign</listitem>
-      <listitem>Player Digging</listitem>
-      <listitem>Player Block Placement</listitem>
-      <listitem>Held Item Change</listitem>
-      <listitem>Animation (swing arm)</listitem>
-      <listitem>Entity Action</listitem>
-      <listitem>Client Status</listitem>
-      <listitem>Chat Message</listitem>
-      <listitem>Use Entity</listitem>
-      </itemizedlist>
+      - Click Window
+      - Enchant Item
+      - Update Sign
+      - Player Digging
+      - Player Block Placement
+      - Held Item Change
+      - Animation (swing arm)
+      - Entity Action
+      - Client Status
+      - Chat Message
+      - Use Entity
     '';
   };
   prevent-proxy-connections = mkOption {
@@ -461,12 +378,10 @@ with lib; {
     default = false;
     description = ''
       If the ISP/AS sent from the server is different from the one from
-      Mojang's authentication server, the player is kicked
+      Mojang's authentication server, the player is kicked.
 
-      <itemizedlist>
-      <listitem><emphasis>true</emphasis> - Enabled. Server prevents users from using vpns or proxies.</listitem>
-      <listitem><emphasis>false</emphasis> - Disabled. The server doesn't prevent users from using vpns or proxies.</listitem>
-      </itemizedlist>
+      - *true* - Enabled. Server prevents users from using vpns or proxies.
+      - *false* - Disabled. The server doesn't prevent users from using vpns or proxies.
     '';
   };
   pvp = mkOption {
@@ -476,29 +391,20 @@ with lib; {
       Enable PvP on the server. Players shooting themselves with arrows
       receive damage only if PvP is enabled.
 
-      <itemizedlist>
-      <listitem>
-      <emphasis>true</emphasis> - Players can kill each other.
-      </listitem>
-      <listitem>
-      <emphasis>false</emphasis> - Players cannot kill other players
-      (also known as <emphasis>Player versus Environment
-      (PvE)</emphasis>).
-      </listitem>
-      </itemizedlist>
+      - *true* - Players can kill each other.
+      - *false* - Players cannot kill other players (also known as *Player versus Environment (PvE)*).
 
-      <emphasis>Note:</emphasis> Indirect damage sources spawned by
-      players (such as lava, fire, TNT and to some extent water, sand
-      and gravel) still deal damage to other players.
+      *Note:* Indirect damage sources spawned by players (such as lava, fire, TNT and to some
+      extent water, sand and gravel) still deal damage to other players.
     '';
   };
   query-port = mkOption {
     type = with types; port;
     default = 25565;
     description = ''
-      Minecraft: <literal>query.port</literal>
+      Minecraft: `query.port`
 
-      Sets the port for the query server (see <literal>enable-query</literal>).
+      Sets the port for the query server (see `enable-query`).
     '';
   };
   rate-limit = mkOption {
@@ -513,7 +419,7 @@ with lib; {
     type = with types; str;
     default = "whatisloveohbabydonthurtmedonthurtmenomore";
     description = ''
-      Minecraft: <literal>rcon.password</literal>.
+      Minecraft: `rcon.password`.
 
       Sets the password for RCON: a remote console protocol that can
       allow other applications to connect and interact with a Minecraft
@@ -521,12 +427,12 @@ with lib; {
 
       A default password has been set because an empty password does not work
       with mcrcon. This same default password is the default value of
-      <literal>$MCRCON_PASS</literal>. If you set this, you must also set
-      <literal>$MCRCON_PASS</literal> environment variable for the
+      `$MCRCON_PASS`. If you set this, you must also set
+      `$MCRCON_PASS` environment variable for the
       corresponding systemd unit.
 
       Note: By default, rcon is enabled, and its port is set to
-      <literal>server-port+1</literal>.  However, the rcon port does not get
+      `server-port+1`. However, the rcon port does not get
       opened in the firewall by default, meaning it can only be accessed from
       localhost.
     '';
@@ -536,12 +442,12 @@ with lib; {
     default = config.minecraft.server-properties.server-port + 1;
     defaultText = literalExpression ''config.minecraft.server-properties.server-port + 1'';
     description = ''
-      Minecraft: <literal>rcon.port</literal>.
+      Minecraft: `rcon.port`.
 
       Sets the RCON network port.
 
       Note: By default, rcon is enabled, and its port is set to
-      <literal>server-port+1</literal>.  However, the rcon port does not get
+      `server-port+1`. However, the rcon port does not get
       opened in the firewall by default, meaning it can only be accessed from
       localhost.
     '';
@@ -565,7 +471,7 @@ with lib; {
       hexadecimal. It is recommended to specify this, because it is used
       to verify the integrity of the resource pack.
 
-      <emphasis>Note:</emphasis> If the resource pack is any different,
+      *Note:* If the resource pack is any different,
       a yellow message "Invalid sha1 for resource-pack-sha1" appears in
       the console when the server starts. Due to the nature of hash
       functions, errors have a tiny probability of occurring, so this
@@ -672,10 +578,10 @@ with lib; {
       friends or strangers carefully selected via an application
       process, for example.
 
-      <emphasis>Note:</emphasis> Ops are automatically whitelisted, and
+      *Note:* Ops are automatically whitelisted, and
       there is no need to add them to the whitelist.
 
-      <emphasis>NixOS Note:</emphasis> The whitelist is maintained statefully,
+      *NixOS Note:* The whitelist is maintained statefully,
       either manually or through console commands.
     '';
   };

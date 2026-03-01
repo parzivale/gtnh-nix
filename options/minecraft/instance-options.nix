@@ -38,8 +38,7 @@ in {
       Opportunistically restart the server when nobody is online. Sets a wall
       timer in minutes to check for currently online players. If two checks in
       a row find nobody online, restart the server if it hasn't been restarted
-      within the last <literal>autoRestartOpportunisticMinInterval</literal>
-      minutes.
+      within the last `autoRestartOpportunisticMinInterval` minutes.
     '';
   };
 
@@ -61,9 +60,7 @@ in {
     description = ''
       JVM package used to run the server.
 
-      <emphasis>Note:</emphasis> Do not use the
-      <literal>jre8_headless</literal> package. Modded minecraft needs
-      <literal>awt</literal>.
+      *Note:* Do not use the `jre8_headless` package. Modded minecraft needs `awt`.
     '';
   };
 
@@ -79,8 +76,7 @@ in {
     type = with types; str;
     default = "6G";
     description = ''
-      Maximum memory allocation pool for the JVM, as set by
-      <literal>-Xmx</literal>.
+      Maximum memory allocation pool for the JVM, as set by `-Xmx`.
 
       Default is JVM default. You definitely want to change this.
     '';
@@ -90,8 +86,7 @@ in {
     type = with types; str;
     default = "6G";
     description = ''
-      Initial memory allocation pool for the JVM, as set by
-      <literal>-Xms</literal>.
+      Initial memory allocation pool for the JVM, as set by `-Xms`.
 
       Defaults to not being set.
     '';
@@ -143,12 +138,9 @@ in {
       The default value should serve you well unless you have specific
       needs.
 
-      Note: Do not include <literal>-Xms</literal> or
-      <literal>-Xmx</literal> here.
+      Note: Do not include `-Xms` or `-Xmx` here.
 
-      See <literal>jvmMaxAllocation</literal> for <literal>-Xmx</literal>
-      and <literal>jvmInitialAllocation</literal> for
-      <literal>-Xms</literal>.
+      See `jvmMaxAllocation` for `-Xmx` and `jvmInitialAllocation` for `-Xms`.
     '';
   };
 
