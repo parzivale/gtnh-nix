@@ -11,10 +11,22 @@
     # config values for comparison checks.
     moduleEval = lib.evalModules {
       modules = [
-        self.nixosModules.gtnh
+        # Stub NixOS options that the gtnh module sets
+        ({lib, ...}: {
+          options = {
+            systemd.services = lib.mkOption {type = lib.types.attrs; default = {};};
+            users.users = lib.mkOption {type = lib.types.attrs; default = {};};
+            users.groups = lib.mkOption {type = lib.types.attrs; default = {};};
+            networking.firewall.allowedTCPPorts = lib.mkOption {type = lib.types.listOf lib.types.port; default = [];};
+            networking.firewall.allowedUDPPorts = lib.mkOption {type = lib.types.listOf lib.types.port; default = [];};
+          };
+        })
         {
           _module.args.pkgs = pkgs;
           _module.check = false;
+        }
+        self.lib.nixosModules."gtnh-2.8.4"
+        {
           programs.gtnh.enable = true;
         }
       ];
@@ -32,7 +44,7 @@
       # temp removed
       # | sed 's/^[BIDS]://' \
       pkgs.runCommand "check-cfg-${name}" {
-        nativeBuildInputs = [ pkgs.python3 ];
+        nativeBuildInputs = [pkgs.python3];
       } ''
         python3 ${./normalize.py} "${original}" "${rendered}"
         touch $out

@@ -1,19 +1,29 @@
 #!/usr/bin/env python3
-"""Generate Nix option files from Forge .cfg files."""
+"""Generate Nix option files from Forge .cfg files.
+
+Usage: gen_cfg_options.py <pack_root> <output_dir>
+
+Example:
+    ./gen_cfg_options.py /nix/store/xyz-gtnh ./versions/2.8.3/options/mods
+"""
 
 import re
 import sys
 from pathlib import Path
 
-PACK_ROOT = Path("/nix/store/iyigqiz3h7wf7sixmm7cdmnffpdr9fpv-gtnh")
+if len(sys.argv) >= 3:
+    PACK_ROOT = Path(sys.argv[1])
+    OPTIONS_OUT = Path(sys.argv[2])
+else:
+    PACK_ROOT = Path("/nix/store/iyigqiz3h7wf7sixmm7cdmnffpdr9fpv-gtnh")
+    OPTIONS_OUT = Path("./versions/2.8.4/options/mods")
+
 CFG_ROOT = PACK_ROOT / "config"
-OPTIONS_OUT = Path("./options/mods")
-FLAKE = Path("./flake.nix")
 
 # Already handled elsewhere
-SKIP_DIRS = {}
+SKIP_DIRS = set()
 # Skip the RTG biomes subdir (auto-generated), but keep RTG/rtg.cfg
-SKIP_PREFIXES = [CFG_ROOT]
+SKIP_PREFIXES = [CFG_ROOT / "RTG" / "biomes"]
 
 
 # ---------------------------------------------------------------------------

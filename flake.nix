@@ -12,10 +12,21 @@
 
   outputs = inputs @ {flake-parts, ...}: let
     base-url = "https://downloads.gtnewhorizons.com/ServerPacks/";
-    versionModules = inputs.haumea.lib.load {
-      src = ./versions;
-      loader = inputs.haumea.lib.loaders.path;
-    };
+    # Discover version directories that contain a default.nix
+    versionDirs = builtins.readDir ./versions;
+    versionModules = builtins.listToAttrs (builtins.filter (x: x != null) (builtins.map (
+      name: let
+        path = ./versions + "/${name}";
+        isDir = versionDirs.${name} == "directory";
+        hasDefault = isDir && builtins.pathExists (path + "/default.nix");
+      in
+        if hasDefault
+        then {
+          name = builtins.replaceStrings ["."] ["-"] name;
+          value = path;
+        }
+        else null
+    ) (builtins.attrNames versionDirs)));
     version-list = [
       {
         version = "2.8.4";
@@ -302,14 +313,32 @@
           '';
 
         mkDocs = dir:
-          builtins.listToAttrs (map (filepath: {
-              name = lib.removeSuffix ".nix" (builtins.baseNameOf filepath);
-              value = mkDoc filepath;
-            })
-            (filePaths dir));
+          if builtins.pathExists dir
+          then
+            builtins.listToAttrs (map (filepath: {
+                name = lib.removeSuffix ".nix" (builtins.baseNameOf filepath);
+                value = mkDoc filepath;
+              })
+              (filePaths dir))
+          else {};
 
-        modDocs = mkDocs ./options/mods;
-        minecraftDocs = mkDocs ./options/minecraft;
+        # Discover versions with options directories
+        versionsWithOptions = builtins.filter (
+          name: let
+            path = ./versions + "/${name}/options";
+          in
+            builtins.pathExists path
+        ) (builtins.attrNames versionDirs);
+
+        # Generate docs per version
+        versionDocs = builtins.listToAttrs (map (version: {
+            name = version;
+            value = {
+              mods = mkDocs (./versions + "/${version}/options/mods");
+              minecraft = mkDocs (./versions + "/${version}/options/minecraft");
+            };
+          })
+          versionsWithOptions);
 
         bookToml = pkgs.writeText "book.toml" ''
           [book]
@@ -322,18 +351,24 @@
           site-url = "/gtnh-nix/"
         '';
 
+        # Generate SUMMARY.md with sections per version
         summaryMd = pkgs.writeText "SUMMARY.md" ''
           # Summary
 
           [Introduction](index.md)
 
-          # Minecraft options
+          ${lib.concatStringsSep "\n\n" (map (version: ''
+              # ${version}
 
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames minecraftDocs))}
+              ## Minecraft options
 
-          # Mod options
+              ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
 
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
+              ## Mod options
+
+              ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
+            '')
+            versionsWithOptions)}
         '';
 
         indexDoc = pkgs.writeText "index.md" ''
@@ -341,14 +376,24 @@
 
           Configuration options exposed by the gtnh-nix NixOS module.
 
-          ## Minecraft options
+          ## Available Versions
 
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames minecraftDocs))}
-
-          ## Mod options
-
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
+          ${lib.concatStringsSep "\n" (map (version: "- [${version}](${version}/index.md)") versionsWithOptions)}
         '';
+
+        # Generate per-version index pages
+        mkVersionIndex = version:
+          pkgs.writeText "index.md" ''
+            # ${version} Configuration Options
+
+            ## Minecraft options
+
+            ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
+
+            ## Mod options
+
+            ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
+          '';
 
         allDocs =
           pkgs.runCommand "gtnh-docs" {
@@ -358,14 +403,22 @@
             cp ${bookToml} book/book.toml
             cp ${summaryMd} book/src/SUMMARY.md
             cp ${indexDoc}  book/src/index.md
-            ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
-                cp ${doc} book/src/${modName}.md
+
+            # Copy docs for each version
+            ${lib.concatStringsSep "\n" (map (version: ''
+                mkdir -p book/src/${version}
+                cp ${mkVersionIndex version} book/src/${version}/index.md
+                ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
+                    cp ${doc} book/src/${version}/${modName}.md
+                  '')
+                  versionDocs.${version}.mods)}
+                ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
+                    cp ${doc} book/src/${version}/${optionName}.md
+                  '')
+                  versionDocs.${version}.minecraft)}
               '')
-              modDocs)}
-            ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
-                cp ${doc} book/src/${optionName}.md
-              '')
-              minecraftDocs)}
+              versionsWithOptions)}
+
             mdbook build book --dest-dir $out
           '';
       in {
@@ -375,8 +428,14 @@
               value = mkVersion version;
             })
             version-list)
-          // lib.mapAttrs' (modName: doc: lib.nameValuePair "docs-${modName}" doc) modDocs
-          // lib.mapAttrs' (optionName: doc: lib.nameValuePair "docs-${optionName}" doc) minecraftDocs
+          # Per-version doc packages
+          // lib.foldl' (
+            acc: version:
+              acc
+              // lib.mapAttrs' (modName: doc: lib.nameValuePair "docs-${version}-${modName}" doc) versionDocs.${version}.mods
+              // lib.mapAttrs' (optionName: doc: lib.nameValuePair "docs-${version}-${optionName}" doc) versionDocs.${version}.minecraft
+          ) {}
+          versionsWithOptions
           // {docs = allDocs;};
 
         overlayAttrs = builtins.listToAttrs (builtins.map (version: {
@@ -385,13 +444,16 @@
           })
           version-list);
       };
-      flake = {
-        nixosModules =
-          {
-            gtnh = module @ {
-              pkgs,
+      flake = rec {
+        # Use lib output to bypass flake-parts module processing
+        lib.nixosModules = builtins.listToAttrs (builtins.map (v: let
+            vKey = builtins.replaceStrings ["."] ["-"] v.version;
+          in {
+            name = "gtnh-${v.version}";
+            value = {
               config,
               lib,
+              pkgs,
               ...
             }: let
               inherit (import ./lib.nix {inherit lib pkgs;}) mkConfigFile;
@@ -440,21 +502,17 @@
               in
                 lib.concatStringsSep "\n"
                 (lib.mapAttrsToList mkOptionLine c);
-
-              options.programs.gtnh = lib.mkOption {
-                type = lib.types.submodule (subArgs: {
-                  options =
-                    inputs.haumea.lib.load {
-                      src = ./options;
-                      inputs = module // {config = subArgs.config;};
-                    }
-                    // {
-                      enable = lib.mkEnableOption "Enable the GTNH server";
-                    };
-                });
-              };
             in {
-              inherit options;
+              imports =
+                if versionModules ? ${vKey}
+                then [
+                  (import (versionModules.${vKey} + "/default.nix") {
+                    inherit lib pkgs;
+                    haumea = inputs.haumea;
+                  })
+                ]
+                else [];
+
               config = lib.mkIf config.programs.gtnh.enable {
                 systemd.services.gtnh = {
                   description = "GTNH Server";
@@ -549,27 +607,14 @@
                 users.groups.gtnh = {};
                 networking.firewall.allowedUDPPorts = [config.programs.gtnh.minecraft.server-properties.query-port];
                 networking.firewall.allowedTCPPorts = [config.programs.gtnh.minecraft.server-properties.server-port config.programs.gtnh.minecraft.server-properties.query-port config.programs.gtnh.minecraft.server-properties.rcon-port];
+
+                programs.gtnh.minecraft.instance-options.version = lib.mkDefault v.version;
               };
             };
-          }
-          // builtins.listToAttrs (builtins.map (v: let
-              vKey = builtins.replaceStrings ["."] ["-"] v.version;
-            in {
-              name = v.version;
-              value = {
-                config,
-                lib,
-                ...
-              }: {
-                imports =
-                  if versionModules ? ${vKey}
-                  then [versionModules.${vKey}]
-                  else [];
-                programs.gtnh.minecraft.instance-options.version =
-                  lib.mkIf config.programs.gtnh.enable (lib.mkDefault v.version);
-              };
-            })
-            version-list);
+          })
+          version-list);
+        # Expose as standard nixosModules output
+        nixosModules = lib.nixosModules;
       };
     });
 }
