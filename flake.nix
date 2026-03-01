@@ -29,6 +29,126 @@
         version = "2.8.2";
         sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
       }
+      # {
+      #   version = "2.8.1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-rc-2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-rc-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-beta-4";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-beta-3";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-beta-2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.8.0-beta-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.4";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "April_Fool_2025_Edition";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.3";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-RC-3";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-RC-2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-RC-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-beta-4";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-beta-3";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-beta-2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.7.0-beta-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.6.1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.6.0";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.6.0-beta-3";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.6.0-beta-2";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.6.0-beta-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.5.1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.5.0";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.5.0-RC1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
+      # {
+      #   version = "2.5.0-beta-1";
+      #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
+      # }
     ];
   in
     flake-parts.lib.mkFlake {inherit inputs;} ({self, ...}: {

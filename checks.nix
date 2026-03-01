@@ -31,35 +31,10 @@
     in
       # temp removed
       # | sed 's/^[BIDS]://' \
-      pkgs.runCommand "check-cfg-${name}" {} ''
-        normalize() {
-          grep -v '^\s*#' "$1" \
-            | grep -v '^\s*$' \
-            | grep -v '^\s*~' \
-            | sed 's/"//g' \
-            | awk '{
-                # Strip spaces around separators and remove extra padding
-                gsub(/[[:space:]]*=[[:space:]]*/, "=", $0);
-                gsub(/[[:space:]]*\{[[:space:]]*/, "{", $0);
-                gsub(/[[:space:]]+/, "", $0);
-                print $0
-            }' \
-            | awk '{ if (prev != "" && /^{$/) { print prev "{"; prev=""; next } if (prev != "") print prev; prev=$0 } END { if (prev != "") print prev }' \
-            | awk '/<$/{skip=1;next} skip&&/^>$/{skip=0;next} skip{next} {print}' \
-            | awk 'match($0, /=[-]?[0-9]*[.]?[0-9]+[Ee][+-]?[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
-            | awk 'match($0, /=[-]?[0-9]*\.[0-9]+$/) { printf "%s%.20f\n", substr($0, 1, RSTART), substr($0, RSTART+1)+0; next } { print }' \
-            | awk '/[0-9]+\.[0-9]+$/ { sub(/0+$/, ""); sub(/\.$/, "") } { print }' \
-            | sort -u \
-            || true
-        }
-
-        normalize "${original}"  > orig_norm
-        normalize "${rendered}" > rendered_norm
-        if ! diff orig_norm rendered_norm; then
-          echo ""
-          echo "FAIL: rendered ${name} does not match ${relPath} from gtnh-2.8.4"
-          exit 1
-        fi
+      pkgs.runCommand "check-cfg-${name}" {
+        nativeBuildInputs = [ pkgs.python3 ];
+      } ''
+        python3 ${./normalize.py} "${original}" "${rendered}"
         touch $out
       '';
   in {
