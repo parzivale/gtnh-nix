@@ -57,6 +57,7 @@ in {
   jvmPackage = mkOption {
     type = with types; package;
     default = pkgs.jdk25;
+    defaultText = lib.literalExpression "pkgs.jdk25";
     description = ''
       JVM package used to run the server.
 
@@ -69,6 +70,7 @@ in {
   gtnhPackage = mkOption {
     type = with types; package;
     default = pkgs."gtnh-${config.minecraft."instance-options".version}";
+    defaultText = lib.literalExpression ''pkgs."gtnh-''${config.minecraft."instance-options".version}"'';
     description = ''
       GTNH package used for the server.
     '';
@@ -153,6 +155,7 @@ in {
   jvmOptString = mkOption {
     type = with types; str;
     default = mkJvmOptString config.minecraft."instance-options";
+    defaultText = lib.literalExpression ''mkJvmOptString config.minecraft."instance-options"'';
     readOnly = true;
     description = ''
       The compiled value of $JVMOPTS, exported as a read-only value.

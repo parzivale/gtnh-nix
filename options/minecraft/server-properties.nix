@@ -534,6 +534,7 @@ with lib; {
   rcon-port = mkOption {
     type = with types; port;
     default = config.minecraft.server-properties.server-port + 1;
+    defaultText = literalExpression ''config.minecraft.server-properties.server-port + 1'';
     description = ''
       Minecraft: <literal>rcon.port</literal>.
 
@@ -687,23 +688,6 @@ with lib; {
       When this option is enabled, users who are not present on the
       whitelist (if it's enabled) get kicked from the server after the
       server reloads the whitelist file.
-    '';
-  };
-  extra-options = mkOption {
-    type = with types; attrs;
-    default = {};
-    example = options.literalExample ''
-      {
-      }
-    '';
-    description = ''
-      Extra options to be appended to <literal>server.properties</literal>.
-
-      Some modpacks require custom settings to work, and usually ship them in
-      their default <literal>server.properties</literal> file.
-
-      This should be a one-dimensional attrset. Values will be automatically
-      escaped, but property names will not.
     '';
   };
 }

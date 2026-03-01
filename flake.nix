@@ -63,14 +63,19 @@
             '';
           };
 
-        modDir = ./options/mods;
-        modFileNames = builtins.filter (n: lib.hasSuffix ".nix" n)
-          (builtins.attrNames (builtins.readDir modDir));
+        filePaths = dir: let
+          files = builtins.readDir dir;
+        in
+          builtins.map (name: dir + "/${name}")
+          (builtins.filter (name: lib.hasSuffix ".nix" name) (builtins.attrNames files));
 
         manpageUrls = pkgs.writeText "manpage-urls.json" "{}";
 
-        mkModDoc = fileName: let
-          modOpts = import "${modDir}/${fileName}" {inherit lib pkgs; config = {};};
+        mkDoc = path: let
+          modOpts = import path {
+            inherit lib pkgs;
+            config = {};
+          };
           evaluated = lib.evalModules {
             modules = [{options = modOpts;}];
           };
@@ -93,11 +98,15 @@
               $out
           '';
 
-        modDocs = builtins.listToAttrs (map (fileName: {
-            name = lib.removeSuffix ".nix" fileName;
-            value = mkModDoc fileName;
-          })
-          modFileNames);
+        mkDocs = dir:
+          builtins.listToAttrs (map (filepath: {
+              name = lib.removeSuffix ".nix" (builtins.baseNameOf filepath);
+              value = mkDoc filepath;
+            })
+            (filePaths dir));
+
+        modDocs = mkDocs ./options/mods;
+        minecraftDocs = mkDocs ./options/minecraft;
 
         bookToml = pkgs.writeText "book.toml" ''
           [book]
@@ -115,7 +124,11 @@
 
           [Introduction](index.md)
 
-          # Mods
+          # Minecraft options
+
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames minecraftDocs))}
+
+          # Mod options
 
           ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
         '';
@@ -123,27 +136,35 @@
         indexDoc = pkgs.writeText "index.md" ''
           # GTNH Nix Configuration Options
 
-          Configuration options exposed by the gtnh-nix NixOS module,
-          organised by mod.
+          Configuration options exposed by the gtnh-nix NixOS module.
 
-          ## Mods
+          ## Minecraft options
+
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames minecraftDocs))}
+
+          ## Mod options
 
           ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames modDocs))}
         '';
 
-        allDocs = pkgs.runCommand "gtnh-docs" {
-          nativeBuildInputs = [pkgs.mdbook];
-        } ''
-          mkdir -p book/src
-          cp ${bookToml} book/book.toml
-          cp ${summaryMd} book/src/SUMMARY.md
-          cp ${indexDoc}  book/src/index.md
-          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
-            cp ${doc} book/src/${modName}.md
-          '') modDocs)}
-          mdbook build book --dest-dir $out
-        '';
-
+        allDocs =
+          pkgs.runCommand "gtnh-docs" {
+            nativeBuildInputs = [pkgs.mdbook];
+          } ''
+            mkdir -p book/src
+            cp ${bookToml} book/book.toml
+            cp ${summaryMd} book/src/SUMMARY.md
+            cp ${indexDoc}  book/src/index.md
+            ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
+                cp ${doc} book/src/${modName}.md
+              '')
+              modDocs)}
+            ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
+                cp ${doc} book/src/${optionName}.md
+              '')
+              minecraftDocs)}
+            mdbook build book --dest-dir $out
+          '';
       in {
         packages =
           builtins.listToAttrs (builtins.map (version: {
@@ -152,6 +173,7 @@
             })
             version-list)
           // lib.mapAttrs' (modName: doc: lib.nameValuePair "docs-${modName}" doc) modDocs
+          // lib.mapAttrs' (optionName: doc: lib.nameValuePair "docs-${optionName}" doc) minecraftDocs
           // {docs = allDocs;};
 
         overlayAttrs = builtins.listToAttrs (builtins.map (version: {
@@ -159,7 +181,6 @@
             value = config.packages."gtnh-${version.version}";
           })
           version-list);
-
       };
       flake = {
         nixosModules =
@@ -174,6 +195,7 @@
 
               eulaFile = builtins.toFile "eula.txt" ''
                 # eula.txt managed by NixOS Configuration
+
                 eula=true
               '';
 
@@ -211,8 +233,7 @@
               mkOptionText = serverConfig: let
                 # Merge declared options with extraConfig
                 c =
-                  (builtins.removeAttrs serverConfig ["extra-options"])
-                  // serverConfig.extra-options;
+                  builtins.removeAttrs serverConfig ["extra-options"];
               in
                 lib.concatStringsSep "\n"
                 (lib.mapAttrsToList mkOptionLine c);
@@ -297,14 +318,15 @@
                     chmod 644 eula.txt
                     # Place managed config files (copy rendered content so mods can write to them)
                     ${lib.concatStringsSep "\n" (lib.flatten (lib.mapAttrsToList (_modGroup: cfgs:
-                        lib.mapAttrsToList (_cfgName: value: ''
-                          if [[ -f "${value.path}" ]]; then
-                            mv -f "${value.path}" "${value.path}.bak"
-                          fi
-                          cp ${mkConfigFile value} "${value.path}"
-                          chmod 644 "${value.path}"
-                        '') cfgs)
-                      config.programs.gtnh.mods))}
+                      lib.mapAttrsToList (_cfgName: value: ''
+                        if [[ -f "${value.path}" ]]; then
+                          mv -f "${value.path}" "${value.path}.bak"
+                        fi
+                        cp ${mkConfigFile value} "${value.path}"
+                        chmod 644 "${value.path}"
+                      '')
+                      cfgs)
+                    config.programs.gtnh.mods))}
                     # Ensure server.properties is present
                     if [[ -f server.properties ]]; then
                       mv -f server.properties server.properties.bak

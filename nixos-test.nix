@@ -53,7 +53,7 @@
           # Wait for RCON to come up — GTNH takes several minutes to start
           machine.wait_until_succeeds(
             "${mcrcon} list",
-            timeout=600
+            timeout=200
           )
 
           # Verify the server responds sensibly to a list command
