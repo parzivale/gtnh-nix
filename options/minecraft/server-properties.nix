@@ -351,6 +351,15 @@ with lib; {
       - *4* - Ops can use all commands including `/stop`, `/save-all`, `/save-on`, and `/save-off`.
     '';
   };
+
+  pause-when-empty-seconds = mkOption {
+    type = types.int;
+    default = 60;
+    description = ''
+      How many seconds have to pass after no player has been online before the server is paused.
+    '';
+  };
+
   player-idle-timeout = mkOption {
     type = with types; int;
     default = 0;
