@@ -85,6 +85,155 @@
     else if attrs.kind == "xml"
     then mkXmlFile attrs
     else throw "AHHH";
+
+  base-url = "https://downloads.gtnewhorizons.com/ServerPacks/";
+  mkVersion = version:
+    pkgs.stdenv.mkDerivation {
+      name = "gtnh";
+      version = version.version;
+      src = pkgs.fetchurl {
+        url = "${base-url}${
+          if version.beta
+          then "/betas/"
+          else ""
+        }GT_New_Horizons_${version.version}_Server_Java_${version.java_version}.zip";
+        sha256 = version.sha;
+      };
+      nativeBuildInputs = [pkgs.unzip];
+      unpackPhase = ''
+        unzip $src
+      '';
+      installPhase = ''
+        mkdir -p $out
+        cp -r . $out/
+      '';
+    };
+  filePaths = dir: let
+    files = builtins.readDir dir;
+  in
+    builtins.map (name: dir + "/${name}")
+    (builtins.filter (name: lib.hasSuffix ".nix" name) (builtins.attrNames files));
+
+  manpageUrls = pkgs.writeText "manpage-urls.json" "{}";
+
+  mkDoc = path: let
+    modOpts = import path {
+      inherit lib pkgs;
+      config = {};
+    };
+    evaluated = lib.evalModules {
+      modules = [{options = modOpts;}];
+    };
+    optionsDoc = pkgs.nixosOptionsDoc {
+      options = builtins.removeAttrs evaluated.options ["_module"];
+      warningsAreErrors = false;
+    };
+  in
+    pkgs.runCommand "options.md" {
+      nativeBuildInputs = [pkgs.nixos-render-docs pkgs.jq];
+    } ''
+      jq 'with_entries(select(
+        (.value.type != "submodule") and
+        ((.key | split(".") | last) | . != "path" and . != "kind")
+      ))' < ${optionsDoc.optionsJSON}/share/doc/nixos/options.json > filtered.json
+      nixos-render-docs options commonmark \
+        --manpage-urls ${manpageUrls} \
+        --revision "" \
+        filtered.json \
+        $out
+    '';
+
+  mkDocs = dir:
+    if builtins.pathExists dir
+    then
+      builtins.listToAttrs (map (filepath: {
+          name = lib.removeSuffix ".nix" (builtins.baseNameOf filepath);
+          value = mkDoc filepath;
+        })
+        (filePaths dir))
+    else {};
+
+  bookToml = pkgs.writeText "book.toml" ''
+    [book]
+    title = "GTNH Nix Configuration Options"
+    language = "en"
+    src = "src"
+
+    [output.html]
+    no-section-label = true
+    site-url = "/gtnh-nix/"
+  '';
+
+  # Generate SUMMARY.md with sections per version
+  summaryMd = pkgs.writeText "SUMMARY.md" ''
+    # Summary
+
+    [Introduction](index.md)
+
+    ${lib.concatStringsSep "\n\n" (map (version: ''
+        # ${version}
+
+        ## Minecraft options
+
+        ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
+
+        ## Mod options
+
+        ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
+      '')
+      versionsWithOptions)}
+  '';
+
+  indexDoc = pkgs.writeText "index.md" ''
+    # GTNH Nix Configuration Options
+
+    Configuration options exposed by the gtnh-nix NixOS module.
+
+    ## Available Versions
+
+    ${lib.concatStringsSep "\n" (map (version: "- [${version}](${version}/index.md)") versionsWithOptions)}
+  '';
+
+  # Generate per-version index pages
+  mkVersionIndex = version:
+    pkgs.writeText "index.md" ''
+      # ${version} Configuration Options
+
+      ## Minecraft options
+
+      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
+
+      ## Mod options
+
+      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
+    '';
+
+  allDocs =
+    pkgs.runCommand "gtnh-docs" {
+      nativeBuildInputs = [pkgs.mdbook];
+    } ''
+      mkdir -p book/src
+      cp ${bookToml} book/book.toml
+      cp ${summaryMd} book/src/SUMMARY.md
+      cp ${indexDoc}  book/src/index.md
+
+      # Copy docs for each version
+      ${lib.concatStringsSep "\n" (map (version: ''
+          mkdir -p book/src/${version}
+          cp ${mkVersionIndex version} book/src/${version}/index.md
+          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
+              cp ${doc} book/src/${version}/${modName}.md
+            '')
+            versionDocs.${version}.mods)}
+          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
+              cp ${doc} book/src/${version}/${optionName}.md
+            '')
+            versionDocs.${version}.minecraft)}
+        '')
+        versionsWithOptions)}
+
+      mdbook build book --dest-dir $out
+    '';
 in {
-  inherit mkConfigFile;
+  inherit mkConfigFile mkVersion;
 }
