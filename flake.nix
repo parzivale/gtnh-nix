@@ -10,13 +10,7 @@
     };
   };
 
-  outputs = inputs @ {flake-parts, ...}: let
-    version-list = import ./version-list.nix;
-    lib = import ./lib.nix {
-      lib = inputs.nixpkgs.lib;
-      pkgs = inputs.nixpkgs.pkgs;
-    };
-  in
+  outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} ({self, ...}: {
       imports = [
         inputs.flake-parts.flakeModules.easyOverlay
@@ -24,25 +18,28 @@
         ./nixos-test.nix
       ];
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
-      perSystem = {
+      perSystem = perSystemInputs @ {
         config,
         pkgs,
+        lib,
         ...
-      }: {
-        packages = builtins.listToAttrs (builtins.map (version: {
-            name = "gtnh-${version.version}";
-            value = lib.mkVersion version;
-          })
-          version-list);
-        # Per-version doc packages
-        # // lib.foldl' (
-        #   acc: version:
-        #     acc
-        #     // lib.mapAttrs' (modName: doc: lib.nameValuePair "docs-${version}-${modName}" doc) versionDocs.${version}.mods
-        #     // lib.mapAttrs' (optionName: doc: lib.nameValuePair "docs-${version}-${optionName}" doc) versionDocs.${version}.minecraft
-        # ) {}
-        # versionsWithOptions
-        # // {docs = allDocs;};
+      }: let
+        gtnh-lib = import ./lib.nix {
+          inherit pkgs lib;
+        };
+        versions = inputs.haumea.lib.load {
+          src = ./versions;
+          inputs = perSystemInputs;
+        };
+        version-list = import ./version-list.nix;
+      in {
+        packages =
+          builtins.listToAttrs (builtins.map (version: {
+              name = "gtnh-${version.version}";
+              value = (gtnh-lib.mkVersion version) pkgs;
+            })
+            version-list)
+          // {docs = gtnh-lib.allDocs versions pkgs;};
 
         overlayAttrs = builtins.listToAttrs (builtins.map (version: {
             name = "gtnh-${version.version}";
@@ -50,11 +47,13 @@
           })
           version-list);
       };
-      flake = {
-        nixosModules.gtnh = inputs.haumea.lib.load {
+      flake = flakeInputs: let
+        versions = inputs.haumea.lib.load {
           src = ./versions;
-          inherit inputs;
+          inputs = flakeInputs;
         };
+      in {
+        nixosModules.gtnh = versions;
       };
     });
 }
