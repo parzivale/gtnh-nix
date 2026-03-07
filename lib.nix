@@ -108,50 +108,8 @@
         cp -r . $out/
       '';
     };
-  filePaths = dir: let
-    files = builtins.readDir dir;
-  in
-    builtins.map (name: dir + "/${name}")
-    (builtins.filter (name: lib.hasSuffix ".nix" name) (builtins.attrNames files));
 
   manpageUrls = pkgs.writeText "manpage-urls.json" "{}";
-
-  mkDoc = path: let
-    modOpts = import path {
-      inherit lib pkgs;
-      config = {};
-    };
-    evaluated = lib.evalModules {
-      modules = [{options = modOpts;}];
-    };
-    optionsDoc = pkgs.nixosOptionsDoc {
-      options = builtins.removeAttrs evaluated.options ["_module"];
-      warningsAreErrors = false;
-    };
-  in
-    pkgs.runCommand "options.md" {
-      nativeBuildInputs = [pkgs.nixos-render-docs pkgs.jq];
-    } ''
-      jq 'with_entries(select(
-        (.value.type != "submodule") and
-        ((.key | split(".") | last) | . != "path" and . != "kind")
-      ))' < ${optionsDoc.optionsJSON}/share/doc/nixos/options.json > filtered.json
-      nixos-render-docs options commonmark \
-        --manpage-urls ${manpageUrls} \
-        --revision "" \
-        filtered.json \
-        $out
-    '';
-
-  mkDocs = dir:
-    if builtins.pathExists dir
-    then
-      builtins.listToAttrs (map (filepath: {
-          name = lib.removeSuffix ".nix" (builtins.baseNameOf filepath);
-          value = mkDoc filepath;
-        })
-        (filePaths dir))
-    else {};
 
   bookToml = pkgs.writeText "book.toml" ''
     [book]
@@ -165,34 +123,36 @@
   '';
 
   # Generate SUMMARY.md with sections per version
-  summaryMd = pkgs.writeText "SUMMARY.md" ''
-    # Summary
+  summaryMd = versions:
+    pkgs.writeText "SUMMARY.md" ''
+      # Summary
 
-    [Introduction](index.md)
+      [Introduction](index.md)
 
-    ${lib.concatStringsSep "\n\n" (map (version: ''
-        # ${version}
+      ${lib.concatStringsSep "\n\n" (map (version: ''
+          # ${version}
 
-        ## Minecraft options
+          ## Minecraft options
 
-        ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames version.minecraft))}
 
-        ## Mod options
+          ## Mod options
 
-        ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
-      '')
-      versionsWithOptions)}
-  '';
+          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${version}/${modName}.md)") (builtins.attrNames version.mods))}
+        '')
+        versions)}
+    '';
 
-  indexDoc = pkgs.writeText "index.md" ''
-    # GTNH Nix Configuration Options
+  indexDoc = versions:
+    pkgs.writeText "index.md" ''
+      # GTNH Nix Configuration Options
 
-    Configuration options exposed by the gtnh-nix NixOS module.
+      Configuration options exposed by the gtnh-nix NixOS module.
 
-    ## Available Versions
+      ## Available Versions
 
-    ${lib.concatStringsSep "\n" (map (version: "- [${version}](${version}/index.md)") versionsWithOptions)}
-  '';
+      ${lib.concatStringsSep "\n" (map (version: "- [${version}](${version}/index.md)") versions)}
+    '';
 
   # Generate per-version index pages
   mkVersionIndex = version:
@@ -201,14 +161,14 @@
 
       ## Minecraft options
 
-      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.minecraft))}
+      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames version.minecraft))}
 
       ## Mod options
 
-      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames versionDocs.${version}.mods))}
+      ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${modName}.md)") (builtins.attrNames version.mods))}
     '';
 
-  allDocs =
+  allDocs = versions:
     pkgs.runCommand "gtnh-docs" {
       nativeBuildInputs = [pkgs.mdbook];
     } ''
@@ -224,13 +184,13 @@
           ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
               cp ${doc} book/src/${version}/${modName}.md
             '')
-            versionDocs.${version}.mods)}
+            version.mods)}
           ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
               cp ${doc} book/src/${version}/${optionName}.md
             '')
-            versionDocs.${version}.minecraft)}
+            version.minecraft)}
         '')
-        versionsWithOptions)}
+        versions)}
 
       mdbook build book --dest-dir $out
     '';
