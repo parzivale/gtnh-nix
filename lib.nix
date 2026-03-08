@@ -88,7 +88,7 @@
     else throw "AHHH";
 
   base-url = "https://downloads.gtnewhorizons.com/ServerPacks/";
-  mkVersion = version: pkgs: (pkgs.mkDerivation {
+  mkVersion = version: pkgs: (pkgs.stdenv.mkDerivation {
     name = "gtnh";
     version = version.version;
     src = pkgs.fetchurl {

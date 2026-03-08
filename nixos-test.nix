@@ -12,7 +12,7 @@
 
         nodes.machine = {lib, ...}: {
           imports = [
-            self.lib.nixosModules."gtnh-2.8.4"
+            self.nixosModules."2.8.4"
           ];
 
           # Expose gtnh-2.8.4 package via the flake overlay

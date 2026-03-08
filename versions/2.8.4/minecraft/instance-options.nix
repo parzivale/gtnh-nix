@@ -1,9 +1,14 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
-with lib; {
+with lib; let
+  mkJvmMxFlag = icfg: optionalString (icfg.jvmMaxAllocation != "") "-Xmx${icfg.jvmMaxAllocation}";
+  mkJvmMsFlag = icfg: optionalString (icfg.jvmInitialAllocation != "") "-Xms${icfg.jvmInitialAllocation}";
+  mkJvmOptString = icfg: "${mkJvmMxFlag icfg} ${mkJvmMsFlag icfg} ${icfg.jvmOpts}";
+in {
   openRcon = mkOption {
     type = with types; bool;
     default = false;

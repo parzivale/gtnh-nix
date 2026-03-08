@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  version,
   ...
 }: let
   inherit
@@ -56,7 +55,7 @@
     lib.concatStringsSep "\n"
     (lib.mapAttrsToList mkOptionLine c);
 in {
-  systemd.services.gtnh = {
+  systemd.services.gtnh = lib.mkIf config.programs.gtnh.enable {
     description = "GTNH Server";
     wantedBy = ["multi-user.target"];
     after = ["network.target"];
@@ -139,16 +138,14 @@ in {
     '';
   };
 
-  users.users.gtnh-user = {
+  users.users.gtnh-user = lib.mkIf config.programs.gtnh.enable {
     description = "GTNH service user";
     isSystemUser = true;
     group = "gtnh";
     home = "/var/lib/gtnh";
   };
 
-  users.groups.gtnh = {};
-  networking.firewall.allowedUDPPorts = [config.programs.gtnh.minecraft.server-properties.query-port];
-  networking.firewall.allowedTCPPorts = [config.programs.gtnh.minecraft.server-properties.server-port config.programs.gtnh.minecraft.server-properties.query-port config.programs.gtnh.minecraft.server-properties.rcon-port];
-
-  programs.gtnh.minecraft.instance-options.version = lib.mkDefault version;
+  users.groups.gtnh = lib.mkIf config.programs.gtnh.enable {};
+  networking.firewall.allowedUDPPorts = lib.mkIf config.programs.gtnh.enable [config.programs.gtnh.minecraft.server-properties.query-port];
+  networking.firewall.allowedTCPPorts = lib.mkIf config.programs.gtnh.enable [config.programs.gtnh.minecraft.server-properties.server-port config.programs.gtnh.minecraft.server-properties.query-port config.programs.gtnh.minecraft.server-properties.rcon-port];
 }

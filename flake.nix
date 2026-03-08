@@ -47,13 +47,26 @@
           })
           version-list);
       };
-      flake = flakeInputs: let
-        versions = inputs.haumea.lib.load {
-          src = ./versions;
-          inputs = flakeInputs;
-        };
-      in {
-        nixosModules.gtnh = versions;
+      flake = {
+        nixosModules = builtins.mapAttrs (name: _: {
+            config,
+            pkgs,
+            lib,
+            ...
+          }: let
+            versionData = inputs.haumea.lib.load {
+              src = ./versions + "/${name}";
+              inputs = {
+                inherit lib pkgs;
+                config = config.programs.gtnh;
+              };
+            };
+          in {
+            imports = [./service.nix];
+            options.programs.gtnh = versionData // {
+              enable = lib.mkEnableOption "GTNH server";
+            };
+          }) (builtins.readDir ./versions);
       };
     });
 }
