@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Aroma1997Core = lib.mkOption {
-    description = "Aroma1997Core configuration (./config/aroma1997/Aroma1997Core.cfg)";
+  Aroma1997Core_cfg = lib.mkOption {
+    description = "Aroma1997Core_cfg configuration (./config/aroma1997/Aroma1997Core.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

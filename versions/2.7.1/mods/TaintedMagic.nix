@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TaintedMagic = lib.mkOption {
-    description = "TaintedMagic configuration (./config/TaintedMagic.cfg)";
+  TaintedMagic_cfg = lib.mkOption {
+    description = "TaintedMagic_cfg configuration (./config/TaintedMagic.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

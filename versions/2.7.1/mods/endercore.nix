@@ -1,6 +1,6 @@
 {lib, ...}: {
-  endercore = lib.mkOption {
-    description = "endercore configuration (./config/endercore/endercore.cfg)";
+  endercore_cfg = lib.mkOption {
+    description = "endercore_cfg configuration (./config/endercore/endercore.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

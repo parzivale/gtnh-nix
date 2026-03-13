@@ -1,6 +1,6 @@
 {lib, ...}: {
-  adventurebackpack = lib.mkOption {
-    description = "adventurebackpack configuration (./config/adventurebackpack.cfg)";
+  adventurebackpack_cfg = lib.mkOption {
+    description = "adventurebackpack_cfg configuration (./config/adventurebackpack.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

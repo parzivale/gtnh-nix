@@ -1,6 +1,192 @@
 {lib, ...}: {
-  mobsinfo = lib.mkOption {
-    description = "mobsinfo configuration (./config/mobsinfo/mobsinfo.cfg)";
+  MobOverrides_json = lib.mkOption {
+    description = "MobOverrides_json configuration (./config/mobsinfo/MobOverrides.json)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/mobsinfo/MobOverrides.json";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "json";
+        readOnly = true;
+        };
+        ExampleMob = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              removeAll = lib.mkOption {
+                type = lib.types.bool;
+                default = false;
+              };
+              additions = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "0" = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          reconstructableStack = lib.mkOption {
+                            default = {};
+                            type = lib.types.submodule {
+                              options = {
+                                itemIdentifier = lib.mkOption {
+                                  default = {};
+                                  type = lib.types.submodule {
+                                    options = {
+                                      modId = lib.mkOption {
+                                        type = lib.types.str;
+                                        default = "minecraft";
+                                      };
+                                      name = lib.mkOption {
+                                        type = lib.types.str;
+                                        default = "diamond_sword";
+                                      };
+                                    };
+                                  };
+                                };
+                                meta = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 0;
+                                };
+                                size = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 1;
+                                };
+                                tagCompound = lib.mkOption {
+                                  type = lib.types.str;
+                                  default = "None";
+                                };
+                              };
+                            };
+                          };
+                          type = lib.mkOption {
+                            type = lib.types.str;
+                            default = "Rare";
+                          };
+                          chance = lib.mkOption {
+                            type = lib.types.int;
+                            default = 500;
+                          };
+                          enchantable = lib.mkOption {
+                            type = lib.types.int;
+                            default = 20;
+                          };
+                          damages = lib.mkOption {
+                            default = {};
+                            type = lib.types.submodule {
+                              options = {
+                                "1" = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 1;
+                                };
+                                "2" = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 5;
+                                };
+                                "3" = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 10;
+                                };
+                              };
+                            };
+                          };
+                          lootable = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                          playerOnly = lib.mkOption {
+                            type = lib.types.bool;
+                            default = false;
+                          };
+                          variableChance = lib.mkOption {
+                            type = lib.types.bool;
+                            default = false;
+                          };
+                          chanceModifiers = lib.mkOption {
+                            default = {};
+                            type = lib.types.submodule {
+                              options = {
+                              };
+                            };
+                          };
+                          additionalInfo = lib.mkOption {
+                            default = {};
+                            type = lib.types.submodule {
+                              options = {
+                              };
+                            };
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+              removals = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "0" = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          reconstructableStack = lib.mkOption {
+                            default = {};
+                            type = lib.types.submodule {
+                              options = {
+                                itemIdentifier = lib.mkOption {
+                                  default = {};
+                                  type = lib.types.submodule {
+                                    options = {
+                                      modId = lib.mkOption {
+                                        type = lib.types.str;
+                                        default = "minecraft";
+                                      };
+                                      name = lib.mkOption {
+                                        type = lib.types.str;
+                                        default = "rotten_flesh";
+                                      };
+                                    };
+                                  };
+                                };
+                                meta = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 0;
+                                };
+                                size = lib.mkOption {
+                                  type = lib.types.int;
+                                  default = 1;
+                                };
+                                tagCompound = lib.mkOption {
+                                  type = lib.types.str;
+                                  default = "None";
+                                };
+                              };
+                            };
+                          };
+                          type = lib.mkOption {
+                            type = lib.types.str;
+                            default = "Normal";
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+  mobsinfo_cfg = lib.mkOption {
+    description = "mobsinfo_cfg configuration (./config/mobsinfo/mobsinfo.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

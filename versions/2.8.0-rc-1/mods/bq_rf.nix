@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bq_rf = lib.mkOption {
-    description = "bq_rf configuration (./config/bq_rf.cfg)";
+  bq_rf_cfg = lib.mkOption {
+    description = "bq_rf_cfg configuration (./config/bq_rf.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

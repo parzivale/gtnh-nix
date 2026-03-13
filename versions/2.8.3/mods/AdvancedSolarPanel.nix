@@ -1,6 +1,6 @@
 {lib, ...}: {
-  AdvancedSolarPanel = lib.mkOption {
-    description = "AdvancedSolarPanel configuration (./config/AdvancedSolarPanel.cfg)";
+  AdvancedSolarPanel_cfg = lib.mkOption {
+    description = "AdvancedSolarPanel_cfg configuration (./config/AdvancedSolarPanel.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

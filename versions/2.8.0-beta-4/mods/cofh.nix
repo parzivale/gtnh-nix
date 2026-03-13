@@ -1,6 +1,6 @@
 {lib, ...}: {
-  core_common = lib.mkOption {
-    description = "core_common configuration (./config/cofh/core/common.cfg)";
+  core_common_cfg = lib.mkOption {
+    description = "core_common_cfg configuration (./config/cofh/core/common.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

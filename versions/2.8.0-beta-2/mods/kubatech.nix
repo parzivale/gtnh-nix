@@ -1,6 +1,6 @@
 {lib, ...}: {
-  kubatech = lib.mkOption {
-    description = "kubatech configuration (./config/kubatech/kubatech.cfg)";
+  kubatech_cfg = lib.mkOption {
+    description = "kubatech_cfg configuration (./config/kubatech/kubatech.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

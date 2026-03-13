@@ -1,6 +1,6 @@
 {lib, ...}: {
-  witchery_debug = lib.mkOption {
-    description = "witchery_debug configuration (./config/witchery_debug.cfg)";
+  witchery_debug_cfg = lib.mkOption {
+    description = "witchery_debug_cfg configuration (./config/witchery_debug.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

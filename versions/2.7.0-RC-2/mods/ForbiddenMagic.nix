@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ForbiddenMagic = lib.mkOption {
-    description = "ForbiddenMagic configuration (./config/ForbiddenMagic.cfg)";
+  ForbiddenMagic_cfg = lib.mkOption {
+    description = "ForbiddenMagic_cfg configuration (./config/ForbiddenMagic.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

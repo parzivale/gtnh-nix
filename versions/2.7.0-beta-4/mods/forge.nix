@@ -1,6 +1,6 @@
 {lib, ...}: {
-  forge = lib.mkOption {
-    description = "forge configuration (./config/forge.cfg)";
+  forge_cfg = lib.mkOption {
+    description = "forge_cfg configuration (./config/forge.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

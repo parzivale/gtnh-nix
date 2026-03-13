@@ -1,6 +1,6 @@
 {lib, ...}: {
-  InfernalMobs = lib.mkOption {
-    description = "InfernalMobs configuration (./config/InfernalMobs.cfg)";
+  InfernalMobs_cfg = lib.mkOption {
+    description = "InfernalMobs_cfg configuration (./config/InfernalMobs.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

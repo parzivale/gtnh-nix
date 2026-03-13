@@ -1,6 +1,6 @@
 {lib, ...}: {
-  berriespp = lib.mkOption {
-    description = "berriespp configuration (./config/berriespp.cfg)";
+  berriespp_cfg = lib.mkOption {
+    description = "berriespp_cfg configuration (./config/berriespp.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

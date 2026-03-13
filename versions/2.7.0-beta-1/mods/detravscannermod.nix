@@ -1,6 +1,6 @@
 {lib, ...}: {
-  detravscannermod = lib.mkOption {
-    description = "detravscannermod configuration (./config/detravscannermod.cfg)";
+  detravscannermod_cfg = lib.mkOption {
+    description = "detravscannermod_cfg configuration (./config/detravscannermod.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

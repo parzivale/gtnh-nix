@@ -1,6 +1,6 @@
 {lib, ...}: {
-  RIO = lib.mkOption {
-    description = "RIO configuration (./config/RIO.cfg)";
+  RIO_cfg = lib.mkOption {
+    description = "RIO_cfg configuration (./config/RIO.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

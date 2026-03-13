@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ExtraUtilities = lib.mkOption {
-    description = "ExtraUtilities configuration (./config/ExtraUtilities.cfg)";
+  ExtraUtilities_cfg = lib.mkOption {
+    description = "ExtraUtilities_cfg configuration (./config/ExtraUtilities.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

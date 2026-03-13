@@ -1,6 +1,6 @@
 {lib, ...}: {
-  JABBA = lib.mkOption {
-    description = "JABBA configuration (./config/JABBA.cfg)";
+  JABBA_cfg = lib.mkOption {
+    description = "JABBA_cfg configuration (./config/JABBA.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

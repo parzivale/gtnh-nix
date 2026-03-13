@@ -3,11 +3,18 @@
     config,
     pkgs,
     lib,
+    gtnh-venv,
+    gtnh-scripts,
     ...
   }: let
     inherit (import ./lib.nix {inherit lib pkgs;}) mkConfigFile;
 
-    versions = builtins.attrNames (builtins.readDir ./versions);
+    allVersions = builtins.attrNames (builtins.readDir ./versions);
+    # Only include versions that have mods (filter out incomplete beta/RC versions)
+    versions = builtins.filter (v:
+      builtins.pathExists (./versions + "/${v}/mods") &&
+      builtins.length (builtins.attrNames (builtins.readDir (./versions + "/${v}/mods"))) > 0
+    ) allVersions;
 
     # Build a derivation that passes iff the rendered config file
     # semantically matches the corresponding file in the pack.
@@ -17,9 +24,9 @@
         original = "${config.packages."gtnh-${version}"}/${cfgValue.path}";
       in
         pkgs.runCommand "check-cfg-${version}-${name}" {
-          nativeBuildInputs = [pkgs.python3];
+          nativeBuildInputs = [gtnh-venv];
         } ''
-          python3 ${./normalize.py} "${original}" "${rendered}"
+          python3 ${gtnh-scripts}/normalize.py "${original}" "${rendered}"
           touch $out
         '';
 
@@ -70,9 +77,19 @@
         }) cfgs
       ) moduleEval.config.programs.gtnh.mods));
 
-    # Generate checks for all versions
-    allChecks = lib.foldl' (acc: version: acc // mkVersionChecks version) {} versions;
+    # Aggregate check for a single version
+    mkVersionAggregate = version:
+      let checks = mkVersionChecks version;
+      in pkgs.runCommand "check-${version}" {} ''
+        ${lib.concatMapStringsSep "\n" (c: "echo ${c}") (lib.attrValues checks)}
+        touch $out
+      '';
+
+    # Per-version aggregate checks (lazy - only evaluates when accessed)
+    versionAggregates = lib.genAttrs versions mkVersionAggregate;
+
   in {
-    checks = allChecks;
+    # Only expose per-version aggregate checks to avoid evaluating all versions at once
+    checks = versionAggregates;
   };
 }

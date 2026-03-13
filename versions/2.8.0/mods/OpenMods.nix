@@ -1,6 +1,6 @@
 {lib, ...}: {
-  OpenMods = lib.mkOption {
-    description = "OpenMods configuration (./config/OpenMods.cfg)";
+  OpenMods_cfg = lib.mkOption {
+    description = "OpenMods_cfg configuration (./config/OpenMods.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

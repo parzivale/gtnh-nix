@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Baubles = lib.mkOption {
-    description = "Baubles configuration (./config/Baubles.cfg)";
+  Baubles_cfg = lib.mkOption {
+    description = "Baubles_cfg configuration (./config/Baubles.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

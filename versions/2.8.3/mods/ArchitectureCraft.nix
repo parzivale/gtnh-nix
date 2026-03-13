@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ArchitectureCraft = lib.mkOption {
-    description = "ArchitectureCraft configuration (./config/ArchitectureCraft.cfg)";
+  ArchitectureCraft_cfg = lib.mkOption {
+    description = "ArchitectureCraft_cfg configuration (./config/ArchitectureCraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

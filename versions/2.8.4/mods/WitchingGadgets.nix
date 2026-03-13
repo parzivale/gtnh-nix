@@ -1,6 +1,6 @@
 {lib, ...}: {
-  WitchingGadgets = lib.mkOption {
-    description = "WitchingGadgets configuration (./config/WitchingGadgets.cfg)";
+  WitchingGadgets_cfg = lib.mkOption {
+    description = "WitchingGadgets_cfg configuration (./config/WitchingGadgets.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

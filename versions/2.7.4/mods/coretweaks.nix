@@ -1,6 +1,6 @@
 {lib, ...}: {
-  coretweaks = lib.mkOption {
-    description = "coretweaks configuration (./config/coretweaks.cfg)";
+  coretweaks_cfg = lib.mkOption {
+    description = "coretweaks_cfg configuration (./config/coretweaks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

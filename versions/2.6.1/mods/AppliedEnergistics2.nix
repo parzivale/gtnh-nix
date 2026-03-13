@@ -1,6 +1,6 @@
 {lib, ...}: {
-  AppliedEnergistics2 = lib.mkOption {
-    description = "AppliedEnergistics2 configuration (./config/AppliedEnergistics2/AppliedEnergistics2.cfg)";
+  AppliedEnergistics2_cfg = lib.mkOption {
+    description = "AppliedEnergistics2_cfg configuration (./config/AppliedEnergistics2/AppliedEnergistics2.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1083,8 +1083,8 @@
       };
     };
   };
-  extracells = lib.mkOption {
-    description = "extracells configuration (./config/AppliedEnergistics2/extracells.cfg)";
+  extracells_cfg = lib.mkOption {
+    description = "extracells_cfg configuration (./config/AppliedEnergistics2/extracells.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

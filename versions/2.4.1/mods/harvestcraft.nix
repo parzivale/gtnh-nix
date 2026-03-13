@@ -1,6 +1,6 @@
 {lib, ...}: {
-  harvestcraft = lib.mkOption {
-    description = "harvestcraft configuration (./config/harvestcraft.cfg)";
+  harvestcraft_cfg = lib.mkOption {
+    description = "harvestcraft_cfg configuration (./config/harvestcraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

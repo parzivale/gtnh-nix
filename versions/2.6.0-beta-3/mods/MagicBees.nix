@@ -1,6 +1,6 @@
 {lib, ...}: {
-  MagicBees = lib.mkOption {
-    description = "MagicBees configuration (./config/MagicBees.cfg)";
+  MagicBees_cfg = lib.mkOption {
+    description = "MagicBees_cfg configuration (./config/MagicBees.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  RWG = lib.mkOption {
-    description = "RWG configuration (./config/RWG.cfg)";
+  RWG_cfg = lib.mkOption {
+    description = "RWG_cfg configuration (./config/RWG.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

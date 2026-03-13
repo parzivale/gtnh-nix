@@ -1,6 +1,6 @@
 {lib, ...}: {
-  defaultserverlist = lib.mkOption {
-    description = "defaultserverlist configuration (./config/defaultserverlist.cfg)";
+  defaultserverlist_cfg = lib.mkOption {
+    description = "defaultserverlist_cfg configuration (./config/defaultserverlist.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

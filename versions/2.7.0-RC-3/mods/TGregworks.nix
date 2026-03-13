@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TGregworks = lib.mkOption {
-    description = "TGregworks configuration (./config/TGregworks.cfg)";
+  TGregworks_cfg = lib.mkOption {
+    description = "TGregworks_cfg configuration (./config/TGregworks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

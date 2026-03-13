@@ -1,6 +1,6 @@
 {lib, ...}: {
-  microblocks = lib.mkOption {
-    description = "microblocks configuration (./config/microblocks.cfg)";
+  microblocks_cfg = lib.mkOption {
+    description = "microblocks_cfg configuration (./config/microblocks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

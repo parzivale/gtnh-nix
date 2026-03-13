@@ -1,6 +1,6 @@
 {lib, ...}: {
-  backhand = lib.mkOption {
-    description = "backhand configuration (./config/backhand.cfg)";
+  backhand_cfg = lib.mkOption {
+    description = "backhand_cfg configuration (./config/backhand.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

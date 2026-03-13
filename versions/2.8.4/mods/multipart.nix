@@ -1,6 +1,6 @@
 {lib, ...}: {
-  multipart = lib.mkOption {
-    description = "multipart configuration (./config/multipart.cfg)";
+  multipart_cfg = lib.mkOption {
+    description = "multipart_cfg configuration (./config/multipart.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

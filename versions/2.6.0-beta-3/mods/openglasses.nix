@@ -1,6 +1,6 @@
 {lib, ...}: {
-  openglasses = lib.mkOption {
-    description = "openglasses configuration (./config/openglasses.cfg)";
+  openglasses_cfg = lib.mkOption {
+    description = "openglasses_cfg configuration (./config/openglasses.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

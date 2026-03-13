@@ -1,6 +1,6 @@
 {lib, ...}: {
-  holoinventory = lib.mkOption {
-    description = "holoinventory configuration (./config/holoinventory.cfg)";
+  holoinventory_cfg = lib.mkOption {
+    description = "holoinventory_cfg configuration (./config/holoinventory.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

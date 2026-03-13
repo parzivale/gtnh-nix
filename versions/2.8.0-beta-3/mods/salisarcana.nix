@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bugfixes = lib.mkOption {
-    description = "bugfixes configuration (./config/salisarcana/bugfixes.cfg)";
+  bugfixes_cfg = lib.mkOption {
+    description = "bugfixes_cfg configuration (./config/salisarcana/bugfixes.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -234,8 +234,8 @@
       };
     };
   };
-  commands = lib.mkOption {
-    description = "commands configuration (./config/salisarcana/commands.cfg)";
+  commands_cfg = lib.mkOption {
+    description = "commands_cfg configuration (./config/salisarcana/commands.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -477,8 +477,8 @@
       };
     };
   };
-  enhancements = lib.mkOption {
-    description = "enhancements configuration (./config/salisarcana/enhancements.cfg)";
+  enhancements_cfg = lib.mkOption {
+    description = "enhancements_cfg configuration (./config/salisarcana/enhancements.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1076,8 +1076,8 @@
       };
     };
   };
-  mod_integrations = lib.mkOption {
-    description = "mod_integrations configuration (./config/salisarcana/mod_integrations.cfg)";
+  mod_integrations_cfg = lib.mkOption {
+    description = "mod_integrations_cfg configuration (./config/salisarcana/mod_integrations.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1157,8 +1157,8 @@
       };
     };
   };
-  salisarcana = lib.mkOption {
-    description = "salisarcana configuration (./config/salisarcana.cfg)";
+  salisarcana_cfg = lib.mkOption {
+    description = "salisarcana_cfg configuration (./config/salisarcana.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

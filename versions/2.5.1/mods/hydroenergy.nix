@@ -1,6 +1,6 @@
 {lib, ...}: {
-  hydroenergy = lib.mkOption {
-    description = "hydroenergy configuration (./config/hydroenergy.cfg)";
+  hydroenergy_cfg = lib.mkOption {
+    description = "hydroenergy_cfg configuration (./config/hydroenergy.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  WirelessCraftingTerminal = lib.mkOption {
-    description = "WirelessCraftingTerminal configuration (./config/WirelessCraftingTerminal.cfg)";
+  WirelessCraftingTerminal_cfg = lib.mkOption {
+    description = "WirelessCraftingTerminal_cfg configuration (./config/WirelessCraftingTerminal.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

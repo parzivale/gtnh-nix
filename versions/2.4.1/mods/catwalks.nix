@@ -1,6 +1,6 @@
 {lib, ...}: {
-  catwalks = lib.mkOption {
-    description = "catwalks configuration (./config/catwalks.cfg)";
+  catwalks_cfg = lib.mkOption {
+    description = "catwalks_cfg configuration (./config/catwalks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

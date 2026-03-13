@@ -1,6 +1,6 @@
 {lib, ...}: {
-  BetterAchievements = lib.mkOption {
-    description = "BetterAchievements configuration (./config/BetterAchievements.cfg)";
+  BetterAchievements_cfg = lib.mkOption {
+    description = "BetterAchievements_cfg configuration (./config/BetterAchievements.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

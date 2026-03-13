@@ -1,6 +1,6 @@
 {lib, ...}: {
-  CodeChickenCore = lib.mkOption {
-    description = "CodeChickenCore configuration (./config/CodeChickenCore.cfg)";
+  CodeChickenCore_cfg = lib.mkOption {
+    description = "CodeChickenCore_cfg configuration (./config/CodeChickenCore.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

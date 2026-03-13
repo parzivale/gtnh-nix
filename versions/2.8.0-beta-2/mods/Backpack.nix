@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Backpack = lib.mkOption {
-    description = "Backpack configuration (./config/Backpack.cfg)";
+  Backpack_cfg = lib.mkOption {
+    description = "Backpack_cfg configuration (./config/Backpack.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

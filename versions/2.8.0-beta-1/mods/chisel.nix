@@ -1,6 +1,6 @@
 {lib, ...}: {
-  chisel = lib.mkOption {
-    description = "chisel configuration (./config/chisel.cfg)";
+  chisel_cfg = lib.mkOption {
+    description = "chisel_cfg configuration (./config/chisel.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

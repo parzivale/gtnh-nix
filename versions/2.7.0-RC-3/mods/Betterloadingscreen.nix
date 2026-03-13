@@ -1,6 +1,6 @@
 {lib, ...}: {
-  betterloadingscreen = lib.mkOption {
-    description = "betterloadingscreen configuration (./config/Betterloadingscreen/betterloadingscreen.cfg)";
+  betterloadingscreen_cfg = lib.mkOption {
+    description = "betterloadingscreen_cfg configuration (./config/Betterloadingscreen/betterloadingscreen.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

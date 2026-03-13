@@ -1,6 +1,6 @@
 {lib, ...}: {
-  asm = lib.mkOption {
-    description = "asm configuration (./config/WitcheryExtras/asm.cfg)";
+  asm_cfg = lib.mkOption {
+    description = "asm_cfg configuration (./config/WitcheryExtras/asm.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

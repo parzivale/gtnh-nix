@@ -1,6 +1,6 @@
 {lib, ...}: {
-  witchery = lib.mkOption {
-    description = "witchery configuration (./config/witchery.cfg)";
+  witchery_cfg = lib.mkOption {
+    description = "witchery_cfg configuration (./config/witchery.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

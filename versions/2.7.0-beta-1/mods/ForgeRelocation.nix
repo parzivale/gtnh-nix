@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ForgeRelocation = lib.mkOption {
-    description = "ForgeRelocation configuration (./config/ForgeRelocation.cfg)";
+  ForgeRelocation_cfg = lib.mkOption {
+    description = "ForgeRelocation_cfg configuration (./config/ForgeRelocation.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bogosorter = lib.mkOption {
-    description = "bogosorter configuration (./config/bogosorter.cfg)";
+  bogosorter_cfg = lib.mkOption {
+    description = "bogosorter_cfg configuration (./config/bogosorter.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

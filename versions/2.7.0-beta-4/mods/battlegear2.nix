@@ -1,6 +1,6 @@
 {lib, ...}: {
-  battlegear2 = lib.mkOption {
-    description = "battlegear2 configuration (./config/battlegear2.cfg)";
+  battlegear2_cfg = lib.mkOption {
+    description = "battlegear2_cfg configuration (./config/battlegear2.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

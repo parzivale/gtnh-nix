@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bq_themed = lib.mkOption {
-    description = "bq_themed configuration (./config/bq_themed.cfg)";
+  bq_themed_cfg = lib.mkOption {
+    description = "bq_themed_cfg configuration (./config/bq_themed.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

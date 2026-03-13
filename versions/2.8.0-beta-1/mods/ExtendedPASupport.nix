@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ExtendedPASupport = lib.mkOption {
-    description = "ExtendedPASupport configuration (./config/ExtendedPASupport.cfg)";
+  ExtendedPASupport_cfg = lib.mkOption {
+    description = "ExtendedPASupport_cfg configuration (./config/ExtendedPASupport.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ironchestminecarts = lib.mkOption {
-    description = "ironchestminecarts configuration (./config/ironchestminecarts.cfg)";
+  ironchestminecarts_cfg = lib.mkOption {
+    description = "ironchestminecarts_cfg configuration (./config/ironchestminecarts.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

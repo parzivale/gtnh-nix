@@ -1,6 +1,6 @@
 {lib, ...}: {
-  MouseTweaks = lib.mkOption {
-    description = "MouseTweaks configuration (./config/MouseTweaks.cfg)";
+  MouseTweaks_cfg = lib.mkOption {
+    description = "MouseTweaks_cfg configuration (./config/MouseTweaks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

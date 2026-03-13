@@ -1,6 +1,6 @@
 {lib, ...}: {
-  defaultworldgenerator = lib.mkOption {
-    description = "defaultworldgenerator configuration (./config/defaultworldgenerator.cfg)";
+  defaultworldgenerator_cfg = lib.mkOption {
+    description = "defaultworldgenerator_cfg configuration (./config/defaultworldgenerator.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

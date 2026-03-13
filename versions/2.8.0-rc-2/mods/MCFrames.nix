@@ -1,6 +1,6 @@
 {lib, ...}: {
-  MCFrames = lib.mkOption {
-    description = "MCFrames configuration (./config/MCFrames.cfg)";
+  MCFrames_cfg = lib.mkOption {
+    description = "MCFrames_cfg configuration (./config/MCFrames.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

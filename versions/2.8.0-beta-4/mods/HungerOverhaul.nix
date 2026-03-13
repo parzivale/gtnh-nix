@@ -1,6 +1,6 @@
 {lib, ...}: {
-  HungerOverhaul = lib.mkOption {
-    description = "HungerOverhaul configuration (./config/HungerOverhaul/HungerOverhaul.cfg)";
+  HungerOverhaul_cfg = lib.mkOption {
+    description = "HungerOverhaul_cfg configuration (./config/HungerOverhaul/HungerOverhaul.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -534,8 +534,8 @@
       };
     };
   };
-  default = lib.mkOption {
-    description = "default configuration (./config/HungerOverhaul/default.cfg)";
+  default_cfg = lib.mkOption {
+    description = "default_cfg configuration (./config/HungerOverhaul/default.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

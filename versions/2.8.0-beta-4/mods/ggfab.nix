@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ggfab = lib.mkOption {
-    description = "ggfab configuration (./config/ggfab.cfg)";
+  ggfab_cfg = lib.mkOption {
+    description = "ggfab_cfg configuration (./config/ggfab.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

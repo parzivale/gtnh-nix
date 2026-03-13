@@ -1,6 +1,6 @@
 {lib, ...}: {
-  IGWMod = lib.mkOption {
-    description = "IGWMod configuration (./config/IGWMod.cfg)";
+  IGWMod_cfg = lib.mkOption {
+    description = "IGWMod_cfg configuration (./config/IGWMod.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

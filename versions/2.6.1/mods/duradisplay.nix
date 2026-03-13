@@ -1,6 +1,6 @@
 {lib, ...}: {
-  duradisplay = lib.mkOption {
-    description = "duradisplay configuration (./config/duradisplay.cfg)";
+  duradisplay_cfg = lib.mkOption {
+    description = "duradisplay_cfg configuration (./config/duradisplay.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

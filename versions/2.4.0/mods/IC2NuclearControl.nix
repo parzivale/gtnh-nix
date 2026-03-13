@@ -1,6 +1,6 @@
 {lib, ...}: {
-  IC2NuclearControl = lib.mkOption {
-    description = "IC2NuclearControl configuration (./config/IC2NuclearControl.cfg)";
+  IC2NuclearControl_cfg = lib.mkOption {
+    description = "IC2NuclearControl_cfg configuration (./config/IC2NuclearControl.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

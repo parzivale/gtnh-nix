@@ -1,6 +1,6 @@
 {lib, ...}: {
-  biomeweights = lib.mkOption {
-    description = "biomeweights configuration (./config/biomesoplenty/biomeweights.cfg)";
+  biomeweights_cfg = lib.mkOption {
+    description = "biomeweights_cfg configuration (./config/biomesoplenty/biomeweights.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -302,8 +302,8 @@
       };
     };
   };
-  ids = lib.mkOption {
-    description = "ids configuration (./config/biomesoplenty/ids.cfg)";
+  ids_cfg = lib.mkOption {
+    description = "ids_cfg configuration (./config/biomesoplenty/ids.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -689,8 +689,8 @@
       };
     };
   };
-  terraingen = lib.mkOption {
-    description = "terraingen configuration (./config/biomesoplenty/terraingen.cfg)";
+  terraingen_cfg = lib.mkOption {
+    description = "terraingen_cfg configuration (./config/biomesoplenty/terraingen.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

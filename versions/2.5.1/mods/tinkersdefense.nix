@@ -1,6 +1,6 @@
 {lib, ...}: {
-  tinkersdefense = lib.mkOption {
-    description = "tinkersdefense configuration (./config/tinkersdefense.cfg)";
+  tinkersdefense_cfg = lib.mkOption {
+    description = "tinkersdefense_cfg configuration (./config/tinkersdefense.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

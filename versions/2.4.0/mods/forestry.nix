@@ -1,6 +1,6 @@
 {lib, ...}: {
-  apiculture = lib.mkOption {
-    description = "apiculture configuration (./config/forestry/apiculture.cfg)";
+  apiculture_cfg = lib.mkOption {
+    description = "apiculture_cfg configuration (./config/forestry/apiculture.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -206,8 +206,50 @@
       };
     };
   };
-  backpacks = lib.mkOption {
-    description = "backpacks configuration (./config/forestry/backpacks.cfg)";
+  apiculture_conf = lib.mkOption {
+    description = "apiculture_conf configuration (./config/forestry/apiculture.conf)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/forestry/apiculture.conf";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "properties";
+        readOnly = true;
+        };
+        "apiary.sidesensitive" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "beekeeping.mode" = lib.mkOption {
+          type = lib.types.str;
+          default = "HARD";
+        };
+        "beekeeping.secondprincess" = lib.mkOption {
+          type = lib.types.float;
+          default = 0.0;
+        };
+        "beekeeping.flowers.custom" = lib.mkOption {
+          type = lib.types.str;
+          default = "";
+        };
+        "render.bees.fancy" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "species.blacklist" = lib.mkOption {
+          type = lib.types.str;
+          default = "";
+        };
+      };
+    };
+  };
+  backpacks_cfg = lib.mkOption {
+    description = "backpacks_cfg configuration (./config/forestry/backpacks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -333,8 +375,8 @@
       };
     };
   };
-  common = lib.mkOption {
-    description = "common configuration (./config/forestry/common.cfg)";
+  common_cfg = lib.mkOption {
+    description = "common_cfg configuration (./config/forestry/common.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -683,8 +725,138 @@
       };
     };
   };
-  fluids = lib.mkOption {
-    description = "fluids configuration (./config/forestry/fluids.cfg)";
+  common_conf = lib.mkOption {
+    description = "common_conf configuration (./config/forestry/common.conf)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/forestry/common.conf";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "properties";
+        readOnly = true;
+        };
+        "crafting.bronze.enabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "crafting.stamps.enabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "crafting.stamps.collector" = lib.mkOption {
+          type = lib.types.str;
+          default = "";
+        };
+        "difficulty.gamemode" = lib.mkOption {
+          type = lib.types.str;
+          default = "HARD";
+        };
+        "difficulty.recreate.definitions" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "difficulty.dungeonloot.rare" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "genetics.clear.invalid.chromosomes" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "performance.particleFX.enabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "performance.backpacks.resupply" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "structures.schemata.disabled" = lib.mkOption {
+          type = lib.types.str;
+          default = "";
+        };
+        "tweaks.mailalert.enabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "tweaks.gui.tab.speed" = lib.mkOption {
+          type = lib.types.int;
+          default = 8;
+        };
+        "tweaks.hints.disabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.energystat.disabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "tweaks.tooltip.liquidamount.disabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.permissions.disabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.upgradenotice.disabled" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.farms.squared" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.farms.exutilenderlily" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "tweaks.farms.magicalcropssupport" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.retrogen.normal" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.retrogen.forced" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.generate.apatite" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.generate.beehives" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        "world.generate.beehives.rate" = lib.mkOption {
+          type = lib.types.float;
+          default = 1.0;
+        };
+        "world.generate.copper" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.generate.tin" = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        "world.generate.villager" = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+      };
+    };
+  };
+  fluids_cfg = lib.mkOption {
+    description = "fluids_cfg configuration (./config/forestry/fluids.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -825,8 +997,8 @@
       };
     };
   };
-  gamemodes_EASY = lib.mkOption {
-    description = "gamemodes_EASY configuration (./config/forestry/gamemodes/EASY.cfg)";
+  gamemodes_EASY_cfg = lib.mkOption {
+    description = "gamemodes_EASY_cfg configuration (./config/forestry/gamemodes/EASY.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1126,8 +1298,8 @@
       };
     };
   };
-  gamemodes_HARD = lib.mkOption {
-    description = "gamemodes_HARD configuration (./config/forestry/gamemodes/HARD.cfg)";
+  gamemodes_HARD_cfg = lib.mkOption {
+    description = "gamemodes_HARD_cfg configuration (./config/forestry/gamemodes/HARD.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1427,8 +1599,8 @@
       };
     };
   };
-  gamemodes_NORMAL = lib.mkOption {
-    description = "gamemodes_NORMAL configuration (./config/forestry/gamemodes/NORMAL.cfg)";
+  gamemodes_NORMAL_cfg = lib.mkOption {
+    description = "gamemodes_NORMAL_cfg configuration (./config/forestry/gamemodes/NORMAL.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1728,8 +1900,8 @@
       };
     };
   };
-  gamemodes_OP = lib.mkOption {
-    description = "gamemodes_OP configuration (./config/forestry/gamemodes/OP.cfg)";
+  gamemodes_OP_cfg = lib.mkOption {
+    description = "gamemodes_OP_cfg configuration (./config/forestry/gamemodes/OP.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -2029,8 +2201,8 @@
       };
     };
   };
-  lepidopterology = lib.mkOption {
-    description = "lepidopterology configuration (./config/forestry/lepidopterology.cfg)";
+  lepidopterology_cfg = lib.mkOption {
+    description = "lepidopterology_cfg configuration (./config/forestry/lepidopterology.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -2076,8 +2248,8 @@
       };
     };
   };
-  modules = lib.mkOption {
-    description = "modules configuration (./config/forestry/modules.cfg)";
+  modules_cfg = lib.mkOption {
+    description = "modules_cfg configuration (./config/forestry/modules.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

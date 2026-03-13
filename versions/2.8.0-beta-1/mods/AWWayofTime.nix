@@ -1,6 +1,6 @@
 {lib, ...}: {
-  AWWayofTime = lib.mkOption {
-    description = "AWWayofTime configuration (./config/AWWayofTime.cfg)";
+  AWWayofTime_cfg = lib.mkOption {
+    description = "AWWayofTime_cfg configuration (./config/AWWayofTime.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

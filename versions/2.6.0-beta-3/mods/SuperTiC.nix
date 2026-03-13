@@ -1,6 +1,6 @@
 {lib, ...}: {
-  effects = lib.mkOption {
-    description = "effects configuration (./config/SuperTiC/effects.cfg)";
+  effects_cfg = lib.mkOption {
+    description = "effects_cfg configuration (./config/SuperTiC/effects.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -5390,8 +5390,8 @@
       };
     };
   };
-  main = lib.mkOption {
-    description = "main configuration (./config/SuperTiC/main.cfg)";
+  main_cfg = lib.mkOption {
+    description = "main_cfg configuration (./config/SuperTiC/main.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

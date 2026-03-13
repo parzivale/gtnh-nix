@@ -1,6 +1,6 @@
 {lib, ...}: {
-  RandomThings = lib.mkOption {
-    description = "RandomThings configuration (./config/RandomThings.cfg)";
+  RandomThings_cfg = lib.mkOption {
+    description = "RandomThings_cfg configuration (./config/RandomThings.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  forgeChunkLoading = lib.mkOption {
-    description = "forgeChunkLoading configuration (./config/forgeChunkLoading.cfg)";
+  forgeChunkLoading_cfg = lib.mkOption {
+    description = "forgeChunkLoading_cfg configuration (./config/forgeChunkLoading.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

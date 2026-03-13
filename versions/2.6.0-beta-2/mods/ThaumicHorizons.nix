@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ThaumicHorizons = lib.mkOption {
-    description = "ThaumicHorizons configuration (./config/ThaumicHorizons.cfg)";
+  ThaumicHorizons_cfg = lib.mkOption {
+    description = "ThaumicHorizons_cfg configuration (./config/ThaumicHorizons.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

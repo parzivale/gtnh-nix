@@ -1,6 +1,6 @@
 {lib, ...}: {
-  blocksitems = lib.mkOption {
-    description = "blocksitems configuration (./config/etfuturum/blocksitems.cfg)";
+  blocksitems_cfg = lib.mkOption {
+    description = "blocksitems_cfg configuration (./config/etfuturum/blocksitems.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -674,8 +674,8 @@
       };
     };
   };
-  enchantspotions = lib.mkOption {
-    description = "enchantspotions configuration (./config/etfuturum/enchantspotions.cfg)";
+  enchantspotions_cfg = lib.mkOption {
+    description = "enchantspotions_cfg configuration (./config/etfuturum/enchantspotions.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -741,8 +741,8 @@
       };
     };
   };
-  entities = lib.mkOption {
-    description = "entities configuration (./config/etfuturum/entities.cfg)";
+  entities_cfg = lib.mkOption {
+    description = "entities_cfg configuration (./config/etfuturum/entities.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -862,8 +862,8 @@
       };
     };
   };
-  experiments = lib.mkOption {
-    description = "experiments configuration (./config/etfuturum/experiments.cfg)";
+  experiments_cfg = lib.mkOption {
+    description = "experiments_cfg configuration (./config/etfuturum/experiments.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -944,8 +944,8 @@
       };
     };
   };
-  functions = lib.mkOption {
-    description = "functions configuration (./config/etfuturum/functions.cfg)";
+  functions_cfg = lib.mkOption {
+    description = "functions_cfg configuration (./config/etfuturum/functions.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1193,8 +1193,8 @@
       };
     };
   };
-  mixins = lib.mkOption {
-    description = "mixins configuration (./config/etfuturum/mixins.cfg)";
+  mixins_cfg = lib.mkOption {
+    description = "mixins_cfg configuration (./config/etfuturum/mixins.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1410,8 +1410,8 @@
       };
     };
   };
-  modcompat = lib.mkOption {
-    description = "modcompat configuration (./config/etfuturum/modcompat.cfg)";
+  modcompat_cfg = lib.mkOption {
+    description = "modcompat_cfg configuration (./config/etfuturum/modcompat.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1492,8 +1492,8 @@
       };
     };
   };
-  sounds = lib.mkOption {
-    description = "sounds configuration (./config/etfuturum/sounds.cfg)";
+  sounds_cfg = lib.mkOption {
+    description = "sounds_cfg configuration (./config/etfuturum/sounds.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1665,8 +1665,8 @@
       };
     };
   };
-  tweaks = lib.mkOption {
-    description = "tweaks configuration (./config/etfuturum/tweaks.cfg)";
+  tweaks_cfg = lib.mkOption {
+    description = "tweaks_cfg configuration (./config/etfuturum/tweaks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1749,8 +1749,8 @@
       };
     };
   };
-  world = lib.mkOption {
-    description = "world configuration (./config/etfuturum/world.cfg)";
+  world_cfg = lib.mkOption {
+    description = "world_cfg configuration (./config/etfuturum/world.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

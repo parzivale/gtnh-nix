@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ChiselTones = lib.mkOption {
-    description = "ChiselTones configuration (./config/ChiselTones.cfg)";
+  ChiselTones_cfg = lib.mkOption {
+    description = "ChiselTones_cfg configuration (./config/ChiselTones.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

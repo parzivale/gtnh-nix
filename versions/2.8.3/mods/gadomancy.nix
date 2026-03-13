@@ -1,6 +1,6 @@
 {lib, ...}: {
-  gadomancy = lib.mkOption {
-    description = "gadomancy configuration (./config/gadomancy.cfg)";
+  gadomancy_cfg = lib.mkOption {
+    description = "gadomancy_cfg configuration (./config/gadomancy.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

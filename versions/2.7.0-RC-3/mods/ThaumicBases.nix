@@ -1,6 +1,6 @@
 {lib, ...}: {
-  "Thaumic Bases" = lib.mkOption {
-    description = "Thaumic Bases configuration (./config/Thaumic Bases.cfg)";
+  "Thaumic Bases_cfg" = lib.mkOption {
+    description = "Thaumic Bases_cfg configuration (./config/Thaumic Bases.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

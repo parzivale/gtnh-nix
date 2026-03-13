@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Thaumcraft = lib.mkOption {
-    description = "Thaumcraft configuration (./config/Thaumcraft.cfg)";
+  Thaumcraft_cfg = lib.mkOption {
+    description = "Thaumcraft_cfg configuration (./config/Thaumcraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

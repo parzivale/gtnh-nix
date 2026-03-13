@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ThaumicExploration = lib.mkOption {
-    description = "ThaumicExploration configuration (./config/ThaumicExploration.cfg)";
+  ThaumicExploration_cfg = lib.mkOption {
+    description = "ThaumicExploration_cfg configuration (./config/ThaumicExploration.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bugfixes = lib.mkOption {
-    description = "bugfixes configuration (./config/salisarcana/bugfixes.cfg)";
+  bugfixes_cfg = lib.mkOption {
+    description = "bugfixes_cfg configuration (./config/salisarcana/bugfixes.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -149,8 +149,8 @@
       };
     };
   };
-  commands = lib.mkOption {
-    description = "commands configuration (./config/salisarcana/commands.cfg)";
+  commands_cfg = lib.mkOption {
+    description = "commands_cfg configuration (./config/salisarcana/commands.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -414,8 +414,8 @@
       };
     };
   };
-  enhancements = lib.mkOption {
-    description = "enhancements configuration (./config/salisarcana/enhancements.cfg)";
+  enhancements_cfg = lib.mkOption {
+    description = "enhancements_cfg configuration (./config/salisarcana/enhancements.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -962,8 +962,8 @@
       };
     };
   };
-  mod_integrations = lib.mkOption {
-    description = "mod_integrations configuration (./config/salisarcana/mod_integrations.cfg)";
+  mod_integrations_cfg = lib.mkOption {
+    description = "mod_integrations_cfg configuration (./config/salisarcana/mod_integrations.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1016,8 +1016,140 @@
       };
     };
   };
-  salisarcana = lib.mkOption {
-    description = "salisarcana configuration (./config/salisarcana.cfg)";
+  research_ContainerScan_json = lib.mkOption {
+    description = "research_ContainerScan_json configuration (./config/salisarcana/research/ContainerScan.json)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/salisarcana/research/ContainerScan.json";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "json";
+        readOnly = true;
+        };
+        key = lib.mkOption {
+          type = lib.types.str;
+          default = "salisarcana:CHESTSCAN";
+        };
+        name = lib.mkOption {
+          type = lib.types.str;
+          default = "Container Scanning";
+        };
+        tooltip = lib.mkOption {
+          type = lib.types.str;
+          default = "Looking a little closer";
+        };
+        category = lib.mkOption {
+          type = lib.types.str;
+          default = "BASICS";
+        };
+        aspects = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "0" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    aspect = lib.mkOption {
+                      type = lib.types.str;
+                      default = "ordo";
+                    };
+                    amount = lib.mkOption {
+                      type = lib.types.int;
+                      default = 10;
+                    };
+                  };
+                };
+              };
+              "1" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    aspect = lib.mkOption {
+                      type = lib.types.str;
+                      default = "permutatio";
+                    };
+                    amount = lib.mkOption {
+                      type = lib.types.int;
+                      default = 10;
+                    };
+                  };
+                };
+              };
+              "2" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    aspect = lib.mkOption {
+                      type = lib.types.str;
+                      default = "perditio";
+                    };
+                    amount = lib.mkOption {
+                      type = lib.types.int;
+                      default = 10;
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+        parents = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [ "DECONSTRUCTOR" ];
+        };
+        displayColumn = lib.mkOption {
+          type = lib.types.int;
+          default = 8;
+        };
+        displayRow = lib.mkOption {
+          type = lib.types.int;
+          default = 3;
+        };
+        icon_item = lib.mkOption {
+          type = lib.types.str;
+          default = "minecraft:chest";
+        };
+        complexity = lib.mkOption {
+          type = lib.types.int;
+          default = 3;
+        };
+        pages = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "0" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    pageType = lib.mkOption {
+                      type = lib.types.str;
+                      default = "text";
+                    };
+                    number = lib.mkOption {
+                      type = lib.types.int;
+                      default = 0;
+                    };
+                    text = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Thanks to your research about deconstructing items, you've learned to look inside other blocks with your Thaumometer by using it to \"deconstruct\" the block magically. You can scan any block that can hold items, such as a chest or hopper, to scan all contained items automatically.";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+  salisarcana_cfg = lib.mkOption {
+    description = "salisarcana_cfg configuration (./config/salisarcana.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

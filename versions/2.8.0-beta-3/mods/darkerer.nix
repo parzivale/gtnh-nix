@@ -1,6 +1,6 @@
 {lib, ...}: {
-  darkerer = lib.mkOption {
-    description = "darkerer configuration (./config/darkerer.cfg)";
+  darkerer_cfg = lib.mkOption {
+    description = "darkerer_cfg configuration (./config/darkerer.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  GalacticraftAmunRa = lib.mkOption {
-    description = "GalacticraftAmunRa configuration (./config/GalacticraftAmunRa.cfg)";
+  GalacticraftAmunRa_cfg = lib.mkOption {
+    description = "GalacticraftAmunRa_cfg configuration (./config/GalacticraftAmunRa.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

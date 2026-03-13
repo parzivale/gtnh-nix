@@ -1,6 +1,6 @@
 {lib, ...}: {
-  hodgepodge = lib.mkOption {
-    description = "hodgepodge configuration (./config/hodgepodge.cfg)";
+  hodgepodge_cfg = lib.mkOption {
+    description = "hodgepodge_cfg configuration (./config/hodgepodge.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

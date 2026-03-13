@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TwilightForest = lib.mkOption {
-    description = "TwilightForest configuration (./config/TwilightForest.cfg)";
+  TwilightForest_cfg = lib.mkOption {
+    description = "TwilightForest_cfg configuration (./config/TwilightForest.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

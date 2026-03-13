@@ -1,6 +1,6 @@
 {lib, ...}: {
-  gtnhintergalactic = lib.mkOption {
-    description = "gtnhintergalactic configuration (./config/gtnhintergalactic.cfg)";
+  gtnhintergalactic_cfg = lib.mkOption {
+    description = "gtnhintergalactic_cfg configuration (./config/gtnhintergalactic.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

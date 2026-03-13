@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Ic2Nei = lib.mkOption {
-    description = "Ic2Nei configuration (./config/Ic2Nei.cfg)";
+  Ic2Nei_cfg = lib.mkOption {
+    description = "Ic2Nei_cfg configuration (./config/Ic2Nei.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

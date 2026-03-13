@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ProjectRed = lib.mkOption {
-    description = "ProjectRed configuration (./config/ProjectRed.cfg)";
+  ProjectRed_cfg = lib.mkOption {
+    description = "ProjectRed_cfg configuration (./config/ProjectRed.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

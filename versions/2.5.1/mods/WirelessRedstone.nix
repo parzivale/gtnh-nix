@@ -1,6 +1,6 @@
 {lib, ...}: {
-  WirelessRedstone = lib.mkOption {
-    description = "WirelessRedstone configuration (./config/WirelessRedstone.cfg)";
+  WirelessRedstone_cfg = lib.mkOption {
+    description = "WirelessRedstone_cfg configuration (./config/WirelessRedstone.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

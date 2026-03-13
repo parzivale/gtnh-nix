@@ -1,6 +1,6 @@
 {lib, ...}: {
-  thaumicenergistics = lib.mkOption {
-    description = "thaumicenergistics configuration (./config/thaumicenergistics.cfg)";
+  thaumicenergistics_cfg = lib.mkOption {
+    description = "thaumicenergistics_cfg configuration (./config/thaumicenergistics.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

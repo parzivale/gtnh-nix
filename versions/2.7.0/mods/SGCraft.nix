@@ -1,6 +1,6 @@
 {lib, ...}: {
-  SGCraft = lib.mkOption {
-    description = "SGCraft configuration (./config/SGCraft.cfg)";
+  SGCraft_cfg = lib.mkOption {
+    description = "SGCraft_cfg configuration (./config/SGCraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

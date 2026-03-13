@@ -1,6 +1,6 @@
 {lib, ...}: {
-  NEID = lib.mkOption {
-    description = "NEID configuration (./config/NEID.cfg)";
+  NEID_cfg = lib.mkOption {
+    description = "NEID_cfg configuration (./config/NEID.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

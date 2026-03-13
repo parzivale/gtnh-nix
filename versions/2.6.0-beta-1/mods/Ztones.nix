@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Ztones = lib.mkOption {
-    description = "Ztones configuration (./config/Ztones.cfg)";
+  Ztones_cfg = lib.mkOption {
+    description = "Ztones_cfg configuration (./config/Ztones.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

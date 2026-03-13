@@ -1,6 +1,6 @@
 {lib, ...}: {
-  BiblioCraft = lib.mkOption {
-    description = "BiblioCraft configuration (./config/BiblioCraft.cfg)";
+  BiblioCraft_cfg = lib.mkOption {
+    description = "BiblioCraft_cfg configuration (./config/BiblioCraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

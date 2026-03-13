@@ -1,6 +1,6 @@
 {lib, ...}: {
-  roguelike = lib.mkOption {
-    description = "roguelike configuration (./config/roguelike_dungeons/roguelike.cfg)";
+  roguelike_cfg = lib.mkOption {
+    description = "roguelike_cfg configuration (./config/roguelike_dungeons/roguelike.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -11,7 +11,7 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "properties";
         readOnly = true;
         };
         dimensionBL = lib.mkOption {
@@ -19,56 +19,56 @@
           default = "";
         };
         dimensionWL = lib.mkOption {
-          type = lib.types.str;
-          default = "0";
+          type = lib.types.int;
+          default = 0;
         };
         doNaturalSpawn = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         doNoveltySpawn = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         generous = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         levelMaxRooms = lib.mkOption {
-          type = lib.types.str;
-          default = "30";
+          type = lib.types.int;
+          default = 30;
         };
         levelRange = lib.mkOption {
-          type = lib.types.str;
-          default = "80";
+          type = lib.types.int;
+          default = 80;
         };
         levelScatter = lib.mkOption {
-          type = lib.types.str;
-          default = "10";
+          type = lib.types.int;
+          default = 10;
         };
         looting = lib.mkOption {
-          type = lib.types.str;
-          default = "0.085";
+          type = lib.types.float;
+          default = 0.085;
         };
         lowerLimit = lib.mkOption {
-          type = lib.types.str;
-          default = "60";
+          type = lib.types.int;
+          default = 60;
         };
         preciousBlocks = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         rogueSpawners = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         spawnFrequency = lib.mkOption {
-          type = lib.types.str;
-          default = "16";
+          type = lib.types.int;
+          default = 16;
         };
         upperLimit = lib.mkOption {
-          type = lib.types.str;
-          default = "100";
+          type = lib.types.int;
+          default = 100;
         };
       };
     };

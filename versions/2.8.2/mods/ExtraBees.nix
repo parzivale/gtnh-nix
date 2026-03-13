@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ExtraBees = lib.mkOption {
-    description = "ExtraBees configuration (./config/ExtraBees.cfg)";
+  ExtraBees_cfg = lib.mkOption {
+    description = "ExtraBees_cfg configuration (./config/ExtraBees.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

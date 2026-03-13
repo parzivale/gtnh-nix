@@ -1,11 +1,26 @@
 {
-  description = "Description for the project";
+  description = "GTNH Nix configuration and server module";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     haumea = {
       url = "github:nix-community/haumea/v0.2.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pyproject-nix = {
+      url = "github:pyproject-nix/pyproject.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    uv2nix = {
+      url = "github:pyproject-nix/uv2nix";
+      inputs.pyproject-nix.follows = "pyproject-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pyproject-build-systems = {
+      url = "github:pyproject-nix/build-system-pkgs";
+      inputs.pyproject-nix.follows = "pyproject-nix";
+      inputs.uv2nix.follows = "uv2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -32,7 +47,27 @@
           inputs = perSystemInputs;
         };
         version-list = import ./version-list.nix;
+
+        # Python environment for tools
+        workspace = inputs.uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
+        overlay = workspace.mkPyprojectOverlay {
+          sourcePreference = "wheel";
+        };
+        python = pkgs.python312;
+        pythonSet =
+          (pkgs.callPackage inputs.pyproject-nix.build.packages {
+            inherit python;
+          })
+          .overrideScope
+          (lib.composeManyExtensions [
+            inputs.pyproject-build-systems.overlays.default
+            overlay
+          ]);
+        venv = pythonSet.mkVirtualEnv "gtnh-tools" workspace.deps.default;
       in {
+        _module.args.gtnh-venv = venv;
+        _module.args.gtnh-scripts = ./scripts;
+
         packages =
           builtins.listToAttrs (builtins.map (version: {
               name = "gtnh-${version.version}";
@@ -46,6 +81,14 @@
             value = config.packages."gtnh-${version.version}";
           })
           version-list);
+
+        devShells.default = pkgs.mkShell {
+          packages = [
+            venv
+            python
+            pkgs.uv
+          ];
+        };
       };
       flake = {
         nixosModules = builtins.mapAttrs (name: _: {

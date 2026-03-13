@@ -1,6 +1,6 @@
 {lib, ...}: {
-  UniversalSingularities = lib.mkOption {
-    description = "UniversalSingularities configuration (./config/UniversalSingularities.cfg)";
+  UniversalSingularities_cfg = lib.mkOption {
+    description = "UniversalSingularities_cfg configuration (./config/UniversalSingularities.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

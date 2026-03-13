@@ -1,6 +1,6 @@
 {lib, ...}: {
-  AFSU = lib.mkOption {
-    description = "AFSU configuration (./config/AFSU.cfg)";
+  AFSU_cfg = lib.mkOption {
+    description = "AFSU_cfg configuration (./config/AFSU.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

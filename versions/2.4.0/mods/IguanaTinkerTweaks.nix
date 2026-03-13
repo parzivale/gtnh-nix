@@ -1,6 +1,6 @@
 {lib, ...}: {
-  BlockDefaults = lib.mkOption {
-    description = "BlockDefaults configuration (./config/IguanaTinkerTweaks/BlockDefaults.cfg)";
+  BlockDefaults_cfg = lib.mkOption {
+    description = "BlockDefaults_cfg configuration (./config/IguanaTinkerTweaks/BlockDefaults.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -58921,8 +58921,8 @@
       };
     };
   };
-  BlockOverride = lib.mkOption {
-    description = "BlockOverride configuration (./config/IguanaTinkerTweaks/BlockOverride.cfg)";
+  BlockOverride_cfg = lib.mkOption {
+    description = "BlockOverride_cfg configuration (./config/IguanaTinkerTweaks/BlockOverride.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -58960,8 +58960,8 @@
       };
     };
   };
-  BonusModifierDefaults = lib.mkOption {
-    description = "BonusModifierDefaults configuration (./config/IguanaTinkerTweaks/BonusModifierDefaults.cfg)";
+  BonusModifierDefaults_cfg = lib.mkOption {
+    description = "BonusModifierDefaults_cfg configuration (./config/IguanaTinkerTweaks/BonusModifierDefaults.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -59622,8 +59622,8 @@
       };
     };
   };
-  BonusModifierOverride = lib.mkOption {
-    description = "BonusModifierOverride configuration (./config/IguanaTinkerTweaks/BonusModifierOverride.cfg)";
+  BonusModifierOverride_cfg = lib.mkOption {
+    description = "BonusModifierOverride_cfg configuration (./config/IguanaTinkerTweaks/BonusModifierOverride.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -60003,8 +60003,8 @@
       };
     };
   };
-  HarvestLevelNamesDefaults = lib.mkOption {
-    description = "HarvestLevelNamesDefaults configuration (./config/IguanaTinkerTweaks/HarvestLevelNamesDefaults.cfg)";
+  HarvestLevelNamesDefaults_cfg = lib.mkOption {
+    description = "HarvestLevelNamesDefaults_cfg configuration (./config/IguanaTinkerTweaks/HarvestLevelNamesDefaults.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -60064,8 +60064,8 @@
       };
     };
   };
-  HarvestLevelNamesOverride = lib.mkOption {
-    description = "HarvestLevelNamesOverride configuration (./config/IguanaTinkerTweaks/HarvestLevelNamesOverride.cfg)";
+  HarvestLevelNamesOverride_cfg = lib.mkOption {
+    description = "HarvestLevelNamesOverride_cfg configuration (./config/IguanaTinkerTweaks/HarvestLevelNamesOverride.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -60089,8 +60089,8 @@
       };
     };
   };
-  MaterialDefaults = lib.mkOption {
-    description = "MaterialDefaults configuration (./config/IguanaTinkerTweaks/MaterialDefaults.cfg)";
+  MaterialDefaults_cfg = lib.mkOption {
+    description = "MaterialDefaults_cfg configuration (./config/IguanaTinkerTweaks/MaterialDefaults.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -69144,8 +69144,8 @@
       };
     };
   };
-  MaterialOverride = lib.mkOption {
-    description = "MaterialOverride configuration (./config/IguanaTinkerTweaks/MaterialOverride.cfg)";
+  MaterialOverride_cfg = lib.mkOption {
+    description = "MaterialOverride_cfg configuration (./config/IguanaTinkerTweaks/MaterialOverride.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -69186,8 +69186,8 @@
       };
     };
   };
-  Modules = lib.mkOption {
-    description = "Modules configuration (./config/IguanaTinkerTweaks/Modules.cfg)";
+  Modules_cfg = lib.mkOption {
+    description = "Modules_cfg configuration (./config/IguanaTinkerTweaks/Modules.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -69266,8 +69266,8 @@
       };
     };
   };
-  ToolDefaults = lib.mkOption {
-    description = "ToolDefaults configuration (./config/IguanaTinkerTweaks/ToolDefaults.cfg)";
+  ToolDefaults_cfg = lib.mkOption {
+    description = "ToolDefaults_cfg configuration (./config/IguanaTinkerTweaks/ToolDefaults.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -75149,8 +75149,8 @@
       };
     };
   };
-  ToolOverride = lib.mkOption {
-    description = "ToolOverride configuration (./config/IguanaTinkerTweaks/ToolOverride.cfg)";
+  ToolOverride_cfg = lib.mkOption {
+    description = "ToolOverride_cfg configuration (./config/IguanaTinkerTweaks/ToolOverride.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -76101,8 +76101,8 @@
       };
     };
   };
-  main = lib.mkOption {
-    description = "main configuration (./config/IguanaTinkerTweaks/main.cfg)";
+  main_cfg = lib.mkOption {
+    description = "main_cfg configuration (./config/IguanaTinkerTweaks/main.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -76574,8 +76574,8 @@
       };
     };
   };
-  restrictions = lib.mkOption {
-    description = "restrictions configuration (./config/IguanaTinkerTweaks/restrictions.cfg)";
+  restrictions_cfg = lib.mkOption {
+    description = "restrictions_cfg configuration (./config/IguanaTinkerTweaks/restrictions.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

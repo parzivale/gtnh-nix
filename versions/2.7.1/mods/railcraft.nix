@@ -1,6 +1,6 @@
 {lib, ...}: {
-  blocks = lib.mkOption {
-    description = "blocks configuration (./config/railcraft/blocks.cfg)";
+  blocks_cfg = lib.mkOption {
+    description = "blocks_cfg configuration (./config/railcraft/blocks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1235,8 +1235,8 @@
       };
     };
   };
-  items = lib.mkOption {
-    description = "items configuration (./config/railcraft/items.cfg)";
+  items_cfg = lib.mkOption {
+    description = "items_cfg configuration (./config/railcraft/items.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1580,8 +1580,8 @@
       };
     };
   };
-  modules = lib.mkOption {
-    description = "modules configuration (./config/railcraft/modules.cfg)";
+  modules_cfg = lib.mkOption {
+    description = "modules_cfg configuration (./config/railcraft/modules.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1705,8 +1705,8 @@
       };
     };
   };
-  railcraft = lib.mkOption {
-    description = "railcraft configuration (./config/railcraft/railcraft.cfg)";
+  railcraft_cfg = lib.mkOption {
+    description = "railcraft_cfg configuration (./config/railcraft/railcraft.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

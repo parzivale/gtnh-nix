@@ -1,6 +1,6 @@
 {lib, ...}: {
-  CarpentersBlocks = lib.mkOption {
-    description = "CarpentersBlocks configuration (./config/CarpentersBlocks.cfg)";
+  CarpentersBlocks_cfg = lib.mkOption {
+    description = "CarpentersBlocks_cfg configuration (./config/CarpentersBlocks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

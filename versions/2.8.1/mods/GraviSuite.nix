@@ -1,6 +1,6 @@
 {lib, ...}: {
-  GraviSuite = lib.mkOption {
-    description = "GraviSuite configuration (./config/GraviSuite.cfg)";
+  GraviSuite_cfg = lib.mkOption {
+    description = "GraviSuite_cfg configuration (./config/GraviSuite.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

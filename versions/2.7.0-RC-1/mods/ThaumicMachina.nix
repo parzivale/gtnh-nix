@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ThaumicMachina = lib.mkOption {
-    description = "ThaumicMachina configuration (./config/ThaumicMachina.cfg)";
+  ThaumicMachina_cfg = lib.mkOption {
+    description = "ThaumicMachina_cfg configuration (./config/ThaumicMachina.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

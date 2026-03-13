@@ -1,6 +1,6 @@
 {lib, ...}: {
-  IronChest = lib.mkOption {
-    description = "IronChest configuration (./config/IronChest.cfg)";
+  IronChest_cfg = lib.mkOption {
+    description = "IronChest_cfg configuration (./config/IronChest.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

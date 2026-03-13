@@ -1,6 +1,6 @@
 {lib, ...}: {
-  WailaHarvestability = lib.mkOption {
-    description = "WailaHarvestability configuration (./config/WailaHarvestability.cfg)";
+  WailaHarvestability_cfg = lib.mkOption {
+    description = "WailaHarvestability_cfg configuration (./config/WailaHarvestability.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

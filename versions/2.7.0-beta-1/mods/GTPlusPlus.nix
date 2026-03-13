@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ASM = lib.mkOption {
-    description = "ASM configuration (./config/GTPlusPlus/ASM.cfg)";
+  ASM_cfg = lib.mkOption {
+    description = "ASM_cfg configuration (./config/GTPlusPlus/ASM.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -68,8 +68,8 @@
       };
     };
   };
-  GTPlusPlus = lib.mkOption {
-    description = "GTPlusPlus configuration (./config/GTPlusPlus/GTPlusPlus.cfg)";
+  GTPlusPlus_cfg = lib.mkOption {
+    description = "GTPlusPlus_cfg configuration (./config/GTPlusPlus/GTPlusPlus.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

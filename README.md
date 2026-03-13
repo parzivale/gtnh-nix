@@ -54,3 +54,31 @@ And then enable GTNH!
 ```nix
 programs.gtnh.enable = true;
 ```
+
+## Development
+
+Enter the dev shell:
+
+```bash
+nix develop
+```
+
+### Scripts
+
+Generate Nix options from a GTNH pack:
+
+```bash
+uv run python3 scripts/gen_cfg_options.py <pack_root> <output_dir>
+```
+
+Regenerate options for all versions:
+
+```bash
+uv run python3 scripts/gen_all_versions.py
+```
+
+Compare original vs rendered config files:
+
+```bash
+uv run python3 scripts/normalize.py <original> <rendered>
+```

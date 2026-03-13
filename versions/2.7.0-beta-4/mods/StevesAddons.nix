@@ -1,6 +1,6 @@
 {lib, ...}: {
-  StevesAddons = lib.mkOption {
-    description = "StevesAddons configuration (./config/StevesAddons.cfg)";
+  StevesAddons_cfg = lib.mkOption {
+    description = "StevesAddons_cfg configuration (./config/StevesAddons.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

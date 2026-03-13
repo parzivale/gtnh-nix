@@ -1,6 +1,6 @@
 {lib, ...}: {
-  EMT = lib.mkOption {
-    description = "EMT configuration (./config/EMT.cfg)";
+  EMT_cfg = lib.mkOption {
+    description = "EMT_cfg configuration (./config/EMT.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  LogisticsPipes = lib.mkOption {
-    description = "LogisticsPipes configuration (./config/LogisticsPipes.cfg)";
+  LogisticsPipes_cfg = lib.mkOption {
+    description = "LogisticsPipes_cfg configuration (./config/LogisticsPipes.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

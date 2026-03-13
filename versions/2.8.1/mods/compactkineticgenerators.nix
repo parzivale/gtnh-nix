@@ -1,6 +1,6 @@
 {lib, ...}: {
-  compactkineticgenerators = lib.mkOption {
-    description = "compactkineticgenerators configuration (./config/compactkineticgenerators.cfg)";
+  compactkineticgenerators_cfg = lib.mkOption {
+    description = "compactkineticgenerators_cfg configuration (./config/compactkineticgenerators.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

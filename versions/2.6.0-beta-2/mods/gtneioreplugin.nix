@@ -1,6 +1,6 @@
 {lib, ...}: {
-  gtneioreplugin = lib.mkOption {
-    description = "gtneioreplugin configuration (./config/gtneioreplugin.cfg)";
+  gtneioreplugin_cfg = lib.mkOption {
+    description = "gtneioreplugin_cfg configuration (./config/gtneioreplugin.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

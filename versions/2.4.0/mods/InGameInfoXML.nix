@@ -1,6 +1,6 @@
 {lib, ...}: {
-  InGameInfoXML = lib.mkOption {
-    description = "InGameInfoXML configuration (./config/InGameInfoXML.cfg)";
+  InGameInfoXML_cfg = lib.mkOption {
+    description = "InGameInfoXML_cfg configuration (./config/InGameInfoXML.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

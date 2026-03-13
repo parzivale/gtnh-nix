@@ -1,6 +1,6 @@
 {lib, ...}: {
-  "DraconicEvolution.Balance" = lib.mkOption {
-    description = "DraconicEvolution.Balance configuration (./config/DraconicEvolution.Balance.cfg)";
+  "DraconicEvolution.Balance_cfg" = lib.mkOption {
+    description = "DraconicEvolution.Balance_cfg configuration (./config/DraconicEvolution.Balance.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

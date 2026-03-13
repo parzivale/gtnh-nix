@@ -1,6 +1,6 @@
 {lib, ...}: {
-  MouseTweaks = lib.mkOption {
-    description = "MouseTweaks configuration (./config/MouseTweaks.cfg)";
+  MouseTweaks_cfg = lib.mkOption {
+    description = "MouseTweaks_cfg configuration (./config/MouseTweaks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -11,37 +11,36 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "properties";
         readOnly = true;
         };
         WheelTweak = lib.mkOption {
-          type = lib.types.str;
-          default = "0";
-          description = "Sun May 13 12:45:37 CEST 2018";
+          type = lib.types.int;
+          default = 0;
         };
         LMBTweakWithoutItem = lib.mkOption {
-          type = lib.types.str;
-          default = "1";
+          type = lib.types.int;
+          default = 1;
         };
         RMBTweak = lib.mkOption {
-          type = lib.types.str;
-          default = "1";
+          type = lib.types.int;
+          default = 1;
         };
         LMBTweakWithItem = lib.mkOption {
-          type = lib.types.str;
-          default = "0";
+          type = lib.types.int;
+          default = 0;
         };
         WheelSearchOrder = lib.mkOption {
-          type = lib.types.str;
-          default = "1";
+          type = lib.types.int;
+          default = 1;
         };
         OnTickMethodOrder = lib.mkOption {
           type = lib.types.str;
           default = "Forge, LiteLoader, Minecraft";
         };
         Debug = lib.mkOption {
-          type = lib.types.str;
-          default = "0";
+          type = lib.types.int;
+          default = 0;
         };
       };
     };

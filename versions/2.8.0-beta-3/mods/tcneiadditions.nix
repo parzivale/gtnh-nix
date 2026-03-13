@@ -1,6 +1,6 @@
 {lib, ...}: {
-  tcneiadditions = lib.mkOption {
-    description = "tcneiadditions configuration (./config/tcneiadditions.cfg)";
+  tcneiadditions_cfg = lib.mkOption {
+    description = "tcneiadditions_cfg configuration (./config/tcneiadditions.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

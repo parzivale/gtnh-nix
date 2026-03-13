@@ -1,6 +1,6 @@
 {lib, ...}: {
-  NEIAddons = lib.mkOption {
-    description = "NEIAddons configuration (./config/NEIAddons.cfg)";
+  NEIAddons_cfg = lib.mkOption {
+    description = "NEIAddons_cfg configuration (./config/NEIAddons.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

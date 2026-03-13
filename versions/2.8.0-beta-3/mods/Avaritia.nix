@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Avaritia = lib.mkOption {
-    description = "Avaritia configuration (./config/Avaritia.cfg)";
+  Avaritia_cfg = lib.mkOption {
+    description = "Avaritia_cfg configuration (./config/Avaritia.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

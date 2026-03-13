@@ -1,6 +1,6 @@
 {lib, ...}: {
-  BloodArsenal = lib.mkOption {
-    description = "BloodArsenal configuration (./config/BloodArsenal.cfg)";
+  BloodArsenal_cfg = lib.mkOption {
+    description = "BloodArsenal_cfg configuration (./config/BloodArsenal.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

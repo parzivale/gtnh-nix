@@ -1,6 +1,6 @@
 {lib, ...}: {
-  rewards = lib.mkOption {
-    description = "rewards configuration (./config/lootgames/rewards.cfg)";
+  rewards_cfg = lib.mkOption {
+    description = "rewards_cfg configuration (./config/lootgames/rewards.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

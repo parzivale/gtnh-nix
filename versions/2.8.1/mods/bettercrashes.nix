@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bettercrashes = lib.mkOption {
-    description = "bettercrashes configuration (./config/bettercrashes.cfg)";
+  bettercrashes_cfg = lib.mkOption {
+    description = "bettercrashes_cfg configuration (./config/bettercrashes.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

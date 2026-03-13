@@ -1,6 +1,6 @@
 {lib, ...}: {
-  findit = lib.mkOption {
-    description = "findit configuration (./config/findit.cfg)";
+  findit_cfg = lib.mkOption {
+    description = "findit_cfg configuration (./config/findit.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

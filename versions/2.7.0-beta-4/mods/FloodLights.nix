@@ -1,6 +1,6 @@
 {lib, ...}: {
-  FloodLights = lib.mkOption {
-    description = "FloodLights configuration (./config/FloodLights.cfg)";
+  FloodLights_cfg = lib.mkOption {
+    description = "FloodLights_cfg configuration (./config/FloodLights.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

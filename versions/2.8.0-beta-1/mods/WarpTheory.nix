@@ -1,6 +1,6 @@
 {lib, ...}: {
-  WarpTheory = lib.mkOption {
-    description = "WarpTheory configuration (./config/WarpTheory.cfg)";
+  WarpTheory_cfg = lib.mkOption {
+    description = "WarpTheory_cfg configuration (./config/WarpTheory.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  INpureCore_INpureCore = lib.mkOption {
-    description = "INpureCore_INpureCore configuration (./config/INpureProjects/INpureCore/INpureCore.cfg)";
+  INpureCore_INpureCore_cfg = lib.mkOption {
+    description = "INpureCore_INpureCore_cfg configuration (./config/INpureProjects/INpureCore/INpureCore.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -74,8 +74,8 @@
       };
     };
   };
-  custom_nei_filters_custom_nei_filters = lib.mkOption {
-    description = "custom_nei_filters_custom_nei_filters configuration (./config/INpureProjects/custom_nei_filters/custom_nei_filters.cfg)";
+  custom_nei_filters_custom_nei_filters_cfg = lib.mkOption {
+    description = "custom_nei_filters_custom_nei_filters_cfg configuration (./config/INpureProjects/custom_nei_filters/custom_nei_filters.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

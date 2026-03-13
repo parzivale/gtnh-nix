@@ -1,6 +1,6 @@
 {lib, ...}: {
-  AppleCore = lib.mkOption {
-    description = "AppleCore configuration (./config/AppleCore.cfg)";
+  AppleCore_cfg = lib.mkOption {
+    description = "AppleCore_cfg configuration (./config/AppleCore.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

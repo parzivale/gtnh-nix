@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TravellersGear_inv = lib.mkOption {
-    description = "TravellersGear_inv configuration (./config/TravellersGear_inv.cfg)";
+  TravellersGear_inv_cfg = lib.mkOption {
+    description = "TravellersGear_inv_cfg configuration (./config/TravellersGear_inv.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

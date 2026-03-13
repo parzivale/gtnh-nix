@@ -1,6 +1,6 @@
 {lib, ...}: {
-  archaicfix = lib.mkOption {
-    description = "archaicfix configuration (./config/archaicfix.cfg)";
+  archaicfix_cfg = lib.mkOption {
+    description = "archaicfix_cfg configuration (./config/archaicfix.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

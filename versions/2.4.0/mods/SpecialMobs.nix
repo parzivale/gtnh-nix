@@ -1,6 +1,6 @@
 {lib, ...}: {
-  SpecialMobs = lib.mkOption {
-    description = "SpecialMobs configuration (./config/SpecialMobs.cfg)";
+  SpecialMobs_cfg = lib.mkOption {
+    description = "SpecialMobs_cfg configuration (./config/SpecialMobs.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

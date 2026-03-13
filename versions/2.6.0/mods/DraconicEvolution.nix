@@ -1,6 +1,6 @@
 {lib, ...}: {
-  DraconicEvolution = lib.mkOption {
-    description = "DraconicEvolution configuration (./config/DraconicEvolution.cfg)";
+  DraconicEvolution_cfg = lib.mkOption {
+    description = "DraconicEvolution_cfg configuration (./config/DraconicEvolution.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

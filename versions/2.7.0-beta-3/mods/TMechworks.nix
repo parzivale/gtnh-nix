@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TMechworks = lib.mkOption {
-    description = "TMechworks configuration (./config/TMechworks.cfg)";
+  TMechworks_cfg = lib.mkOption {
+    description = "TMechworks_cfg configuration (./config/TMechworks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

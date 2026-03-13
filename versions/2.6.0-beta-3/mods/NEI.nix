@@ -1,6 +1,6 @@
 {lib, ...}: {
-  client = lib.mkOption {
-    description = "client configuration (./config/NEI/client.cfg)";
+  client_cfg = lib.mkOption {
+    description = "client_cfg configuration (./config/NEI/client.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -272,8 +272,8 @@
       };
     };
   };
-  heighthackhandlers = lib.mkOption {
-    description = "heighthackhandlers configuration (./config/NEI/heighthackhandlers.cfg)";
+  heighthackhandlers_cfg = lib.mkOption {
+    description = "heighthackhandlers_cfg configuration (./config/NEI/heighthackhandlers.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -290,8 +290,8 @@
       };
     };
   };
-  serialhandlers = lib.mkOption {
-    description = "serialhandlers configuration (./config/NEI/serialhandlers.cfg)";
+  serialhandlers_cfg = lib.mkOption {
+    description = "serialhandlers_cfg configuration (./config/NEI/serialhandlers.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

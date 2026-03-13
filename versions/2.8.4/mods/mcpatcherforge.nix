@@ -1,6 +1,6 @@
 {lib, ...}: {
-  mcpatcherforge = lib.mkOption {
-    description = "mcpatcherforge configuration (./config/mcpatcherforge.cfg)";
+  mcpatcherforge_cfg = lib.mkOption {
+    description = "mcpatcherforge_cfg configuration (./config/mcpatcherforge.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

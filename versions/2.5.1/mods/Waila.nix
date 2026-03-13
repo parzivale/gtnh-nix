@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Waila = lib.mkOption {
-    description = "Waila configuration (./config/Waila.cfg)";
+  Waila_cfg = lib.mkOption {
+    description = "Waila_cfg configuration (./config/Waila.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bq_standard = lib.mkOption {
-    description = "bq_standard configuration (./config/bq_standard.cfg)";
+  bq_standard_cfg = lib.mkOption {
+    description = "bq_standard_cfg configuration (./config/bq_standard.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

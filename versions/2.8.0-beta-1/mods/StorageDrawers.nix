@@ -1,6 +1,6 @@
 {lib, ...}: {
-  StorageDrawers = lib.mkOption {
-    description = "StorageDrawers configuration (./config/StorageDrawers.cfg)";
+  StorageDrawers_cfg = lib.mkOption {
+    description = "StorageDrawers_cfg configuration (./config/StorageDrawers.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

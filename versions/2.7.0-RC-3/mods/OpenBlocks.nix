@@ -1,6 +1,6 @@
 {lib, ...}: {
-  OpenBlocks = lib.mkOption {
-    description = "OpenBlocks configuration (./config/OpenBlocks.cfg)";
+  OpenBlocks_cfg = lib.mkOption {
+    description = "OpenBlocks_cfg configuration (./config/OpenBlocks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

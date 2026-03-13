@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ifu = lib.mkOption {
-    description = "ifu configuration (./config/ifu.cfg)";
+  ifu_cfg = lib.mkOption {
+    description = "ifu_cfg configuration (./config/ifu.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

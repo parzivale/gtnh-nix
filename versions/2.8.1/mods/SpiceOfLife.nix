@@ -1,6 +1,6 @@
 {lib, ...}: {
-  SpiceOfLife = lib.mkOption {
-    description = "SpiceOfLife configuration (./config/SpiceOfLife.cfg)";
+  SpiceOfLife_cfg = lib.mkOption {
+    description = "SpiceOfLife_cfg configuration (./config/SpiceOfLife.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

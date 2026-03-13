@@ -1,6 +1,6 @@
 {lib, ...}: {
-  EnderZoo = lib.mkOption {
-    description = "EnderZoo configuration (./config/enderzoo/EnderZoo.cfg)";
+  EnderZoo_cfg = lib.mkOption {
+    description = "EnderZoo_cfg configuration (./config/enderzoo/EnderZoo.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -649,6 +649,596 @@
               };
             };
           };
+        };
+      };
+    };
+  };
+  SpawnConfig_Core_xml = lib.mkOption {
+    description = "SpawnConfig_Core_xml configuration (./config/enderzoo/SpawnConfig_Core.xml)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/enderzoo/SpawnConfig_Core.xml";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+          type = lib.types.str;
+          default = "SpawnConfig";
+        };
+        entry_0 = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "@id" = lib.mkOption {
+                type = lib.types.str;
+                default = "ConcussionCreeper";
+              };
+              "@mobName" = lib.mkOption {
+                type = lib.types.str;
+                default = "enderzoo.ConcussionCreeper";
+              };
+              "@creatureType" = lib.mkOption {
+                type = lib.types.str;
+                default = "monster";
+              };
+              "@rate" = lib.mkOption {
+                type = lib.types.int;
+                default = 40;
+              };
+              "@minGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 1;
+              };
+              "@maxGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 3;
+              };
+              "@remove" = lib.mkOption {
+                type = lib.types.bool;
+                default = false;
+              };
+              biomeFilter = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@type" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "any";
+                    };
+                    biome_0 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "BASE_LAND_TYPES";
+                          };
+                        };
+                      };
+                    };
+                    biome_1 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "NETHER";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_2 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "END";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_3 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "MUSHROOM";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_4 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@name" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "Tainted Land";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+              dimensionExclude_0 = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@name" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Twilight Forest";
+                    };
+                  };
+                };
+              };
+              dimensionExclude_1 = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@name" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Dungeon";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+        entry_1 = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "@id" = lib.mkOption {
+                type = lib.types.str;
+                default = "EnderMiny";
+              };
+              "@mobName" = lib.mkOption {
+                type = lib.types.str;
+                default = "enderzoo.Enderminy";
+              };
+              "@rate" = lib.mkOption {
+                type = lib.types.int;
+                default = 30;
+              };
+              biomeFilter = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@type" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "any";
+                    };
+                    biome_0 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "FOREST";
+                          };
+                        };
+                      };
+                    };
+                    biome_1 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "SWAMP";
+                          };
+                        };
+                      };
+                    };
+                    biome_2 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "JUNGLE";
+                          };
+                        };
+                      };
+                    };
+                    biome_3 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "NETHER";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_4 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "END";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+              dimensionExclude = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@name" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Twilight Forest";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+        entry_2 = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "@id" = lib.mkOption {
+                type = lib.types.str;
+                default = "FallenKnight";
+              };
+              "@mobName" = lib.mkOption {
+                type = lib.types.str;
+                default = "enderzoo.FallenKnight";
+              };
+              "@rate" = lib.mkOption {
+                type = lib.types.int;
+                default = 30;
+              };
+              "@minGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 1;
+              };
+              "@maxGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 4;
+              };
+              biomeFilter = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@type" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "any";
+                    };
+                    biome_0 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "PLAINS";
+                          };
+                        };
+                      };
+                    };
+                    biome_1 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "NETHER";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_2 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "END";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+              dimensionExclude = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@name" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Twilight Forest";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+        entry_3 = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "@id" = lib.mkOption {
+                type = lib.types.str;
+                default = "WitherWitch";
+              };
+              "@mobName" = lib.mkOption {
+                type = lib.types.str;
+                default = "enderzoo.WitherWitch";
+              };
+              "@rate" = lib.mkOption {
+                type = lib.types.int;
+                default = 5;
+              };
+              "@minGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 1;
+              };
+              "@maxGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 1;
+              };
+              biomeFilter = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@type" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "any";
+                    };
+                    biome_0 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "FOREST";
+                          };
+                        };
+                      };
+                    };
+                    biome_1 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "SWAMP";
+                          };
+                        };
+                      };
+                    };
+                    biome_2 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "PLAINS";
+                          };
+                        };
+                      };
+                    };
+                    biome_3 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "HILLS";
+                          };
+                        };
+                      };
+                    };
+                    biome_4 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "MOUNTAIN";
+                          };
+                        };
+                      };
+                    };
+                    biome_5 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "NETHER";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_6 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "END";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+              dimensionExclude = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@name" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Twilight Forest";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+        entry_4 = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "@id" = lib.mkOption {
+                type = lib.types.str;
+                default = "DireWolf";
+              };
+              "@mobName" = lib.mkOption {
+                type = lib.types.str;
+                default = "enderzoo.DireWolf";
+              };
+              "@rate" = lib.mkOption {
+                type = lib.types.int;
+                default = 30;
+              };
+              "@minGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 2;
+              };
+              "@maxGroupSize" = lib.mkOption {
+                type = lib.types.int;
+                default = 6;
+              };
+              biomeFilter = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                    "@type" = lib.mkOption {
+                      type = lib.types.str;
+                      default = "all";
+                    };
+                    biome_0 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "SNOWY";
+                          };
+                        };
+                      };
+                    };
+                    biome_1 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "NETHER";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                    biome_2 = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "@type" = lib.mkOption {
+                            type = lib.types.str;
+                            default = "END";
+                          };
+                          "@exclude" = lib.mkOption {
+                            type = lib.types.bool;
+                            default = true;
+                          };
+                        };
+                      };
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+  SpawnConfig_User_xml = lib.mkOption {
+    description = "SpawnConfig_User_xml configuration (./config/enderzoo/SpawnConfig_User.xml)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/enderzoo/SpawnConfig_User.xml";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+          type = lib.types.str;
+          default = "SpawnConfig";
         };
       };
     };

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  angelica-modules = lib.mkOption {
-    description = "angelica-modules configuration (./config/angelica-modules.cfg)";
+  angelica-modules_cfg = lib.mkOption {
+    description = "angelica-modules_cfg configuration (./config/angelica-modules.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

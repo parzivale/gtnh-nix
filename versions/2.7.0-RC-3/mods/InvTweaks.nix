@@ -1,6 +1,6 @@
 {lib, ...}: {
-  InvTweaks = lib.mkOption {
-    description = "InvTweaks configuration (./config/InvTweaks.cfg)";
+  InvTweaks_cfg = lib.mkOption {
+    description = "InvTweaks_cfg configuration (./config/InvTweaks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -11,49 +11,48 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "properties";
         readOnly = true;
         };
         enableMiddleClick = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
-          description = "Inventory Tweaks Configuration (Regarding shortcuts, all key names can be found at: http://www.lwjgl.org/javadoc/org/lwjgl/input/Keyboard.html) Wed Mar 22 17:40:56 CET 2017";
+          type = lib.types.bool;
+          default = true;
         };
         showChestButtons = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         enableSortingOnPickup = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         enableAutoRefill = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         autoRefillBeforeBreak = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         autoRefillDamageThreshhold = lib.mkOption {
-          type = lib.types.str;
-          default = "5";
+          type = lib.types.int;
+          default = 5;
         };
         enableSounds = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         enableShortcuts = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         enableAutoEquipArmor = lib.mkOption {
-          type = lib.types.str;
-          default = "false";
+          type = lib.types.bool;
+          default = false;
         };
         enableServerItemSwap = lib.mkOption {
-          type = lib.types.str;
-          default = "true";
+          type = lib.types.bool;
+          default = true;
         };
         shortcutKeyAllItems = lib.mkOption {
           type = lib.types.str;

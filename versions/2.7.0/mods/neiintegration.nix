@@ -1,6 +1,6 @@
 {lib, ...}: {
-  neiintegration = lib.mkOption {
-    description = "neiintegration configuration (./config/neiintegration.cfg)";
+  neiintegration_cfg = lib.mkOption {
+    description = "neiintegration_cfg configuration (./config/neiintegration.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  GalacticGreg = lib.mkOption {
-    description = "GalacticGreg configuration (./config/galacticgreg/GalacticGreg.cfg)";
+  GalacticGreg_cfg = lib.mkOption {
+    description = "GalacticGreg_cfg configuration (./config/galacticgreg/GalacticGreg.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

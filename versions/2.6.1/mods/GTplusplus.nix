@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Australia = lib.mkOption {
-    description = "Australia configuration (./config/GTplusplus/Australia.cfg)";
+  Australia_cfg = lib.mkOption {
+    description = "Australia_cfg configuration (./config/GTplusplus/Australia.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -17,8 +17,8 @@
       };
     };
   };
-  GTplusplus = lib.mkOption {
-    description = "GTplusplus configuration (./config/GTplusplus/GTplusplus.cfg)";
+  GTplusplus_cfg = lib.mkOption {
+    description = "GTplusplus_cfg configuration (./config/GTplusplus/GTplusplus.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -721,8 +721,8 @@
       };
     };
   };
-  GliderBlacklist = lib.mkOption {
-    description = "GliderBlacklist configuration (./config/GTplusplus/GliderBlacklist.cfg)";
+  GliderBlacklist_cfg = lib.mkOption {
+    description = "GliderBlacklist_cfg configuration (./config/GTplusplus/GliderBlacklist.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -739,8 +739,8 @@
       };
     };
   };
-  MaterialProperties = lib.mkOption {
-    description = "MaterialProperties configuration (./config/GTplusplus/MaterialProperties.cfg)";
+  MaterialProperties_cfg = lib.mkOption {
+    description = "MaterialProperties_cfg configuration (./config/GTplusplus/MaterialProperties.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -998,8 +998,8 @@
       };
     };
   };
-  WorldGeneration = lib.mkOption {
-    description = "WorldGeneration configuration (./config/GTplusplus/WorldGeneration.cfg)";
+  WorldGeneration_cfg = lib.mkOption {
+    description = "WorldGeneration_cfg configuration (./config/GTplusplus/WorldGeneration.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1016,8 +1016,8 @@
       };
     };
   };
-  asm = lib.mkOption {
-    description = "asm configuration (./config/GTplusplus/asm.cfg)";
+  asm_cfg = lib.mkOption {
+    description = "asm_cfg configuration (./config/GTplusplus/asm.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

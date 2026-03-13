@@ -1,6 +1,6 @@
 {lib, ...}: {
-  computronics = lib.mkOption {
-    description = "computronics configuration (./config/computronics.cfg)";
+  computronics_cfg = lib.mkOption {
+    description = "computronics_cfg configuration (./config/computronics.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

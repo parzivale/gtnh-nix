@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ProjectBlue = lib.mkOption {
-    description = "ProjectBlue configuration (./config/ProjectBlue.cfg)";
+  ProjectBlue_cfg = lib.mkOption {
+    description = "ProjectBlue_cfg configuration (./config/ProjectBlue.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

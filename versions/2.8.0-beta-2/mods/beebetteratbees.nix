@@ -1,6 +1,6 @@
 {lib, ...}: {
-  beebetteratbees = lib.mkOption {
-    description = "beebetteratbees configuration (./config/beebetteratbees.cfg)";
+  beebetteratbees_cfg = lib.mkOption {
+    description = "beebetteratbees_cfg configuration (./config/beebetteratbees.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

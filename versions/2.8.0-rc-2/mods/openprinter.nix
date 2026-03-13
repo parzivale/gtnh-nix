@@ -1,6 +1,6 @@
 {lib, ...}: {
-  openprinter = lib.mkOption {
-    description = "openprinter configuration (./config/openprinter.cfg)";
+  openprinter_cfg = lib.mkOption {
+    description = "openprinter_cfg configuration (./config/openprinter.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

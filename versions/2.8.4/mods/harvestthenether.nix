@@ -1,6 +1,6 @@
 {lib, ...}: {
-  harvestthenether = lib.mkOption {
-    description = "harvestthenether configuration (./config/harvestthenether.cfg)";
+  harvestthenether_cfg = lib.mkOption {
+    description = "harvestthenether_cfg configuration (./config/harvestthenether.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

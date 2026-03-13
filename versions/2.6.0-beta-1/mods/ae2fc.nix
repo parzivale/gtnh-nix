@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ae2fc = lib.mkOption {
-    description = "ae2fc configuration (./config/ae2fc.cfg)";
+  ae2fc_cfg = lib.mkOption {
+    description = "ae2fc_cfg configuration (./config/ae2fc.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  CCDimensions = lib.mkOption {
-    description = "CCDimensions configuration (./config/ClimateControl/CCDimensions.cfg)";
+  CCDimensions_cfg = lib.mkOption {
+    description = "CCDimensions_cfg configuration (./config/ClimateControl/CCDimensions.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -34,8 +34,8 @@
       };
     };
   };
-  ThaumcraftInCC = lib.mkOption {
-    description = "ThaumcraftInCC configuration (./config/ClimateControl/ThaumcraftInCC.cfg)";
+  ThaumcraftInCC_cfg = lib.mkOption {
+    description = "ThaumcraftInCC_cfg configuration (./config/ClimateControl/ThaumcraftInCC.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -124,8 +124,8 @@
       };
     };
   };
-  biomesoplentyInCC = lib.mkOption {
-    description = "biomesoplentyInCC configuration (./config/ClimateControl/biomesoplentyInCC.cfg)";
+  biomesoplentyInCC_cfg = lib.mkOption {
+    description = "biomesoplentyInCC_cfg configuration (./config/ClimateControl/biomesoplentyInCC.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -1150,8 +1150,8 @@
       };
     };
   };
-  climatecontrol = lib.mkOption {
-    description = "climatecontrol configuration (./config/climatecontrol.cfg)";
+  climatecontrol_cfg = lib.mkOption {
+    description = "climatecontrol_cfg configuration (./config/climatecontrol.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

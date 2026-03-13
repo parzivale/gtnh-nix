@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Botania = lib.mkOption {
-    description = "Botania configuration (./config/Botania.cfg)";
+  Botania_cfg = lib.mkOption {
+    description = "Botania_cfg configuration (./config/Botania.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

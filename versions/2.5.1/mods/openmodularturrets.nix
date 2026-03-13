@@ -1,6 +1,6 @@
 {lib, ...}: {
-  openmodularturrets = lib.mkOption {
-    description = "openmodularturrets configuration (./config/openmodularturrets.cfg)";
+  openmodularturrets_cfg = lib.mkOption {
+    description = "openmodularturrets_cfg configuration (./config/openmodularturrets.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

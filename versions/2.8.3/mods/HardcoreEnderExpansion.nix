@@ -1,6 +1,6 @@
 {lib, ...}: {
-  HardcoreEnderExpansion = lib.mkOption {
-    description = "HardcoreEnderExpansion configuration (./config/HardcoreEnderExpansion.cfg)";
+  HardcoreEnderExpansion_cfg = lib.mkOption {
+    description = "HardcoreEnderExpansion_cfg configuration (./config/HardcoreEnderExpansion.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

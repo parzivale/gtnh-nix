@@ -1,6 +1,6 @@
 {lib, ...}: {
-  lwjgl3ify = lib.mkOption {
-    description = "lwjgl3ify configuration (./config/lwjgl3ify.cfg)";
+  lwjgl3ify_cfg = lib.mkOption {
+    description = "lwjgl3ify_cfg configuration (./config/lwjgl3ify.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

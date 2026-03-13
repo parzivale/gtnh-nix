@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bees = lib.mkOption {
-    description = "bees configuration (./config/gendustry/bees.cfg)";
+  bees_cfg = lib.mkOption {
+    description = "bees_cfg configuration (./config/gendustry/bees.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -24,8 +24,97 @@
       };
     };
   };
-  overrides_recipes = lib.mkOption {
-    description = "overrides_recipes configuration (./config/gendustry/overrides/recipes.cfg)";
+  client_config = lib.mkOption {
+    description = "client_config configuration (./config/gendustry/client.config)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+        path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/gendustry/client.config";
+        readOnly = true;
+        };
+        kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
+        };
+        display = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              PowerShowUnits = lib.mkOption {
+                type = lib.types.str;
+                default = "EU";
+                description = "Units to use when displaying power. Valid values: MJ, EU, RF";
+              };
+            };
+          };
+        };
+        nei = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "Add Extractor Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Imprinter Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Liquifier Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Mutagen Producer Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Mutatron Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Replicator Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Sampler Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Samples to Search" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              "Add Transposer Recipes" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+            };
+          };
+        };
+        rendering = lib.mkOption {
+          default = {};
+          type = lib.types.submodule {
+            options = {
+              "Bee Effects Frequency" = lib.mkOption {
+                type = lib.types.int;
+                default = 2;
+                description = "Higher = less particles";
+              };
+              "Render Bee Effects" = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+  overrides_recipes_cfg = lib.mkOption {
+    description = "overrides_recipes_cfg configuration (./config/gendustry/overrides/recipes.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -49,8 +138,8 @@
       };
     };
   };
-  overrides_tuning = lib.mkOption {
-    description = "overrides_tuning configuration (./config/gendustry/overrides/tuning.cfg)";
+  overrides_tuning_cfg = lib.mkOption {
+    description = "overrides_tuning_cfg configuration (./config/gendustry/overrides/tuning.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -663,8 +752,8 @@
       };
     };
   };
-  overrides_upgrades = lib.mkOption {
-    description = "overrides_upgrades configuration (./config/gendustry/overrides/upgrades.cfg)";
+  overrides_upgrades_cfg = lib.mkOption {
+    description = "overrides_upgrades_cfg configuration (./config/gendustry/overrides/upgrades.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

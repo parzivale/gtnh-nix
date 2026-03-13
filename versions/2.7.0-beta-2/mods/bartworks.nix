@@ -1,6 +1,6 @@
 {lib, ...}: {
-  bartworks = lib.mkOption {
-    description = "bartworks configuration (./config/bartworks.cfg)";
+  bartworks_cfg = lib.mkOption {
+    description = "bartworks_cfg configuration (./config/bartworks.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

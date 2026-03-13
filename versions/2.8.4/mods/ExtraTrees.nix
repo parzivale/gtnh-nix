@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ExtraTrees = lib.mkOption {
-    description = "ExtraTrees configuration (./config/ExtraTrees.cfg)";
+  ExtraTrees_cfg = lib.mkOption {
+    description = "ExtraTrees_cfg configuration (./config/ExtraTrees.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

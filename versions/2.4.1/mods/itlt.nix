@@ -1,6 +1,6 @@
 {lib, ...}: {
-  itlt = lib.mkOption {
-    description = "itlt configuration (./config/itlt.cfg)";
+  itlt_cfg = lib.mkOption {
+    description = "itlt_cfg configuration (./config/itlt.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

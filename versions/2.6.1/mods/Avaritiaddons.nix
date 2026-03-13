@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Avaritiaddons = lib.mkOption {
-    description = "Avaritiaddons configuration (./config/Avaritiaddons.cfg)";
+  Avaritiaddons_cfg = lib.mkOption {
+    description = "Avaritiaddons_cfg configuration (./config/Avaritiaddons.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

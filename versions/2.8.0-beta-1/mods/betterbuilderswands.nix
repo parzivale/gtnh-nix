@@ -1,6 +1,6 @@
 {lib, ...}: {
-  betterbuilderswands = lib.mkOption {
-    description = "betterbuilderswands configuration (./config/betterbuilderswands.cfg)";
+  betterbuilderswands_cfg = lib.mkOption {
+    description = "betterbuilderswands_cfg configuration (./config/betterbuilderswands.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

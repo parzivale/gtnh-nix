@@ -1,6 +1,6 @@
 {lib, ...}: {
-  eternalsingularity = lib.mkOption {
-    description = "eternalsingularity configuration (./config/eternalsingularity.cfg)";
+  eternalsingularity_cfg = lib.mkOption {
+    description = "eternalsingularity_cfg configuration (./config/eternalsingularity.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

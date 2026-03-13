@@ -1,6 +1,6 @@
 {lib, ...}: {
-  ThaumicTinkerer = lib.mkOption {
-    description = "ThaumicTinkerer configuration (./config/ThaumicTinkerer.cfg)";
+  ThaumicTinkerer_cfg = lib.mkOption {
+    description = "ThaumicTinkerer_cfg configuration (./config/ThaumicTinkerer.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

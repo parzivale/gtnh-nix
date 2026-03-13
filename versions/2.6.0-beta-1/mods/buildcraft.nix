@@ -1,6 +1,6 @@
 {lib, ...}: {
-  main = lib.mkOption {
-    description = "main configuration (./config/buildcraft/main.cfg)";
+  main_cfg = lib.mkOption {
+    description = "main_cfg configuration (./config/buildcraft/main.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

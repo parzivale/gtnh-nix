@@ -1,6 +1,6 @@
 {lib, ...}: {
-  malisisdoors = lib.mkOption {
-    description = "malisisdoors configuration (./config/malisisdoors.cfg)";
+  malisisdoors_cfg = lib.mkOption {
+    description = "malisisdoors_cfg configuration (./config/malisisdoors.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

@@ -1,6 +1,6 @@
 {lib, ...}: {
-  HardcoreDarkness = lib.mkOption {
-    description = "HardcoreDarkness configuration (./config/HardcoreDarkness.cfg)";
+  HardcoreDarkness_cfg = lib.mkOption {
+    description = "HardcoreDarkness_cfg configuration (./config/HardcoreDarkness.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

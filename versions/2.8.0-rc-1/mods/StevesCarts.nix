@@ -1,6 +1,6 @@
 {lib, ...}: {
-  StevesCarts = lib.mkOption {
-    description = "StevesCarts configuration (./config/StevesCarts.cfg)";
+  StevesCarts_cfg = lib.mkOption {
+    description = "StevesCarts_cfg configuration (./config/StevesCarts.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

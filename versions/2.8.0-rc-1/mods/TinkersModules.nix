@@ -1,6 +1,6 @@
 {lib, ...}: {
-  TinkersModules = lib.mkOption {
-    description = "TinkersModules configuration (./config/TinkersModules.cfg)";
+  TinkersModules_cfg = lib.mkOption {
+    description = "TinkersModules_cfg configuration (./config/TinkersModules.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

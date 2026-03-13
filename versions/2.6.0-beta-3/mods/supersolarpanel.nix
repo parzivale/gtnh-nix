@@ -1,6 +1,6 @@
 {lib, ...}: {
-  supersolarpanel = lib.mkOption {
-    description = "supersolarpanel configuration (./config/supersolarpanel.cfg)";
+  supersolarpanel_cfg = lib.mkOption {
+    description = "supersolarpanel_cfg configuration (./config/supersolarpanel.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

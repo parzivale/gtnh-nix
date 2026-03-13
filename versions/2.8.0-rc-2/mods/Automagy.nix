@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Automagy = lib.mkOption {
-    description = "Automagy configuration (./config/Automagy.cfg)";
+  Automagy_cfg = lib.mkOption {
+    description = "Automagy_cfg configuration (./config/Automagy.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

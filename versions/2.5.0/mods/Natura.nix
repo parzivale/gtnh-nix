@@ -1,6 +1,6 @@
 {lib, ...}: {
-  Natura = lib.mkOption {
-    description = "Natura configuration (./config/Natura.cfg)";
+  Natura_cfg = lib.mkOption {
+    description = "Natura_cfg configuration (./config/Natura.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

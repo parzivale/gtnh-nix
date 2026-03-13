@@ -1,6 +1,6 @@
 {lib, ...}: {
-  base = lib.mkOption {
-    description = "base configuration (./config/bugtorch/base.cfg)";
+  base_cfg = lib.mkOption {
+    description = "base_cfg configuration (./config/bugtorch/base.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -41,8 +41,8 @@
       };
     };
   };
-  mixins = lib.mkOption {
-    description = "mixins configuration (./config/bugtorch/mixins.cfg)";
+  mixins_cfg = lib.mkOption {
+    description = "mixins_cfg configuration (./config/bugtorch/mixins.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -232,8 +232,8 @@
       };
     };
   };
-  mixinsModSupport = lib.mkOption {
-    description = "mixinsModSupport configuration (./config/bugtorch/mixinsModSupport.cfg)";
+  mixinsModSupport_cfg = lib.mkOption {
+    description = "mixinsModSupport_cfg configuration (./config/bugtorch/mixinsModSupport.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
@@ -262,8 +262,8 @@
       };
     };
   };
-  modSupport = lib.mkOption {
-    description = "modSupport configuration (./config/bugtorch/modSupport.cfg)";
+  modSupport_cfg = lib.mkOption {
+    description = "modSupport_cfg configuration (./config/bugtorch/modSupport.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

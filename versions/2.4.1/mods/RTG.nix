@@ -1,6 +1,6 @@
 {lib, ...}: {
-  rtg = lib.mkOption {
-    description = "rtg configuration (./config/RTG/rtg.cfg)";
+  rtg_cfg = lib.mkOption {
+    description = "rtg_cfg configuration (./config/RTG/rtg.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {

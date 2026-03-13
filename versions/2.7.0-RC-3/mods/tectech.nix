@@ -1,6 +1,6 @@
 {lib, ...}: {
-  tectech = lib.mkOption {
-    description = "tectech configuration (./config/tectech.cfg)";
+  tectech_cfg = lib.mkOption {
+    description = "tectech_cfg configuration (./config/tectech.cfg)";
     default = {};
     type = lib.types.submodule {
       options = {
