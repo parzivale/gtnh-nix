@@ -14,11 +14,15 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+          type = lib.types.str;
+          default = "config";
+        };
         lines_0 = lib.mkOption {
           default = {};
           type = lib.types.submodule {
             options = {
-              at = lib.mkOption {
+              "@at" = lib.mkOption {
                 type = lib.types.str;
                 default = "topleft";
               };
@@ -1268,7 +1272,7 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              at = lib.mkOption {
+              "@at" = lib.mkOption {
                 type = lib.types.str;
                 default = "middleleft";
               };
@@ -1755,7 +1759,7 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              at = lib.mkOption {
+              "@at" = lib.mkOption {
                 type = lib.types.str;
                 default = "bottomright";
               };

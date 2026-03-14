@@ -668,35 +668,39 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+          type = lib.types.str;
+          default = "SpawnConfig";
+        };
         entry_0 = lib.mkOption {
           default = {};
           type = lib.types.submodule {
             options = {
-              id = lib.mkOption {
+              "@id" = lib.mkOption {
                 type = lib.types.str;
                 default = "ConcussionCreeper";
               };
-              mobName = lib.mkOption {
+              "@mobName" = lib.mkOption {
                 type = lib.types.str;
                 default = "enderzoo.ConcussionCreeper";
               };
-              creatureType = lib.mkOption {
+              "@creatureType" = lib.mkOption {
                 type = lib.types.str;
                 default = "monster";
               };
-              rate = lib.mkOption {
+              "@rate" = lib.mkOption {
                 type = lib.types.int;
                 default = 40;
               };
-              minGroupSize = lib.mkOption {
+              "@minGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
               };
-              maxGroupSize = lib.mkOption {
+              "@maxGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 3;
               };
-              remove = lib.mkOption {
+              "@remove" = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
@@ -704,7 +708,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    type = lib.mkOption {
+                    "@type" = lib.mkOption {
                       type = lib.types.str;
                       default = "any";
                     };
@@ -712,7 +716,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "BASE_LAND_TYPES";
                           };
@@ -723,11 +727,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "NETHER";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -738,11 +742,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "END";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -753,11 +757,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "MUSHROOM";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -768,11 +772,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          name = lib.mkOption {
+                          "@name" = lib.mkOption {
                             type = lib.types.str;
                             default = "Tainted Land";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -786,7 +790,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    name = lib.mkOption {
+                    "@name" = lib.mkOption {
                       type = lib.types.str;
                       default = "Twilight Forest";
                     };
@@ -797,7 +801,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    name = lib.mkOption {
+                    "@name" = lib.mkOption {
                       type = lib.types.str;
                       default = "Dungeon";
                     };
@@ -811,15 +815,15 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              id = lib.mkOption {
+              "@id" = lib.mkOption {
                 type = lib.types.str;
                 default = "EnderMiny";
               };
-              mobName = lib.mkOption {
+              "@mobName" = lib.mkOption {
                 type = lib.types.str;
                 default = "enderzoo.Enderminy";
               };
-              rate = lib.mkOption {
+              "@rate" = lib.mkOption {
                 type = lib.types.int;
                 default = 30;
               };
@@ -827,7 +831,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    type = lib.mkOption {
+                    "@type" = lib.mkOption {
                       type = lib.types.str;
                       default = "any";
                     };
@@ -835,7 +839,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "FOREST";
                           };
@@ -846,7 +850,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "SWAMP";
                           };
@@ -857,7 +861,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "JUNGLE";
                           };
@@ -868,11 +872,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "NETHER";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -883,11 +887,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "END";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -901,7 +905,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    name = lib.mkOption {
+                    "@name" = lib.mkOption {
                       type = lib.types.str;
                       default = "Twilight Forest";
                     };
@@ -915,23 +919,23 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              id = lib.mkOption {
+              "@id" = lib.mkOption {
                 type = lib.types.str;
                 default = "FallenKnight";
               };
-              mobName = lib.mkOption {
+              "@mobName" = lib.mkOption {
                 type = lib.types.str;
                 default = "enderzoo.FallenKnight";
               };
-              rate = lib.mkOption {
+              "@rate" = lib.mkOption {
                 type = lib.types.int;
                 default = 30;
               };
-              minGroupSize = lib.mkOption {
+              "@minGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
               };
-              maxGroupSize = lib.mkOption {
+              "@maxGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 4;
               };
@@ -939,7 +943,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    type = lib.mkOption {
+                    "@type" = lib.mkOption {
                       type = lib.types.str;
                       default = "any";
                     };
@@ -947,7 +951,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "PLAINS";
                           };
@@ -958,11 +962,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "NETHER";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -973,11 +977,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "END";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -991,7 +995,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    name = lib.mkOption {
+                    "@name" = lib.mkOption {
                       type = lib.types.str;
                       default = "Twilight Forest";
                     };
@@ -1005,23 +1009,23 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              id = lib.mkOption {
+              "@id" = lib.mkOption {
                 type = lib.types.str;
                 default = "WitherWitch";
               };
-              mobName = lib.mkOption {
+              "@mobName" = lib.mkOption {
                 type = lib.types.str;
                 default = "enderzoo.WitherWitch";
               };
-              rate = lib.mkOption {
+              "@rate" = lib.mkOption {
                 type = lib.types.int;
                 default = 5;
               };
-              minGroupSize = lib.mkOption {
+              "@minGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
               };
-              maxGroupSize = lib.mkOption {
+              "@maxGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
               };
@@ -1029,7 +1033,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    type = lib.mkOption {
+                    "@type" = lib.mkOption {
                       type = lib.types.str;
                       default = "any";
                     };
@@ -1037,7 +1041,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "FOREST";
                           };
@@ -1048,7 +1052,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "SWAMP";
                           };
@@ -1059,7 +1063,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "PLAINS";
                           };
@@ -1070,7 +1074,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "HILLS";
                           };
@@ -1081,7 +1085,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "MOUNTAIN";
                           };
@@ -1092,11 +1096,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "NETHER";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -1107,11 +1111,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "END";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -1125,7 +1129,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    name = lib.mkOption {
+                    "@name" = lib.mkOption {
                       type = lib.types.str;
                       default = "Twilight Forest";
                     };
@@ -1139,23 +1143,23 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              id = lib.mkOption {
+              "@id" = lib.mkOption {
                 type = lib.types.str;
                 default = "DireWolf";
               };
-              mobName = lib.mkOption {
+              "@mobName" = lib.mkOption {
                 type = lib.types.str;
                 default = "enderzoo.DireWolf";
               };
-              rate = lib.mkOption {
+              "@rate" = lib.mkOption {
                 type = lib.types.int;
                 default = 30;
               };
-              minGroupSize = lib.mkOption {
+              "@minGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 2;
               };
-              maxGroupSize = lib.mkOption {
+              "@maxGroupSize" = lib.mkOption {
                 type = lib.types.int;
                 default = 6;
               };
@@ -1163,7 +1167,7 @@
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    type = lib.mkOption {
+                    "@type" = lib.mkOption {
                       type = lib.types.str;
                       default = "all";
                     };
@@ -1171,7 +1175,7 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "SNOWY";
                           };
@@ -1182,11 +1186,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "NETHER";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -1197,11 +1201,11 @@
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          type = lib.mkOption {
+                          "@type" = lib.mkOption {
                             type = lib.types.str;
                             default = "END";
                           };
-                          exclude = lib.mkOption {
+                          "@exclude" = lib.mkOption {
                             type = lib.types.bool;
                             default = true;
                           };
@@ -1231,6 +1235,10 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
+        };
+        __root = lib.mkOption {
+          type = lib.types.str;
+          default = "SpawnConfig";
         };
       };
     };

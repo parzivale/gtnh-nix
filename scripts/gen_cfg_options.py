@@ -267,11 +267,18 @@ def gen_entries(items, ind):
     i3 = ind + '    '
     i4 = ind + '      '
 
+    # Track seen keys to avoid duplicates (Nix doesn't allow duplicate attrs)
+    seen_keys = set()
+
     for item in items:
         kind = item[0]
 
         if kind == 'entry':
             _, prefix, key, val, desc = item
+            # Skip duplicates (Nix doesn't allow duplicate attribute keys)
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
             nk = nix_attr_key(key)
             try:
                 nv = nix_scalar(prefix, val)
@@ -291,6 +298,10 @@ def gen_entries(items, ind):
 
         elif kind == 'list':
             _, prefix, key, vals, desc = item
+            # Skip duplicates
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
             nk = nix_attr_key(key)
             try:
                 nv = nix_list(prefix, vals)
@@ -306,6 +317,10 @@ def gen_entries(items, ind):
 
         elif kind == 'section':
             _, name, children, desc = item
+            # Skip duplicates
+            if name in seen_keys:
+                continue
+            seen_keys.add(name)
             nk = nix_attr_key(name)
             lines.append(f'{ind}{nk} = lib.mkOption {{')
             lines.append(f'{i2}default = {{}};')

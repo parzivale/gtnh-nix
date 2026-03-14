@@ -530,41 +530,6 @@
                 default = false;
                 description = "Disable Ilmenite Ore Gen on Asteroids.";
               };
-              "Disable Iron Ore Gen on Asteroids" = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Disable Iron Ore Gen on Asteroids.";
-              };
-              "Disable Aluminum Ore Gen on Asteroids" = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Disable Aluminum Ore Gen on Asteroids.";
-              };
-              "Disable Ilmenite Ore Gen on Asteroids" = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Disable Ilmenite Ore Gen on Asteroids.";
-              };
-              "Disable Iron Ore Gen on Mars" = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Disable Iron Ore Gen on Mars.";
-              };
-              "Disable Copper Ore Gen on Mars" = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Disable Copper Ore Gen on Mars.";
-              };
-              "Disable Tin Ore Gen on Mars" = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Disable Tin Ore Gen on Mars.";
-              };
-              "Disable Desh Ore Gen on Mars" = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Disable Desh Ore Gen on Mars.";
-              };
             };
           };
         };
