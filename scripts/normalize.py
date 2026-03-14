@@ -29,6 +29,16 @@ def normalize_number(s):
         return s
 
 
+def normalize_bool(value):
+    """Normalize a boolean value (handles 0/1/true/false)."""
+    value = value.strip().lower()
+    if value in ('true', '1'):
+        return 'true'
+    if value in ('false', '0'):
+        return 'false'
+    return value
+
+
 def normalize_value(value):
     """Normalize a config value."""
     value = value.strip()
@@ -147,9 +157,14 @@ def format_entries(entries):
     for entry in sorted(seen.values(), key=lambda e: e[0]):
         path, type_prefix, value = entry
         if isinstance(value, list):
-            # Array
+            # Array - normalize booleans in list if B: type
+            if type_prefix == 'B:':
+                value = [normalize_bool(v) for v in value]
             lines.append(f"{path}={type_prefix}<{','.join(value)}>")
         else:
+            # Normalize booleans (handles 0/1 vs true/false)
+            if type_prefix == 'B:':
+                value = normalize_bool(value)
             lines.append(f"{path}={type_prefix}{value}")
     return '\n'.join(lines)
 
