@@ -11,13 +11,13 @@ import re
 import sys
 from pathlib import Path
 
-# Add project root to path for consistent imports
-_project_root = Path(__file__).parent.parent
-if str(_project_root) not in sys.path:
-    sys.path.insert(0, str(_project_root))
+# Support both development (scripts.parsers) and Nix store (parsers) contexts
+_scripts_dir = Path(__file__).parent
+if str(_scripts_dir) not in sys.path:
+    sys.path.insert(0, str(_scripts_dir))
 
-from scripts.parsers import parse_config, detect_format, ConfigParser, KNOWN_HOCON_PATHS
-from scripts.parsers.ast import Entry, List, Section, ConfigAST
+from parsers import parse_config, detect_format, ConfigParser, KNOWN_HOCON_PATHS
+from parsers.ast import Entry, List, Section, ConfigAST
 
 
 def normalize_number(s: str) -> str:
@@ -123,7 +123,7 @@ def parse_config_file(filepath: str) -> list[tuple[str, str, str | list[str]]]:
     format_name = detect_file_type(filepath)
 
     # Get appropriate parser
-    from scripts.parsers import get_parser
+    from parsers import get_parser
     parser = get_parser(format_name)
     ast = parser.parse(text)
 

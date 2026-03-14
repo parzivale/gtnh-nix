@@ -1,8 +1,16 @@
 """Tests for config file parsers."""
 
+import sys
+from pathlib import Path
+
+# Support both development (scripts.parsers) and direct (parsers) contexts
+_parsers_dir = Path(__file__).parent.parent.parent
+if str(_parsers_dir) not in sys.path:
+    sys.path.insert(0, str(_parsers_dir))
+
 import pytest
 
-from scripts.parsers import (
+from parsers import (
     ForgeParser,
     JsonParser,
     XmlParser,
@@ -12,7 +20,7 @@ from scripts.parsers import (
     detect_format,
     get_parser,
 )
-from scripts.parsers.ast import Entry, List, Section, ValueType, ConfigAST
+from parsers.ast import Entry, List, Section, ValueType, ConfigAST
 
 
 class TestForgeParser:

@@ -11,13 +11,13 @@ import re
 import sys
 from pathlib import Path
 
-# Add project root to path for consistent imports
-_project_root = Path(__file__).parent.parent
-if str(_project_root) not in sys.path:
-    sys.path.insert(0, str(_project_root))
+# Support both development and Nix store contexts
+_scripts_dir = Path(__file__).parent
+if str(_scripts_dir) not in sys.path:
+    sys.path.insert(0, str(_scripts_dir))
 
-from scripts.parsers import detect_format, get_parser, KNOWN_HOCON_PATHS
-from scripts.parsers.ast import Entry, List, Section, Node, ValueType
+from parsers import detect_format, get_parser, KNOWN_HOCON_PATHS
+from parsers.ast import Entry, List, Section, Node, ValueType
 
 # These are set in main() when run as a script
 PACK_ROOT = None
