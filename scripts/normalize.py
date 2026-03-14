@@ -506,8 +506,8 @@ def detect_file_type(filepath):
     if suffix == '.properties':
         return 'properties'
 
-    # Check known HOCON files
-    if name in KNOWN_HOCON:
+    # Check known HOCON files (handle Nix store hash prefix like "abc123-OpenComputers.cfg")
+    if name in KNOWN_HOCON or any(name.endswith('-' + h) for h in KNOWN_HOCON):
         return 'hocon'
 
     # Read content for content-based detection
