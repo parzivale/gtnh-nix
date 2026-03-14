@@ -893,8 +893,7 @@ def gen_check_entry(check_attr, rel_path):
 # ---------------------------------------------------------------------------
 
 # Hand-written files that must never be overwritten by the generator
-# Note: GregTech was removed as each version needs its own defaults
-PROTECTED_STEMS = {'ServerUtilities'}
+PROTECTED_STEMS = set()
 
 
 def main():
