@@ -407,12 +407,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -429,12 +425,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -451,12 +443,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -473,12 +461,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -495,12 +479,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -517,12 +497,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -539,12 +515,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -561,12 +533,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -583,12 +551,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -605,12 +569,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -627,12 +587,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };
@@ -649,12 +605,8 @@
         };
         kind = lib.mkOption {
         type = lib.types.str;
-        default = "forge_untyped";
+        default = "ini";
         readOnly = true;
-        };
-        "; Line breaks are only allowed with a leading \\ character, but never before" = lib.mkOption {
-          type = lib.types.str;
-          default = ".";
         };
       };
     };

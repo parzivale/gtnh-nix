@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate Nix options for all GTNH versions."""
 
+import argparse
 import json
 import shutil
 import subprocess
@@ -65,7 +66,7 @@ def download_and_extract(url: str, dest: Path) -> bool:
         return False
 
 
-def process_version(version_info: dict, root: Path) -> bool:
+def process_version(version_info: dict, root: Path, force: bool = False) -> bool:
     """Process a single GTNH version."""
     version = version_info["version"]
     print(f"=== Processing {version} ===")
@@ -74,8 +75,8 @@ def process_version(version_info: dict, root: Path) -> bool:
     mods_dir = version_dir / "mods"
     minecraft_dir = version_dir / "minecraft"
 
-    # Skip if already has mods
-    if mods_dir.exists():
+    # Skip if already has mods (unless force)
+    if not force and mods_dir.exists():
         existing = list(mods_dir.glob("*.nix"))
         if len(existing) > 10:
             print(f"Skipping {version} (already has mods)")
@@ -120,6 +121,10 @@ def process_version(version_info: dict, root: Path) -> bool:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Generate Nix options for all GTNH versions")
+    parser.add_argument("-f", "--force", action="store_true", help="Regenerate even if mods already exist")
+    args = parser.parse_args()
+
     root = Path(__file__).parent.parent.resolve()
 
     # Load versions from version-list.nix
@@ -134,7 +139,7 @@ def main():
     failed = 0
 
     for version_info in versions:
-        if process_version(version_info, root):
+        if process_version(version_info, root, force=args.force):
             success += 1
         else:
             failed += 1
