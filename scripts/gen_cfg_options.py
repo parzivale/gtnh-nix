@@ -653,6 +653,8 @@ def detect_format(filepath, text):
         return 'json'
     if suffix == '.xml':
         return 'xml'
+    if suffix == '.ini':
+        return 'ini'
     if suffix == '.properties':
         return 'properties'
 
