@@ -62,9 +62,11 @@ def _flatten_nodes(nodes, path: list[str], entries: list):
             type_prefix = f'{node.type.value}:'
             entries.append((full_path, type_prefix, node.value))
         elif isinstance(node, List):
-            full_path = '.'.join(path + [node.key])
-            type_prefix = f'{node.type.value}:'
-            entries.append((full_path, type_prefix, node.values))
+            # Skip empty lists (renderer omits them)
+            if node.values:
+                full_path = '.'.join(path + [node.key])
+                type_prefix = f'{node.type.value}:'
+                entries.append((full_path, type_prefix, node.values))
         elif isinstance(node, Section):
             _flatten_nodes(node.children, path + [node.name], entries)
 
