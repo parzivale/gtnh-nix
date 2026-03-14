@@ -165,15 +165,25 @@
     let
       # Get all keys except path, kind, and __root
       content = builtins.removeAttrs attrs ["kind" "path" "__root"];
-      keys = sortXmlKeys (builtins.attrNames content);
+      allKeys = builtins.attrNames content;
+      # Separate @ attributes (root element attributes) from child elements
+      attrKeys = builtins.filter (k: lib.hasPrefix "@" k) allKeys;
+      childKeys = builtins.filter (k: !(lib.hasPrefix "@" k)) allKeys;
       # Get root element name, default to "config" if not specified
       rootName = attrs.__root or "config";
+      # Render root element attributes
+      rootAttrs = lib.concatMapStringsSep " " (k: mkXmlAttr (lib.removePrefix "@" k) content.${k}) attrKeys;
+      rootAttrStr = if rootAttrs == "" then "" else " ${rootAttrs}";
+      # Render children
       children = lib.concatMapStrings (k:
         let elemName = stripNumericSuffix k;
         in mkXmlElement "  " elemName content.${k}
-      ) keys;
+      ) (sortXmlKeys childKeys);
     in
-      "<${rootName}>\n${children}</${rootName}>\n";
+      if childKeys == [] then
+        "<${rootName}${rootAttrStr}/>\n"
+      else
+        "<${rootName}${rootAttrStr}>\n${children}</${rootName}>\n";
 
   mkXmlFile = attrs:
     pkgs.writeText (builtins.baseNameOf attrs.path) (mkXmlCfg attrs);
