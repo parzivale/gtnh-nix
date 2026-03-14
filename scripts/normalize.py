@@ -137,8 +137,14 @@ def parse_config(filepath):
 
 def format_entries(entries):
     """Format entries for comparison output."""
+    # Deduplicate by path, keeping the last occurrence (Forge behavior)
+    seen = {}
+    for entry in entries:
+        path = entry[0]
+        seen[path] = entry
+
     lines = []
-    for entry in sorted(entries, key=lambda e: e[0]):
+    for entry in sorted(seen.values(), key=lambda e: e[0]):
         path, type_prefix, value = entry
         if isinstance(value, list):
             # Array
