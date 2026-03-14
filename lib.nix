@@ -117,8 +117,11 @@
       ["&amp;" "&lt;" "&gt;" "&quot;" "&apos;"]
       (toString s);
 
-  # Render a single XML attribute
-  mkXmlAttr = name: value: "${name}=\"${xmlEscape value}\"";
+  # Render a single XML attribute (handle bools specially since toString false = "")
+  mkXmlAttr = name: value:
+    let
+      strValue = if builtins.isBool value then (if value then "true" else "false") else toString value;
+    in "${name}=\"${xmlEscape strValue}\"";
 
   # Render XML element content (recursive)
   mkXmlElement = indent: name: value:
