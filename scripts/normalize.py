@@ -61,7 +61,11 @@ def normalize_value(value: str, vtype: ValueType) -> str:
 
 def normalize_key(key: str) -> str:
     """Normalize a key/path component."""
-    return normalize_string(key)
+    key = normalize_string(key)
+    # Strip surrounding quotes (Forge config keys may be quoted)
+    while key.startswith('"') and key.endswith('"') and len(key) > 1:
+        key = key[1:-1]
+    return key
 
 
 def ast_to_dict(ast: ConfigAST) -> dict:
