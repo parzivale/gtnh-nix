@@ -2,8 +2,7 @@
 """
 Normalize and compare config files (Forge cfg, HOCON, INI, JSON, XML, Properties).
 
-Uses the parsers package to parse configs into a common AST, then normalizes
-values for comparison between original and rendered configs.
+Compares configs by parsing both into ASTs and comparing them structurally.
 """
 
 import os
@@ -16,8 +15,8 @@ _scripts_dir = Path(__file__).parent
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
-from parsers import parse_config, detect_format, ConfigParser, KNOWN_HOCON_PATHS
-from parsers.ast import Entry, List, Section, ConfigAST
+from parsers import detect_format, KNOWN_HOCON_PATHS, get_parser
+from parsers.ast import Entry, List, Section, ConfigAST, ValueType
 
 
 def normalize_number(s: str) -> str:
@@ -39,93 +38,99 @@ def normalize_bool(value: str) -> str:
     return value
 
 
-def normalize_quotes(value: str) -> str:
-    """Normalize quote characters (smart quotes to straight quotes)."""
+def normalize_string(value: str) -> str:
+    """Normalize a string value."""
     # Replace curly/smart quotes with straight quotes
-    value = value.replace('"', '"').replace('"', '"')  # Double quotes
-    value = value.replace(''', "'").replace(''', "'")  # Single quotes
-    return value
-
-
-def normalize_whitespace(value: str) -> str:
-    """Normalize whitespace (collapse multiple spaces, normalize line endings)."""
-    # Replace various whitespace with regular space
-    value = re.sub(r'[\t\r\n\xa0]+', ' ', value)  # tabs, newlines, NBSP
-    # Collapse multiple spaces
+    value = value.replace('"', '"').replace('"', '"')
+    value = value.replace(''', "'").replace(''', "'")
+    # Normalize whitespace
+    value = re.sub(r'[\t\r\n\xa0]+', ' ', value)
     value = re.sub(r' +', ' ', value)
     return value.strip()
 
 
-def normalize_value(value: str) -> str:
-    """Normalize a config value."""
-    value = value.strip()
-    value = normalize_quotes(value)
-    value = normalize_whitespace(value)
-    if re.match(r'^-?[\d.]+(?:[eE][+-]?\d+)?$', value):
+def normalize_value(value: str, vtype: ValueType) -> str:
+    """Normalize a value based on its type."""
+    value = normalize_string(value)
+    if vtype == ValueType.BOOL:
+        return normalize_bool(value)
+    if vtype in (ValueType.INT, ValueType.FLOAT):
         return normalize_number(value)
     return value
 
 
-def flatten_ast(ast: ConfigAST) -> list[tuple[str, str, str | list[str]]]:
-    """Flatten AST to list of (path, type_prefix, value) tuples."""
-    entries = []
-    _flatten_nodes(ast.nodes, [], entries)
-    return entries
+def normalize_key(key: str) -> str:
+    """Normalize a key/path component."""
+    return normalize_string(key)
 
 
-def _flatten_nodes(nodes, path: list[str], entries: list):
-    """Recursively flatten nodes."""
+def ast_to_dict(ast: ConfigAST) -> dict:
+    """Convert AST to a normalized dictionary for comparison."""
+    return nodes_to_dict(ast.nodes)
+
+
+def nodes_to_dict(nodes: list) -> dict:
+    """Convert list of nodes to normalized dictionary."""
+    result = {}
     for node in nodes:
         if isinstance(node, Entry):
-            full_path = '.'.join(path + [node.key])
-            type_prefix = f'{node.type.value}:'
-            entries.append((full_path, type_prefix, node.value))
+            key = normalize_key(node.key)
+            if not key:  # Skip empty keys
+                continue
+            value = normalize_value(node.value, node.type)
+            result[key] = ('entry', node.type.value, value)
         elif isinstance(node, List):
-            # Skip empty lists (renderer omits them)
-            if node.values:
-                full_path = '.'.join(path + [node.key])
-                type_prefix = f'{node.type.value}:'
-                entries.append((full_path, type_prefix, node.values))
+            key = normalize_key(node.key)
+            if not key:  # Skip empty keys
+                continue
+            if not node.values:  # Skip empty lists (renderer omits them)
+                continue
+            values = tuple(sorted(normalize_value(v, node.type) for v in node.values))
+            result[key] = ('list', node.type.value, values)
         elif isinstance(node, Section):
-            _flatten_nodes(node.children, path + [node.name], entries)
+            key = normalize_key(node.name)
+            if not key:  # Skip empty keys
+                continue
+            children = nodes_to_dict(node.children)
+            if children:  # Only include non-empty sections
+                result[key] = ('section', children)
+    return result
 
 
-def normalize_path(path: str) -> str:
-    """Normalize a path string."""
-    # Apply same normalization as values
-    path = normalize_quotes(path)
-    path = normalize_whitespace(path)
-    return path
+def dict_diff(d1: dict, d2: dict, path: str = '') -> list[str]:
+    """Find differences between two normalized dictionaries."""
+    diffs = []
+
+    all_keys = set(d1.keys()) | set(d2.keys())
+
+    for key in sorted(all_keys):
+        current_path = f"{path}.{key}" if path else key
+
+        if key not in d1:
+            diffs.append(f"+ {current_path}: {format_value(d2[key])}")
+        elif key not in d2:
+            diffs.append(f"- {current_path}: {format_value(d1[key])}")
+        elif d1[key] != d2[key]:
+            v1, v2 = d1[key], d2[key]
+            if v1[0] == 'section' and v2[0] == 'section':
+                # Recurse into sections
+                diffs.extend(dict_diff(v1[1], v2[1], current_path))
+            else:
+                diffs.append(f"- {current_path}: {format_value(v1)}")
+                diffs.append(f"+ {current_path}: {format_value(v2)}")
+
+    return diffs
 
 
-def format_entries(entries: list[tuple[str, str, str | list[str]]]) -> str:
-    """Format entries for comparison output."""
-    # Deduplicate by normalized path, keeping the last occurrence (Forge behavior)
-    seen = {}
-    for entry in entries:
-        path = normalize_path(entry[0])
-        # Skip entries with empty paths (malformed)
-        if not path:
-            continue
-        # Store with normalized path
-        seen[path] = (path, entry[1], entry[2])
-
-    lines = []
-    for entry in sorted(seen.values(), key=lambda e: e[0]):
-        path, type_prefix, value = entry
-        if isinstance(value, list):
-            # Array - normalize values
-            normalized = [normalize_value(v) for v in value]
-            if type_prefix == 'B:':
-                normalized = [normalize_bool(v) for v in normalized]
-            lines.append(f"{path}={type_prefix}<{','.join(sorted(set(normalized)))}>")
-        else:
-            # Scalar - normalize value
-            normalized = normalize_value(value)
-            if type_prefix == 'B:':
-                normalized = normalize_bool(normalized)
-            lines.append(f"{path}={type_prefix}{normalized}")
-    return '\n'.join(lines)
+def format_value(v: tuple) -> str:
+    """Format a value tuple for display."""
+    if v[0] == 'entry':
+        return f"{v[1]}:{v[2]}"
+    elif v[0] == 'list':
+        return f"{v[1]}:<{','.join(v[2])}>"
+    elif v[0] == 'section':
+        return f"{{...}}"
+    return str(v)
 
 
 def detect_file_type(filepath: str) -> str:
@@ -143,24 +148,17 @@ def detect_file_type(filepath: str) -> str:
     if name in KNOWN_HOCON_PATHS or any(name.endswith('-' + h) for h in KNOWN_HOCON_PATHS):
         return 'hocon'
 
-    # Use standard detection (without config_root since we don't have it)
     return detect_format(path, text)
 
 
-def parse_config_file(filepath: str) -> list[tuple[str, str, str | list[str]]]:
-    """Parse a config file and return flattened entries."""
+def parse_config_file(filepath: str) -> dict:
+    """Parse a config file and return normalized dict."""
     path = Path(filepath)
     text = path.read_text(errors='replace')
-
-    # Detect format with special handling for Nix store paths
     format_name = detect_file_type(filepath)
-
-    # Get appropriate parser
-    from parsers import get_parser
     parser = get_parser(format_name)
     ast = parser.parse(text)
-
-    return flatten_ast(ast)
+    return ast_to_dict(ast)
 
 
 def main():
@@ -171,38 +169,16 @@ def main():
     original_path = sys.argv[1]
     rendered_path = sys.argv[2]
 
-    original_entries = parse_config_file(original_path)
-    rendered_entries = parse_config_file(rendered_path)
+    original_dict = parse_config_file(original_path)
+    rendered_dict = parse_config_file(rendered_path)
 
-    original_formatted = format_entries(original_entries)
-    rendered_formatted = format_entries(rendered_entries)
+    if original_dict != rendered_dict:
+        diffs = dict_diff(original_dict, rendered_dict)
 
-    if original_formatted != rendered_formatted:
         print("MISMATCH:")
         print()
-        print("=== Original ===")
-        print(original_formatted)
-        print()
-        print("=== Rendered ===")
-        print(rendered_formatted)
-        print()
-
-        # Show diff
-        orig_set = set(original_formatted.split('\n'))
-        rend_set = set(rendered_formatted.split('\n'))
-
-        only_orig = orig_set - rend_set
-        only_rend = rend_set - orig_set
-
-        if only_orig:
-            print("Only in original:")
-            for line in sorted(only_orig):
-                print(f"  - {line}")
-
-        if only_rend:
-            print("Only in rendered:")
-            for line in sorted(only_rend):
-                print(f"  + {line}")
+        for diff in diffs:
+            print(f"  {diff}")
 
         sys.exit(1)
 
