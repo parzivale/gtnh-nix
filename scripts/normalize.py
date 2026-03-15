@@ -39,9 +39,18 @@ def normalize_bool(value: str) -> str:
     return value
 
 
+def normalize_quotes(value: str) -> str:
+    """Normalize quote characters (smart quotes to straight quotes)."""
+    # Replace curly/smart quotes with straight quotes
+    value = value.replace('"', '"').replace('"', '"')  # Double quotes
+    value = value.replace(''', "'").replace(''', "'")  # Single quotes
+    return value
+
+
 def normalize_value(value: str) -> str:
     """Normalize a config value."""
     value = value.strip()
+    value = normalize_quotes(value)
     if re.match(r'^-?[\d.]+(?:[eE][+-]?\d+)?$', value):
         return normalize_number(value)
     return value
@@ -77,6 +86,9 @@ def format_entries(entries: list[tuple[str, str, str | list[str]]]) -> str:
     seen = {}
     for entry in entries:
         path = entry[0]
+        # Skip entries with empty paths (malformed)
+        if not path:
+            continue
         seen[path] = entry
 
     lines = []
