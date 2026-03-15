@@ -47,10 +47,20 @@ def normalize_quotes(value: str) -> str:
     return value
 
 
+def normalize_whitespace(value: str) -> str:
+    """Normalize whitespace (collapse multiple spaces, normalize line endings)."""
+    # Replace various whitespace with regular space
+    value = re.sub(r'[\t\r\n\xa0]+', ' ', value)  # tabs, newlines, NBSP
+    # Collapse multiple spaces
+    value = re.sub(r' +', ' ', value)
+    return value.strip()
+
+
 def normalize_value(value: str) -> str:
     """Normalize a config value."""
     value = value.strip()
     value = normalize_quotes(value)
+    value = normalize_whitespace(value)
     if re.match(r'^-?[\d.]+(?:[eE][+-]?\d+)?$', value):
         return normalize_number(value)
     return value
@@ -80,16 +90,25 @@ def _flatten_nodes(nodes, path: list[str], entries: list):
             _flatten_nodes(node.children, path + [node.name], entries)
 
 
+def normalize_path(path: str) -> str:
+    """Normalize a path string."""
+    # Apply same normalization as values
+    path = normalize_quotes(path)
+    path = normalize_whitespace(path)
+    return path
+
+
 def format_entries(entries: list[tuple[str, str, str | list[str]]]) -> str:
     """Format entries for comparison output."""
-    # Deduplicate by path, keeping the last occurrence (Forge behavior)
+    # Deduplicate by normalized path, keeping the last occurrence (Forge behavior)
     seen = {}
     for entry in entries:
-        path = entry[0]
+        path = normalize_path(entry[0])
         # Skip entries with empty paths (malformed)
         if not path:
             continue
-        seen[path] = entry
+        # Store with normalized path
+        seen[path] = (path, entry[1], entry[2])
 
     lines = []
     for entry in sorted(seen.values(), key=lambda e: e[0]):
