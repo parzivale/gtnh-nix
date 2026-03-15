@@ -118,6 +118,15 @@ class ForgeParser(ConfigParser):
                     nodes.append(Section(name=name, children=children, description=desc))
                     continue
 
+            # Untyped value with quoted key: "key"=value
+            m = re.match(r'^"([^"]+)"=(.*)$', line)
+            if m:
+                key = m.group(1).strip()
+                val = m.group(2).strip()
+                desc = take_comment()
+                nodes.append(Entry(key=key, value=val, type=ValueType.STRING, description=desc))
+                continue
+
             # Untyped value: key=value
             m = re.match(r'^([^:={}<>\s][^:={}<>]*?)=(.*)$', line)
             if m:
