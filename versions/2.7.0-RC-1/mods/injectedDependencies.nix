@@ -23,26 +23,24 @@
                 default = "ExtraUtilities";
               };
               deps = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
+                type = lib.types.listOf (lib.types.submodule {
                   options = {
-                    "0" = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          type = lib.mkOption {
-                            type = lib.types.str;
-                            default = "after";
-                          };
-                          target = lib.mkOption {
-                            type = lib.types.str;
-                            default = "Thaumcraft";
-                          };
-                        };
-                      };
+                    type = lib.mkOption {
+                      type = lib.types.str;
+                      default = "after";
+                    };
+                    target = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Thaumcraft";
                     };
                   };
-                };
+                });
+                default = [
+                  {
+                    type = "after";
+                    target = "Thaumcraft";
+                  }
+                ];
               };
             };
           };

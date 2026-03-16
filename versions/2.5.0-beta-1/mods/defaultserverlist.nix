@@ -110,11 +110,8 @@
           };
         };
         DO_NOT_EDIT_prevDefaultServers = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-            };
-          };
+          type = lib.types.listOf lib.types.str;
+          default = [ ];
         };
       };
     };

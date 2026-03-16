@@ -1048,56 +1048,32 @@
           default = "BASICS";
         };
         aspects = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
+          type = lib.types.listOf (lib.types.submodule {
             options = {
-              "0" = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    aspect = lib.mkOption {
-                      type = lib.types.str;
-                      default = "ordo";
-                    };
-                    amount = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
-                    };
-                  };
-                };
+              aspect = lib.mkOption {
+                type = lib.types.str;
+                default = "ordo";
               };
-              "1" = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    aspect = lib.mkOption {
-                      type = lib.types.str;
-                      default = "permutatio";
-                    };
-                    amount = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
-                    };
-                  };
-                };
-              };
-              "2" = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    aspect = lib.mkOption {
-                      type = lib.types.str;
-                      default = "perditio";
-                    };
-                    amount = lib.mkOption {
-                      type = lib.types.int;
-                      default = 10;
-                    };
-                  };
-                };
+              amount = lib.mkOption {
+                type = lib.types.int;
+                default = 10;
               };
             };
-          };
+          });
+          default = [
+            {
+              aspect = "ordo";
+              amount = 10;
+            }
+            {
+              aspect = "permutatio";
+              amount = 10;
+            }
+            {
+              aspect = "perditio";
+              amount = 10;
+            }
+          ];
         };
         parents = lib.mkOption {
           type = lib.types.listOf lib.types.str;
@@ -1120,30 +1096,29 @@
           default = 3;
         };
         pages = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
+          type = lib.types.listOf (lib.types.submodule {
             options = {
-              "0" = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    pageType = lib.mkOption {
-                      type = lib.types.str;
-                      default = "text";
-                    };
-                    number = lib.mkOption {
-                      type = lib.types.int;
-                      default = 0;
-                    };
-                    text = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Thanks to your research about deconstructing items, you've learned to look inside other blocks with your Thaumometer by using it to \"deconstruct\" the block magically. You can scan any block that can hold items, such as a chest or hopper, to scan all contained items automatically.";
-                    };
-                  };
-                };
+              pageType = lib.mkOption {
+                type = lib.types.str;
+                default = "text";
+              };
+              number = lib.mkOption {
+                type = lib.types.int;
+                default = 0;
+              };
+              text = lib.mkOption {
+                type = lib.types.str;
+                default = "Thanks to your research about deconstructing items, you've learned to look inside other blocks with your Thaumometer by using it to \"deconstruct\" the block magically. You can scan any block that can hold items, such as a chest or hopper, to scan all contained items automatically.";
               };
             };
-          };
+          });
+          default = [
+            {
+              pageType = "text";
+              number = 0;
+              text = "Thanks to your research about deconstructing items, you've learned to look inside other blocks with your Thaumometer by using it to \"deconstruct\" the block magically. You can scan any block that can hold items, such as a chest or hopper, to scan all contained items automatically.";
+            }
+          ];
         };
       };
     };

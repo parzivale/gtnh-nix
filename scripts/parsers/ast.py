@@ -41,8 +41,21 @@ class Section:
     description: str = ""
 
 
+@dataclass
+class ObjectList:
+    """Array of objects (for JSON arrays of objects).
+
+    The schema contains the merged structure of all objects in the array.
+    The items list contains the actual object data as lists of nodes.
+    """
+    key: str
+    schema: list[Node] = field(default_factory=list)  # Merged schema of all objects
+    items: list[list[Node]] = field(default_factory=list)  # Each item's nodes
+    description: str = ""
+
+
 # Union type for all node types
-Node = Union[Entry, List, Section]
+Node = Union[Entry, List, Section, ObjectList]
 
 
 @dataclass

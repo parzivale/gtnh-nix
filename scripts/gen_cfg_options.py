@@ -17,7 +17,7 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from parsers import detect_format, get_parser, KNOWN_HOCON_PATHS
-from parsers.ast import Entry, List, Section, Node, ValueType
+from parsers.ast import Entry, List, ObjectList, Section, Node, ValueType
 
 # These are set in main() when run as a script
 PACK_ROOT = None
@@ -220,6 +220,106 @@ def gen_entries(nodes: list[Node], ind: str) -> list[str]:
             lines.append(f'{i2}  }};')
             lines.append(f'{i2}}};')
             lines.append(f'{ind}}};')
+
+        elif isinstance(node, ObjectList):
+            key = node.key
+            # Skip duplicates
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+
+            nk = nix_attr_key(key)
+            lines.append(f'{ind}{nk} = lib.mkOption {{')
+            lines.append(f'{i2}type = lib.types.listOf (lib.types.submodule {{')
+            lines.append(f'{i2}  options = {{')
+            # Generate schema options
+            schema_lines = gen_entries(node.schema, i2 + '    ')
+            lines.extend(schema_lines)
+            lines.append(f'{i2}  }};')
+            lines.append(f'{i2}}});')
+            # Generate default value as list of attrsets
+            default_items = gen_object_list_defaults(node.items, i2)
+            lines.append(f'{i2}default = [')
+            lines.extend(default_items)
+            lines.append(f'{i2}];')
+            if node.description:
+                lines.append(f'{i2}description = {nix_str_lit(node.description)};')
+            lines.append(f'{ind}}};')
+
+    return lines
+
+
+def gen_object_list_defaults(items: list[list[Node]], ind: str) -> list[str]:
+    """Generate default value items for an ObjectList."""
+    lines = []
+    i2 = ind + '  '
+    i3 = ind + '    '
+
+    for item_nodes in items:
+        lines.append(f'{i2}{{')
+        for node in item_nodes:
+            if isinstance(node, Entry):
+                nk = nix_attr_key(node.key)
+                try:
+                    nv = nix_scalar(node.type, node.value)
+                except Exception:
+                    nv = nix_str_lit(str(node.value))
+                lines.append(f'{i3}{nk} = {nv};')
+            elif isinstance(node, List):
+                nk = nix_attr_key(node.key)
+                try:
+                    nv = nix_list(node.type, node.values)
+                except Exception:
+                    nv = '[ ]'
+                lines.append(f'{i3}{nk} = {nv};')
+            elif isinstance(node, Section):
+                nk = nix_attr_key(node.name)
+                nested = gen_nested_default(node.children, i3)
+                lines.append(f'{i3}{nk} = {{')
+                lines.extend(nested)
+                lines.append(f'{i3}}};')
+            elif isinstance(node, ObjectList):
+                nk = nix_attr_key(node.key)
+                nested_items = gen_object_list_defaults(node.items, i3)
+                lines.append(f'{i3}{nk} = [')
+                lines.extend(nested_items)
+                lines.append(f'{i3}];')
+        lines.append(f'{i2}}}')
+    return lines
+
+
+def gen_nested_default(nodes: list[Node], ind: str) -> list[str]:
+    """Generate nested attrset for default values."""
+    lines = []
+    i2 = ind + '  '
+
+    for node in nodes:
+        if isinstance(node, Entry):
+            nk = nix_attr_key(node.key)
+            try:
+                nv = nix_scalar(node.type, node.value)
+            except Exception:
+                nv = nix_str_lit(str(node.value))
+            lines.append(f'{i2}{nk} = {nv};')
+        elif isinstance(node, List):
+            nk = nix_attr_key(node.key)
+            try:
+                nv = nix_list(node.type, node.values)
+            except Exception:
+                nv = '[ ]'
+            lines.append(f'{i2}{nk} = {nv};')
+        elif isinstance(node, Section):
+            nk = nix_attr_key(node.name)
+            nested = gen_nested_default(node.children, i2)
+            lines.append(f'{i2}{nk} = {{')
+            lines.extend(nested)
+            lines.append(f'{i2}}};')
+        elif isinstance(node, ObjectList):
+            nk = nix_attr_key(node.key)
+            nested_items = gen_object_list_defaults(node.items, i2)
+            lines.append(f'{i2}{nk} = [')
+            lines.extend(nested_items)
+            lines.append(f'{i2}];')
 
     return lines
 

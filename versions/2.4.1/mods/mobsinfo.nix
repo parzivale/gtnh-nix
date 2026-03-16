@@ -23,161 +23,179 @@
                 default = false;
               };
               additions = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
+                type = lib.types.listOf (lib.types.submodule {
                   options = {
-                    "0" = lib.mkOption {
+                    reconstructableStack = lib.mkOption {
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          reconstructableStack = lib.mkOption {
+                          itemIdentifier = lib.mkOption {
                             default = {};
                             type = lib.types.submodule {
                               options = {
-                                itemIdentifier = lib.mkOption {
-                                  default = {};
-                                  type = lib.types.submodule {
-                                    options = {
-                                      modId = lib.mkOption {
-                                        type = lib.types.str;
-                                        default = "minecraft";
-                                      };
-                                      name = lib.mkOption {
-                                        type = lib.types.str;
-                                        default = "diamond_sword";
-                                      };
-                                    };
-                                  };
-                                };
-                                meta = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 0;
-                                };
-                                size = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 1;
-                                };
-                                tagCompound = lib.mkOption {
+                                modId = lib.mkOption {
                                   type = lib.types.str;
-                                  default = "None";
+                                  default = "minecraft";
+                                };
+                                name = lib.mkOption {
+                                  type = lib.types.str;
+                                  default = "diamond_sword";
                                 };
                               };
                             };
                           };
-                          type = lib.mkOption {
+                          meta = lib.mkOption {
+                            type = lib.types.int;
+                            default = 0;
+                          };
+                          size = lib.mkOption {
+                            type = lib.types.int;
+                            default = 1;
+                          };
+                          tagCompound = lib.mkOption {
                             type = lib.types.str;
-                            default = "Rare";
-                          };
-                          chance = lib.mkOption {
-                            type = lib.types.int;
-                            default = 500;
-                          };
-                          enchantable = lib.mkOption {
-                            type = lib.types.int;
-                            default = 20;
-                          };
-                          damages = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                                "1" = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 1;
-                                };
-                                "2" = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 5;
-                                };
-                                "3" = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 10;
-                                };
-                              };
-                            };
-                          };
-                          lootable = lib.mkOption {
-                            type = lib.types.bool;
-                            default = true;
-                          };
-                          playerOnly = lib.mkOption {
-                            type = lib.types.bool;
-                            default = false;
-                          };
-                          variableChance = lib.mkOption {
-                            type = lib.types.bool;
-                            default = false;
-                          };
-                          variableChanceInfo = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                              };
-                            };
-                          };
-                          additionalInfo = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                              };
-                            };
+                            default = "None";
                           };
                         };
                       };
                     };
+                    type = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Rare";
+                    };
+                    chance = lib.mkOption {
+                      type = lib.types.int;
+                      default = 500;
+                    };
+                    enchantable = lib.mkOption {
+                      type = lib.types.int;
+                      default = 20;
+                    };
+                    damages = lib.mkOption {
+                      default = {};
+                      type = lib.types.submodule {
+                        options = {
+                          "1" = lib.mkOption {
+                            type = lib.types.int;
+                            default = 1;
+                          };
+                          "2" = lib.mkOption {
+                            type = lib.types.int;
+                            default = 5;
+                          };
+                          "3" = lib.mkOption {
+                            type = lib.types.int;
+                            default = 10;
+                          };
+                        };
+                      };
+                    };
+                    lootable = lib.mkOption {
+                      type = lib.types.bool;
+                      default = true;
+                    };
+                    playerOnly = lib.mkOption {
+                      type = lib.types.bool;
+                      default = false;
+                    };
+                    variableChance = lib.mkOption {
+                      type = lib.types.bool;
+                      default = false;
+                    };
+                    variableChanceInfo = lib.mkOption {
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
+                    };
+                    additionalInfo = lib.mkOption {
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
+                    };
                   };
-                };
+                });
+                default = [
+                  {
+                    reconstructableStack = {
+                      itemIdentifier = {
+                        modId = "minecraft";
+                        name = "diamond_sword";
+                      };
+                      meta = 0;
+                      size = 1;
+                      tagCompound = "None";
+                    };
+                    type = "Rare";
+                    chance = 500;
+                    enchantable = 20;
+                    damages = {
+                      "1" = 1;
+                      "2" = 5;
+                      "3" = 10;
+                    };
+                    lootable = true;
+                    playerOnly = false;
+                    variableChance = false;
+                    variableChanceInfo = [ ];
+                    additionalInfo = [ ];
+                  }
+                ];
               };
               removals = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
+                type = lib.types.listOf (lib.types.submodule {
                   options = {
-                    "0" = lib.mkOption {
+                    reconstructableStack = lib.mkOption {
                       default = {};
                       type = lib.types.submodule {
                         options = {
-                          reconstructableStack = lib.mkOption {
+                          itemIdentifier = lib.mkOption {
                             default = {};
                             type = lib.types.submodule {
                               options = {
-                                itemIdentifier = lib.mkOption {
-                                  default = {};
-                                  type = lib.types.submodule {
-                                    options = {
-                                      modId = lib.mkOption {
-                                        type = lib.types.str;
-                                        default = "minecraft";
-                                      };
-                                      name = lib.mkOption {
-                                        type = lib.types.str;
-                                        default = "rotten_flesh";
-                                      };
-                                    };
-                                  };
-                                };
-                                meta = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 0;
-                                };
-                                size = lib.mkOption {
-                                  type = lib.types.int;
-                                  default = 1;
-                                };
-                                tagCompound = lib.mkOption {
+                                modId = lib.mkOption {
                                   type = lib.types.str;
-                                  default = "None";
+                                  default = "minecraft";
+                                };
+                                name = lib.mkOption {
+                                  type = lib.types.str;
+                                  default = "rotten_flesh";
                                 };
                               };
                             };
                           };
-                          type = lib.mkOption {
+                          meta = lib.mkOption {
+                            type = lib.types.int;
+                            default = 0;
+                          };
+                          size = lib.mkOption {
+                            type = lib.types.int;
+                            default = 1;
+                          };
+                          tagCompound = lib.mkOption {
                             type = lib.types.str;
-                            default = "Normal";
+                            default = "None";
                           };
                         };
                       };
                     };
+                    type = lib.mkOption {
+                      type = lib.types.str;
+                      default = "Normal";
+                    };
                   };
-                };
+                });
+                default = [
+                  {
+                    reconstructableStack = {
+                      itemIdentifier = {
+                        modId = "minecraft";
+                        name = "rotten_flesh";
+                      };
+                      meta = 0;
+                      size = 1;
+                      tagCompound = "None";
+                    };
+                    type = "Normal";
+                  }
+                ];
               };
             };
           };
