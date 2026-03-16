@@ -14,10 +14,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroups";
-        };
         LootGroup_0 = lib.mkOption {
           default = {};
           type = lib.types.submodule {

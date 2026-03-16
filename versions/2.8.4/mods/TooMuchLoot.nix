@@ -14,10 +14,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "bonusChest";
@@ -414,10 +410,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -1667,10 +1659,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -3125,10 +3113,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -4642,10 +4626,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "chest4";
@@ -5810,10 +5790,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -9626,10 +9602,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "mineshaftCorridor";
@@ -12951,10 +12923,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "naturalistChest";
@@ -13584,10 +13552,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -16532,10 +16496,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "pyramidJungleChest";
@@ -19402,10 +19362,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "pyramidJungleDispenser";
@@ -19493,10 +19449,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -20260,10 +20212,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
@@ -22938,10 +22886,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "strongholdCrossing";
@@ -24643,10 +24587,6 @@
         default = "xml";
         readOnly = true;
         };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
-        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "strongholdLibrary";
@@ -25861,10 +25801,6 @@
         type = lib.types.str;
         default = "xml";
         readOnly = true;
-        };
-        __root = lib.mkOption {
-          type = lib.types.str;
-          default = "LootGroup";
         };
         "@category" = lib.mkOption {
           type = lib.types.str;
