@@ -364,11 +364,8 @@
                       default = "7e506b5d-2ccb-4ac4-a249-5624925b0c67";
                     };
                     modBlacklist = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                        };
-                      };
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
                     };
                     peripheralBlacklist = lib.mkOption {
                       type = lib.types.listOf lib.types.str;
@@ -433,11 +430,8 @@
                       default = 4;
                     };
                     whitelist = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                        };
-                      };
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
                     };
                   };
                 };
@@ -451,11 +445,8 @@
                       default = true;
                     };
                     assemblerBlacklist = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                        };
-                      };
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
                     };
                     dataCardHardLimit = lib.mkOption {
                       type = lib.types.int;
@@ -933,11 +924,8 @@
                       default = false;
                     };
                     modBlacklist = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                        };
-                      };
+                      type = lib.types.listOf lib.types.str;
+                      default = [ ];
                     };
                     printerTickAmount = lib.mkOption {
                       type = lib.types.int;
