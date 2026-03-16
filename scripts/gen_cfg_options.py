@@ -28,7 +28,7 @@ CFG_ROOT = None
 SKIP_DIRS = set()
 # Skip files with non-standard formats (recipe files, etc.)
 # These use custom formats that can't be represented as Nix options
-SKIP_FILES = {'AdvancedSolarPanel_MTRecipes.cfg'}
+SKIP_FILES = {'AdvancedSolarPanel_MTRecipes.cfg', 'bees.cfg'}
 
 
 def get_skip_prefixes():
@@ -36,7 +36,8 @@ def get_skip_prefixes():
     # Skip the RTG biomes subdir (auto-generated), but keep RTG/rtg.cfg
     # Skip ThaumcraftMobAspects (JSON arrays that can't round-trip to Nix)
     # Skip GTNewHorizons (XML with duplicate elements like multiple <Drop>)
-    return [CFG_ROOT / "RTG" / "biomes", CFG_ROOT / "ThaumcraftMobAspects", CFG_ROOT / "GTNewHorizons"]
+    # Skip gendustry/overrides (BDLib custom DSL that can't be represented as Nix options)
+    return [CFG_ROOT / "RTG" / "biomes", CFG_ROOT / "ThaumcraftMobAspects", CFG_ROOT / "GTNewHorizons", CFG_ROOT / "gendustry" / "overrides"]
 
 
 # ---------------------------------------------------------------------------
