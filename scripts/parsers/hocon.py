@@ -33,10 +33,12 @@ class HoconParser(ConfigParser):
                     children = self._to_nodes(value)
                     nodes.append(Section(name=key, children=children))
                 elif isinstance(value, list):
-                    if value and all(isinstance(x, (str, int, float, bool)) for x in value):
+                    # Empty lists or lists of primitives become List nodes
+                    if not value or all(isinstance(x, (str, int, float, bool)) for x in value):
                         vtype = self.infer_type_from_python(value[0]) if value else ValueType.STRING
                         nodes.append(List(key=key, values=[self.to_string(x) for x in value], type=vtype))
                     else:
+                        # Lists of complex objects become sections
                         children = self._to_nodes(value)
                         nodes.append(Section(name=key, children=children))
                 else:
