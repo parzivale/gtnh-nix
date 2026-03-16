@@ -70,7 +70,8 @@
   in {
     # nixosTest only runs on Linux (requires QEMU)
     checks = lib.optionalAttrs (builtins.elem system ["x86_64-linux" "aarch64-linux"]) (
-      lib.genAttrs versions (version: mkVersionTest version)
+      lib.mapAttrs' (name: value: lib.nameValuePair "nixos-${name}" value)
+        (lib.genAttrs versions mkVersionTest)
     );
   };
 }
