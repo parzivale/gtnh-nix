@@ -17,6 +17,7 @@ class IniParser(ConfigParser):
     def parse(self, text: str) -> ConfigAST:
         try:
             config = configparser.ConfigParser()
+            config.optionxform = str  # Preserve key case
             config.read_string(text)
             nodes = self._to_nodes(config)
             return ConfigAST(nodes=nodes)
