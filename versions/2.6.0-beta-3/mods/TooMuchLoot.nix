@@ -14,6 +14,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "bonusChest";
@@ -409,6 +414,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -1658,6 +1668,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -3112,6 +3127,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -4653,6 +4673,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "chest4";
@@ -5816,6 +5841,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -9656,6 +9686,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "mineshaftCorridor";
@@ -13031,6 +13066,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "naturalistChest";
@@ -13659,6 +13699,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -16604,6 +16649,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "pyramidJungleChest";
@@ -19470,6 +19520,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "pyramidJungleDispenser";
@@ -19583,6 +19638,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -20346,6 +20406,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {
@@ -23129,6 +23194,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "strongholdCrossing";
@@ -24884,6 +24954,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
+        readOnly = true;
+        };
         "@category" = lib.mkOption {
           type = lib.types.str;
           default = "strongholdLibrary";
@@ -26097,6 +26172,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "LootGroup";
         readOnly = true;
         };
         "@category" = lib.mkOption {

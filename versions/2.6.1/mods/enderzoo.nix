@@ -668,6 +668,11 @@
         default = "xml";
         readOnly = true;
         };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "SpawnConfig";
+        readOnly = true;
+        };
         entry_0 = lib.mkOption {
           default = {};
           type = lib.types.submodule {
@@ -1215,6 +1220,11 @@
         kind = lib.mkOption {
         type = lib.types.str;
         default = "xml";
+        readOnly = true;
+        };
+        __root = lib.mkOption {
+        type = lib.types.str;
+        default = "SpawnConfig";
         readOnly = true;
         };
       };

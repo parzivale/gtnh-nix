@@ -244,6 +244,7 @@ def gen_cfg_option(opt_name, cfg_path, rel_path, base_indent):
         parser = get_parser(fmt)
         ast = parser.parse(text)
         nodes = ast.nodes
+        root_name = getattr(ast, 'root_name', None)
 
         # Map format names to kind values
         kind_map = {
@@ -259,6 +260,7 @@ def gen_cfg_option(opt_name, cfg_path, rel_path, base_indent):
     except Exception as e:
         nodes = []
         kind = "forge"
+        root_name = None
 
     rel_nix = rel_path.replace('\\', '/')
     nk = nix_attr_key(opt_name)
@@ -279,6 +281,13 @@ def gen_cfg_option(opt_name, cfg_path, rel_path, base_indent):
     lines.append(f'{i4}default = "{kind}";')
     lines.append(f'{i4}readOnly = true;')
     lines.append(f'{i3}  }};')
+    # For XML files, include the root element name
+    if kind == 'xml' and root_name:
+        lines.append(f'{i3}  __root = lib.mkOption {{')
+        lines.append(f'{i4}type = lib.types.str;')
+        lines.append(f'{i4}default = {nix_str_lit(root_name)};')
+        lines.append(f'{i4}readOnly = true;')
+        lines.append(f'{i3}  }};')
     inner = gen_entries(nodes, i3 + '  ')
     lines.extend(inner)
     lines.append(f'{i2}  }};')
