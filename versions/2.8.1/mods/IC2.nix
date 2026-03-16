@@ -18,27 +18,27 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              rubbertree = lib.mkOption {
+              rubberTree = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              copperore = lib.mkOption {
+              copperOre = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              tinore = lib.mkOption {
+              tinOre = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              uraniumore = lib.mkOption {
+              uraniumOre = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              leadore = lib.mkOption {
+              leadOre = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              oredensityfactor = lib.mkOption {
+              oreDensityFactor = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
@@ -49,19 +49,19 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              wrenchlogging = lib.mkOption {
+              wrenchLogging = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              nukeexplosionpowerlimit = lib.mkOption {
+              nukeExplosionPowerLimit = lib.mkOption {
                 type = lib.types.int;
                 default = 100;
               };
-              reactorexplosionpowerlimit = lib.mkOption {
+              reactorExplosionPowerLimit = lib.mkOption {
                 type = lib.types.int;
                 default = 100;
               };
-              enablenuke = lib.mkOption {
+              enableNuke = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
@@ -72,35 +72,35 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              minerdischargetier = lib.mkOption {
+              minerDischargeTier = lib.mkOption {
                 type = lib.types.int;
                 default = 1;
               };
-              teleporteruseinventoryweight = lib.mkOption {
+              teleporterUseInventoryWeight = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              energyretainedinstorageblockdrops = lib.mkOption {
+              energyRetainedInStorageBlockDrops = lib.mkOption {
                 type = lib.types.float;
                 default = 0.8;
               };
-              uuenergyfactor = lib.mkOption {
+              uuEnergyFactor = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              disableenderchest = lib.mkOption {
+              disableEnderChest = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              recyclerblacklist = lib.mkOption {
+              recyclerBlacklist = lib.mkOption {
                 type = lib.types.str;
                 default = "minecraft:glass_pane, minecraft:stick, minecraft:snowball, minecraft:snow_layer, minecraft:snow, IC2:blockScaffold";
               };
-              recyclerwhitelist = lib.mkOption {
+              recyclerWhitelist = lib.mkOption {
                 type = lib.types.str;
                 default = "";
               };
-              ignorewrenchrequirement = lib.mkOption {
+              ignoreWrenchRequirement = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
@@ -135,31 +135,31 @@
                 type = lib.types.float;
                 default = 5.0;
               };
-              semifluidoil = lib.mkOption {
+              semiFluidOil = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidfuel = lib.mkOption {
+              semiFluidFuel = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbiomass = lib.mkOption {
+              semiFluidBiomass = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbioethanol = lib.mkOption {
+              semiFluidBioethanol = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbiogas = lib.mkOption {
+              semiFluidBiogas = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              stirling = lib.mkOption {
+              Stirling = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              kinetic = lib.mkOption {
+              Kinetic = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
@@ -174,23 +174,23 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              semifluidoil = lib.mkOption {
+              semiFluidOil = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidfuel = lib.mkOption {
+              semiFluidFuel = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbiomass = lib.mkOption {
+              semiFluidBiomass = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbioethanol = lib.mkOption {
+              semiFluidBioethanol = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              semifluidbiogas = lib.mkOption {
+              semiFluidBiogas = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
@@ -240,15 +240,15 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              heatexchangerlava = lib.mkOption {
+              heatExchangerLava = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              heatexchangerhotcoolant = lib.mkOption {
+              heatExchangerHotCoolant = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
-              heatexchangerwater = lib.mkOption {
+              heatExchangerWater = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
@@ -259,7 +259,7 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              outputmodifier = lib.mkOption {
+              outputModifier = lib.mkOption {
                 type = lib.types.float;
                 default = 1.0;
               };
@@ -300,7 +300,7 @@
                 type = lib.types.int;
                 default = 200;
               };
-              hu_per_run = lib.mkOption {
+              hU_per_run = lib.mkOption {
                 type = lib.types.int;
                 default = 8000;
               };
@@ -315,7 +315,7 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              ic2 = lib.mkOption {
+              IC2 = lib.mkOption {
                 type = lib.types.str;
                 default = "itemOreIridium = 12000";
               };
@@ -334,19 +334,19 @@
                 type = lib.types.str;
                 default = "";
               };
-              allowcoincrafting = lib.mkOption {
+              allowCoinCrafting = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              requireic2circuits = lib.mkOption {
+              requireIc2Circuits = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              smelttoic2items = lib.mkOption {
+              smeltToIc2Items = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              ignoreinvalidrecipes = lib.mkOption {
+              ignoreInvalidRecipes = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
@@ -357,35 +357,35 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              enableic2audio = lib.mkOption {
+              enableIc2Audio = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              maxaudiosourcecount = lib.mkOption {
+              maxAudioSourceCount = lib.mkOption {
                 type = lib.types.int;
                 default = 32;
               };
-              hidesecretrecipes = lib.mkOption {
+              hideSecretRecipes = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              quantumspeedonsprint = lib.mkOption {
+              quantumSpeedOnSprint = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              allowburningscrap = lib.mkOption {
+              allowBurningScrap = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              additionalvaluableores = lib.mkOption {
+              additionalValuableOres = lib.mkOption {
                 type = lib.types.str;
                 default = "";
               };
-              uselineartransfermodel = lib.mkOption {
+              useLinearTransferModel = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              radiationpotionid = lib.mkOption {
+              radiationPotionID = lib.mkOption {
                 type = lib.types.int;
                 default = 24;
               };
