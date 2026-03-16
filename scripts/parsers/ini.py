@@ -16,7 +16,8 @@ class IniParser(ConfigParser):
 
     def parse(self, text: str) -> ConfigAST:
         try:
-            config = configparser.ConfigParser()
+            # Use only '=' as delimiter (not ':') to preserve keys like 'IC2:itemOreIridium'
+            config = configparser.ConfigParser(delimiters=('=',))
             config.optionxform = str  # Preserve key case
             config.read_string(text)
             nodes = self._to_nodes(config)
