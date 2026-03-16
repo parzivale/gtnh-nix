@@ -315,9 +315,9 @@
           default = {};
           type = lib.types.submodule {
             options = {
-              IC2 = lib.mkOption {
-                type = lib.types.str;
-                default = "itemOreIridium = 12000";
+              "IC2:itemOreIridium" = lib.mkOption {
+                type = lib.types.int;
+                default = 12000;
               };
             };
           };
