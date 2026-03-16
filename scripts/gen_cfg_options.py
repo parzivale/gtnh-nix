@@ -25,7 +25,7 @@ OPTIONS_OUT = None
 CFG_ROOT = None
 
 # Already handled elsewhere
-SKIP_DIRS = set()
+SKIP_DIRS = {'betterquesting'}  # Quest data, not configuration
 # Skip files with non-standard formats (recipe files, etc.)
 # These use custom formats that can't be represented as Nix options
 SKIP_FILES = {'AdvancedSolarPanel_MTRecipes.cfg', 'bees.cfg'}
