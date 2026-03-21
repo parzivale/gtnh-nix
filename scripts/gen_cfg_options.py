@@ -25,7 +25,7 @@ OPTIONS_OUT = None
 CFG_ROOT = None
 
 # Already handled elsewhere
-SKIP_DIRS = {'betterquesting'}  # Quest data, not configuration
+SKIP_DIRS = {'betterquesting', 'roguelike_dungeons'}  # Data, not configuration
 # Skip files with non-standard formats (recipe files, etc.)
 # These use custom formats that can't be represented as Nix options
 SKIP_FILES = {'AdvancedSolarPanel_MTRecipes.cfg', 'bees.cfg'}
@@ -165,6 +165,17 @@ def gen_entries(nodes: list[Node], ind: str) -> list[str]:
             seen_keys.add(key)
 
             nk = nix_attr_key(key)
+
+            # Handle mixed types (where different array items have different types)
+            if node.value == '__MIXED_TYPE__':
+                lines.append(f'{ind}{nk} = lib.mkOption {{')
+                lines.append(f'{i2}type = lib.types.anything;')
+                lines.append(f'{i2}default = null;')
+                if node.description:
+                    lines.append(f'{i2}description = {nix_str_lit(node.description)};')
+                lines.append(f'{ind}}};')
+                continue
+
             try:
                 nv = nix_scalar(node.type, node.value)
             except Exception:
