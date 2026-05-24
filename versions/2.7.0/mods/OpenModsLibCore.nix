@@ -4,130 +4,130 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/OpenModsLibCore.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        activate_gl_capabilities_hook = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: hook to get check additional OpenGL capabilities (mostly stencil buffer related)" "Modified class: net.minecraft.client.renderer.OpenGlHelper" "Known users: OpenBlocks skyblocks" "When disabled: no stencil buffer available unless unlocked with Forge flag. Mods may not use some graphic features" ];
-              };
-            };
+      };
+      activate_gl_capabilities_hook = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: hook to get check additional OpenGL capabilities (mostly stencil buffer related)" "Modified class: net.minecraft.client.renderer.OpenGlHelper" "Known users: OpenBlocks skyblocks" "When disabled: no stencil buffer available unless unlocked with Forge flag. Mods may not use some graphic features" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
-        activate_player_render_hook = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: add hook to player rendering code" "Modified class: net.minecraft.client.renderer.entity.RenderPlayer" "Known users: OpenBlocks hangglider" "When disabled: code may fallback to less compatible mechanism (like replacing renderer)" ];
-              };
-            };
+      };
+      activate_map_gen_fix = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: fix bug in vanilla code used to find nearby structures" "Modified class: net.minecraft.world.gen.structure.MapGenStructure" "Known users: OpenBlocks golden eye" "When disabled: features may not work (either silently fail or cause crash)" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
-        activate_map_gen_fix = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: fix bug in vanilla code used to find nearby structures" "Modified class: net.minecraft.world.gen.structure.MapGenStructure" "Known users: OpenBlocks golden eye" "When disabled: features may not work (either silently fail or cause crash)" ];
-              };
-            };
+      };
+      activate_movement_callback = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: this transformer add hook to player movement controls" "Modified class: net.minecraft.client.entity.EntityPlayerSP" "Known users: OpenBlocks elevator" "When disabled: users usually have fallbacks (elevator will use less accurate algorithm)" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
-        activate_player_damage_hook = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: hook for capturing damage to player (after armor and potion calculations)" "Modified class: net.minecraft.entity.player.EntityPlayer" "Known users: Last Stand enchantment" "When disabled: Last Stand enchantment will not work" ];
-              };
-            };
+      };
+      activate_player_damage_hook = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: hook for capturing damage to player (after armor and potion calculations)" "Modified class: net.minecraft.entity.player.EntityPlayer" "Known users: Last Stand enchantment" "When disabled: Last Stand enchantment will not work" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
-        activate_movement_callback = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: this transformer add hook to player movement controls" "Modified class: net.minecraft.client.entity.EntityPlayerSP" "Known users: OpenBlocks elevator" "When disabled: users usually have fallbacks (elevator will use less accurate algorithm)" ];
-              };
-            };
+      };
+      activate_player_render_hook = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: add hook to player rendering code" "Modified class: net.minecraft.client.renderer.entity.RenderPlayer" "Known users: OpenBlocks hangglider" "When disabled: code may fallback to less compatible mechanism (like replacing renderer)" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
-        activate_stencil_patches = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              version = lib.mkOption {
-                type = lib.types.int;
-                default = 0;
-              };
-              value = lib.mkOption {
-                type = lib.types.str;
-                default = "true";
-              };
-              comment = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ "Purpose: to re-enable stencil buffer on FBO objects. This is was disabled due to problems on some configurations" "Modified class: net.minecraft.client.shader.Framebuffer" "Known users: OpenBlocks skyblocks" "When disabled: no stencil buffer available unless unlocked with Forge flag. Mods may not use some graphic features" ];
-              };
-            };
+      };
+      activate_stencil_patches = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          comment = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ "Purpose: to re-enable stencil buffer on FBO objects. This is was disabled due to problems on some configurations" "Modified class: net.minecraft.client.shader.Framebuffer" "Known users: OpenBlocks skyblocks" "When disabled: no stencil buffer available unless unlocked with Forge flag. Mods may not use some graphic features" ];
+          };
+          value = lib.mkOption {
+            type = lib.types.str;
+            default = "true";
+          };
+          version = lib.mkOption {
+            type = lib.types.int;
+            default = 0;
+          };
           };
         };
+      };
       };
     };
   };

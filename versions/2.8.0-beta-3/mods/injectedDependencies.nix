@@ -4,47 +4,47 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/injectedDependencies.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        "0" = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              modId = lib.mkOption {
+      };
+      "0" = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          deps = lib.mkOption {
+            type = lib.types.listOf (lib.types.submodule {
+              options = {
+              target = lib.mkOption {
                 type = lib.types.str;
-                default = "ExtraUtilities";
+                default = "Thaumcraft";
               };
-              deps = lib.mkOption {
-                type = lib.types.listOf (lib.types.submodule {
-                  options = {
-                    type = lib.mkOption {
-                      type = lib.types.str;
-                      default = "after";
-                    };
-                    target = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Thaumcraft";
-                    };
-                  };
-                });
-                default = [
-                  {
-                    type = "after";
-                    target = "Thaumcraft";
-                  }
-                ];
+              type = lib.mkOption {
+                type = lib.types.str;
+                default = "after";
               };
-            };
+              };
+            });
+            default = [
+              {
+                target = "Thaumcraft";
+                type = "after";
+              }
+            ];
+          };
+          modId = lib.mkOption {
+            type = lib.types.str;
+            default = "ExtraUtilities";
+          };
           };
         };
+      };
       };
     };
   };

@@ -61,21 +61,16 @@ fn main() {
             pack_root,
             output_dir,
         } => {
-            println!(
-                "gen: pack_root={} output_dir={}",
-                pack_root.display(),
-                output_dir.display()
-            );
+            if let Err(e) = gtnh_nix::nix_gen::run(&pack_root, &output_dir) {
+                eprintln!("gen failed: {e}");
+                std::process::exit(1);
+            }
         }
         Command::GenAll { force } => {
             println!("gen-all: force={force}");
         }
         Command::Normalize { original, rendered } => {
-            println!(
-                "normalize: original={} rendered={}",
-                original.display(),
-                rendered.display()
-            );
+            std::process::exit(gtnh_nix::normalize::run(&original, &rendered));
         }
         Command::Parse { parser, file } => {
             let input = std::fs::read_to_string(&file).unwrap_or_else(|e| {

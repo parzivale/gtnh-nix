@@ -4,24 +4,25 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/Translocator.cfg";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "properties";
         readOnly = true;
-        };
-        checkUpdates = lib.mkOption {
-          type = lib.types.bool;
-          default = false;
-        };
-        disable-crafting-grid-key = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-        };
+      };
+      checkUpdates = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      disable-crafting-grid-key = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Set to true to disable placement of crafting grids by keyboard shortcut.";
+      };
       };
     };
   };

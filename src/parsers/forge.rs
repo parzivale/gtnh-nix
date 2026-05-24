@@ -7,11 +7,16 @@ use std::collections::HashMap;
 pub enum Token {
     TypePrefix(char), // B, I, D, S, F
     Colon,
-    Equals,
+    /// Atomic `=` followed by value text up to end-of-line. The lexer
+    /// captures the value greedily because Forge values can contain spaces,
+    /// commas, and other characters that would otherwise split as separate
+    /// idents (e.g. `S:foo=a, b, c with spaces`).
+    EntryValue(String),
     OpenBrace,
     CloseBrace,
-    OpenAngle,        // <
-    CloseAngle,       // >
+    /// `<` followed by one-value-per-line content up to `>` on its own line.
+    /// Captured atomically for the same reason as EntryValue.
+    AngleBlock(Vec<String>),
     Str(String),      // quoted string
     Ident(String),    // unquoted identifier/value
     Comment(String),  // # comment text
@@ -35,12 +40,32 @@ pub enum ForgeExpr {
         children: Vec<Spanned<ForgeExpr>>,
     },
     Doc(String),
+    Blank,
     File(Vec<Spanned<ForgeExpr>>),
 }
 
 impl From<ForgeExpr> for Ir {
+    /// The Forge top-level parser always returns `ForgeExpr::File`. Other
+    /// variants don't appear at this level; they only exist as children
+    /// processed by `forge_children_to_attrs`.
     fn from(expr: ForgeExpr) -> Self {
-        forge_expr_to_ir(expr)
+        let children = match expr {
+            ForgeExpr::File(c) => c,
+            _ => return Ir::Null,
+        };
+        Ir::Node {
+            tag: None,
+            attrs: Some(forge_children_to_attrs(children)),
+            children: None,
+        }
+    }
+}
+
+fn take_pending_doc(pending_doc: &mut Vec<String>) -> Option<String> {
+    if pending_doc.is_empty() {
+        None
+    } else {
+        Some(std::mem::take(pending_doc).join("\n"))
     }
 }
 
@@ -53,113 +78,84 @@ fn forge_children_to_attrs(children: Vec<Spanned<ForgeExpr>>) -> HashMap<String,
             ForgeExpr::Doc(text) => {
                 pending_doc.push(text);
             }
+            ForgeExpr::Blank => {
+                pending_doc.clear();
+            }
             ForgeExpr::Entry {
                 key,
                 type_prefix,
                 value,
                 ..
             } => {
-                if !pending_doc.is_empty() {
-                    attrs.insert(
-                        format!("{key}.__doc__"),
-                        Ir::Doc(pending_doc.join("\n")),
-                    );
-                    pending_doc.clear();
-                }
-                attrs.insert(key, infer_typed_value(type_prefix, &value));
+                let value = infer_typed_value(type_prefix, &value);
+                attrs.insert(key, value.with_doc(take_pending_doc(&mut pending_doc)));
             }
-            ForgeExpr::List { key, values, .. } => {
-                if !pending_doc.is_empty() {
-                    attrs.insert(
-                        format!("{key}.__doc__"),
-                        Ir::Doc(pending_doc.join("\n")),
-                    );
-                    pending_doc.clear();
-                }
-                attrs.insert(
-                    key,
-                    Ir::Node {
-                        tag: None,
-                        attrs: None,
-                        children: Some(values.into_iter().map(Ir::Str).collect()),
-                    },
-                );
+            ForgeExpr::List {
+                key,
+                values,
+                type_prefix,
+            } => {
+                // Type-prefix-aware list element inference: `I:<>` produces
+                // Int children, `D:<>` Real, `B:<>` Bool, etc. Untyped lists
+                // fall back to the heuristic in `infer_typed_value`.
+                let children = values
+                    .into_iter()
+                    .map(|v| infer_typed_value(type_prefix, &v))
+                    .collect();
+                let value = Ir::Node {
+                    tag: None,
+                    attrs: None,
+                    children: Some(children),
+                };
+                attrs.insert(key, value.with_doc(take_pending_doc(&mut pending_doc)));
             }
             ForgeExpr::Section { name, children } => {
-                if !pending_doc.is_empty() {
-                    attrs.insert(
-                        format!("{name}.__doc__"),
-                        Ir::Doc(pending_doc.join("\n")),
-                    );
-                    pending_doc.clear();
-                }
-                attrs.insert(
-                    name.clone(),
-                    forge_expr_to_ir(ForgeExpr::Section { name, children }),
-                );
+                let value = Ir::Node {
+                    tag: None,
+                    attrs: Some(forge_children_to_attrs(children)),
+                    children: None,
+                };
+                attrs.insert(name, value.with_doc(take_pending_doc(&mut pending_doc)));
             }
+            // File appears only at the top level; never as a child.
             ForgeExpr::File(_) => {}
         }
     }
     attrs
 }
 
-fn forge_expr_to_ir(expr: ForgeExpr) -> Ir {
-    match expr {
-        ForgeExpr::Entry {
-            type_prefix,
-            key: _,
-            value,
-        } => infer_typed_value(type_prefix, &value),
-        ForgeExpr::List { values, .. } => Ir::Node {
-            tag: None,
-            attrs: None,
-            children: Some(values.into_iter().map(Ir::Str).collect()),
-        },
-        ForgeExpr::Section { name: _, children } => Ir::Node {
-            tag: None,
-            attrs: Some(forge_children_to_attrs(children)),
-            children: None,
-        },
-        ForgeExpr::File(children) => Ir::Node {
-            tag: None,
-            attrs: Some(forge_children_to_attrs(children)),
-            children: None,
-        },
-        ForgeExpr::Doc(_) => Ir::Null, // standalone doc, shouldn't happen at top level
-    }
-}
-
 fn infer_typed_value(type_prefix: Option<char>, value: &str) -> Ir {
     let trimmed = value.trim();
     match type_prefix {
-        Some('B') => match trimmed.to_lowercase().as_str() {
-            "true" => Ir::Bool(true),
-            "false" => Ir::Bool(false),
-            _ => Ir::Str(trimmed.to_string()),
-        },
+        // `B:` is always Bool. Forge uses "true"/"false"; some files use
+        // legacy 0/1. Match the Python renderer's convention: anything
+        // case-insensitively equal to "true" is true, everything else is
+        // false. This keeps round-trip via mkConfigFile consistent.
+        Some('B') => Ir::Bool(trimmed.eq_ignore_ascii_case("true")),
+        // `I:` is integer. Some Forge configs write the value with a
+        // trailing `.0` (e.g. `I:foo=4.0`); Python's renderer truncates via
+        // `int(float(...))`, so we match that to preserve round-trip.
         Some('I') => trimmed
-            .parse::<i32>()
+            .parse::<i64>()
+            .or_else(|_| trimmed.parse::<f64>().map(|f| f.trunc() as i64))
             .map(Ir::Int)
             .unwrap_or(Ir::Str(trimmed.to_string())),
         Some('D') | Some('F') => trimmed
-            .parse::<f32>()
+            .parse::<f64>()
             .map(Ir::Real)
             .unwrap_or(Ir::Str(trimmed.to_string())),
-        Some('S') | None => match trimmed {
+        // Explicit `S:` prefix means "string", even if the value looks
+        // numeric (`S:foo=176.0` is the string "176.0", not a float).
+        // The lexer constrains TypePrefix tokens to BIDSF so other
+        // characters cannot appear here.
+        Some('S') | Some(_) => Ir::Str(trimmed.to_string()),
+        // Untyped entry: heuristic inference (bool → int → real → str).
+        None => match trimmed {
             "true" => Ir::Bool(true),
             "false" => Ir::Bool(false),
-            _ => {
-                if let Ok(i) = trimmed.parse::<i32>() {
-                    Ir::Int(i)
-                } else if let Ok(f) = trimmed.parse::<f32>() {
-                    Ir::Real(f)
-                } else {
-                    Ir::Str(trimmed.to_string())
-                }
-            }
+            "" => Ir::Str(String::new()),
+            _ => crate::parse_number(trimmed),
         },
-        Some(_) => Ir::Str(trimmed.to_string()),
     }
 }
 
@@ -186,11 +182,39 @@ impl GTNHParser for ForgeParser {
             .map(Token::TypePrefix);
 
         let colon = just(':').to(Token::Colon);
-        let equals = just('=').to(Token::Equals);
         let open_brace = just('{').to(Token::OpenBrace);
         let close_brace = just('}').to(Token::CloseBrace);
-        let open_angle = just('<').to(Token::OpenAngle);
-        let close_angle = just('>').to(Token::CloseAngle);
+
+        // EntryValue: `=` plus everything up to (but not including) end-of-line.
+        // The Python pipeline preserves surrounding quotes as part of the
+        // value (`S:foo="bar"` parses as the literal string `"bar"`), so we
+        // match that — the renderer re-emits the value verbatim.
+        let entry_value = just('=')
+            .ignore_then(none_of('\n').repeated().collect::<String>())
+            .map(|s: String| Token::EntryValue(s.trim().to_string()));
+
+        // AngleBlock: `<` then content up to a `>` that appears at the start
+        // of a line (modulo leading whitespace). Detecting the close this way
+        // lets list values contain `>` characters — important for arrow
+        // syntax like `minecraft:bed -> minecraft:bed` in MCFrames.cfg.
+        let close_marker = just('\n').then(one_of(" \t").repeated()).then(just('>'));
+        let angle_block = just('<')
+            .ignore_then(
+                any()
+                    .and_is(close_marker.clone().not())
+                    .repeated()
+                    .collect::<String>(),
+            )
+            .then_ignore(close_marker)
+            .map(|content: String| {
+                let values: Vec<String> = content
+                    .lines()
+                    .map(|l| l.trim())
+                    .filter(|l| !l.is_empty() && !l.starts_with('#'))
+                    .map(|l| l.to_string())
+                    .collect();
+                Token::AngleBlock(values)
+            });
 
         let ident = none_of(" \t\n\r\"{}=<>:#")
             .repeated()
@@ -204,11 +228,10 @@ impl GTNHParser for ForgeParser {
             quoted_string,
             type_prefix,
             colon,
-            equals,
+            angle_block,
+            entry_value,
             open_brace,
             close_brace,
-            open_angle,
-            close_angle,
             ident,
         ));
 
@@ -239,38 +262,28 @@ impl GTNHParser for ForgeParser {
             });
 
             let colon = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Colon);
-            let equals = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Equals);
             let open_brace = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::OpenBrace);
             let close_brace = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::CloseBrace);
-            let open_angle = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::OpenAngle);
-            let close_angle = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::CloseAngle);
 
             let key_name = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
-                Token::Str(s) => Ok(s),
-                Token::Ident(s) => Ok(s),
+                Token::Str(s) | Token::Ident(s) => Ok(s),
                 _ => Err(Rich::custom(span, "expected key name")),
             });
 
-            let value_token = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
-                Token::Str(s) | Token::Ident(s) => Ok(s),
-                _ => Err(Rich::custom(span, "expected value")),
+            let entry_value = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::EntryValue(s) => Ok(s),
+                _ => Err(Rich::custom(span, "expected entry value")),
             });
 
-            let list_value = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
-                Token::Str(s) | Token::Ident(s) => Ok(s),
-                _ => Err(Rich::custom(span, "expected list value")),
+            let angle_block = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::AngleBlock(values) => Ok(values),
+                _ => Err(Rich::custom(span, "expected angle block")),
             });
-
-            let list_values = choice((list_value.map(Some), skip.clone().to(None)))
-                .repeated()
-                .collect::<Vec<_>>()
-                .map(|items| items.into_iter().flatten().collect::<Vec<_>>());
 
             let typed_entry = type_prefix
                 .then_ignore(colon.clone())
                 .then(key_name.clone())
-                .then_ignore(equals.clone())
-                .then(value_token.clone())
+                .then(entry_value.clone())
                 .map_with(|((tp, key), value), e| {
                     (
                         ForgeExpr::Entry {
@@ -285,11 +298,7 @@ impl GTNHParser for ForgeParser {
             let typed_list = type_prefix
                 .then_ignore(colon)
                 .then(key_name.clone())
-                .then(
-                    list_values
-                        .clone()
-                        .delimited_by(open_angle.clone(), close_angle.clone()),
-                )
+                .then(angle_block.clone())
                 .map_with(|((tp, key), values), e| {
                     (
                         ForgeExpr::List {
@@ -303,8 +312,7 @@ impl GTNHParser for ForgeParser {
 
             let untyped_entry = key_name
                 .clone()
-                .then_ignore(equals)
-                .then(value_token)
+                .then(entry_value)
                 .map_with(|(key, value), e| {
                     (
                         ForgeExpr::Entry {
@@ -316,40 +324,93 @@ impl GTNHParser for ForgeParser {
                     )
                 });
 
-            let untyped_list = key_name
+            let untyped_list = key_name.clone().then(angle_block).map_with(|(key, values), e| {
+                (
+                    ForgeExpr::List {
+                        type_prefix: None,
+                        key,
+                        values,
+                    },
+                    e.span(),
+                )
+            });
+
+            // The closing brace is `.or_not()` because some real-world
+            // Forge configs (e.g. WitcheryExtras/asm.cfg in 2.8.4) leave the
+            // final section unclosed at EOF. Python's parser is similarly
+            // tolerant — it just stops when the input ends.
+            let section = key_name
+                .then(
+                    skip.clone()
+                        .repeated()
+                        .ignore_then(open_brace.clone())
+                        .ignore_then(items.clone())
+                        .then_ignore(close_brace.clone().or_not()),
+                )
+                .map_with(|(name, children), e| (ForgeExpr::Section { name, children }, e.span()));
+
+            // Anonymous section: `{ ... }` with no preceding name. lib.nix's
+            // forge renderer emits these for empty-string keys (e.g. the
+            // HungerOverhaul `" "` source section). Treated as a section with
+            // an empty name so the empty-key filter in normalize/IR drops it.
+            let anonymous_section = open_brace
                 .clone()
-                .then(list_values.delimited_by(open_angle, close_angle))
-                .map_with(|(key, values), e| {
+                .ignore_then(items)
+                .then_ignore(close_brace.clone().or_not())
+                .map_with(|children, e| {
                     (
-                        ForgeExpr::List {
-                            type_prefix: None,
-                            key,
-                            values,
+                        ForgeExpr::Section {
+                            name: String::new(),
+                            children,
                         },
                         e.span(),
                     )
                 });
 
-            let section = key_name
-                .then(
-                    skip.clone()
-                        .repeated()
-                        .ignore_then(items.delimited_by(open_brace, close_brace)),
-                )
-                .map_with(|(name, children), e| (ForgeExpr::Section { name, children }, e.span()));
-
             let item = choice((
                 typed_list,
                 typed_entry,
                 section,
+                anonymous_section,
                 untyped_list,
                 untyped_entry,
             ));
 
-            choice((item.map(Some), comment.map(Some), newline.to(None)))
+            // 2+ consecutive newlines = blank line; clears pending docs.
+            let blank = newline
+                .clone()
+                .then(newline.clone().repeated().at_least(1).collect::<Vec<_>>())
+                .map_with(|_, e| (ForgeExpr::Blank, e.span()));
+
+            // Garbage-line recovery: some Forge-format files (e.g. NEI's
+            // hiddenitems.cfg) contain freeform lines like `minecraft:portal`
+            // that aren't entries, lists, or sections. Skip them token-by-token
+            // until the next newline so the surrounding file still parses.
+            // Braces are structural delimiters and must never be consumed here.
+            let garbage = any()
+                .filter(|(tok, _): &Spanned<Token>| {
+                    !matches!(
+                        tok,
+                        Token::Newline
+                            | Token::Comment(_)
+                            | Token::OpenBrace
+                            | Token::CloseBrace
+                    )
+                })
                 .repeated()
-                .collect::<Vec<_>>()
-                .map(|items| items.into_iter().flatten().collect::<Vec<_>>())
+                .at_least(1)
+                .to(None);
+
+            choice((
+                blank.map(Some),
+                item.map(Some),
+                comment.map(Some),
+                newline.to(None),
+                garbage,
+            ))
+            .repeated()
+            .collect::<Vec<_>>()
+            .map(|items| items.into_iter().flatten().collect::<Vec<_>>())
         })
         .map_with(|children, e| (ForgeExpr::File(children), e.span()))
     }

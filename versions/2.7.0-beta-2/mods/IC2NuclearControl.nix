@@ -4,60 +4,60 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/IC2NuclearControl.cfg";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "forge";
         readOnly = true;
-        };
-        general = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              SMPMaxAlarmRange = lib.mkOption {
-                type = lib.types.int;
-                default = 256;
-              };
-              alarmRange = lib.mkOption {
-                type = lib.types.int;
-                default = 64;
-              };
-              allowedAlarms = lib.mkOption {
-                type = lib.types.str;
-                default = "default,sci-fi";
-              };
-              disableCapes = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              infoPanelRefreshPeriod = lib.mkOption {
-                type = lib.types.int;
-                default = 20;
-              };
-              maxAlarmRange = lib.mkOption {
-                type = lib.types.int;
-                default = 128;
-              };
-              rangeTriggerRefreshPeriod = lib.mkOption {
-                type = lib.types.int;
-                default = 20;
-              };
-              recipes = lib.mkOption {
-                type = lib.types.str;
-                default = "gregtech";
-                description = "Valid inputs: normal, old or gregtech [default: normal]";
-              };
-              remoteThermalMonitorEnergyConsumption = lib.mkOption {
-                type = lib.types.int;
-                default = 1;
-              };
-            };
+      };
+      general = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          SMPMaxAlarmRange = lib.mkOption {
+            type = lib.types.int;
+            default = 256;
+          };
+          alarmRange = lib.mkOption {
+            type = lib.types.int;
+            default = 64;
+          };
+          allowedAlarms = lib.mkOption {
+            type = lib.types.str;
+            default = "default,sci-fi";
+          };
+          disableCapes = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          infoPanelRefreshPeriod = lib.mkOption {
+            type = lib.types.int;
+            default = 20;
+          };
+          maxAlarmRange = lib.mkOption {
+            type = lib.types.int;
+            default = 128;
+          };
+          rangeTriggerRefreshPeriod = lib.mkOption {
+            type = lib.types.int;
+            default = 20;
+          };
+          recipes = lib.mkOption {
+            type = lib.types.str;
+            default = "gregtech";
+            description = "Valid inputs: normal, old or gregtech [default: normal]";
+          };
+          remoteThermalMonitorEnergyConsumption = lib.mkOption {
+            type = lib.types.int;
+            default = 1;
+          };
           };
         };
+      };
       };
     };
   };

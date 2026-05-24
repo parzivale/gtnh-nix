@@ -6,8 +6,8 @@ use std::collections::HashMap;
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
     Bool(bool),
-    Int(i32),
-    Real(f32),
+    Int(i64),
+    Real(f64),
     Str(String),      // quoted string
     Ident(String),    // unquoted identifier
     OpenBrace,
@@ -23,8 +23,8 @@ pub enum Token {
 #[derive(Clone, Debug, PartialEq)]
 pub enum HoconExpr {
     Bool(bool),
-    Int(i32),
-    Real(f32),
+    Int(i64),
+    Real(f64),
     Str(String),
     Arr(Vec<Spanned<Self>>),
     Object(Vec<HoconItem>),
@@ -34,6 +34,7 @@ pub enum HoconExpr {
 pub enum HoconItem {
     Member(String, Spanned<HoconExpr>),
     Doc(String),
+    Blank,
 }
 
 impl From<HoconExpr> for Ir {
@@ -51,19 +52,18 @@ impl From<HoconExpr> for Ir {
             HoconExpr::Object(items) => {
                 let mut attrs = HashMap::new();
                 let mut pending_doc: Vec<String> = Vec::new();
-                eprintln!("HOCON items: {items:?}");
                 for item in items {
                     match item {
                         HoconItem::Doc(text) => pending_doc.push(text),
+                        HoconItem::Blank => pending_doc.clear(),
                         HoconItem::Member(k, (v, _)) => {
-                            if !pending_doc.is_empty() {
-                                attrs.insert(
-                                    format!("{k}.__doc__"),
-                                    Ir::Doc(pending_doc.join("\n")),
-                                );
-                                pending_doc.clear();
-                            }
-                            attrs.insert(k, v.into());
+                            let value: Ir = v.into();
+                            let doc = if pending_doc.is_empty() {
+                                None
+                            } else {
+                                Some(std::mem::take(&mut pending_doc).join("\n"))
+                            };
+                            attrs.insert(k, value.with_doc(doc));
                         }
                     }
                 }
@@ -109,16 +109,25 @@ impl GTNHParser for HoconParser {
             .then_ignore(just('"'))
             .map(Token::Str);
 
+        let exponent = one_of("eE")
+            .then(one_of("+-").or_not())
+            .then(text::digits(10));
         let number = just('-')
             .or_not()
             .then(text::int(10))
             .then(just('.').then(text::digits(10)).or_not())
+            .then(exponent.or_not())
             .to_slice()
             .map(|s: &str| {
-                if s.contains('.') {
-                    Token::Real(s.parse().unwrap())
+                let is_real = s.contains('.') || s.contains('e') || s.contains('E');
+                if is_real {
+                    s.parse::<f64>()
+                        .map(Token::Real)
+                        .unwrap_or_else(|_| Token::Str(s.to_string()))
                 } else {
-                    Token::Int(s.parse().unwrap())
+                    s.parse::<i64>()
+                        .map(Token::Int)
+                        .unwrap_or_else(|_| Token::Str(s.to_string()))
                 }
             });
 
@@ -155,25 +164,26 @@ impl GTNHParser for HoconParser {
     fn parser<'b>(
     ) -> impl Parser<'b, &'b [Spanned<Token>], Spanned<HoconExpr>, Err<Rich<'b, Spanned<Token>>>>
     {
-        recursive(|value| {
-            let comment_text = any()
-                .filter(|(tok, _): &Spanned<Token>| matches!(tok, Token::Comment(_)))
-                .map(|(tok, _)| match tok {
-                    Token::Comment(s) => s,
-                    _ => unreachable!(),
-                });
+        // The recursive `value` is exactly `array | object | atom`. Braceless
+        // is excluded here so a `key = unifont` member can't accidentally
+        // absorb subsequent sibling members as nested object content. The
+        // top-level wrapper at the bottom adds braceless as a fallback.
+        let value = recursive(|value| {
+            let comment_text = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::Comment(s) => Ok(s),
+                _ => Err(Rich::custom(span, "expected comment")),
+            });
             let skip = any().filter(|(tok, _): &Spanned<Token>| {
                 matches!(tok, Token::Comment(_) | Token::Newline)
             });
             let newline = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Newline);
-            let skip_many = skip.clone().repeated();
+            let _skip_many = skip.clone().repeated();
 
             let atom = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
                 Token::Bool(b) => Ok((HoconExpr::Bool(b), span)),
                 Token::Int(n) => Ok((HoconExpr::Int(n), span)),
                 Token::Real(f) => Ok((HoconExpr::Real(f), span)),
-                Token::Str(s) => Ok((HoconExpr::Str(s), span)),
-                Token::Ident(s) => Ok((HoconExpr::Str(s), span)),
+                Token::Str(s) | Token::Ident(s) => Ok((HoconExpr::Str(s), span)),
                 _ => Err(Rich::custom(span, "expected a value")),
             });
 
@@ -185,59 +195,143 @@ impl GTNHParser for HoconParser {
             let close_bracket =
                 any().filter(|(tok, _): &Spanned<Token>| *tok == Token::CloseBracket);
 
-            let array = value
-                .clone()
-                .separated_by(choice((comma.clone(), skip.clone())))
-                .allow_trailing()
+            // Arrays accept items separated by commas, newlines, or both.
+            // We use a `repeated` items loop (rather than `separated_by`)
+            // because `value` already consumes trailing newlines — a
+            // `separated_by` separator would then fail to match between
+            // newline-only-separated items (which lib.nix's HOCON renderer
+            // emits).
+            let array_item = choice((
+                value.clone().map(Some),
+                skip.clone().to(None),
+                comma.clone().to(None),
+            ));
+            let array = array_item
+                .repeated()
                 .collect::<Vec<_>>()
-                .delimited_by(
-                    open_bracket.then(skip_many.clone()),
-                    skip_many.clone().then(close_bracket),
-                )
-                .map_with(|items, e| (HoconExpr::Arr(items), e.span()));
-
-            let key = any()
-                .filter(|(tok, _): &Spanned<Token>| matches!(tok, Token::Str(_) | Token::Ident(_)))
-                .map(|(tok, _)| match tok {
-                    Token::Str(s) | Token::Ident(s) => s,
-                    _ => unreachable!(),
+                .delimited_by(open_bracket, close_bracket)
+                .map_with(|items: Vec<Option<Spanned<HoconExpr>>>, e| {
+                    let items: Vec<Spanned<HoconExpr>> =
+                        items.into_iter().flatten().collect();
+                    (HoconExpr::Arr(items), e.span())
                 });
 
+            let key = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::Str(s) | Token::Ident(s) => Ok(s),
+                _ => Err(Rich::custom(span, "expected key")),
+            });
+
             // key = value  OR  key { object }
+            // After `=`, the value may be empty (followed immediately by a
+            // newline) — common in forestry/*.conf files like
+            // `beekeeping.flowers.custom=`. We try empty_value before value
+            // so the newline terminating the line wins over braceless's
+            // appetite for following members.
             let nl_repeated = newline.clone().repeated();
+            let empty_value = newline
+                .clone()
+                .rewind()
+                .map_with(|_, e| (HoconExpr::Str(String::new()), e.span()));
             let member = key
                 .then_ignore(nl_repeated.clone())
                 .then(choice((
-                    equals.ignore_then(nl_repeated.clone()).ignore_then(value.clone()),
+                    equals.ignore_then(choice((empty_value, value.clone()))),
                     value.clone().filter(|(expr, _)| matches!(expr, HoconExpr::Object(_))),
                 )))
                 .map(|(key, val)| HoconItem::Member(key, val));
 
-            let doc_item = comment_text.map(|s| { eprintln!("DOC_ITEM matched: {s}"); HoconItem::Doc(s) });
+            let doc_item = comment_text.map(HoconItem::Doc);
 
-            let sep = choice((comma.clone(), newline.clone().map(|t| { eprintln!("SEP consumed newline"); t })));
+            // Two or more consecutive newlines = blank line; clears pending docs.
+            let blank = newline
+                .clone()
+                .then(newline.clone().repeated().at_least(1).collect::<Vec<_>>())
+                .to(HoconItem::Blank);
 
-            let nl_many = newline.clone().repeated();
+            let sep = choice((comma.clone(), newline.clone()));
 
-            let object = open_brace
-                .ignore_then(
-                    choice((
-                        doc_item.map(|d| { eprintln!("  chose: doc"); Some(d) }),
-                        member.clone().map(|m| { eprintln!("  chose: member {:?}", match &m { HoconItem::Member(k,_) => k.clone(), _ => "?".into() }); Some(m) }),
-                        sep.map(|_| { eprintln!("  chose: sep"); None }),
-                    ))
-                    .repeated()
-                    .collect::<Vec<_>>()
-                    .map(|items| items.into_iter().flatten().collect::<Vec<_>>()),
-                )
-                .then_ignore(close_brace)
+            // Items inside an object (or at top-level for braceless).
+            let items = choice((
+                blank.map(Some),
+                doc_item.map(Some),
+                member.clone().map(Some),
+                sep.to(None),
+            ))
+            .repeated()
+            .collect::<Vec<_>>()
+            .map(|items| items.into_iter().flatten().collect::<Vec<_>>());
+
+            let object = items
+                .delimited_by(open_brace, close_brace)
                 .map_with(|items, e| (HoconExpr::Object(items), e.span()));
 
             let nl_skip = newline.clone().repeated();
+            // Recursive value: array/object/atom. NO braceless.
             nl_skip
                 .clone()
                 .ignore_then(choice((array, object, atom)))
                 .then_ignore(nl_skip)
-        })
+        });
+
+        // Top-level wrapper: try the recursive value first; if no top-level
+        // value matches, fall back to braceless (file-level bare members).
+        let braceless = {
+            let comment_text = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::Comment(s) => Ok(s),
+                _ => Err(Rich::custom(span, "expected comment")),
+            });
+            let newline = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Newline);
+            let comma = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Comma);
+            let equals = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Equals);
+            let key = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::Str(s) | Token::Ident(s) => Ok(s),
+                _ => Err(Rich::custom(span, "expected key")),
+            });
+
+            let nl_repeated = newline.clone().repeated();
+            let empty_value = newline
+                .clone()
+                .rewind()
+                .map_with(|_, e| (HoconExpr::Str(String::new()), e.span()));
+            let member = key
+                .then_ignore(nl_repeated.clone())
+                .then(choice((
+                    equals.ignore_then(choice((empty_value, value.clone()))),
+                    value
+                        .clone()
+                        .filter(|(expr, _)| matches!(expr, HoconExpr::Object(_))),
+                )))
+                .map(|(key, val)| HoconItem::Member(key, val));
+
+            let doc_item = comment_text.map(HoconItem::Doc);
+            let blank = newline
+                .clone()
+                .then(newline.clone().repeated().at_least(1).collect::<Vec<_>>())
+                .to(HoconItem::Blank);
+            let sep = choice((comma, newline.clone()));
+
+            choice((
+                blank.map(Some),
+                doc_item.map(Some),
+                member.map(Some),
+                sep.to(None),
+            ))
+            .repeated()
+            .at_least(1)
+            .collect::<Vec<_>>()
+            .try_map_with(|items, e| {
+                let items: Vec<HoconItem> = items.into_iter().flatten().collect();
+                if items.is_empty() {
+                    Err(Rich::custom(e.span(), "expected at least one member"))
+                } else {
+                    Ok((HoconExpr::Object(items), e.span()))
+                }
+            })
+        };
+
+        // Try braceless first (requires at least one member). If the input
+        // isn't shaped like a braceless object, fall through to the recursive
+        // value (array / object / atom).
+        choice((braceless, value))
     }
 }

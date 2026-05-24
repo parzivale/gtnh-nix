@@ -6,8 +6,9 @@ use crate::{GTNHParser, Ir, Spanned};
 pub enum Token {
     Null,
     Bool(bool),
-    Int(i32),
-    Real(f32),
+    /// JSON has a single "number" type — int/real distinction is made when
+    /// converting to IR via `parse_number`.
+    Number(String),
     Str(String),
     OpenBrace,
     CloseBrace,
@@ -21,8 +22,7 @@ pub enum Token {
 pub enum JsonExpr {
     Null,
     Bool(bool),
-    Int(i32),
-    Real(f32),
+    Number(String),
     Str(String),
     Arr(Vec<Spanned<Self>>),
     Object(Vec<(String, Spanned<Self>)>),
@@ -33,8 +33,7 @@ impl From<JsonExpr> for Ir {
         match expr {
             JsonExpr::Null => Ir::Null,
             JsonExpr::Bool(b) => Ir::Bool(b),
-            JsonExpr::Int(n) => Ir::Int(n),
-            JsonExpr::Real(f) => Ir::Real(f),
+            JsonExpr::Number(s) => crate::parse_number(&s),
             JsonExpr::Str(s) => Ir::Str(s),
             JsonExpr::Arr(items) => Ir::Node {
                 children: Some(items.into_iter().map(|(e, _)| e.into()).collect()),
@@ -92,18 +91,16 @@ impl GTNHParser for JsonParser {
             .then_ignore(just('"'))
             .map(Token::Str);
 
+        let exponent = one_of("eE")
+            .then(one_of("+-").or_not())
+            .then(text::digits(10));
         let number = just('-')
             .or_not()
             .then(text::int(10))
             .then(just('.').then(text::digits(10)).or_not())
+            .then(exponent.or_not())
             .to_slice()
-            .map(|s: &str| {
-                if s.contains('.') {
-                    Token::Real(s.parse().unwrap())
-                } else {
-                    Token::Int(s.parse().unwrap())
-                }
-            });
+            .map(|s: &str| Token::Number(s.to_string()));
 
         let keyword = text::keyword("null")
             .to(Token::Null)
@@ -135,8 +132,7 @@ impl GTNHParser for JsonParser {
             let atom = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
                 Token::Null => Ok((JsonExpr::Null, span)),
                 Token::Bool(b) => Ok((JsonExpr::Bool(b), span)),
-                Token::Int(n) => Ok((JsonExpr::Int(n), span)),
-                Token::Real(f) => Ok((JsonExpr::Real(f), span)),
+                Token::Number(s) => Ok((JsonExpr::Number(s), span)),
                 Token::Str(s) => Ok((JsonExpr::Str(s), span)),
                 _ => Err(Rich::custom(span, "expected a value")),
             });

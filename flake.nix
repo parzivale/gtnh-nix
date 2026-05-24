@@ -13,21 +13,6 @@
       url = "github:nix-community/haumea/v0.2.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pyproject-nix = {
-      url = "github:pyproject-nix/pyproject.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    uv2nix = {
-      url = "github:pyproject-nix/uv2nix";
-      inputs.pyproject-nix.follows = "pyproject-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    pyproject-build-systems = {
-      url = "github:pyproject-nix/build-system-pkgs";
-      inputs.pyproject-nix.follows = "pyproject-nix";
-      inputs.uv2nix.follows = "uv2nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -56,29 +41,17 @@
         };
         version-list = import ./version-list.nix;
 
-        # Python environment for tools
-        workspace = inputs.uv2nix.lib.workspace.loadWorkspace {workspaceRoot = ./.;};
-        overlay = workspace.mkPyprojectOverlay {
-          sourcePreference = "wheel";
+        gtnh-tool = craneLib.buildPackage {
+          src = craneLib.cleanCargoSource ./.;
+          strictDeps = true;
+          doCheck = false;
         };
-        python = pkgs.python312;
-        pythonSet =
-          (pkgs.callPackage inputs.pyproject-nix.build.packages {
-            inherit python;
-          })
-          .overrideScope
-          (lib.composeManyExtensions [
-            inputs.pyproject-build-systems.overlays.default
-            overlay
-          ]);
-        venv = pythonSet.mkVirtualEnv "gtnh-tools" workspace.deps.default;
       in {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [inputs.rust-overlay.overlays.default];
         };
-        _module.args.gtnh-venv = venv;
-        _module.args.gtnh-scripts = ./scripts;
+        _module.args.gtnh-tool = gtnh-tool;
 
         packages =
           builtins.listToAttrs (builtins.map (version: {
@@ -86,7 +59,10 @@
               value = (gtnh-lib.mkVersion version) pkgs;
             })
             version-list)
-          // {docs = gtnh-lib.allDocs versions pkgs;};
+          // {
+            docs = gtnh-lib.allDocs versions pkgs;
+            gtnh-tool = gtnh-tool;
+          };
 
         overlayAttrs = builtins.listToAttrs (builtins.map (version: {
             name = "gtnh-${version.version}";
@@ -96,11 +72,9 @@
 
         devShells.default = pkgs.mkShell {
           packages = [
-            venv
-            python
-            pkgs.uv
             rustToolchain
             pkgs.rust-analyzer
+            pkgs.cargo-llvm-cov
           ];
           shellHook = "nu";
         };

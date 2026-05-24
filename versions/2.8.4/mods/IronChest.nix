@@ -4,64 +4,65 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/IronChest.cfg";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "forge";
         readOnly = true;
-        };
-        general = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              blocklistUpgrades = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                default = [ ];
-                description = "Disallowed upgrades. All upgrades listed here will not be registred and no recipes will be generated for it. Example: IRON:GOLD [default: ]";
-              };
-              cacheRenderingInformation = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              enableDarkSteelChests = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Enables the dark steel.";
-              };
-              enableNetheriteChests = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Enables the netherite chest.";
-              };
-              enableSilverChests = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-                description = "Enables the silver chest.";
-              };
-              enableSteelChests = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-                description = "Enables the steel chest.";
-              };
-              ocelotsSitOnChests = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              transparentRenderDistance = lib.mkOption {
-                type = lib.types.float;
-                default = 128.0;
-              };
-              transparentRenderInside = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-            };
+      };
+      general = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          blocklistUpgrades = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ ];
+            description = "Disallowed upgrades. All upgrades listed here will not be registred and no recipes will be generated for it.
+Example: IRON:GOLD [default: ]";
+          };
+          cacheRenderingInformation = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          enableDarkSteelChests = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Enables the dark steel.";
+          };
+          enableNetheriteChests = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Enables the netherite chest.";
+          };
+          enableSilverChests = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Enables the silver chest.";
+          };
+          enableSteelChests = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Enables the steel chest.";
+          };
+          ocelotsSitOnChests = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          transparentRenderDistance = lib.mkOption {
+            type = lib.types.float;
+            default = 128.0;
+          };
+          transparentRenderInside = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
           };
         };
+      };
       };
     };
   };

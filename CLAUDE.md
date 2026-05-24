@@ -9,20 +9,26 @@ gtnh-nix is a NixOS Flake that provides declarative configuration for GT New Hor
 ## Commands
 
 ```bash
-# Enter dev environment
+# Enter dev environment (Rust toolchain only)
 nix develop
 
-# Generate Nix options from a GTNH pack
-uv run python3 scripts/gen_cfg_options.py <pack_root> <output_dir>
+# Build the Rust tool
+cargo build --release
 
-# Regenerate options for all versions
-uv run python3 scripts/gen_all_versions.py
+# Generate Nix options from a GTNH pack
+./target/release/gtnh-nix gen <pack_root> <output_dir>
 
 # Compare original vs rendered config files (validation)
-uv run python3 scripts/normalize.py <original> <rendered>
+./target/release/gtnh-nix normalize <original> <rendered>
+
+# Parse a single file and dump its IR (debugging)
+./target/release/gtnh-nix parse <parser> <file>
 
 # Build a specific version package
 nix build .#gtnh-2.8.4
+
+# Build the gtnh-nix tool as a Nix package
+nix build .#gtnh-tool
 
 # Run all checks
 nix flake check
@@ -42,16 +48,17 @@ nix build .#docs
 ### Code Generation Pipeline
 
 ```
-GTNH Pack configs → gen_cfg_options.py → Nix option files → NixOS module evaluation → mkConfigFile renders → normalize.py validates
+GTNH Pack configs → `gtnh-nix gen` → Nix option files → NixOS module evaluation → mkConfigFile renders → `gtnh-nix normalize` validates
 ```
 
 ### Key Files
 
-- `flake.nix` - Entry point; uses flake-parts with perSystem outputs, Haumea for dynamic module loading
+- `flake.nix` - Entry point; uses flake-parts with perSystem outputs, Haumea for dynamic module loading. Builds the Rust tool via crane.
 - `lib.nix` - Config renderers: `mkConfigFile` dispatches to format-specific renderers (forge, json, xml, hocon, ini, properties)
-- `checks.nix` - Validates each mod config by comparing rendered output against originals via `normalize.py`
+- `checks.nix` - Validates each mod config by comparing rendered output against originals via `gtnh-nix normalize`
 - `service.nix` - NixOS systemd service definition
 - `version-list.nix` - Manifest of all supported versions with SHA hashes and Java requirements
+- `src/` - Rust source: parsers (chumsky-based), `nix_gen` (option generator), `normalize` (semantic comparator)
 
 ### Version Structure
 
@@ -75,12 +82,12 @@ The system handles multiple config formats, detected by content:
 ### Adding a new GTNH version
 1. Update `version-list.nix` with version, SHA256, Java version, beta flag
 2. Run `nix build .#gtnh-<version>` to fetch pack
-3. Run `uv run python3 scripts/gen_all_versions.py`
+3. Run `./target/release/gtnh-nix gen $(nix build .#gtnh-<version> --print-out-paths --no-link) versions/<version>/mods`
 
 ### Fixing a mod config
 1. Edit the mod's `.nix` file in `versions/<version>/mods/`
 2. Run `nix flake check` to validate rendering
-3. Adjust if `normalize.py` reports mismatches
+3. Adjust if `gtnh-nix normalize` reports mismatches
 
 ## Code Conventions
 
@@ -91,10 +98,10 @@ The system handles multiple config formats, detected by content:
 - Quote attribute keys containing reserved words or special chars
 - File names sanitized: `DraconicEvolution.Balance` → `DraconicEvolutionBalance.nix`
 
-### Python (scripts/)
-- Underscore prefix for private helper functions
-- Format detection via regex patterns
-- Graceful fallbacks when parsing fails
+### Rust (src/)
+- chumsky 0.12 parser combinators with a unified `Ir` enum
+- Format detection by extension + content heuristics, mirrored in `nix_gen` and `normalize`
+- Graceful fallbacks when parsing fails (returns `None`/empty IR rather than panicking)
 
 ## Known Limitations
 

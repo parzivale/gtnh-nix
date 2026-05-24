@@ -17,6 +17,7 @@ pub enum Token {
 pub enum IniItem {
     Entry(String, String),
     Doc(String),
+    Blank,
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -41,15 +42,15 @@ impl From<IniExpr> for Ir {
                             for item in items {
                                 match item {
                                     IniItem::Doc(text) => pending_doc.push(text),
+                                    IniItem::Blank => pending_doc.clear(),
                                     IniItem::Entry(k, v) => {
-                                        if !pending_doc.is_empty() {
-                                            attrs.insert(
-                                                format!("{k}.__doc__"),
-                                                Ir::Doc(pending_doc.join("\n")),
-                                            );
-                                            pending_doc.clear();
-                                        }
-                                        attrs.insert(k, infer_type(&v));
+                                        let value = infer_type(&v);
+                                        let doc = if pending_doc.is_empty() {
+                                            None
+                                        } else {
+                                            Some(std::mem::take(&mut pending_doc).join("\n"))
+                                        };
+                                        attrs.insert(k, value.with_doc(doc));
                                     }
                                 }
                             }
@@ -74,15 +75,7 @@ fn infer_type(v: &str) -> Ir {
     match trimmed.to_lowercase().as_str() {
         "true" | "yes" | "on" => Ir::Bool(true),
         "false" | "no" | "off" => Ir::Bool(false),
-        _ => {
-            if let Ok(i) = trimmed.parse::<i32>() {
-                Ir::Int(i)
-            } else if let Ok(f) = trimmed.parse::<f32>() {
-                Ir::Real(f)
-            } else {
-                Ir::Str(trimmed.to_string())
-            }
-        }
+        _ => crate::parse_number(trimmed),
     }
 }
 
@@ -93,18 +86,20 @@ impl GTNHParser for IniParser {
     type ParserExpr = IniExpr;
 
     fn lexer<'a>() -> impl Parser<'a, &'a str, Vec<Spanned<Token>>, Err<Rich<'a, char>>> {
-        let newline = just('\n').to(Token::Newline);
+        // Match CRLF (`\r\n`) and LF, tolerating stray CRs (`\r\r\n` shows
+        // up in older GTNH IC2.ini files).
+        let newline = just('\r').repeated().then(just('\n')).to(Token::Newline);
 
         let comment = one_of(";#")
-            .ignore_then(none_of("\n").repeated().collect::<String>())
+            .ignore_then(none_of("\r\n").repeated().collect::<String>())
             .map(|s| Token::Comment(s.trim().to_string()));
 
         let section_header = just('[')
-            .ignore_then(none_of("]\n").repeated().collect::<String>())
+            .ignore_then(none_of("]\r\n").repeated().collect::<String>())
             .then_ignore(just(']'))
             .map(|s| Token::SectionHeader(s.trim().to_string()));
 
-        let key = none_of("=\n[;#")
+        let key = none_of("=\r\n[;#")
             .repeated()
             .at_least(1)
             .collect::<String>()
@@ -112,7 +107,7 @@ impl GTNHParser for IniParser {
 
         let equals = just('=').to(Token::Equals);
 
-        let value = none_of("\n")
+        let value = none_of("\r\n")
             .repeated()
             .collect::<String>()
             .map(|s| Token::Value(s.trim().to_string()));
@@ -165,7 +160,14 @@ impl GTNHParser for IniParser {
             .then(value)
             .map(|(k, v)| IniItem::Entry(k, v));
 
+        // 2+ consecutive newlines = blank line; clears pending docs.
+        let blank = newline
+            .clone()
+            .then(newline.clone().repeated().at_least(1).collect::<Vec<_>>())
+            .to(IniItem::Blank);
+
         let item = choice((
+            blank.map(Some),
             entry.map(Some),
             comment.map(Some),
             newline.to(None),

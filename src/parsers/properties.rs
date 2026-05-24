@@ -16,6 +16,7 @@ pub enum Token {
 pub enum PropertiesItem {
     Entry(String, String),
     Doc(String),
+    Blank,
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -33,15 +34,15 @@ impl From<PropertiesExpr> for Ir {
                 for item in items {
                     match item {
                         PropertiesItem::Doc(text) => pending_doc.push(text),
+                        PropertiesItem::Blank => pending_doc.clear(),
                         PropertiesItem::Entry(k, v) => {
-                            if !pending_doc.is_empty() {
-                                attrs.insert(
-                                    format!("{k}.__doc__"),
-                                    Ir::Doc(pending_doc.join("\n")),
-                                );
-                                pending_doc.clear();
-                            }
-                            attrs.insert(k, infer_type(&v));
+                            let value = infer_type(&v);
+                            let doc = if pending_doc.is_empty() {
+                                None
+                            } else {
+                                Some(std::mem::take(&mut pending_doc).join("\n"))
+                            };
+                            attrs.insert(k, value.with_doc(doc));
                         }
                     }
                 }
@@ -59,16 +60,9 @@ impl From<PropertiesExpr> for Ir {
 fn infer_type(v: &str) -> Ir {
     let trimmed = v.trim();
     match trimmed {
-        "true" | "false" => Ir::Bool(trimmed.parse().unwrap()),
-        _ => {
-            if let Ok(i) = trimmed.parse::<i32>() {
-                Ir::Int(i)
-            } else if let Ok(f) = trimmed.parse::<f32>() {
-                Ir::Real(f)
-            } else {
-                Ir::Str(trimmed.to_string())
-            }
-        }
+        "true" => Ir::Bool(true),
+        "false" => Ir::Bool(false),
+        _ => crate::parse_number(trimmed),
     }
 }
 
@@ -141,7 +135,14 @@ impl GTNHParser for PropertiesParser {
             .then(value)
             .map(|(k, v)| PropertiesItem::Entry(k, v));
 
+        // 2+ consecutive newlines = blank line; clears pending docs.
+        let blank = newline
+            .clone()
+            .then(newline.clone().repeated().at_least(1).collect::<Vec<_>>())
+            .to(PropertiesItem::Blank);
+
         choice((
+            blank.map(Some),
             entry.map(Some),
             comment.map(Some),
             newline.to(None),

@@ -32,6 +32,39 @@ fn reals() {
 }
 
 #[test]
+fn i64_sized_int() {
+    // Quest IDs and similar i64-sized values must not panic.
+    assert_eq!(parse("6838269211896792715"), Ir::Int(6838269211896792715));
+    assert_eq!(parse("-9223372036854775808"), Ir::Int(i64::MIN));
+}
+
+#[test]
+fn int_overflow_falls_back_to_real() {
+    // Values larger than i64 fall back to f64 (approximate but doesn't panic).
+    match parse("99999999999999999999999999") {
+        Ir::Real(_) => {}
+        other => panic!("expected Real, got {:?}", other),
+    }
+}
+
+#[test]
+fn non_numeric_falls_back_to_string() {
+    // If the lexer produces a Token::Str (which happens only for true
+    // junk that isn't even valid f64), conversion preserves it.
+    // We can't directly hit this from a number literal via the lexer,
+    // but the cascade in `parse_number` is exercised by other parsers.
+    use gtnh_nix::parse_number;
+    assert_eq!(parse_number("not a number"), Ir::Str("not a number".into()));
+}
+
+#[test]
+fn scientific_notation() {
+    assert_eq!(parse("1e3"), Ir::Real(1000.0));
+    assert_eq!(parse("1.5E2"), Ir::Real(150.0));
+    assert_eq!(parse("-2e-3"), Ir::Real(-0.002));
+}
+
+#[test]
 fn strings() {
     assert_eq!(parse(r#""hello""#), Ir::Str("hello".into()));
     assert_eq!(parse(r#""""#), Ir::Str(String::new()));

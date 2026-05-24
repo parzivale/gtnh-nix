@@ -4,28 +4,28 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/Ic2Nei.cfg";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "forge";
         readOnly = true;
-        };
-        general = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              simulationlevel = lib.mkOption {
-                type = lib.types.int;
-                default = 2;
-                description = "Decides how many crops are being used in the simulation. 2-4 (default=4)";
-              };
-            };
+      };
+      general = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          simulationlevel = lib.mkOption {
+            type = lib.types.int;
+            default = 2;
+            description = "Decides how many crops are being used in the simulation. 2-4 (default=4)";
+          };
           };
         };
+      };
       };
     };
   };

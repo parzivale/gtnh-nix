@@ -4,1450 +4,1450 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/craftpresence.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
+      };
+      _README = lib.mkOption {
+        type = lib.types.str;
+        default = "https://gitlab.com/CDAGaming/CraftPresence/-/wikis/home";
+      };
+      _SOURCE = lib.mkOption {
+        type = lib.types.str;
+        default = "https://gitlab.com/CDAGaming/CraftPresence";
+      };
+      _lastMCVersionId = lib.mkOption {
+        type = lib.types.int;
+        default = 5;
+      };
+      _schemaVersion = lib.mkOption {
+        type = lib.types.int;
+        default = 5;
+      };
+      accessibilitySettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          buttonBackground = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              start = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  };
+                };
+              };
+              texLocation = lib.mkOption {
+                type = lib.types.str;
+                default = "minecraft:textures/gui/widgets.png";
+              };
+              };
+            };
+          };
+          configKeyCode = lib.mkOption {
+            type = lib.types.int;
+            default = 41;
+          };
+          guiBackground = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              start = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 64;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 64;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 64;
+                  };
+                  };
+                };
+              };
+              texLocation = lib.mkOption {
+                type = lib.types.str;
+                default = "minecraft:textures/gui/options_background.png";
+              };
+              };
+            };
+          };
+          languageId = lib.mkOption {
+            type = lib.types.str;
+            default = "en_US";
+          };
+          showLoggingInChat = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          stripExtraGuiElements = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          stripTranslationColors = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          tooltipBackground = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              start = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 240;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 0;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          tooltipBorder = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              end = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 80;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 127;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 0;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 40;
+                  };
+                  };
+                };
+              };
+              start = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 80;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 255;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 0;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 80;
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          worldGuiBackground = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              end = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 208;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  };
+                };
+              };
+              start = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  alpha = lib.mkOption {
+                    type = lib.types.int;
+                    default = 192;
+                  };
+                  blue = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  green = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  red = lib.mkOption {
+                    type = lib.types.int;
+                    default = 16;
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          };
         };
-        _README = lib.mkOption {
-          type = lib.types.str;
-          default = "https://gitlab.com/CDAGaming/CraftPresence/-/wikis/home";
+      };
+      advancedSettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          allowEndpointIcons = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          allowPlaceholderPreviews = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          debugMode = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          enablePerEntity = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          enablePerGui = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          enablePerItem = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          entitySettings = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              fallbackEntityIcon = lib.mkOption {
+                type = lib.types.str;
+                default = "unknown";
+              };
+              ridingData = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  default = lib.mkOption {
+                    default = {};
+                    type = lib.types.submodule {
+                      options = {
+                      textOverride = lib.mkOption {
+                        type = lib.types.str;
+                        default = "Riding {entity.riding.name}";
+                      };
+                      };
+                    };
+                  };
+                  };
+                };
+              };
+              targetData = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  default = lib.mkOption {
+                    default = {};
+                    type = lib.types.submodule {
+                      options = {
+                      textOverride = lib.mkOption {
+                        type = lib.types.str;
+                        default = "Targeting {entity.target.name}";
+                      };
+                      };
+                    };
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          formatWords = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          guiSettings = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              fallbackGuiIcon = lib.mkOption {
+                type = lib.types.str;
+                default = "unknown";
+              };
+              guiData = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  default = lib.mkOption {
+                    default = {};
+                    type = lib.types.submodule {
+                      options = {
+                      textOverride = lib.mkOption {
+                        type = lib.types.str;
+                        default = "In {screen.name}";
+                      };
+                      };
+                    };
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          includeExtraGuiClasses = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          itemMessages = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              default = lib.mkOption {
+                type = lib.types.str;
+                default = "Holding {item.message.holding}";
+              };
+              };
+            };
+          };
+          playerSkinEndpoint = lib.mkOption {
+            type = lib.types.str;
+            default = "https://mc-heads.net/avatar/{getOrDefault(player.uuid.short, player.name)}";
+          };
+          refreshRate = lib.mkOption {
+            type = lib.types.int;
+            default = 2;
+          };
+          renderTooltips = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          roundSize = lib.mkOption {
+            type = lib.types.int;
+            default = 3;
+          };
+          serverIconEndpoint = lib.mkOption {
+            type = lib.types.str;
+            default = "https://api.mcsrvstat.us/icon/{server.address.short}";
+          };
+          verboseMode = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          };
         };
-        _SOURCE = lib.mkOption {
-          type = lib.types.str;
-          default = "https://gitlab.com/CDAGaming/CraftPresence";
+      };
+      biomeSettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          biomeData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              default = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "Playing in {biome.name}";
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          fallbackBiomeIcon = lib.mkOption {
+            type = lib.types.str;
+            default = "gtnhlogoresized";
+          };
+          };
         };
-        _schemaVersion = lib.mkOption {
-          type = lib.types.int;
-          default = 5;
+      };
+      dimensionSettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          dimensionData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              asteroids = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "asteroids";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "Mining Asteroids";
+                  };
+                  };
+                };
+              };
+              australia = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "australia";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In {dimension.name}";
+                  };
+                  };
+                };
+              };
+              barnarda_c = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "barnarda_c";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              barnarda_e = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "barnarda_e";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              barnarda_f = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "barnarda_f";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              bedrock = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "bedrock";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              callisto = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "callisto";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              ceres = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "ceres";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              default = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "default";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              deimos = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "deimos";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              dimensiondarkworld = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "dark_world";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Dark World";
+                  };
+                  };
+                };
+              };
+              enceladus = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "enceladus";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              europa = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "europa";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              ganymede = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "ganymede";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              haumea = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "haumea";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              io = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "io";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              kuiper_belt = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "kuiper_belt";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              makemake = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "makemake";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              mars = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              mercury = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "mercury";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              miranda = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "miranda";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              mirror = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "mirror";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              moon = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              oberon = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "oberon";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              outer_lands = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "the_outer_lands";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              overworld = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "overworldv2";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              phobos = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "phobos";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              pluto = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "pluto";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              pocket_plane = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "pocket_plane";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In a {dimension.name}";
+                  };
+                  };
+                };
+              };
+              proteus = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "proteus";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              ross128b = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "ross128b";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              ross128ba = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "ross128a";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              spectreworld = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "spectre_world";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Spectre World";
+                  };
+                  };
+                };
+              };
+              spirit_world = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "spirit_world";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              "t_ceti_е" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "tcetie";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              the_end = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the End";
+                  };
+                  };
+                };
+              };
+              the_last_millenium = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "last_millenium";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Last Millenium";
+                  };
+                  };
+                };
+              };
+              the_nether = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "nether";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Nether";
+                  };
+                  };
+                };
+              };
+              the_outer_lands = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "the_outer_lands";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Outer Lands";
+                  };
+                  };
+                };
+              };
+              titan = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "titan";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              torment = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "torment";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              triton = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "triton";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              twilight_forest = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "twilight_forestv2";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              underdark = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "underdark";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the Deep Dark";
+                  };
+                  };
+                };
+              };
+              vega_b = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "vega_b";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              venus = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "venus";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "In the {dimension.name}";
+                  };
+                  };
+                };
+              };
+              "α_centauri_bb" = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  iconOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "a_centauri_b";
+                  };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "On {dimension.name}";
+                  };
+                  };
+                };
+              };
+              };
+            };
+          };
+          fallbackDimensionIcon = lib.mkOption {
+            type = lib.types.str;
+            default = "default";
+          };
+          };
         };
-        _lastMCVersionId = lib.mkOption {
-          type = lib.types.int;
-          default = 5;
-        };
-        generalSettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              detectATLauncherInstance = lib.mkOption {
+      };
+      displaySettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          dynamicIcons = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              boubou_19 = lib.mkOption {
+                type = lib.types.str;
+                default = "https://mc-heads.net/avatar/d28e5f134b8444ce9d3251f1b569adda";
+              };
+              default = lib.mkOption {
+                type = lib.types.str;
+                default = "https://via.placeholder.com/256.png";
+              };
+              "zeta.gtnewhorizons.com" = lib.mkOption {
+                type = lib.types.str;
+                default = "https://api.mcsrvstat.us/icon/zeta.gtnewhorizons.com";
+              };
+              };
+            };
+          };
+          dynamicVariables = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              default = lib.mkOption {
+                type = lib.types.str;
+                default = "Example Text";
+              };
+              mods = lib.mkOption {
+                type = lib.types.str;
+                default = "{general.mods} Mod(s)";
+              };
+              pack = lib.mkOption {
+                type = lib.types.str;
+                default = "Minecraft 1.7.10";
+              };
+              player_info_coordinate = lib.mkOption {
+                type = lib.types.str;
+                default = "At {player.position.x}, {player.position.z}";
+              };
+              player_info_health = lib.mkOption {
+                type = lib.types.str;
+                default = "Health: {player.health.current}/{player.health.max}";
+              };
+              player_info_in = lib.mkOption {
+                type = lib.types.str;
+                default = "({custom.player_info_health})";
+              };
+              player_info_items = lib.mkOption {
+                type = lib.types.str;
+                default = "Items: {item.main_hand.message}";
+              };
+              player_info_out = lib.mkOption {
+                type = lib.types.str;
+                default = "As {player.name}";
+              };
+              players = lib.mkOption {
+                type = lib.types.str;
+                default = "{server.players.current} / {server.players.max} Players";
+              };
+              world_info = lib.mkOption {
+                type = lib.types.str;
+                default = "On {world.name}";
+              };
+              };
+            };
+          };
+          presenceData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              buttons = lib.mkOption {
+                default = {};
+                type = lib.types.submodule {
+                  options = {
+                  default = lib.mkOption {
+                    default = {};
+                    type = lib.types.submodule {
+                      options = {
+                      label = lib.mkOption {
+                        type = lib.types.str;
+                        default = "Example Text";
+                      };
+                      url = lib.mkOption {
+                        type = lib.types.str;
+                        default = "https://google.com";
+                      };
+                      };
+                    };
+                  };
+                  };
+                };
+              };
+              details = lib.mkOption {
+                type = lib.types.str;
+                default = "{menu.message}{dimension.message}";
+              };
+              enabled = lib.mkOption {
                 type = lib.types.bool;
                 default = true;
               };
-              detectCurseManifest = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              detectMultiMCManifest = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              detectMCUpdaterInstance = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              detectTechnicPack = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              detectBiomeData = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              detectDimensionData = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              detectWorldData = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              clientId = lib.mkOption {
+              endTimestamp = lib.mkOption {
                 type = lib.types.str;
-                default = "1118980710187929681";
+                default = "";
               };
-              defaultIcon = lib.mkOption {
+              gameState = lib.mkOption {
                 type = lib.types.str;
-                default = "gtnhlogoresized";
+                default = "{server.message} {custom.pack}";
               };
-              enableJoinRequests = lib.mkOption {
+              largeImageKey = lib.mkOption {
+                type = lib.types.str;
+                default = "{menu.icon}{dimension.icon}";
+              };
+              largeImageText = lib.mkOption {
+                type = lib.types.str;
+                default = "{menu.message}{dimension.message}";
+              };
+              smallImageKey = lib.mkOption {
+                type = lib.types.str;
+                default = "{server.icon}{pack.icon}";
+              };
+              smallImageText = lib.mkOption {
+                type = lib.types.str;
+                default = "{server.message} {custom.pack}";
+              };
+              startTimestamp = lib.mkOption {
+                type = lib.types.str;
+                default = "{data.general.time}";
+              };
+              useAsMain = lib.mkOption {
                 type = lib.types.bool;
                 default = false;
               };
-              partyPrivacyLevel = lib.mkOption {
-                type = lib.types.int;
-                default = 1;
-              };
-              preferredClientLevel = lib.mkOption {
-                type = lib.types.int;
-                default = 3;
-              };
-              resetTimeOnInit = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              autoRegister = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
               };
             };
           };
+          };
         };
-        biomeSettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              fallbackBiomeIcon = lib.mkOption {
-                type = lib.types.str;
-                default = "gtnhlogoresized";
-              };
-              biomeData = lib.mkOption {
+      };
+      generalSettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          autoRegister = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          clientId = lib.mkOption {
+            type = lib.types.str;
+            default = "1118980710187929681";
+          };
+          defaultIcon = lib.mkOption {
+            type = lib.types.str;
+            default = "gtnhlogoresized";
+          };
+          detectATLauncherInstance = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          detectBiomeData = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          detectCurseManifest = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          detectDimensionData = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          detectMCUpdaterInstance = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          detectMultiMCManifest = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          detectTechnicPack = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          detectWorldData = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+          enableJoinRequests = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          partyPrivacyLevel = lib.mkOption {
+            type = lib.types.int;
+            default = 1;
+          };
+          preferredClientLevel = lib.mkOption {
+            type = lib.types.int;
+            default = 3;
+          };
+          resetTimeOnInit = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          };
+        };
+      };
+      serverSettings = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          fallbackServerIcon = lib.mkOption {
+            type = lib.types.str;
+            default = "gtnhlogoresized";
+          };
+          fallbackServerMotd = lib.mkOption {
+            type = lib.types.str;
+            default = "A Minecraft Server";
+          };
+          fallbackServerName = lib.mkOption {
+            type = lib.types.str;
+            default = "GT:NH Server";
+          };
+          serverData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              default = lib.mkOption {
                 default = {};
                 type = lib.types.submodule {
                   options = {
-                    default = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "Playing in {biome.name}";
-                          };
-                        };
-                      };
-                    };
+                  textOverride = lib.mkOption {
+                    type = lib.types.str;
+                    default = "Playing on {server.motd.raw}";
+                  };
                   };
                 };
+              };
               };
             };
           };
+          };
         };
-        dimensionSettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              fallbackDimensionIcon = lib.mkOption {
+      };
+      statusMessages = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          lanData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              textOverride = lib.mkOption {
                 type = lib.types.str;
-                default = "default";
+                default = "Playing on a LAN Server";
               };
-              dimensionData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    enceladus = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "enceladus";
-                          };
-                        };
-                      };
-                    };
-                    mirror = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "mirror";
-                          };
-                        };
-                      };
-                    };
-                    torment = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "torment";
-                          };
-                        };
-                      };
-                    };
-                    spirit_world = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "spirit_world";
-                          };
-                        };
-                      };
-                    };
-                    mercury = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "mercury";
-                          };
-                        };
-                      };
-                    };
-                    underdark = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Deep Dark";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "underdark";
-                          };
-                        };
-                      };
-                    };
-                    dimensiondarkworld = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Dark World";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "dark_world";
-                          };
-                        };
-                      };
-                    };
-                    the_end = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the End";
-                          };
-                        };
-                      };
-                    };
-                    default = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "default";
-                          };
-                        };
-                      };
-                    };
-                    venus = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "venus";
-                          };
-                        };
-                      };
-                    };
-                    "α_centauri_bb" = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "a_centauri_b";
-                          };
-                        };
-                      };
-                    };
-                    bedrock = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "bedrock";
-                          };
-                        };
-                      };
-                    };
-                    "t_ceti_е" = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "tcetie";
-                          };
-                        };
-                      };
-                    };
-                    titan = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "titan";
-                          };
-                        };
-                      };
-                    };
-                    ganymede = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "ganymede";
-                          };
-                        };
-                      };
-                    };
-                    ceres = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "ceres";
-                          };
-                        };
-                      };
-                    };
-                    twilight_forest = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "twilight_forestv2";
-                          };
-                        };
-                      };
-                    };
-                    oberon = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "oberon";
-                          };
-                        };
-                      };
-                    };
-                    europa = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "europa";
-                          };
-                        };
-                      };
-                    };
-                    triton = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "triton";
-                          };
-                        };
-                      };
-                    };
-                    phobos = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "phobos";
-                          };
-                        };
-                      };
-                    };
-                    asteroids = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "Mining Asteroids";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "asteroids";
-                          };
-                        };
-                      };
-                    };
-                    io = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "io";
-                          };
-                        };
-                      };
-                    };
-                    mars = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                        };
-                      };
-                    };
-                    miranda = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "miranda";
-                          };
-                        };
-                      };
-                    };
-                    haumea = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "haumea";
-                          };
-                        };
-                      };
-                    };
-                    proteus = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "proteus";
-                          };
-                        };
-                      };
-                    };
-                    the_last_millenium = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Last Millenium";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "last_millenium";
-                          };
-                        };
-                      };
-                    };
-                    pluto = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "pluto";
-                          };
-                        };
-                      };
-                    };
-                    makemake = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "makemake";
-                          };
-                        };
-                      };
-                    };
-                    barnarda_f = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "barnarda_f";
-                          };
-                        };
-                      };
-                    };
-                    ross128b = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "ross128b";
-                          };
-                        };
-                      };
-                    };
-                    australia = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "australia";
-                          };
-                        };
-                      };
-                    };
-                    overworld = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "overworldv2";
-                          };
-                        };
-                      };
-                    };
-                    deimos = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "deimos";
-                          };
-                        };
-                      };
-                    };
-                    the_outer_lands = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Outer Lands";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "the_outer_lands";
-                          };
-                        };
-                      };
-                    };
-                    kuiper_belt = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "kuiper_belt";
-                          };
-                        };
-                      };
-                    };
-                    outer_lands = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "the_outer_lands";
-                          };
-                        };
-                      };
-                    };
-                    moon = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On the {dimension.name}";
-                          };
-                        };
-                      };
-                    };
-                    spectreworld = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Spectre World";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "spectre_world";
-                          };
-                        };
-                      };
-                    };
-                    the_nether = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In the Nether";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "nether";
-                          };
-                        };
-                      };
-                    };
-                    barnarda_e = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "barnarda_e";
-                          };
-                        };
-                      };
-                    };
-                    pocket_plane = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "In a {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "pocket_plane";
-                          };
-                        };
-                      };
-                    };
-                    ross128ba = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "ross128a";
-                          };
-                        };
-                      };
-                    };
-                    vega_b = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "vega_b";
-                          };
-                        };
-                      };
-                    };
-                    barnarda_c = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "barnarda_c";
-                          };
-                        };
-                      };
-                    };
-                    callisto = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "On {dimension.name}";
-                          };
-                          iconOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "callisto";
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
               };
             };
           };
-        };
-        serverSettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              fallbackServerIcon = lib.mkOption {
+          loadingData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              textOverride = lib.mkOption {
                 type = lib.types.str;
-                default = "gtnhlogoresized";
+                default = "Loading...";
               };
-              fallbackServerName = lib.mkOption {
-                type = lib.types.str;
-                default = "GT:NH Server";
-              };
-              fallbackServerMotd = lib.mkOption {
-                type = lib.types.str;
-                default = "A Minecraft Server";
-              };
-              serverData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    default = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          textOverride = lib.mkOption {
-                            type = lib.types.str;
-                            default = "Playing on {server.motd.raw}";
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
               };
             };
           };
-        };
-        statusMessages = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              mainMenuData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    textOverride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "In the Main Menu";
-                    };
-                  };
-                };
-              };
-              loadingData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    textOverride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Loading...";
-                    };
-                  };
-                };
-              };
-              lanData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    textOverride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Playing on a LAN Server";
-                    };
-                  };
-                };
-              };
-              singleplayerData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    textOverride = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Playing Singleplayer";
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
-        advancedSettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              enablePerGui = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              enablePerItem = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              enablePerEntity = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              renderTooltips = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              formatWords = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              debugMode = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              verboseMode = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              refreshRate = lib.mkOption {
-                type = lib.types.int;
-                default = 2;
-              };
-              roundSize = lib.mkOption {
-                type = lib.types.int;
-                default = 3;
-              };
-              includeExtraGuiClasses = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              allowPlaceholderPreviews = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              guiSettings = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    fallbackGuiIcon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "unknown";
-                    };
-                    guiData = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          default = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                                textOverride = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "In {screen.name}";
-                                };
-                              };
-                            };
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              itemMessages = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    default = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Holding {item.message.holding}";
-                    };
-                  };
-                };
-              };
-              entitySettings = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    fallbackEntityIcon = lib.mkOption {
-                      type = lib.types.str;
-                      default = "unknown";
-                    };
-                    targetData = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          default = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                                textOverride = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "Targeting {entity.target.name}";
-                                };
-                              };
-                            };
-                          };
-                        };
-                      };
-                    };
-                    ridingData = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          default = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                                textOverride = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "Riding {entity.riding.name}";
-                                };
-                              };
-                            };
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              allowEndpointIcons = lib.mkOption {
-                type = lib.types.bool;
-                default = true;
-              };
-              serverIconEndpoint = lib.mkOption {
+          mainMenuData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              textOverride = lib.mkOption {
                 type = lib.types.str;
-                default = "https://api.mcsrvstat.us/icon/{server.address.short}";
+                default = "In the Main Menu";
               };
-              playerSkinEndpoint = lib.mkOption {
+              };
+            };
+          };
+          singleplayerData = lib.mkOption {
+            default = {};
+            type = lib.types.submodule {
+              options = {
+              textOverride = lib.mkOption {
                 type = lib.types.str;
-                default = "https://mc-heads.net/avatar/{getOrDefault(player.uuid.short, player.name)}";
+                default = "Playing Singleplayer";
+              };
               };
             };
           };
-        };
-        accessibilitySettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              tooltipBackground = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    start = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 0;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 240;
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              tooltipBorder = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    start = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 80;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 0;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 80;
-                          };
-                        };
-                      };
-                    };
-                    end = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 40;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 0;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 127;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 80;
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              guiBackground = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    start = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 64;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 64;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 64;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                        };
-                      };
-                    };
-                    texLocation = lib.mkOption {
-                      type = lib.types.str;
-                      default = "minecraft:textures/gui/options_background.png";
-                    };
-                  };
-                };
-              };
-              worldGuiBackground = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    start = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 192;
-                          };
-                        };
-                      };
-                    };
-                    end = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 16;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 208;
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              buttonBackground = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    start = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          red = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                          green = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                          blue = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                          alpha = lib.mkOption {
-                            type = lib.types.int;
-                            default = 255;
-                          };
-                        };
-                      };
-                    };
-                    texLocation = lib.mkOption {
-                      type = lib.types.str;
-                      default = "minecraft:textures/gui/widgets.png";
-                    };
-                  };
-                };
-              };
-              languageId = lib.mkOption {
-                type = lib.types.str;
-                default = "en_US";
-              };
-              stripTranslationColors = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              showLoggingInChat = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              stripExtraGuiElements = lib.mkOption {
-                type = lib.types.bool;
-                default = false;
-              };
-              configKeyCode = lib.mkOption {
-                type = lib.types.int;
-                default = 41;
-              };
-            };
           };
         };
-        displaySettings = lib.mkOption {
-          default = {};
-          type = lib.types.submodule {
-            options = {
-              presenceData = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    enabled = lib.mkOption {
-                      type = lib.types.bool;
-                      default = true;
-                    };
-                    useAsMain = lib.mkOption {
-                      type = lib.types.bool;
-                      default = false;
-                    };
-                    details = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{menu.message}{dimension.message}";
-                    };
-                    gameState = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{server.message} {custom.pack}";
-                    };
-                    largeImageKey = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{menu.icon}{dimension.icon}";
-                    };
-                    largeImageText = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{menu.message}{dimension.message}";
-                    };
-                    smallImageKey = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{server.icon}{pack.icon}";
-                    };
-                    smallImageText = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{server.message} {custom.pack}";
-                    };
-                    startTimestamp = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{data.general.time}";
-                    };
-                    endTimestamp = lib.mkOption {
-                      type = lib.types.str;
-                      default = "";
-                    };
-                    buttons = lib.mkOption {
-                      default = {};
-                      type = lib.types.submodule {
-                        options = {
-                          default = lib.mkOption {
-                            default = {};
-                            type = lib.types.submodule {
-                              options = {
-                                label = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "Example Text";
-                                };
-                                url = lib.mkOption {
-                                  type = lib.types.str;
-                                  default = "https://google.com";
-                                };
-                              };
-                            };
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-              dynamicIcons = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    boubou_19 = lib.mkOption {
-                      type = lib.types.str;
-                      default = "https://mc-heads.net/avatar/d28e5f134b8444ce9d3251f1b569adda";
-                    };
-                    "zeta.gtnewhorizons.com" = lib.mkOption {
-                      type = lib.types.str;
-                      default = "https://api.mcsrvstat.us/icon/zeta.gtnewhorizons.com";
-                    };
-                    default = lib.mkOption {
-                      type = lib.types.str;
-                      default = "https://via.placeholder.com/256.png";
-                    };
-                  };
-                };
-              };
-              dynamicVariables = lib.mkOption {
-                default = {};
-                type = lib.types.submodule {
-                  options = {
-                    default = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Example Text";
-                    };
-                    mods = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{general.mods} Mod(s)";
-                    };
-                    player_info_coordinate = lib.mkOption {
-                      type = lib.types.str;
-                      default = "At {player.position.x}, {player.position.z}";
-                    };
-                    players = lib.mkOption {
-                      type = lib.types.str;
-                      default = "{server.players.current} / {server.players.max} Players";
-                    };
-                    player_info_in = lib.mkOption {
-                      type = lib.types.str;
-                      default = "({custom.player_info_health})";
-                    };
-                    player_info_items = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Items: {item.main_hand.message}";
-                    };
-                    player_info_out = lib.mkOption {
-                      type = lib.types.str;
-                      default = "As {player.name}";
-                    };
-                    player_info_health = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Health: {player.health.current}/{player.health.max}";
-                    };
-                    world_info = lib.mkOption {
-                      type = lib.types.str;
-                      default = "On {world.name}";
-                    };
-                    pack = lib.mkOption {
-                      type = lib.types.str;
-                      default = "Minecraft 1.7.10";
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
+      };
       };
     };
   };

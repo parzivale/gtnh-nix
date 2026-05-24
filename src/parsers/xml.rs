@@ -37,7 +37,9 @@ impl From<XmlExpr> for Ir {
 fn xml_to_ir(expr: XmlExpr) -> Ir {
     match expr {
         XmlExpr::Text(s) => infer_type(&s),
-        XmlExpr::Comment(s) => Ir::Doc(s),
+        // Standalone comments should not appear at this level; they're consumed
+        // by the surrounding element's child loop and attached to the next child.
+        XmlExpr::Comment(_) => Ir::Null,
         XmlExpr::Element {
             tag,
             attrs,
@@ -45,12 +47,10 @@ fn xml_to_ir(expr: XmlExpr) -> Ir {
         } => {
             let mut map = HashMap::new();
 
-            // Add attributes with @ prefix
             for (k, v) in attrs {
                 map.insert(format!("@{k}"), infer_type(&v));
             }
 
-            // Process children, attaching doc comments to following elements
             let mut pending_doc: Vec<String> = Vec::new();
             let mut child_irs = Vec::new();
 
@@ -59,22 +59,24 @@ fn xml_to_ir(expr: XmlExpr) -> Ir {
                     XmlExpr::Comment(text) => {
                         pending_doc.push(text);
                     }
-                    XmlExpr::Element { tag: ref _child_tag, .. } => {
-                        if !pending_doc.is_empty() {
-                            child_irs.push(Ir::Doc(pending_doc.join("\n")));
-                            pending_doc.clear();
-                        }
-                        child_irs.push(xml_to_ir(child));
+                    XmlExpr::Element { .. } => {
+                        let doc = if pending_doc.is_empty() {
+                            None
+                        } else {
+                            Some(std::mem::take(&mut pending_doc).join("\n"))
+                        };
+                        child_irs.push(xml_to_ir(child).with_doc(doc));
                     }
                     XmlExpr::Text(ref s) => {
-                        let trimmed = s.trim();
-                        if !trimmed.is_empty() {
-                            if !pending_doc.is_empty() {
-                                child_irs.push(Ir::Doc(pending_doc.join("\n")));
-                                pending_doc.clear();
-                            }
-                            child_irs.push(xml_to_ir(child));
+                        if s.trim().is_empty() {
+                            continue;
                         }
+                        let doc = if pending_doc.is_empty() {
+                            None
+                        } else {
+                            Some(std::mem::take(&mut pending_doc).join("\n"))
+                        };
+                        child_irs.push(xml_to_ir(child).with_doc(doc));
                     }
                 }
             }
@@ -92,20 +94,63 @@ fn xml_to_ir(expr: XmlExpr) -> Ir {
     }
 }
 
+/// Decode XML entity references in attribute values and text content. This
+/// matches what `xml.etree.ElementTree` does on the Python side so the IR is
+/// the same as the Python AST and strings round-trip back to source form
+/// after re-escaping in `mkConfigFile`.
+fn decode_entities(s: &str) -> String {
+    if !s.contains('&') {
+        return s.to_string();
+    }
+    let mut out = String::with_capacity(s.len());
+    let mut rest = s;
+    while let Some(amp_idx) = rest.find('&') {
+        out.push_str(&rest[..amp_idx]);
+        let after = &rest[amp_idx + 1..];
+        let Some(semi_off) = after.find(';') else {
+            // Unterminated entity — keep the `&` literal and continue.
+            out.push('&');
+            rest = after;
+            continue;
+        };
+        let entity = &after[..semi_off];
+        let decoded = match entity {
+            "amp" => Some('&'),
+            "lt" => Some('<'),
+            "gt" => Some('>'),
+            "quot" => Some('"'),
+            "apos" => Some('\''),
+            _ => {
+                if let Some(hex) = entity.strip_prefix("#x").or_else(|| entity.strip_prefix("#X")) {
+                    u32::from_str_radix(hex, 16).ok().and_then(char::from_u32)
+                } else if let Some(dec) = entity.strip_prefix('#') {
+                    dec.parse::<u32>().ok().and_then(char::from_u32)
+                } else {
+                    None
+                }
+            }
+        };
+        match decoded {
+            Some(c) => {
+                out.push(c);
+                rest = &after[semi_off + 1..];
+            }
+            None => {
+                out.push('&');
+                rest = after;
+            }
+        }
+    }
+    out.push_str(rest);
+    out
+}
+
 fn infer_type(v: &str) -> Ir {
     let trimmed = v.trim();
     match trimmed {
         "true" => Ir::Bool(true),
         "false" => Ir::Bool(false),
-        _ => {
-            if let Ok(i) = trimmed.parse::<i32>() {
-                Ir::Int(i)
-            } else if let Ok(f) = trimmed.parse::<f32>() {
-                Ir::Real(f)
-            } else {
-                Ir::Str(trimmed.to_string())
-            }
-        }
+        _ => crate::parse_number(trimmed),
     }
 }
 
@@ -145,7 +190,7 @@ impl GTNHParser for XmlParser {
             .or(just('\'')
                 .ignore_then(none_of("'").repeated().collect::<String>())
                 .then_ignore(just('\'')))
-            .map(Token::Str);
+            .map(|s: String| Token::Str(decode_entities(&s)));
 
         let name = one_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_")
             .then(
@@ -159,7 +204,7 @@ impl GTNHParser for XmlParser {
         let text_content = none_of("< \t\r\n")
             .then(none_of("<").repeated().collect::<String>())
             .to_slice()
-            .map(|s: &str| Token::Text(s.trim().to_string()));
+            .map(|s: &str| Token::Text(decode_entities(s.trim())));
 
         let token = choice((
             xml_decl,
@@ -184,14 +229,15 @@ impl GTNHParser for XmlParser {
     fn parser<'b>(
     ) -> impl Parser<'b, &'b [Spanned<Token>], Spanned<XmlExpr>, Err<Rich<'b, Spanned<Token>>>>
     {
-        recursive(|element| {
+        let top_skip = any().filter(|(tok, _): &Spanned<Token>| {
+            matches!(tok, Token::XmlDecl | Token::Comment(_))
+        });
+
+        let element = recursive(|element| {
             let comment = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
                 Token::Comment(s) => Ok((XmlExpr::Comment(s), span)),
                 _ => Err(Rich::custom(span, "expected comment")),
             });
-
-            let skip = any()
-                .filter(|(tok, _): &Spanned<Token>| matches!(tok, Token::XmlDecl));
 
             let name = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
                 Token::Name(s) => Ok(s),
@@ -203,11 +249,40 @@ impl GTNHParser for XmlParser {
                 _ => Err(Rich::custom(span, "expected string")),
             });
 
-            let text = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
-                Token::Text(s) => Ok((XmlExpr::Text(s), span)),
-                Token::Name(s) => Ok((XmlExpr::Text(s), span)),
-                _ => Err(Rich::custom(span, "expected text")),
+            // Element text content can span multiple lexer tokens because
+            // `name` greedily eats identifier-shaped fragments inside text
+            // runs (e.g. `<str>Minecraft Year {darkaqua}</str>` lexes as
+            // Name("Minecraft"), Name("Year"), Text("{darkaqua}")). Collapse
+            // a run of adjacent Name/Text tokens into a single Text node.
+            //
+            // We use the source span on each fragment to detect whitespace
+            // gaps: if `prev_end < this.start`, the lexer's `padded_by` ate
+            // whitespace between them and we re-insert a single space.
+            // Adjacent fragments (no gap) — e.g. `Name("textures") + Text(
+            // "/items/slimeball.png")` — are joined directly.
+            use chumsky::span::Span as _;
+            let text_frag = any().try_map(|(tok, span): Spanned<Token>, _| match tok {
+                Token::Text(s) | Token::Name(s) => Ok((s, span)),
+                _ => Err(Rich::custom(span, "expected text fragment")),
             });
+            let text = text_frag
+                .repeated()
+                .at_least(1)
+                .collect::<Vec<(String, crate::Span)>>()
+                .map_with(|parts, e| {
+                    let mut combined = String::new();
+                    let mut prev_end: Option<usize> = None;
+                    for (s, span) in parts {
+                        if let Some(end) = prev_end {
+                            if end < span.start() {
+                                combined.push(' ');
+                            }
+                        }
+                        combined.push_str(&s);
+                        prev_end = Some(span.end());
+                    }
+                    (XmlExpr::Text(combined), e.span())
+                });
 
             let open_tag = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::OpenTag);
             let close_tag = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::CloseTag);
@@ -216,7 +291,6 @@ impl GTNHParser for XmlParser {
             let equals = any().filter(|(tok, _): &Spanned<Token>| *tok == Token::Equals);
 
             let attr = name.clone().then_ignore(equals).then(str_val);
-
             let attrs = attr.repeated().collect::<Vec<_>>();
 
             // Self-closing: <tag attr="val" />
@@ -244,14 +318,7 @@ impl GTNHParser for XmlParser {
                 .ignore_then(name.clone())
                 .then(attrs)
                 .then_ignore(close_tag)
-                .then(
-                    choice((child.map(Some), skip.clone().to(None)))
-                        .repeated()
-                        .collect::<Vec<Option<Spanned<XmlExpr>>>>()
-                        .map(|items: Vec<Option<Spanned<XmlExpr>>>| {
-                            items.into_iter().flatten().collect::<Vec<_>>()
-                        }),
-                )
+                .then(child.repeated().collect::<Vec<_>>())
                 .then_ignore(open_end_tag)
                 .then_ignore(name)
                 .then_ignore(any().filter(|(tok, _): &Spanned<Token>| *tok == Token::CloseTag))
@@ -266,11 +333,16 @@ impl GTNHParser for XmlParser {
                     )
                 });
 
-            choice((skip.to(None), comment.map(Some)))
-                .repeated()
-                .collect::<Vec<Option<Spanned<XmlExpr>>>>()
-                .map(|items| items.into_iter().flatten().collect::<Vec<_>>())
-                .ignore_then(choice((self_closing, full_element)))
-        })
+            choice((self_closing, full_element))
+        });
+
+        // Allow optional XML declarations and top-level comments before/after
+        // the root element. Top-level comments are discarded (no element to
+        // attach them to).
+        top_skip
+            .clone()
+            .repeated()
+            .ignore_then(element)
+            .then_ignore(top_skip.repeated())
     }
 }

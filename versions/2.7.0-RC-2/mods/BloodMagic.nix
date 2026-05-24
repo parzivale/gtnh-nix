@@ -4,40 +4,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/AsteroidLateGameOres.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneBlackPlutonium:100" "OREDICT:oreEndstoneCosmicNeutronium:5" "OREDICT:oreEndstoneYttrium:75" "OREDICT:oreEndstoneGallium:75" "OREDICT:oreEndstoneMysteriousCrystal:25" "OREDICT:oreEndstoneDeepIron:150" "OREDICT:oreEndstoneNaquadah:125" "OREDICT:oreEndstoneNaquadahEnriched:75" "OREDICT:oreEndstoneNaquadria:50" "OREDICT:oreEndstoneUranium235:25" "OREDICT:oreEndstonePlutonium241:25" "OREDICT:oreEndstoneUranium:50" "OREDICT:oreEndstonePlutonium:50" "OREDICT:oreEndstoneSamarium:25" "OREDICT:oreEndstoneNetherStar:10" "OREDICT:oreEndstoneNeutronium:10" "OREDICT:oreEndstoneNiobium:75" "OREDICT:oreEndstoneBorax:75" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 22;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 100000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 10951;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 100000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 10951;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneBlackPlutonium:100" "OREDICT:oreEndstoneCosmicNeutronium:5" "OREDICT:oreEndstoneYttrium:75" "OREDICT:oreEndstoneGallium:75" "OREDICT:oreEndstoneMysteriousCrystal:25" "OREDICT:oreEndstoneDeepIron:150" "OREDICT:oreEndstoneNaquadah:125" "OREDICT:oreEndstoneNaquadahEnriched:75" "OREDICT:oreEndstoneNaquadria:50" "OREDICT:oreEndstoneUranium235:25" "OREDICT:oreEndstonePlutonium241:25" "OREDICT:oreEndstoneUranium:50" "OREDICT:oreEndstonePlutonium:50" "OREDICT:oreEndstoneSamarium:25" "OREDICT:oreEndstoneNetherStar:10" "OREDICT:oreEndstoneNeutronium:10" "OREDICT:oreEndstoneNiobium:75" "OREDICT:oreEndstoneBorax:75" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 22;
+      };
       };
     };
   };
@@ -46,48 +46,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/CallistoMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleTopaz:50" "OREDICT:oreMarbleBlueTopaz:50" "OREDICT:oreMarbleChromite:75" "OREDICT:oreMarbleUvarovite:125" "OREDICT:oreMarbleTungstate:45" "OREDICT:oreMarbleScheelite:45" "OREDICT:oreMarbleLithium:30" "OREDICT:oreMarbleAlduorite:10" "OREDICT:oreMarblePalladium:35" "OREDICT:oreMarbleChrome:50" "OREDICT:oreMarblePlatinum:65" "OREDICT:oreMarbleNickel:100" "OREDICT:oreMarbleIridium:50" "OREDICT:oreMarbleLedox:50" "OREDICT:oreMarbleUranium:10" "OREDICT:oreMarblePlutonium:1" "OREDICT:oreMarbleCallistoIce:125" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:rockCallisto:350" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32464;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 27;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1000000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:rockCallisto:350" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 27;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32464;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleTopaz:50" "OREDICT:oreMarbleBlueTopaz:50" "OREDICT:oreMarbleChromite:75" "OREDICT:oreMarbleUvarovite:125" "OREDICT:oreMarbleTungstate:45" "OREDICT:oreMarbleScheelite:45" "OREDICT:oreMarbleLithium:30" "OREDICT:oreMarbleAlduorite:10" "OREDICT:oreMarblePalladium:35" "OREDICT:oreMarbleChrome:50" "OREDICT:oreMarblePlatinum:65" "OREDICT:oreMarbleNickel:100" "OREDICT:oreMarbleIridium:50" "OREDICT:oreMarbleLedox:50" "OREDICT:oreMarbleUranium:10" "OREDICT:oreMarblePlutonium:1" "OREDICT:oreMarbleCallistoIce:125" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -96,48 +96,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/CheatyVeryLowQuantityRawTengam.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleSalt:69" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "gregtech:gt.blockores:817:72" "OREDICT:oreTengamRaw:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1000000001;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "GalacticraftAmunRa";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "tile.machines2";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 1;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 10;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1000000001;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "gregtech:gt.blockores:817:72" "OREDICT:oreTengamRaw:1" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 10;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 1;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "GalacticraftAmunRa";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "tile.machines2";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleSalt:69" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -146,40 +146,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/Chinfinity.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneElectrum:100" "OREDICT:oreEndstoneAluminium:100" "OREDICT:oreEndstoneTitanium:100" "OREDICT:oreEndstoneTungsten:100" "OREDICT:oreEndstoneNeodymium:100" "OREDICT:oreEndstoneChrome:100" "OREDICT:oreEndstoneBeryllium:100" "OREDICT:oreEndstoneManganese:100" "OREDICT:oreEndstoneGallium:100" "OREDICT:oreEndstoneYttrium:100" "OREDICT:oreEndstoneNiobium:100" "OREDICT:oreEndstoneStrontium:100" "OREDICT:oreEndstoneCadmium:100" "OREDICT:oreEndstoneTellurium:100" "OREDICT:oreEndstoneBarium:100" "OREDICT:oreEndstoneLanthanum:10" "OREDICT:oreEndstoneIndium:5" "OREDICT:oreEndstoneCerium:100" "OREDICT:oreEndstonePraseodymium:100" "OREDICT:oreEndstonePromethium:100" "OREDICT:oreEndstoneSamarium:25" "OREDICT:oreEndstoneEuropium:5" "OREDICT:oreEndstoneTerbium:100" "OREDICT:oreEndstoneDysprosium:100" "OREDICT:oreEndstoneErbium:100" "OREDICT:oreEndstoneThulium:100" "OREDICT:oreEndstoneLutetium:75" "OREDICT:oreEndstoneTantalum:100" "OREDICT:oreEndstoneYtterbium:100" "OREDICT:oreEndstoneGadolinium:100" "OREDICT:oreEndstoneHolmium:100" "OREDICT:oreEndstoneCaesium:100" "OREDICT:oreEndstoneScandium:100" "OREDICT:oreTiberium:100" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 80000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 1186;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 80000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 1186;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneElectrum:100" "OREDICT:oreEndstoneAluminium:100" "OREDICT:oreEndstoneTitanium:100" "OREDICT:oreEndstoneTungsten:100" "OREDICT:oreEndstoneNeodymium:100" "OREDICT:oreEndstoneChrome:100" "OREDICT:oreEndstoneBeryllium:100" "OREDICT:oreEndstoneManganese:100" "OREDICT:oreEndstoneGallium:100" "OREDICT:oreEndstoneYttrium:100" "OREDICT:oreEndstoneNiobium:100" "OREDICT:oreEndstoneStrontium:100" "OREDICT:oreEndstoneCadmium:100" "OREDICT:oreEndstoneTellurium:100" "OREDICT:oreEndstoneBarium:100" "OREDICT:oreEndstoneLanthanum:10" "OREDICT:oreEndstoneIndium:5" "OREDICT:oreEndstoneCerium:100" "OREDICT:oreEndstonePraseodymium:100" "OREDICT:oreEndstonePromethium:100" "OREDICT:oreEndstoneSamarium:25" "OREDICT:oreEndstoneEuropium:5" "OREDICT:oreEndstoneTerbium:100" "OREDICT:oreEndstoneDysprosium:100" "OREDICT:oreEndstoneErbium:100" "OREDICT:oreEndstoneThulium:100" "OREDICT:oreEndstoneLutetium:75" "OREDICT:oreEndstoneTantalum:100" "OREDICT:oreEndstoneYtterbium:100" "OREDICT:oreEndstoneGadolinium:100" "OREDICT:oreEndstoneHolmium:100" "OREDICT:oreEndstoneCaesium:100" "OREDICT:oreEndstoneScandium:100" "OREDICT:oreTiberium:100" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -188,40 +188,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/ConcentratedLeadEV.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneLead:100" "OREDICT:oreEndstoneGalena:200" "OREDICT:oreEndstoneSilver:100" "OREDICT:oreEndstoneCryolite:100" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 9;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 2000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 214;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 2000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 214;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneLead:100" "OREDICT:oreEndstoneGalena:200" "OREDICT:oreEndstoneSilver:100" "OREDICT:oreEndstoneCryolite:100" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 9;
+      };
       };
     };
   };
@@ -230,48 +230,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/EndstoneHEE.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreHeeEndPowder:100" "OREDICT:oreHeeStardust:50" "OREDICT:oreHeeIgneousRock:50" "OREDICT:oreHeeEndium:50" "OREDICT:oreHeeInstabilityOrb:1" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:endstone:799" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 12;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "end_stone";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 76;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 500000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:endstone:799" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 76;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "end_stone";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreHeeEndPowder:100" "OREDICT:oreHeeStardust:50" "OREDICT:oreHeeIgneousRock:50" "OREDICT:oreHeeEndium:50" "OREDICT:oreHeeInstabilityOrb:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 12;
+      };
       };
     };
   };
@@ -280,48 +280,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/GraphiteMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteGraphite:500" "OREDICT:oreBlackgraniteDiamond:50" "OREDICT:oreBlackgraniteCoal:200" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneGraniteBlack:250" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 13;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 420000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.02";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 30500;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 25;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 420000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneGraniteBlack:250" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 25;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 30500;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.02";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteGraphite:500" "OREDICT:oreBlackgraniteDiamond:50" "OREDICT:oreBlackgraniteCoal:200" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 13;
+      };
       };
     };
   };
@@ -330,48 +330,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/GreaterEndstoneVariant.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneMagnetite:115" "OREDICT:oreEndstoneVanadiumMagnetite:75" "OREDICT:oreEndstoneGold:75" "OREDICT:oreEndstoneChalcopyrite:85" "OREDICT:oreEndstoneIron:60" "OREDICT:oreEndstonePyrite:75" "OREDICT:oreEndstoneCopper:95" "OREDICT:oreEndstoneTetrahedrite:115" "OREDICT:oreEndstoneStibnite:75" "OREDICT:oreEndstoneGrossular:55" "OREDICT:oreEndstoneSpessartine:55" "OREDICT:oreEndstonePyrolusite:45" "OREDICT:oreEndstoneTantalite:45" "OREDICT:oreEndstoneBeryllium:65" "OREDICT:oreEndstoneEmerald:40" "OREDICT:oreEndstoneThorium:50" "OREDICT:oreEndstoneWulfenite:25" "OREDICT:oreEndstoneMolybdenite:25" "OREDICT:oreEndstoneMolybdenum:25" "OREDICT:oreEndstonePowellite:25" "OREDICT:oreEndstoneBentonite:55" "OREDICT:oreEndstoneMagnesite:55" "OREDICT:oreEndstoneOlivine:55" "OREDICT:oreEndstoneGlauconite:45" "OREDICT:oreEndstoneGarnierite:65" "OREDICT:oreEndstoneNickel:65" "OREDICT:oreEndstoneCobaltite:65" "OREDICT:oreEndstonePentlandite:125" "OREDICT:oreEndstoneScheelite:20" "OREDICT:oreEndstoneTungstate:20" "OREDICT:oreEndstoneLithium:25" "OREDICT:oreEndstoneIridium:25" "OREDICT:oreEndstonePlatinum:25" "OREDICT:oreEndstonePalladium:25" "OREDICT:oreEndstoneNaquadah:15" "OREDICT:oreEndstoneNaquadahEnriched:5" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:endstone:150" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 3250000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 1182;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 7;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 3250000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:endstone:150" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 7;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 1182;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneMagnetite:115" "OREDICT:oreEndstoneVanadiumMagnetite:75" "OREDICT:oreEndstoneGold:75" "OREDICT:oreEndstoneChalcopyrite:85" "OREDICT:oreEndstoneIron:60" "OREDICT:oreEndstonePyrite:75" "OREDICT:oreEndstoneCopper:95" "OREDICT:oreEndstoneTetrahedrite:115" "OREDICT:oreEndstoneStibnite:75" "OREDICT:oreEndstoneGrossular:55" "OREDICT:oreEndstoneSpessartine:55" "OREDICT:oreEndstonePyrolusite:45" "OREDICT:oreEndstoneTantalite:45" "OREDICT:oreEndstoneBeryllium:65" "OREDICT:oreEndstoneEmerald:40" "OREDICT:oreEndstoneThorium:50" "OREDICT:oreEndstoneWulfenite:25" "OREDICT:oreEndstoneMolybdenite:25" "OREDICT:oreEndstoneMolybdenum:25" "OREDICT:oreEndstonePowellite:25" "OREDICT:oreEndstoneBentonite:55" "OREDICT:oreEndstoneMagnesite:55" "OREDICT:oreEndstoneOlivine:55" "OREDICT:oreEndstoneGlauconite:45" "OREDICT:oreEndstoneGarnierite:65" "OREDICT:oreEndstoneNickel:65" "OREDICT:oreEndstoneCobaltite:65" "OREDICT:oreEndstonePentlandite:125" "OREDICT:oreEndstoneScheelite:20" "OREDICT:oreEndstoneTungstate:20" "OREDICT:oreEndstoneLithium:25" "OREDICT:oreEndstoneIridium:25" "OREDICT:oreEndstonePlatinum:25" "OREDICT:oreEndstonePalladium:25" "OREDICT:oreEndstoneNaquadah:15" "OREDICT:oreEndstoneNaquadahEnriched:5" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };
@@ -380,48 +380,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/ImpureSuperNiobiumSpaceMix.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreRedgraniteApatite:150" "OREDICT:oreRedgraniteTricalciumPhosphate:150" "OREDICT:oreRedgranitePyrochlore:100" "OREDICT:oreRedgraniteTantalite:100" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:rockMars:125" "OREDICT:rockPhobos:125" "OREDICT:rockDeimos:125" "OREDICT:rockAsteroids:125" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32672;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 50;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1000000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:rockMars:125" "OREDICT:rockPhobos:125" "OREDICT:rockDeimos:125" "OREDICT:rockAsteroids:125" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 50;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32672;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreRedgraniteApatite:150" "OREDICT:oreRedgraniteTricalciumPhosphate:150" "OREDICT:oreRedgranitePyrochlore:100" "OREDICT:oreRedgraniteTantalite:100" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };
@@ -430,40 +430,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/IndiumGreaterVariant.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneLead:1000" "OREDICT:oreEndstoneGalena:1600" "OREDICT:oreEndstoneSilver:800" "OREDICT:oreEndstoneSphalerite:800" "OREDICT:oreEndstoneIndium:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 14;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 50000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.03";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32094;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 50000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32094;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.03";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneLead:1000" "OREDICT:oreEndstoneGalena:1600" "OREDICT:oreEndstoneSilver:800" "OREDICT:oreEndstoneSphalerite:800" "OREDICT:oreEndstoneIndium:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 14;
+      };
       };
     };
   };
@@ -472,48 +472,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/LegacyGemBunch.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteDiamond:100" "OREDICT:oreBlackgraniteEmerald:50" "OREDICT:oreBlackgraniteRuby:50" "OREDICT:oreBlackgraniteSapphire:25" "OREDICT:oreBlackgraniteGreenSapphire:25" "OREDICT:oreBlackgraniteOlivine:25" "OREDICT:oreBlackgraniteTopaz:25" "OREDICT:oreBlackgraniteTanzanite:25" "OREDICT:oreBlackgraniteAmethyst:25" "OREDICT:oreBlackgraniteOpal:25" "OREDICT:oreBlackgraniteJasper:25" "OREDICT:oreBlackgraniteBlueTopaz:25" "OREDICT:oreBlackgraniteGarnetRed:25" "OREDICT:oreBlackgraniteGarnetYellow:25" "OREDICT:oreBlackgraniteJade:25" "OREDICT:oreBlackgraniteVinteum:25" "OREDICT:oreBlackgraniteLapis:50" "OREDICT:oreBlackgraniteLazurite:50" "OREDICT:oreBlackgraniteNetherStar:1" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneGraniteBlack:499" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 12;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 24347;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 44;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 500000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneGraniteBlack:499" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 44;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 24347;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteDiamond:100" "OREDICT:oreBlackgraniteEmerald:50" "OREDICT:oreBlackgraniteRuby:50" "OREDICT:oreBlackgraniteSapphire:25" "OREDICT:oreBlackgraniteGreenSapphire:25" "OREDICT:oreBlackgraniteOlivine:25" "OREDICT:oreBlackgraniteTopaz:25" "OREDICT:oreBlackgraniteTanzanite:25" "OREDICT:oreBlackgraniteAmethyst:25" "OREDICT:oreBlackgraniteOpal:25" "OREDICT:oreBlackgraniteJasper:25" "OREDICT:oreBlackgraniteBlueTopaz:25" "OREDICT:oreBlackgraniteGarnetRed:25" "OREDICT:oreBlackgraniteGarnetYellow:25" "OREDICT:oreBlackgraniteJade:25" "OREDICT:oreBlackgraniteVinteum:25" "OREDICT:oreBlackgraniteLapis:50" "OREDICT:oreBlackgraniteLazurite:50" "OREDICT:oreBlackgraniteNetherStar:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 12;
+      };
       };
     };
   };
@@ -522,40 +522,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/LegacyMarsMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteMeteoricIron:10" "OREDICT:oreBlackgraniteChromite:50" "OREDICT:oreBlackgraniteBastnasite:100" "OREDICT:oreBlackgraniteMonazite:30" "OREDICT:oreBlackgraniteMolybdenum:70" "OREDICT:oreBlackgranitePyrochlore:50" "OREDICT:oreBlackgraniteNeodymium:50" "OREDICT:oreBlackgraniteBarite:50" "OREDICT:oreBlackgraniteCertusQuartz:25" "OREDICT:oreBlackgraniteDesh:60" "OREDICT:oreBlackgraniteThorium:50" "OREDICT:oreBlackgraniteUraninite:50" "OREDICT:oreBlackgraniteUranium:30" "OREDICT:oreBlackgranitePitchblende:50" "OREDICT:oreBlackgraniteDraconium:50" "OREDICT:oreBlackgraniteElectrotine:50" "OREDICT:oreBlackgraniteOriharukon:50" "OREDICT:oreBlackgraniteArsenic:50" "OREDICT:oreBlackgraniteBismuth:50" "OREDICT:oreBlackgraniteAntimony:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 13;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32692;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 500000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32692;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteMeteoricIron:10" "OREDICT:oreBlackgraniteChromite:50" "OREDICT:oreBlackgraniteBastnasite:100" "OREDICT:oreBlackgraniteMonazite:30" "OREDICT:oreBlackgraniteMolybdenum:70" "OREDICT:oreBlackgranitePyrochlore:50" "OREDICT:oreBlackgraniteNeodymium:50" "OREDICT:oreBlackgraniteBarite:50" "OREDICT:oreBlackgraniteCertusQuartz:25" "OREDICT:oreBlackgraniteDesh:60" "OREDICT:oreBlackgraniteThorium:50" "OREDICT:oreBlackgraniteUraninite:50" "OREDICT:oreBlackgraniteUranium:30" "OREDICT:oreBlackgranitePitchblende:50" "OREDICT:oreBlackgraniteDraconium:50" "OREDICT:oreBlackgraniteElectrotine:50" "OREDICT:oreBlackgraniteOriharukon:50" "OREDICT:oreBlackgraniteArsenic:50" "OREDICT:oreBlackgraniteBismuth:50" "OREDICT:oreBlackgraniteAntimony:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 13;
+      };
       };
     };
   };
@@ -564,48 +564,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/LegacyOWMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteTantalite:60" "OREDICT:oreBlackgraniteMica:60" "OREDICT:oreBlackgraniteAsbestos:20" "OREDICT:oreBlackgraniteCalcite:60" "OREDICT:oreBlackgraniteSoapstone:20" "OREDICT:oreBlackgraniteVanadiumMagnetite:60" "OREDICT:oreBlackgraniteSalt:50" "OREDICT:oreBlackgraniteRockSalt:50" "OREDICT:oreBlackgraniteSphalerite:50" "OREDICT:oreBlackgraniteIron:5" "OREDICT:oreBlackgraniteNickel:15" "OREDICT:oreBlackgraniteCopper:200" "OREDICT:oreBlackgraniteTin:20" "OREDICT:oreBlackgraniteLead:40" "OREDICT:oreBlackgraniteSilver:50" "OREDICT:oreBlackgraniteGold:50" "OREDICT:oreBlackgraniteCassiterite:70" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneGraniteBlack:200" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 300000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32680;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 300000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneGraniteBlack:200" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32680;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteTantalite:60" "OREDICT:oreBlackgraniteMica:60" "OREDICT:oreBlackgraniteAsbestos:20" "OREDICT:oreBlackgraniteCalcite:60" "OREDICT:oreBlackgraniteSoapstone:20" "OREDICT:oreBlackgraniteVanadiumMagnetite:60" "OREDICT:oreBlackgraniteSalt:50" "OREDICT:oreBlackgraniteRockSalt:50" "OREDICT:oreBlackgraniteSphalerite:50" "OREDICT:oreBlackgraniteIron:5" "OREDICT:oreBlackgraniteNickel:15" "OREDICT:oreBlackgraniteCopper:200" "OREDICT:oreBlackgraniteTin:20" "OREDICT:oreBlackgraniteLead:40" "OREDICT:oreBlackgraniteSilver:50" "OREDICT:oreBlackgraniteGold:50" "OREDICT:oreBlackgraniteCassiterite:70" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -614,40 +614,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/LegacyVariousOreBunch.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteRutile:100" "OREDICT:oreBlackgraniteTungstate:100" "OREDICT:oreBlackgraniteCopper:300" "OREDICT:oreBlackgraniteSalt:200" "OREDICT:oreBlackgraniteRockSalt:200" "OREDICT:oreBlackgraniteMica:60" "OREDICT:oreBlackgraniteAsbestos:20" "OREDICT:oreBlackgraniteSoapstone:20" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 9;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 750000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "nether_star";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 750000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "nether_star";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteRutile:100" "OREDICT:oreBlackgraniteTungstate:100" "OREDICT:oreBlackgraniteCopper:300" "OREDICT:oreBlackgraniteSalt:200" "OREDICT:oreBlackgraniteRockSalt:200" "OREDICT:oreBlackgraniteMica:60" "OREDICT:oreBlackgraniteAsbestos:20" "OREDICT:oreBlackgraniteSoapstone:20" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 9;
+      };
       };
     };
   };
@@ -656,40 +656,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/MASTER1_GemMaster.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneDiamond:5" "OREDICT:oreEndstoneEmerald:5" "OREDICT:oreEndstoneRuby:5" "OREDICT:oreEndstoneSapphire:5" "OREDICT:oreEndstoneGreenSapphire:5" "OREDICT:oreEndstoneOlivine:5" "OREDICT:oreEndstoneTopaz:5" "OREDICT:oreEndstoneTanzanite:5" "OREDICT:oreEndstoneAmethyst:5" "OREDICT:oreEndstoneOpal:5" "OREDICT:oreEndstoneJasper:5" "OREDICT:oreEndstoneBlueTopaz:5" "OREDICT:oreEndstoneGarnetRed:5" "OREDICT:oreEndstoneGarnetYellow:5" "OREDICT:oreEndstoneJade:5" "OREDICT:oreEndstoneVinteum:5" "OREDICT:oreEndstoneLapis:5" "OREDICT:oreEndstoneLazurite:5" "OREDICT:oreEndstoneMysteriousCrystal:5" "OREDICT:oreEndstoneInfusedFire:5" "OREDICT:oreEndstoneInfusedAir:5" "OREDICT:oreEndstoneInfusedWater:5" "OREDICT:oreEndstoneInfusedEarth:5" "OREDICT:oreEndstoneInfusedOrder:5" "OREDICT:oreEndstoneInfusedEntropy:5" "OREDICT:oreEndstoneNetherStar:5" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 32;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 90000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "kubatech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "defc.casing";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 8;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 90000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 8;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "kubatech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "defc.casing";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneDiamond:5" "OREDICT:oreEndstoneEmerald:5" "OREDICT:oreEndstoneRuby:5" "OREDICT:oreEndstoneSapphire:5" "OREDICT:oreEndstoneGreenSapphire:5" "OREDICT:oreEndstoneOlivine:5" "OREDICT:oreEndstoneTopaz:5" "OREDICT:oreEndstoneTanzanite:5" "OREDICT:oreEndstoneAmethyst:5" "OREDICT:oreEndstoneOpal:5" "OREDICT:oreEndstoneJasper:5" "OREDICT:oreEndstoneBlueTopaz:5" "OREDICT:oreEndstoneGarnetRed:5" "OREDICT:oreEndstoneGarnetYellow:5" "OREDICT:oreEndstoneJade:5" "OREDICT:oreEndstoneVinteum:5" "OREDICT:oreEndstoneLapis:5" "OREDICT:oreEndstoneLazurite:5" "OREDICT:oreEndstoneMysteriousCrystal:5" "OREDICT:oreEndstoneInfusedFire:5" "OREDICT:oreEndstoneInfusedAir:5" "OREDICT:oreEndstoneInfusedWater:5" "OREDICT:oreEndstoneInfusedEarth:5" "OREDICT:oreEndstoneInfusedOrder:5" "OREDICT:oreEndstoneInfusedEntropy:5" "OREDICT:oreEndstoneNetherStar:5" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 32;
+      };
       };
     };
   };
@@ -698,48 +698,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/MagicalOres.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleInfusedAir:75" "OREDICT:oreMarbleInfusedFire:75" "OREDICT:oreMarbleInfusedWater:75" "OREDICT:oreMarbleInfusedEarth:75" "OREDICT:oreMarbleInfusedOrder:75" "OREDICT:oreMarbleInfusedEntropy:75" "OREDICT:oreMarbleAmber:150" "OREDICT:oreMarbleCinnabar:250" "OREDICT:oreMarbleVinteum:10" "OREDICT:oreMarbleShadowIron:10" "OREDICT:oreMarbleInfusedGold:10" "OREDICT:oreMarbleShadow:10" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneMarble:110" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 15;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 800000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "Thaumcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "ItemSanitySoap";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 11;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 800000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneMarble:110" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 11;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "Thaumcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "ItemSanitySoap";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleInfusedAir:75" "OREDICT:oreMarbleInfusedFire:75" "OREDICT:oreMarbleInfusedWater:75" "OREDICT:oreMarbleInfusedEarth:75" "OREDICT:oreMarbleInfusedOrder:75" "OREDICT:oreMarbleInfusedEntropy:75" "OREDICT:oreMarbleAmber:150" "OREDICT:oreMarbleCinnabar:250" "OREDICT:oreMarbleVinteum:10" "OREDICT:oreMarbleShadowIron:10" "OREDICT:oreMarbleInfusedGold:10" "OREDICT:oreMarbleShadow:10" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 15;
+      };
       };
     };
   };
@@ -748,48 +748,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/MysteriousMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneMysteriousCrystal:400" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:rockEnceladus:600" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 44000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 10990;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 60;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 44000000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:rockEnceladus:600" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 60;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 10990;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneMysteriousCrystal:400" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -798,40 +798,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/NaquadahPure.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneNaquadah:75" "OREDICT:oreEndstoneNaquadahEnriched:50" "OREDICT:oreEndstoneNaquadria:15" "OREDICT:oreTiberium:100" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 25000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.03";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32091;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 25000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32091;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.03";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneNaquadah:75" "OREDICT:oreEndstoneNaquadahEnriched:50" "OREDICT:oreEndstoneNaquadria:15" "OREDICT:oreTiberium:100" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -840,48 +840,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/OWMeteorVersionTwo.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteOilsands:120" "OREDICT:oreBlackgraniteMica:50" "OREDICT:oreBlackgraniteAsbestos:50" "OREDICT:oreBlackgraniteCalcite:80" "OREDICT:oreBlackgraniteLepidolite:70" "OREDICT:oreBlackgraniteVanadiumMagnetite:80" "OREDICT:oreBlackgraniteSalt:20" "OREDICT:oreBlackgraniteRockSalt:20" "OREDICT:oreBlackgraniteSphalerite:70" "OREDICT:oreBlackgranitePollucite:25" "OREDICT:oreBlackgraniteNickel:55" "OREDICT:oreBlackgraniteCopper:75" "OREDICT:oreBlackgraniteRedstone:80" "OREDICT:oreBlackgraniteCinnabar:120" "OREDICT:oreBlackgraniteSilver:90" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneGraniteBlack:200" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 300000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32690;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 17;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 300000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneGraniteBlack:200" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 17;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32690;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteOilsands:120" "OREDICT:oreBlackgraniteMica:50" "OREDICT:oreBlackgraniteAsbestos:50" "OREDICT:oreBlackgraniteCalcite:80" "OREDICT:oreBlackgraniteLepidolite:70" "OREDICT:oreBlackgraniteVanadiumMagnetite:80" "OREDICT:oreBlackgraniteSalt:20" "OREDICT:oreBlackgraniteRockSalt:20" "OREDICT:oreBlackgraniteSphalerite:70" "OREDICT:oreBlackgranitePollucite:25" "OREDICT:oreBlackgraniteNickel:55" "OREDICT:oreBlackgraniteCopper:75" "OREDICT:oreBlackgraniteRedstone:80" "OREDICT:oreBlackgraniteCinnabar:120" "OREDICT:oreBlackgraniteSilver:90" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };
@@ -890,48 +890,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/OWMoonrockMix.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleCassiteriteSand:50" "OREDICT:oreMarbleCassiterite:50" "OREDICT:oreMarbleTin:25" "OREDICT:oreMarbleGarnetSand:50" "OREDICT:oreMarbleAsbestos:25" "OREDICT:oreMarbleDiatomite:25" "OREDICT:oreMarbleBasalticMineralSand:50" "OREDICT:oreMarbleGraniticMineralSand:50" "OREDICT:oreMarbleFullersEarth:50" "OREDICT:oreMarbleGypsum:50" "OREDICT:oreMarbleCheese:25" "OREDICT:oreMarbleMica:25" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:rockMoon:250" "OREDICT:stoneMarble:250" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 15;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 650000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "harvestcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "cheeseItem";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 50;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 650000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:rockMoon:250" "OREDICT:stoneMarble:250" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 50;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "harvestcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "cheeseItem";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleCassiteriteSand:50" "OREDICT:oreMarbleCassiterite:50" "OREDICT:oreMarbleTin:25" "OREDICT:oreMarbleGarnetSand:50" "OREDICT:oreMarbleAsbestos:25" "OREDICT:oreMarbleDiatomite:25" "OREDICT:oreMarbleBasalticMineralSand:50" "OREDICT:oreMarbleGraniticMineralSand:50" "OREDICT:oreMarbleFullersEarth:50" "OREDICT:oreMarbleGypsum:50" "OREDICT:oreMarbleCheese:25" "OREDICT:oreMarbleMica:25" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 15;
+      };
       };
     };
   };
@@ -940,48 +940,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/Pufferfish.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBasaltSalt:75" "OREDICT:oreBasaltRockSalt:75" "OREDICT:oreBasaltSaltpeter:200" "OREDICT:oreBasaltBasalticMineralSand:25" "OREDICT:oreBasaltGraniticMineralSand:25" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneBasalt:100" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 6666666;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "fish";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 3;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 6666666;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneBasalt:100" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 3;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "fish";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBasaltSalt:75" "OREDICT:oreBasaltRockSalt:75" "OREDICT:oreBasaltSaltpeter:200" "OREDICT:oreBasaltBasalticMineralSand:25" "OREDICT:oreBasaltGraniticMineralSand:25" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -990,40 +990,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/PureMarsRelatedOres.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleBauxite:135" "OREDICT:oreMarbleIlmenite:105" "OREDICT:oreMarbleAluminium:55" "OREDICT:oreMarbleChromite:35" "OREDICT:oreMarbleUvarovite:55" "OREDICT:oreMarblePerlite:35" "OREDICT:oreMarbleBastnasite:85" "OREDICT:oreMarbleNeodymium:75" "OREDICT:oreMarbleMonazite:65" "OREDICT:oreBasaltGalena:85" "OREDICT:oreBasaltSphalerite:45" "OREDICT:oreBasaltSilver:35" "OREDICT:oreBasaltCinnabar:45" "OREDICT:oreBasaltLead:35" "OREDICT:oreBasaltCobaltite:35" "OREDICT:oreBasaltNickel:45" "OREDICT:oreBasaltArsenic:35" "OREDICT:oreBasaltDesh:50" "OREDICT:oreBasaltTungstate:75" "OREDICT:oreBasaltScheelite:75" "OREDICT:oreBasaltUraninite:75" "OREDICT:oreBasaltPitchblende:75" "OREDICT:oreBasaltUranium:65" "OREDICT:oreBasaltOriharukon:35" "OREDICT:oreEndstoneMeteoricIron:75" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 24;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 6000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 463;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 6000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 463;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleBauxite:135" "OREDICT:oreMarbleIlmenite:105" "OREDICT:oreMarbleAluminium:55" "OREDICT:oreMarbleChromite:35" "OREDICT:oreMarbleUvarovite:55" "OREDICT:oreMarblePerlite:35" "OREDICT:oreMarbleBastnasite:85" "OREDICT:oreMarbleNeodymium:75" "OREDICT:oreMarbleMonazite:65" "OREDICT:oreBasaltGalena:85" "OREDICT:oreBasaltSphalerite:45" "OREDICT:oreBasaltSilver:35" "OREDICT:oreBasaltCinnabar:45" "OREDICT:oreBasaltLead:35" "OREDICT:oreBasaltCobaltite:35" "OREDICT:oreBasaltNickel:45" "OREDICT:oreBasaltArsenic:35" "OREDICT:oreBasaltDesh:50" "OREDICT:oreBasaltTungstate:75" "OREDICT:oreBasaltScheelite:75" "OREDICT:oreBasaltUraninite:75" "OREDICT:oreBasaltPitchblende:75" "OREDICT:oreBasaltUranium:65" "OREDICT:oreBasaltOriharukon:35" "OREDICT:oreEndstoneMeteoricIron:75" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 24;
+      };
       };
     };
   };
@@ -1032,40 +1032,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/PureMoonOreMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreMarbleBauxite:175" "OREDICT:oreMarbleIlmenite:125" "OREDICT:oreMarbleAluminium:75" "OREDICT:oreMarbleChromite:50" "OREDICT:oreMarbleUvarovite:75" "OREDICT:oreMarblePerlite:50" "OREDICT:oreMarbleBastnasite:100" "OREDICT:oreMarbleNeodymium:75" "OREDICT:oreMarbleMonazite:75" "OREDICT:oreMarbleMeteoricIron:75" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 2000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32682;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 2000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32682;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreMarbleBauxite:175" "OREDICT:oreMarbleIlmenite:125" "OREDICT:oreMarbleAluminium:75" "OREDICT:oreMarbleChromite:50" "OREDICT:oreMarbleUvarovite:75" "OREDICT:oreMarblePerlite:50" "OREDICT:oreMarbleBastnasite:100" "OREDICT:oreMarbleNeodymium:75" "OREDICT:oreMarbleMonazite:75" "OREDICT:oreMarbleMeteoricIron:75" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -1074,40 +1074,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/PureNetherOreVariant.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreNetherrackNetherQuartz:150" "OREDICT:oreNetherrackSulfur:100" "OREDICT:oreNetherrackSphalerite:100" "OREDICT:oreNetherrackThorium:100" "OREDICT:oreNetherrackEmerald:50" "OREDICT:oreNetherrackBeryllium:100" "OREDICT:oreNetherrackIron:75" "OREDICT:oreNetherrackChalcopyrite:75" "OREDICT:oreNetherrackPyrite:75" "OREDICT:oreNetherrackCopper:100" "OREDICT:oreNetherrackTetrahedrite:125" "OREDICT:oreNetherrackStibnite:75" "OREDICT:oreNetherrackTantalite:75" "OREDICT:oreNetherrackPyrolusite:75" "OREDICT:oreNetherrackGrossular:50" "OREDICT:oreNetherrackSpessartine:50" "OREDICT:oreNetherrackQuartzite:75" "OREDICT:oreNetherrackBarite:75" "OREDICT:oreNetherrackRedstone:100" "OREDICT:oreNetherrackRuby:75" "OREDICT:oreNetherrackCinnabar:70" "OREDICT:oreNetherrackCertusQuartz:100" "OREDICT:oreNetherrackFirestone:20" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1200000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 482;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1200000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 482;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreNetherrackNetherQuartz:150" "OREDICT:oreNetherrackSulfur:100" "OREDICT:oreNetherrackSphalerite:100" "OREDICT:oreNetherrackThorium:100" "OREDICT:oreNetherrackEmerald:50" "OREDICT:oreNetherrackBeryllium:100" "OREDICT:oreNetherrackIron:75" "OREDICT:oreNetherrackChalcopyrite:75" "OREDICT:oreNetherrackPyrite:75" "OREDICT:oreNetherrackCopper:100" "OREDICT:oreNetherrackTetrahedrite:125" "OREDICT:oreNetherrackStibnite:75" "OREDICT:oreNetherrackTantalite:75" "OREDICT:oreNetherrackPyrolusite:75" "OREDICT:oreNetherrackGrossular:50" "OREDICT:oreNetherrackSpessartine:50" "OREDICT:oreNetherrackQuartzite:75" "OREDICT:oreNetherrackBarite:75" "OREDICT:oreNetherrackRedstone:100" "OREDICT:oreNetherrackRuby:75" "OREDICT:oreNetherrackCinnabar:70" "OREDICT:oreNetherrackCertusQuartz:100" "OREDICT:oreNetherrackFirestone:20" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };
@@ -1116,40 +1116,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/PureOWOreMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteOilsands:100" "OREDICT:oreBlackgraniteMica:80" "OREDICT:oreBlackgraniteAsbestos:60" "OREDICT:oreBlackgraniteCalcite:80" "OREDICT:oreBlackgraniteLepidolite:80" "OREDICT:oreBlackgraniteVanadiumMagnetite:60" "OREDICT:oreBlackgraniteSalt:80" "OREDICT:oreBlackgraniteRockSalt:80" "OREDICT:oreBlackgraniteSphalerite:80" "OREDICT:oreBlackgranitePollucite:40" "OREDICT:oreBlackgraniteNickel:80" "OREDICT:oreBlackgraniteCopper:100" "OREDICT:oreBlackgraniteRedstone:100" "OREDICT:oreBlackgraniteCinnabar:80" "OREDICT:oreBlackgraniteGarnetSand:40" "OREDICT:oreBlackgraniteGypsum:40" "OREDICT:oreBlackgraniteLapis:100" "OREDICT:oreBlackgraniteLazurite:60" "OREDICT:oreBlackgraniteSodalite:60" "OREDICT:oreBlackgraniteCassiterite:80" "OREDICT:oreBlackgraniteApatite:80" "OREDICT:oreBlackgraniteRuby:80" "OREDICT:oreBlackgraniteSilver:80" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 600000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32670;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 600000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32670;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteOilsands:100" "OREDICT:oreBlackgraniteMica:80" "OREDICT:oreBlackgraniteAsbestos:60" "OREDICT:oreBlackgraniteCalcite:80" "OREDICT:oreBlackgraniteLepidolite:80" "OREDICT:oreBlackgraniteVanadiumMagnetite:60" "OREDICT:oreBlackgraniteSalt:80" "OREDICT:oreBlackgraniteRockSalt:80" "OREDICT:oreBlackgraniteSphalerite:80" "OREDICT:oreBlackgranitePollucite:40" "OREDICT:oreBlackgraniteNickel:80" "OREDICT:oreBlackgraniteCopper:100" "OREDICT:oreBlackgraniteRedstone:100" "OREDICT:oreBlackgraniteCinnabar:80" "OREDICT:oreBlackgraniteGarnetSand:40" "OREDICT:oreBlackgraniteGypsum:40" "OREDICT:oreBlackgraniteLapis:100" "OREDICT:oreBlackgraniteLazurite:60" "OREDICT:oreBlackgraniteSodalite:60" "OREDICT:oreBlackgraniteCassiterite:80" "OREDICT:oreBlackgraniteApatite:80" "OREDICT:oreBlackgraniteRuby:80" "OREDICT:oreBlackgraniteSilver:80" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1158,40 +1158,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/RadioactivePure.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneUranium:60" "OREDICT:oreEndstoneUranium235:25" "OREDICT:oreEndstoneUraninite:60" "OREDICT:oreEndstonePitchblende:60" "OREDICT:oreEndstoneThorium:150" "OREDICT:oreEndstonePlutonium:25" "OREDICT:oreEndstonePlutonium241:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 12;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 2500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 465;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 2500000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 465;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneUranium:60" "OREDICT:oreEndstoneUranium235:25" "OREDICT:oreEndstoneUraninite:60" "OREDICT:oreEndstonePitchblende:60" "OREDICT:oreEndstoneThorium:150" "OREDICT:oreEndstonePlutonium:25" "OREDICT:oreEndstonePlutonium241:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 12;
+      };
       };
     };
   };
@@ -1200,40 +1200,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/RainbowGlassMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stainedGlassWhite:1" "OREDICT:stainedGlassOrange:1" "OREDICT:stainedGlassMagenta:1" "OREDICT:stainedGlassLightBlue:1" "OREDICT:stainedGlassYellow:1" "OREDICT:stainedGlassLime:1" "OREDICT:stainedGlassPink:1" "OREDICT:stainedGlassGray:1" "OREDICT:stainedGlassLightGray:1" "OREDICT:stainedGlassCyan:1" "OREDICT:stainedGlassPurple:1" "OREDICT:stainedGlassBlue:1" "OREDICT:stainedGlassBrown:1" "OREDICT:stainedGlassGreen:1" "OREDICT:stainedGlassRed:1" "OREDICT:stainedGlassBlack:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 8;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 123456;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "melon_block";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 123456;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "melon_block";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stainedGlassWhite:1" "OREDICT:stainedGlassOrange:1" "OREDICT:stainedGlassMagenta:1" "OREDICT:stainedGlassLightBlue:1" "OREDICT:stainedGlassYellow:1" "OREDICT:stainedGlassLime:1" "OREDICT:stainedGlassPink:1" "OREDICT:stainedGlassGray:1" "OREDICT:stainedGlassLightGray:1" "OREDICT:stainedGlassCyan:1" "OREDICT:stainedGlassPurple:1" "OREDICT:stainedGlassBlue:1" "OREDICT:stainedGlassBrown:1" "OREDICT:stainedGlassGreen:1" "OREDICT:stainedGlassRed:1" "OREDICT:stainedGlassBlack:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 8;
+      };
       };
     };
   };
@@ -1242,40 +1242,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/SomeBartOres.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBismutite:1" "OREDICT:oreFluor-Buergerite:1" "OREDICT:oreOrangeDescloizite:1" "OREDICT:oreRedDescloizite:1" "OREDICT:oreFluor-Buergerite:1" "OREDICT:oreFayalite:1" "OREDICT:oreForsterite:1" "OREDICT:oreRedFuchsite:1" "OREDICT:oreGreenFuchsite:1" "OREDICT:oreDjurleite:1" "OREDICT:oreBornite:1" "OREDICT:oreWittichenite:1" "OREDICT:oreChromo-Alumino-Povondraite:1" "OREDICT:oreVanadio-Oxy-Dravite:1" "OREDICT:oreOlenite:1" "OREDICT:oreRedZircon:1" "OREDICT:oreHedenbergite:1" "OREDICT:orePrasiolite:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 10000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 406;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 10000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 406;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBismutite:1" "OREDICT:oreFluor-Buergerite:1" "OREDICT:oreOrangeDescloizite:1" "OREDICT:oreRedDescloizite:1" "OREDICT:oreFluor-Buergerite:1" "OREDICT:oreFayalite:1" "OREDICT:oreForsterite:1" "OREDICT:oreRedFuchsite:1" "OREDICT:oreGreenFuchsite:1" "OREDICT:oreDjurleite:1" "OREDICT:oreBornite:1" "OREDICT:oreWittichenite:1" "OREDICT:oreChromo-Alumino-Povondraite:1" "OREDICT:oreVanadio-Oxy-Dravite:1" "OREDICT:oreOlenite:1" "OREDICT:oreRedZircon:1" "OREDICT:oreHedenbergite:1" "OREDICT:orePrasiolite:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };
@@ -1284,40 +1284,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/SoulInducedMeteor.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:soulSand:1000" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 5000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "soul_sand";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 5000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "soul_sand";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:soulSand:1000" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -1326,48 +1326,48 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/SpaceyOres.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreBlackgraniteNaquadah:100" "OREDICT:oreBlackgraniteNaquadahEnriched:25" "OREDICT:oreBlackgraniteDeepIron:50" "OREDICT:oreBlackgraniteQuantium:50" "OREDICT:oreBlackgraniteArdite:50" "OREDICT:oreBlackgraniteDraconium:50" "OREDICT:oreBlackgraniteAdamantium:25" "OREDICT:oreBlackgraniteNeodymium:75" "OREDICT:oreBlackgraniteMonazite:75" "OREDICT:oreBlackgraniteMeteoricIron:125" ];
-        };
-        filler = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:stoneGraniteBlack:250" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32674;
-        };
-        fillerChance = lib.mkOption {
-          type = lib.types.int;
-          default = 28;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1500000;
+      };
+      filler = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:stoneGraniteBlack:250" ];
+      };
+      fillerChance = lib.mkOption {
+        type = lib.types.int;
+        default = 28;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32674;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreBlackgraniteNaquadah:100" "OREDICT:oreBlackgraniteNaquadahEnriched:25" "OREDICT:oreBlackgraniteDeepIron:50" "OREDICT:oreBlackgraniteQuantium:50" "OREDICT:oreBlackgraniteArdite:50" "OREDICT:oreBlackgraniteDraconium:50" "OREDICT:oreBlackgraniteAdamantium:25" "OREDICT:oreBlackgraniteNeodymium:75" "OREDICT:oreBlackgraniteMonazite:75" "OREDICT:oreBlackgraniteMeteoricIron:125" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -1376,40 +1376,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/SuperGTStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "gregtech:gt.blockstones:0:250" "gregtech:gt.blockstones:8:250" "gregtech:gt.blockgranites:0:250" "gregtech:gt.blockgranites:8:250" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 775000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "minecraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "tnt";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 775000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "minecraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "tnt";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "gregtech:gt.blockstones:0:250" "gregtech:gt.blockstones:8:250" "gregtech:gt.blockgranites:0:250" "gregtech:gt.blockgranites:8:250" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1418,40 +1418,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/SuperPlatinumGroupMetals.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstonePlatinum:150" "OREDICT:oreEndstoneIridium:75" "OREDICT:oreEndstonePalladium:75" "OREDICT:oreEndstoneOsmium:50" "OREDICT:oreCrudeRhodiumMetal:200" "OREDICT:oreLeachResidue:200" "OREDICT:oreRarestMetalResidue:100" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 14;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 12500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 345;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 12500000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 345;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstonePlatinum:150" "OREDICT:oreEndstoneIridium:75" "OREDICT:oreEndstonePalladium:75" "OREDICT:oreEndstoneOsmium:50" "OREDICT:oreCrudeRhodiumMetal:200" "OREDICT:oreLeachResidue:200" "OREDICT:oreRarestMetalResidue:100" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 14;
+      };
       };
     };
   };
@@ -1460,40 +1460,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T1RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalacticraftCore:tile.moonBlock:4:850" "GalacticraftCore:tile.moonBlock:3:100" "GalacticraftCore:tile.moonBlock:5:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32462;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 500000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32462;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalacticraftCore:tile.moonBlock:4:850" "GalacticraftCore:tile.moonBlock:3:100" "GalacticraftCore:tile.moonBlock:5:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1502,40 +1502,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T2RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalacticraftMars:tile.mars:9:850" "GalacticraftMars:tile.mars:6:100" "GalacticraftMars:tile.mars:5:50" "GalaxySpace:phobosblocks:2:850" "GalaxySpace:phobosblocks:1:100" "GalaxySpace:phobosblocks:0:50" "GalaxySpace:deimosblocks:1:950" "GalaxySpace:deimosblocks:0:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 750000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.metaitem.01";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 32463;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 750000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 32463;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.metaitem.01";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalacticraftMars:tile.mars:9:850" "GalacticraftMars:tile.mars:6:100" "GalacticraftMars:tile.mars:5:50" "GalaxySpace:phobosblocks:2:850" "GalaxySpace:phobosblocks:1:100" "GalaxySpace:phobosblocks:0:50" "GalaxySpace:deimosblocks:1:950" "GalaxySpace:deimosblocks:0:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1544,40 +1544,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T3RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:ceresblocks:1:950" "GalaxySpace:ceresblocks:0:50" "GalaxySpace:callistoblocks:1:950" "GalaxySpace:callistoblocks:0:50" "GalaxySpace:europagrunt:1:950" "GalaxySpace:europagrunt:0:50" "GalaxySpace:ganymedeblocks:1:950" "GalaxySpace:ganymedeblocks:0:50" "GalacticraftMars:tile.asteroidsBlock:0:320" "GalacticraftMars:tile.asteroidsBlock:1:320" "GalacticraftMars:tile.asteroidsBlock:2:320" "GalacticraftMars:tile.denseIce:0:40" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "GalacticraftMars";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.itemBasicAsteroids";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "GalacticraftMars";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.itemBasicAsteroids";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:ceresblocks:1:950" "GalaxySpace:ceresblocks:0:50" "GalaxySpace:callistoblocks:1:950" "GalaxySpace:callistoblocks:0:50" "GalaxySpace:europagrunt:1:950" "GalaxySpace:europagrunt:0:50" "GalaxySpace:ganymedeblocks:1:950" "GalaxySpace:ganymedeblocks:0:50" "GalacticraftMars:tile.asteroidsBlock:0:320" "GalacticraftMars:tile.asteroidsBlock:1:320" "GalacticraftMars:tile.asteroidsBlock:2:320" "GalacticraftMars:tile.denseIce:0:40" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1586,40 +1586,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T4RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:ioblocks:2:900" "GalaxySpace:ioblocks:0:50" "GalaxySpace:ioblocks:1:50" "GalaxySpace:mercuryblocks:2:850" "GalaxySpace:mercuryblocks:1:100" "GalaxySpace:mercuryblocks:0:50" "GalaxySpace:venusblocks:1:950" "GalaxySpace:venusblocks:0:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 7500000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "dreamcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.HeavyDutyPlateTier4";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 7500000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "dreamcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.HeavyDutyPlateTier4";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:ioblocks:2:900" "GalaxySpace:ioblocks:0:50" "GalaxySpace:ioblocks:1:50" "GalaxySpace:mercuryblocks:2:850" "GalaxySpace:mercuryblocks:1:100" "GalaxySpace:mercuryblocks:0:50" "GalaxySpace:venusblocks:1:950" "GalaxySpace:venusblocks:0:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1628,40 +1628,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T5RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:titanblocks:2:750" "GalaxySpace:titanblocks:1:100" "GalaxySpace:titanblocks:0:50" "minecraft:packed_ice:0:100" "GalaxySpace:enceladusblocks:1:850" "GalaxySpace:enceladusblocks:3:100" "GalaxySpace:enceladusblocks:0:50" "GalaxySpace:oberonblocks:2:850" "GalaxySpace:oberonblocks:1:100" "GalaxySpace:oberonblocks:0:50" "GalaxySpace:mirandablocks:2:850" "GalaxySpace:mirandablocks:1:100" "GalaxySpace:mirandablocks:0:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 10000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "dreamcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.HeavyDutyPlateTier5";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 10000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "dreamcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.HeavyDutyPlateTier5";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:titanblocks:2:750" "GalaxySpace:titanblocks:1:100" "GalaxySpace:titanblocks:0:50" "minecraft:packed_ice:0:100" "GalaxySpace:enceladusblocks:1:850" "GalaxySpace:enceladusblocks:3:100" "GalaxySpace:enceladusblocks:0:50" "GalaxySpace:oberonblocks:2:850" "GalaxySpace:oberonblocks:1:100" "GalaxySpace:oberonblocks:0:50" "GalaxySpace:mirandablocks:2:850" "GalaxySpace:mirandablocks:1:100" "GalaxySpace:mirandablocks:0:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1670,40 +1670,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T6RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:tritonblocks:2:850" "GalaxySpace:tritonblocks:1:100" "GalaxySpace:tritonblocks:0:50" "GalaxySpace:proteusblocks:2:850" "GalaxySpace:proteusblocks:1:100" "GalaxySpace:proteusblocks:0:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 15000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "dreamcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.HeavyDutyPlateTier6";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 15000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "dreamcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.HeavyDutyPlateTier6";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:tritonblocks:2:850" "GalaxySpace:tritonblocks:1:100" "GalaxySpace:tritonblocks:0:50" "GalaxySpace:proteusblocks:2:850" "GalaxySpace:proteusblocks:1:100" "GalaxySpace:proteusblocks:0:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1712,40 +1712,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T7RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:plutoblocks:5:840" "GalaxySpace:plutoblocks:4:100" "GalaxySpace:plutoblocks:0:15" "GalaxySpace:plutoblocks:1:15" "GalaxySpace:plutoblocks:2:15" "GalaxySpace:plutoblocks:3:15" "GalaxySpace:makemakegrunt:1:950" "GalaxySpace:makemakegrunt:0:50" "GalaxySpace:haumeablocks:0:1000" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 30000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "dreamcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.HeavyDutyPlateTier7";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 30000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "dreamcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.HeavyDutyPlateTier7";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:plutoblocks:5:840" "GalaxySpace:plutoblocks:4:100" "GalaxySpace:plutoblocks:0:15" "GalaxySpace:plutoblocks:1:15" "GalaxySpace:plutoblocks:2:15" "GalaxySpace:plutoblocks:3:15" "GalaxySpace:makemakegrunt:1:950" "GalaxySpace:makemakegrunt:0:50" "GalaxySpace:haumeablocks:0:1000" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1754,40 +1754,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T8RocketStones.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "GalaxySpace:barnardaEsubgrunt:0:950" "GalaxySpace:barnardaEgrunt:0:50" "GalaxySpace:barnardaFsubgrunt:0:950" "GalaxySpace:barnardaFgrunt:0:50" "GalaxySpace:barnardaCdirt:0:100" "GalaxySpace:barnardaCgrass:0:20" "GalaxySpace:vegabsubgrunt:0:950" "GalaxySpace:vegabgrunt:0:50" "GalaxySpace:tcetieblocks:2:850" "GalaxySpace:tcetieblocks:1:100" "GalaxySpace:tcetieblocks:0:50" "GalaxySpace:acentauribbsubgrunt:0:950" "GalaxySpace:acentauribbgrunt:0:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 20;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 50000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "dreamcraft";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "item.HeavyDutyPlateTier8";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 0;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 50000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 0;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "dreamcraft";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "item.HeavyDutyPlateTier8";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "GalaxySpace:barnardaEsubgrunt:0:950" "GalaxySpace:barnardaEgrunt:0:50" "GalaxySpace:barnardaFsubgrunt:0:950" "GalaxySpace:barnardaFgrunt:0:50" "GalaxySpace:barnardaCdirt:0:100" "GalaxySpace:barnardaCgrass:0:20" "GalaxySpace:vegabsubgrunt:0:950" "GalaxySpace:vegabgrunt:0:50" "GalaxySpace:tcetieblocks:2:850" "GalaxySpace:tcetieblocks:1:100" "GalaxySpace:tcetieblocks:0:50" "GalaxySpace:acentauribbsubgrunt:0:950" "GalaxySpace:acentauribbgrunt:0:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 20;
+      };
       };
     };
   };
@@ -1796,40 +1796,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/T9Ores.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreDraconiumAwakened:1000" "OREDICT:oreNeodymium:500" "OREDICT:oreSamarium:300" "OREDICT:oreNetherStar:250" "OREDICT:oreTartarite:60" "OREDICT:oreTengamRaw:1" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 16;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 1000000001;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 14009;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 1000000001;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 14009;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreDraconiumAwakened:1000" "OREDICT:oreNeodymium:500" "OREDICT:oreSamarium:300" "OREDICT:oreNetherStar:250" "OREDICT:oreTartarite:60" "OREDICT:oreTengamRaw:1" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 16;
+      };
       };
     };
   };
@@ -1838,40 +1838,40 @@
     default = {};
     type = lib.types.submodule {
       options = {
-        path = lib.mkOption {
+      path = lib.mkOption {
         type = lib.types.str;
         default = "./config/BloodMagic/meteors/YourResourcesHandItOver.json";
         readOnly = true;
-        };
-        kind = lib.mkOption {
+      };
+      kind = lib.mkOption {
         type = lib.types.str;
         default = "json";
         readOnly = true;
-        };
-        ores = lib.mkOption {
-          type = lib.types.listOf lib.types.str;
-          default = [ "OREDICT:oreEndstoneBlackPlutonium:50" "OREDICT:oreEndstoneCosmicNeutronium:10" "OREDICT:oreEndstoneNaquadah:50" "OREDICT:oreEndstoneNaquadahEnriched:55" "OREDICT:oreEndstoneNaquadria:40" "OREDICT:oreEndstoneNeutronium:25" "OREDICT:oreEndstoneElectrumFlux:10" "OREDICT:oreEndstoneIndium:5" "OREDICT:oreEndstoneAmericium:10" "OREDICT:oreEndstoneEuropium:25" "OREDICT:oreEndstoneLutetium:50" "OREDICT:oreEndstoneInfinityCatalyst:50" ];
-        };
-        radius = lib.mkOption {
-          type = lib.types.int;
-          default = 18;
-        };
-        cost = lib.mkOption {
-          type = lib.types.int;
-          default = 125000000;
-        };
-        focusModId = lib.mkOption {
-          type = lib.types.str;
-          default = "gregtech";
-        };
-        focusName = lib.mkOption {
-          type = lib.types.str;
-          default = "gt.blockmachines";
-        };
-        focusMeta = lib.mkOption {
-          type = lib.types.int;
-          default = 12526;
-        };
+      };
+      cost = lib.mkOption {
+        type = lib.types.int;
+        default = 125000000;
+      };
+      focusMeta = lib.mkOption {
+        type = lib.types.int;
+        default = 12526;
+      };
+      focusModId = lib.mkOption {
+        type = lib.types.str;
+        default = "gregtech";
+      };
+      focusName = lib.mkOption {
+        type = lib.types.str;
+        default = "gt.blockmachines";
+      };
+      ores = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "OREDICT:oreEndstoneBlackPlutonium:50" "OREDICT:oreEndstoneCosmicNeutronium:10" "OREDICT:oreEndstoneNaquadah:50" "OREDICT:oreEndstoneNaquadahEnriched:55" "OREDICT:oreEndstoneNaquadria:40" "OREDICT:oreEndstoneNeutronium:25" "OREDICT:oreEndstoneElectrumFlux:10" "OREDICT:oreEndstoneIndium:5" "OREDICT:oreEndstoneAmericium:10" "OREDICT:oreEndstoneEuropium:25" "OREDICT:oreEndstoneLutetium:50" "OREDICT:oreEndstoneInfinityCatalyst:50" ];
+      };
+      radius = lib.mkOption {
+        type = lib.types.int;
+        default = 18;
+      };
       };
     };
   };

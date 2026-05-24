@@ -3,8 +3,7 @@
     config,
     pkgs,
     lib,
-    gtnh-venv,
-    gtnh-scripts,
+    gtnh-tool,
     ...
   }: let
     inherit (import ./lib.nix {inherit lib pkgs;}) mkConfigFile;
@@ -23,10 +22,8 @@
         rendered = mkConfigFile cfgValue;
         original = "${config.packages."gtnh-${version}"}/${cfgValue.path}";
       in
-        pkgs.runCommand "check-cfg-${version}-${name}" {
-          nativeBuildInputs = [gtnh-venv];
-        } ''
-          python3 ${gtnh-scripts}/normalize.py "${original}" "${rendered}"
+        pkgs.runCommand "check-cfg-${version}-${name}" {} ''
+          ${gtnh-tool}/bin/gtnh-nix normalize "${original}" "${rendered}"
           touch $out
         '';
 
