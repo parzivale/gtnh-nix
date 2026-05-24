@@ -272,55 +272,37 @@
     '';
   });
 
-  bookToml = pkgs.writeText "book.toml" ''
-    [book]
-    title = "GTNH Nix Configuration Options"
-    language = "en"
-    src = "src"
+  # Per-version book.toml. Each version's mdbook is mounted at
+  # /gtnh-nix/<name>/ so site-url has to match.
+  mkVersionBookToml = name:
+    pkgs.writeText "book.toml" ''
+      [book]
+      title = "GTNH ${name} Configuration Options"
+      language = "en"
+      src = "src"
 
-    [output.html]
-    no-section-label = true
-    site-url = "/gtnh-nix/"
-  '';
+      [output.html]
+      no-section-label = true
+      site-url = "/gtnh-nix/${name}/"
+    '';
 
-  # Generate SUMMARY.md with sections per version
-  summaryMd = versions:
+  # Per-version SUMMARY.md — flat under src/, one page per mod/option.
+  mkVersionSummary = name: value:
     pkgs.writeText "SUMMARY.md" ''
       # Summary
 
-      [Introduction](index.md)
+      [Overview](index.md)
 
-      ${lib.concatStringsSep "\n\n" (map ({
-          name,
-          value,
-        }: ''
-          # ${name}
+      # Minecraft options
 
-          - [Overview](${name}/index.md)
+      ${lib.concatStringsSep "\n" (map (m: "- [${m}](${m}.md)") (builtins.attrNames value.minecraft))}
 
-          ## Minecraft options
+      # Mod options
 
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${name}/${modName}.md)") (builtins.attrNames value.minecraft))}
-
-          ## Mod options
-
-          ${lib.concatStringsSep "\n" (map (modName: "- [${modName}](${name}/${modName}.md)") (builtins.attrNames value.mods))}
-        '')
-        (lib.attrsToList versions))}
+      ${lib.concatStringsSep "\n" (map (m: "- [${m}](${m}.md)") (builtins.attrNames value.mods))}
     '';
 
-  indexDoc = versions:
-    pkgs.writeText "index.md" ''
-      # GTNH Nix Configuration Options
-
-      Configuration options exposed by the gtnh-nix NixOS module.
-
-      ## Available Versions
-
-      ${lib.concatStringsSep "\n" (map (version: "- [${version}](${version}/index.md)") (builtins.attrNames versions))}
-    '';
-
-  # Generate per-version index pages
+  # Per-version index page.
   mkVersionIndex = {
     name,
     value,
@@ -362,37 +344,69 @@
         $out
     '';
 
-  allDocs = versions: pkgs: let
-    summaryMd' = summaryMd versions;
-    indexDoc' = indexDoc versions;
-  in
-    pkgs.runCommand "gtnh-docs" {
+  # Build one mdbook per version. Keeps each invocation small (~180
+  # pages) so mdbook's in-memory search index never blows up — the
+  # combined ~6000-page book on a 16 GB runner OOMs.
+  mkVersionDocs = name: value: pkgs:
+    pkgs.runCommand "gtnh-docs-${name}" {
       nativeBuildInputs = [pkgs.mdbook];
     } ''
       mkdir -p book/src
-      cp ${bookToml} book/book.toml
-      cp ${summaryMd'} book/src/SUMMARY.md
-      cp ${indexDoc'}  book/src/index.md
+      cp ${mkVersionBookToml name} book/book.toml
+      cp ${mkVersionSummary name value} book/src/SUMMARY.md
+      cp ${mkVersionIndex {inherit name value;}} book/src/index.md
+      ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
+          cp ${mkDoc doc pkgs} book/src/${modName}.md
+        '')
+        value.mods)}
+      ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
+          cp ${mkDoc doc pkgs} book/src/${optionName}.md
+        '')
+        value.minecraft)}
 
-      # Copy docs for each version
+      mdbook build book --dest-dir $out
+    '';
+
+  # Top-level landing page linking to each version's mdbook.
+  landingHtml = versions:
+    pkgs.writeText "index.html" ''
+      <!doctype html>
+      <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>GTNH Nix Configuration Options</title>
+        <style>
+          body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+          h1 { margin-bottom: 0.25rem; }
+          ul { padding-left: 1.25rem; }
+          a { text-decoration: none; }
+          a:hover { text-decoration: underline; }
+        </style>
+      </head>
+      <body>
+        <h1>GTNH Nix Configuration Options</h1>
+        <p>Configuration options exposed by the gtnh-nix NixOS module, per pack version.</p>
+        <ul>
+          ${lib.concatStringsSep "\n      " (map (name: "<li><a href=\"${name}/\">${name}</a></li>") (lib.reverseList (builtins.attrNames versions)))}
+        </ul>
+      </body>
+      </html>
+    '';
+
+  # Assemble per-version books under one tree. Pure file ops — no
+  # mdbook invocation here, so this step can't OOM.
+  allDocs = versions: pkgs:
+    pkgs.runCommand "gtnh-docs" {} ''
+      mkdir -p $out
+      cp ${landingHtml versions} $out/index.html
       ${lib.concatStringsSep "\n" (map ({
           name,
           value,
         }: ''
-          mkdir -p book/src/${name}
-          cp ${mkVersionIndex {inherit name value;}} book/src/${name}/index.md
-          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (modName: doc: ''
-              cp ${mkDoc doc pkgs} book/src/${name}/${modName}.md
-            '')
-            value.mods)}
-          ${lib.concatStringsSep "\n" (lib.mapAttrsToList (optionName: doc: ''
-              cp ${mkDoc doc pkgs} book/src/${name}/${optionName}.md
-            '')
-            value.minecraft)}
+          mkdir -p $out/${name}
+          cp -r ${mkVersionDocs name value pkgs}/. $out/${name}/
         '')
         (lib.reverseList (lib.attrsToList versions)))}
-
-      mdbook build book --dest-dir $out
     '';
 in {
   inherit mkConfigFile mkVersion allDocs;
