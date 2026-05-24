@@ -1,39 +1,96 @@
+//! HOCON parser — Human-Optimized Config Object Notation.
+//!
+//! HOCON is a superset of JSON used by the typesafe-config library;
+//! GTNH's OpenComputers config is the main consumer in this repo.
+//! The accepted subset:
+//!
+//! - Objects: `{ key = value, key: value }` or braceless at the top
+//!   level.
+//! - Arrays: `[v1, v2, v3]`. Items may also be separated by newlines
+//!   instead of commas (and `lib.nix`'s renderer uses newlines).
+//! - Strings: quoted (`"..."`) or unquoted identifiers.
+//! - Numbers: int / float, preserving the distinction (unlike JSON).
+//! - Comments: `#` and `//` line comments. Comments before a member
+//!   attach as a doc string; 2+ blank lines reset the pending doc.
+//!
+//! Detected for filenames in the `KNOWN_HOCON_PATHS` list in
+//! [`crate::nix_gen`] (e.g. `OpenComputers.cfg`) or for files that have
+//! both `key {` and `key =` patterns.
+//!
+//! ## Implementation notes
+//!
+//! - Newlines are kept as tokens — they're significant inside arrays as
+//!   a separator alternative to `,`, and inside objects as a member
+//!   terminator.
+//! - The `value` parser is exclusively `array | object | atom` (no
+//!   braceless). A top-level wrapper tries braceless as a fallback for
+//!   bare-member files; nested values are always braced.
+//! - Members may have an empty right-hand side (`key =` followed by a
+//!   newline) — common in `forestry/*.conf`.
+
 use chumsky::{error::Rich, extra::Err, prelude::*, text, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 use std::collections::HashMap;
 
+/// Lexer token.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
+    /// `true` / `false`.
     Bool(bool),
+    /// Integer literal — kept distinct from `Real` to preserve int/float
+    /// semantics that JSON would lose.
     Int(i64),
+    /// Floating-point literal.
     Real(f64),
-    Str(String),      // quoted string
-    Ident(String),    // unquoted identifier
+    /// Quoted string.
+    Str(String),
+    /// Unquoted identifier. Treated as a string in atom contexts.
+    Ident(String),
+    /// `{`
     OpenBrace,
+    /// `}`
     CloseBrace,
+    /// `[`
     OpenBracket,
+    /// `]`
     CloseBracket,
-    Equals, // = or :
+    /// `=` or `:` between key and value.
+    Equals,
+    /// `,` separator.
     Comma,
+    /// `#` or `//` line comment, with marker stripped.
     Comment(String),
+    /// Line terminator — significant inside arrays and object bodies.
     Newline,
 }
 
+/// Parser AST for HOCON values.
 #[derive(Clone, Debug, PartialEq)]
 pub enum HoconExpr {
+    /// `true` / `false`.
     Bool(bool),
+    /// Integer literal.
     Int(i64),
+    /// Floating-point literal.
     Real(f64),
+    /// String literal (quoted or unquoted identifier).
     Str(String),
+    /// Array.
     Arr(Vec<Spanned<Self>>),
+    /// Object body. Items preserve source order so doc comments attach
+    /// to the right member.
     Object(Vec<HoconItem>),
 }
 
+/// One entry inside an `Object`.
 #[derive(Clone, Debug, PartialEq)]
 pub enum HoconItem {
+    /// `key = value` or `key { ... }`.
     Member(String, Spanned<HoconExpr>),
+    /// Comment line — accumulated into the next `Member`'s doc string.
     Doc(String),
+    /// Blank line (2+ consecutive newlines). Resets pending docs.
     Blank,
 }
 
@@ -77,6 +134,7 @@ impl From<HoconExpr> for Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for HOCON files.
 pub struct HoconParser;
 
 impl GTNHParser for HoconParser {

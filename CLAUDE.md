@@ -77,6 +77,48 @@ The system handles multiple config formats, detected by content:
 - **INI**: Sectioned key=value (IC2.ini)
 - **JSON/XML/Properties**: Standard formats
 
+Format detection lives in `nix_gen::detect_format_for_file`. The order
+of checks matters — Forge type prefixes are tested *before* the
+`{`-leading JSON heuristic, otherwise a Forge file whose rendered form
+starts with an anonymous `{ }` section gets misrouted to the JSON parser.
+
+### Parser shape
+
+Every parser in `src/parsers/` implements `GTNHParser` (see `src/lib.rs`):
+
+- `lexer()` — `&str` → `Vec<Spanned<LexerToken>>`.
+- `parser()` — `&[Spanned<LexerToken>]` → `Spanned<ParserExpr>`.
+- `parse(input)` — convenience that runs both and converts the AST into
+  the unified `Ir` enum via `From<ParserExpr>`.
+
+The `Ir::Node` variant encodes objects (`attrs=Some, children=None`),
+arrays (`attrs=None, children=Some`), and XML elements (both set,
+optional `tag`). `Ir::Documented { doc, inner }` wraps a value with a
+doc string extracted from a preceding comment block.
+
+### Normalization rules (`src/normalize.rs`)
+
+`gtnh-nix normalize` does *not* compare files byte-for-byte. It applies
+these equivalences before diffing:
+
+- Int and Real collapse into a single canonical numeric string
+  (`1` ≡ `1.0`).
+- `Ir::Null` ≡ the literal string `"None"` (the renderer has no null
+  sentinel).
+- Bool-shaped strings (case-insensitive `"true"`/`"false"`) compare
+  equal to typed bools.
+- Empty strings, maps, and lists are dropped from the comparison.
+- Lists are compared as sorted multisets (Forge `<>` blocks aren't
+  order-stable).
+- Maps with all-numeric keys (`"0"`, `"1"`, ...) compare equal to lists
+  of those values — needed for the JSON-array-as-submodule trick in
+  `lib.nix`.
+- Strings have whitespace collapsed (tabs / newlines / NBSP → single
+  space, trimmed) and surrounding quotes stripped from keys.
+
+If a normalize check fails, the diff is printed in the form
+`- key: type:value` (original) / `+ key: type:value` (rendered).
+
 ## Development Workflows
 
 ### Adding a new GTNH version

@@ -1,26 +1,59 @@
+//! Java `.properties` parser.
+//!
+//! Standard line-oriented format: `key=value` or `key:value`, with `#` /
+//! `!` line comments. Whitespace around the key and value is trimmed.
+//! There are no sections — nested structure is conventionally encoded by
+//! dotted keys (e.g. `a.b.c=value`).
+//!
+//! Detected for files with the `.properties` extension or any file that
+//! looks like flat key=value with no braces or `[section]` headers.
+//!
+//! Comments immediately preceding an entry are attached as doc strings.
+//! Two or more consecutive blank lines clear the pending doc.
+//!
+//! Value types are inferred (bool / int / float / string) — see
+//! `infer_type`.
+
 use chumsky::{error::Rich, extra::Err, prelude::*, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 use std::collections::HashMap;
 
+/// Lexer token. Newlines are significant because entries are
+/// line-terminated.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
+    /// Key text up to (but not including) `=` or `:`. Whitespace is
+    /// trimmed.
     Key(String),
+    /// `=` or `:` between key and value.
     Equals,
+    /// Value text up to end-of-line. Whitespace is trimmed.
     Value(String),
+    /// `#` or `!` comment text, stripped of the leading marker.
     Comment(String),
+    /// Line terminator.
     Newline,
 }
 
+/// One line of parsed properties content.
 #[derive(Clone, Debug, PartialEq)]
 pub enum PropertiesItem {
+    /// A `key = value` line. Value is the raw string, not yet
+    /// type-inferred.
     Entry(String, String),
+    /// A comment line. Consecutive `Doc`s are concatenated and attached
+    /// to the next `Entry`.
     Doc(String),
+    /// A pair (or more) of consecutive newlines. Resets pending docs so
+    /// they don't attach across a blank-line boundary.
     Blank,
 }
 
+/// Top-level parser expression. A file is just a flat sequence of items.
 #[derive(Clone, Debug, PartialEq)]
 pub enum PropertiesExpr {
+    /// The whole file.
     File(Vec<PropertiesItem>),
 }
 
@@ -57,6 +90,11 @@ impl From<PropertiesExpr> for Ir {
     }
 }
 
+/// Type-infer a properties value: bool → int → float → string.
+///
+/// Only the exact tokens `true` and `false` are treated as booleans
+/// (case-sensitive). Anything else falls through to [`crate::parse_number`],
+/// which tries `i64`, then `f64`, then keeps the raw string.
 fn infer_type(v: &str) -> Ir {
     let trimmed = v.trim();
     match trimmed {
@@ -66,6 +104,7 @@ fn infer_type(v: &str) -> Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for Java `.properties` files.
 pub struct PropertiesParser;
 
 impl GTNHParser for PropertiesParser {

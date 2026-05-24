@@ -37,18 +37,37 @@ const NIX_KEYWORDS: &[&str] = &[
     "true", "false",
 ];
 
+/// One of the seven config formats this crate knows how to round-trip.
+///
+/// Detection lives in [`detect_format_for_file`] (or the internal
+/// `detect_format` used by `gen`, which adds depth-sensitivity for known
+/// HOCON files). The same enum is recorded in the generated `.nix`
+/// files' `kind` field so `mkConfigFile` knows which renderer to use
+/// when re-emitting the file.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Format {
-    Forge,        // typed: has B:/I:/D:/F:/S: prefixes
-    ForgeUntyped, // untyped key=value with section braces
+    /// Forge typed: has `B:/I:/D:/F:/S:` prefixes on entries.
+    Forge,
+    /// Forge untyped: `name { key = value }` blocks with no type
+    /// prefixes. Same parser as [`Format::Forge`], values are inferred
+    /// heuristically.
+    ForgeUntyped,
+    /// RFC 8259 JSON.
     Json,
+    /// XML 1.0 subset.
     Xml,
+    /// HOCON.
     Hocon,
+    /// `[section]`-headed INI.
     Ini,
+    /// Java `.properties`.
     Properties,
 }
 
 impl Format {
+    /// Stable string tag emitted into the generated `.nix` file's `kind`
+    /// option. `lib.nix`'s `mkConfigFile` dispatches on this value to
+    /// pick a renderer.
     pub fn kind_str(self) -> &'static str {
         match self {
             Self::Forge => "forge",
@@ -279,6 +298,9 @@ pub fn detect_format_for_file(path: &Path, text: &str) -> Format {
     Format::ForgeUntyped
 }
 
+/// Detect the format of `text` (named by `path`) and parse it. Returns
+/// `None` if the chosen parser fails — used by [`crate::normalize`] to
+/// fall back to an empty IR rather than abort on broken input.
 pub fn parse_with_detected_format(path: &Path, text: &str) -> Option<Ir> {
     parse_with_format(detect_format_for_file(path, text), text)
 }

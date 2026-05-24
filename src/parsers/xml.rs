@@ -1,30 +1,71 @@
+//! XML 1.0 subset parser.
+//!
+//! Matches the shape produced by Python's `xml.etree.ElementTree` so that
+//! files round-trip through `mkConfigFile` byte-for-meaning. Supports:
+//!
+//! - Self-closing (`<tag />`) and open/close (`<tag>...</tag>`) elements.
+//! - Attributes (decoded as `@name` keys in the IR).
+//! - Text content (with the named entities `&amp;`, `&lt;`, `&gt;`,
+//!   `&quot;`, `&apos;` and numeric `&#NNN;` / `&#xNN;` references
+//!   decoded).
+//! - `<?xml ... ?>` declarations and `<!-- comment -->` comments — the
+//!   declaration is dropped, comments before an element are attached as
+//!   a doc string to the next child.
+//!
+//! Detected for files with the `.xml` extension. Not detected by content;
+//! the dispatcher uses the filename only.
+//!
+//! Element attributes become `@name`-prefixed keys in the [`crate::Ir`]
+//! node so they remain distinguishable from child elements with the
+//! same name.
+
 use chumsky::{error::Rich, extra::Err, prelude::*, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 use std::collections::HashMap;
 
+/// Lexer token.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
-    OpenTag,       // <
-    CloseTag,      // >
-    SlashClose,    // />
-    OpenEndTag,    // </
+    /// `<`
+    OpenTag,
+    /// `>`
+    CloseTag,
+    /// `/>`
+    SlashClose,
+    /// `</`
+    OpenEndTag,
+    /// `=` between attribute name and value.
     Equals,
-    Str(String),      // quoted attribute value
-    Name(String),     // tag/attribute name
-    Text(String),     // text content between tags
-    XmlDecl,          // <?xml ... ?>
-    Comment(String),  // <!-- comment text -->
+    /// Quoted attribute value (`"..."` or `'...'`), entity-decoded.
+    Str(String),
+    /// Tag or attribute name.
+    Name(String),
+    /// Text content between tags, entity-decoded.
+    Text(String),
+    /// `<?xml ... ?>` declaration. Discarded by the parser.
+    XmlDecl,
+    /// `<!-- ... -->` comment body, trimmed.
+    Comment(String),
 }
 
+/// Parser AST.
 #[derive(Clone, Debug, PartialEq)]
 pub enum XmlExpr {
+    /// An XML element — `<tag attrs>children</tag>` or `<tag attrs />`.
     Element {
+        /// Tag name.
         tag: String,
+        /// Attribute key/value pairs, in source order.
         attrs: Vec<(String, String)>,
+        /// Mixed list of child elements, text fragments, and comments.
         children: Vec<Spanned<XmlExpr>>,
     },
+    /// Text content between tags.
     Text(String),
+    /// A `<!-- ... -->` block. Inside an element's children these become
+    /// doc strings on the following child; standalone (top-level)
+    /// comments are dropped.
     Comment(String),
 }
 
@@ -145,6 +186,9 @@ fn decode_entities(s: &str) -> String {
     out
 }
 
+/// Type-infer XML text/attribute content: bool → int → float → string.
+/// Mirrors `properties::infer_type` so XML and Properties produce the
+/// same scalar shape.
 fn infer_type(v: &str) -> Ir {
     let trimmed = v.trim();
     match trimmed {
@@ -154,6 +198,7 @@ fn infer_type(v: &str) -> Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for XML files.
 pub struct XmlParser;
 
 impl GTNHParser for XmlParser {

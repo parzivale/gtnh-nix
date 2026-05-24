@@ -1,46 +1,110 @@
+//! Forge `.cfg` parser.
+//!
+//! Forge configs (Minecraft Forge / GTNH) come in two flavours that share
+//! a parser:
+//!
+//! - **Typed**: lines start with a one-letter type prefix and `:` —
+//!   `B:foo=true` (bool), `I:foo=42` (int), `D:foo=1.5` (real),
+//!   `F:foo=1.5` (real), `S:foo=bar` (string). Lists use `<` / `>`
+//!   delimiters on their own lines.
+//! - **Untyped**: identical structure but without the type prefix. All
+//!   values fall through to a heuristic (`infer_typed_value`).
+//!
+//! Sections are `name { ... }` blocks; the parser accepts both
+//! `name {` on one line and `name`/`{` on consecutive lines, as well as
+//! an `anonymous_section` ( bare `{ ... }` without a name) which
+//! `lib.nix`'s renderer emits for empty-key sections.
+//!
+//! ## Tolerance / recovery
+//!
+//! The Python pipeline this was ported from is intentionally lenient
+//! about real-world Forge configs:
+//!
+//! - The closing `}` is `.or_not()` — some configs (e.g.
+//!   `WitcheryExtras/asm.cfg`) leave the last section unclosed at EOF.
+//! - Garbage lines (e.g. NEI's `hiddenitems.cfg`, which contains bare
+//!   `minecraft:portal` lines outside any section) are skipped
+//!   token-by-token without aborting the parse.
+//! - `S:foo="bar"` keeps the surrounding quotes as part of the value,
+//!   matching the renderer's verbatim re-emit.
+//! - `I:foo=4.0` is truncated to `4` to match the renderer's
+//!   `int(float(...))` coercion.
+
 use chumsky::{error::Rich, extra::Err, prelude::*, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 use std::collections::HashMap;
 
+/// Lexer token.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
-    TypePrefix(char), // B, I, D, S, F
+    /// One of `B`, `I`, `D`, `S`, `F` immediately followed by `:`. The
+    /// `:` is consumed separately as [`Token::Colon`] so the parser can
+    /// match the prefix and colon as a pair without backtracking.
+    TypePrefix(char),
+    /// The `:` after a type prefix (or anywhere else).
     Colon,
     /// Atomic `=` followed by value text up to end-of-line. The lexer
     /// captures the value greedily because Forge values can contain spaces,
     /// commas, and other characters that would otherwise split as separate
     /// idents (e.g. `S:foo=a, b, c with spaces`).
     EntryValue(String),
+    /// `{` opening a section body.
     OpenBrace,
+    /// `}` closing a section body. May be absent on the last section of
+    /// a file — the parser tolerates this.
     CloseBrace,
     /// `<` followed by one-value-per-line content up to `>` on its own line.
-    /// Captured atomically for the same reason as EntryValue.
+    /// Captured atomically for the same reason as `EntryValue` — list
+    /// items can contain `>` characters (e.g. arrow syntax in
+    /// MCFrames.cfg).
     AngleBlock(Vec<String>),
-    Str(String),      // quoted string
-    Ident(String),    // unquoted identifier/value
-    Comment(String),  // # comment text
+    /// Quoted string (typically a section name or a quoted key).
+    Str(String),
+    /// Unquoted identifier — section name, key, or untyped value
+    /// fragment.
+    Ident(String),
+    /// `#` line comment.
+    Comment(String),
+    /// Line terminator.
     Newline,
 }
 
+/// Parser AST for one item in a Forge file.
 #[derive(Clone, Debug, PartialEq)]
 pub enum ForgeExpr {
+    /// `[prefix:]key=value` line.
     Entry {
+        /// `Some(c)` for typed (`B:`/`I:`/`D:`/`F:`/`S:`); `None` for
+        /// untyped configs.
         type_prefix: Option<char>,
+        /// Key (without surrounding quotes if quoted).
         key: String,
+        /// Raw value text, not yet type-inferred.
         value: String,
     },
+    /// `[prefix:]key < ... >` block.
     List {
+        /// Same convention as [`ForgeExpr::Entry::type_prefix`].
         type_prefix: Option<char>,
+        /// Key.
         key: String,
+        /// One element per line inside the angle block, in source order.
         values: Vec<String>,
     },
+    /// `name { ... }` block.
     Section {
+        /// Section name (empty string for anonymous `{ ... }` sections).
         name: String,
+        /// Items inside the braces.
         children: Vec<Spanned<ForgeExpr>>,
     },
+    /// `# comment` — accumulated into the next entry/list/section's doc
+    /// string.
     Doc(String),
+    /// 2+ consecutive newlines — clears pending docs.
     Blank,
+    /// Top-level wrapper produced only at the file root.
     File(Vec<Spanned<ForgeExpr>>),
 }
 
@@ -159,6 +223,8 @@ fn infer_typed_value(type_prefix: Option<char>, value: &str) -> Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for Forge `.cfg` files (typed and
+/// untyped).
 pub struct ForgeParser;
 
 impl GTNHParser for ForgeParser {

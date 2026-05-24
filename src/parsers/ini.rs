@@ -1,28 +1,63 @@
+//! INI parser.
+//!
+//! Sectioned key=value format with `[section]` headers, `;` / `#`
+//! comments, and tolerance for CRLF / `\r\r\n` line endings (older GTNH
+//! `IC2.ini` files use the latter).
+//!
+//! Detected when content has `[section]` headers and no Forge type
+//! prefixes. The dispatcher in [`crate::nix_gen`] resolves the ambiguity
+//! with Forge.
+//!
+//! Entries before any `[section]` header are collected into a synthetic
+//! `default` section so they're still representable in the IR.
+//!
+//! Value types are inferred — `true/yes/on` → bool, integer → int,
+//! float → real, else string (see `infer_type`).
+
 use chumsky::{error::Rich, extra::Err, prelude::*, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 use std::collections::HashMap;
 
+/// Lexer token. Newlines are significant — used to delimit entries and
+/// detect blank-line breaks that clear pending docs.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
+    /// `[name]` heading. The name is trimmed.
     SectionHeader(String),
+    /// Key text up to (but not including) `=`. Trimmed.
     Key(String),
+    /// `=` between key and value.
     Equals,
+    /// Value text up to end-of-line. Trimmed.
     Value(String),
+    /// `;` or `#` comment text without the marker.
     Comment(String),
+    /// Line terminator (LF, CRLF, or `\r\r\n`).
     Newline,
 }
 
+/// One line of section content.
 #[derive(Clone, Debug, PartialEq)]
 pub enum IniItem {
+    /// A `key=value` line. Value is the raw string, type inference
+    /// happens during IR conversion.
     Entry(String, String),
+    /// A comment line. Consecutive `Doc`s are concatenated and attached
+    /// to the next `Entry`.
     Doc(String),
+    /// 2+ consecutive newlines — resets pending docs.
     Blank,
 }
 
+/// Top-level parser expression. A file is an ordered list of (name,
+/// content) pairs; entries before the first `[header]` end up in a
+/// synthetic `default` section.
 #[derive(Clone, Debug, PartialEq)]
 pub enum IniExpr {
+    /// The whole file, split into sections by `[header]` lines.
     File {
+        /// Ordered list of (section name, contents).
         sections: Vec<(String, Vec<IniItem>)>,
     },
 }
@@ -70,6 +105,8 @@ impl From<IniExpr> for Ir {
     }
 }
 
+/// Type-infer an INI value: bool (case-insensitive `true/yes/on` and
+/// `false/no/off`) → int → float → string.
 fn infer_type(v: &str) -> Ir {
     let trimmed = v.trim();
     match trimmed.to_lowercase().as_str() {
@@ -79,6 +116,7 @@ fn infer_type(v: &str) -> Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for INI files.
 pub struct IniParser;
 
 impl GTNHParser for IniParser {

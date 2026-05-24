@@ -1,3 +1,20 @@
+//! CLI entry point for the `gtnh-nix` binary.
+//!
+//! Subcommands:
+//!
+//! - `gen <pack> <out>` — discover config files under `<pack>/config`,
+//!   parse each, and emit one Nix `lib.mkOption` file per mod group into
+//!   `<out>`. See [`gtnh_nix::nix_gen::run`].
+//! - `gen-all [--force]` — (planned) regenerate every version listed in
+//!   `version-list.nix`. The Nix wrapper currently invokes `gen` per
+//!   version directly; this subcommand is reserved for future use.
+//! - `normalize <orig> <rendered>` — semantic-equivalence comparator used
+//!   by `nix flake check`. Exit code: `0` if equivalent, `1` if not. See
+//!   [`gtnh_nix::normalize::run`].
+//! - `parse <kind> <file>` — debug helper: lex and parse `<file>` with
+//!   the specified parser and pretty-print the resulting
+//!   [`gtnh_nix::Ir`] tree.
+
 use std::path::PathBuf;
 
 use clap::{Parser, Subcommand, ValueEnum};

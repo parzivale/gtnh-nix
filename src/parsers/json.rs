@@ -1,30 +1,62 @@
+//! RFC 8259 JSON parser.
+//!
+//! Standard JSON — objects, arrays, strings (with `\uXXXX` escapes and
+//! the usual `\n`/`\t`/etc.), numbers, booleans, and `null`.
+//!
+//! Detected for files with the `.json` extension or any file that starts
+//! with `{` or `[` (after whitespace). The dispatcher in
+//! [`crate::nix_gen`] checks for Forge type prefixes first so that Forge
+//! configs whose first line is an anonymous `{` aren't misrouted here.
+//!
+//! Numbers are kept as their source string and only converted to
+//! [`crate::Ir::Int`] / [`crate::Ir::Real`] / [`crate::Ir::Str`] at the
+//! IR boundary via [`crate::parse_number`]. This avoids precision loss
+//! for large quest IDs that exceed `i32::MAX`.
+
 use chumsky::{error::Rich, extra::Err, prelude::*, text, Parser};
 
 use crate::{GTNHParser, Ir, Spanned};
 
+/// Lexer token.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Token {
+    /// The literal `null`.
     Null,
+    /// `true` / `false`.
     Bool(bool),
     /// JSON has a single "number" type — int/real distinction is made when
-    /// converting to IR via `parse_number`.
+    /// converting to IR via [`crate::parse_number`].
     Number(String),
+    /// A quoted string with escape sequences already decoded.
     Str(String),
+    /// `{`
     OpenBrace,
+    /// `}`
     CloseBrace,
+    /// `[`
     OpenBracket,
+    /// `]`
     CloseBracket,
+    /// `,`
     Comma,
+    /// `:` between an object key and value.
     Colon,
 }
 
+/// Parser AST. Mirrors the JSON grammar one-to-one.
 #[derive(Clone, Debug, PartialEq)]
 pub enum JsonExpr {
+    /// `null`.
     Null,
+    /// `true` / `false`.
     Bool(bool),
+    /// Numeric literal, kept as a string for lossless IR conversion.
     Number(String),
+    /// String literal.
     Str(String),
+    /// `[item, item, ...]`.
     Arr(Vec<Spanned<Self>>),
+    /// `{"key": value, ...}`. Field order is preserved from the source.
     Object(Vec<(String, Spanned<Self>)>),
 }
 
@@ -54,6 +86,7 @@ impl From<JsonExpr> for Ir {
     }
 }
 
+/// [`GTNHParser`] implementation for RFC 8259 JSON.
 pub struct JsonParser;
 
 impl GTNHParser for JsonParser {

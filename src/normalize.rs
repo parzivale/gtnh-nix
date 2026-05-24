@@ -5,6 +5,30 @@
 //! / numbers, collapsed whitespace, stripped key quotes), sorts list elements,
 //! and diffs the two trees. Used by `checks.nix` to validate that a rendered
 //! config matches the original byte-for-meaning.
+//!
+//! ## Why "normalize"?
+//!
+//! `lib.nix`'s renderers don't produce byte-identical output — they
+//! reformat whitespace, may emit `0.0` for an integer value, drop empty
+//! sections, lose comments, and so on. The comparator's job is to decide
+//! whether the rendered file is *equivalent* to the original, allowing
+//! for these legitimate transformations.
+//!
+//! ## Equivalences applied
+//!
+//! - **Numbers** collapse int+float — `1` and `1.0` compare equal.
+//! - **Booleans** absorb bool-shaped strings — `S:foo=true` ≡ `B:foo=true`.
+//! - **Empty values** (empty strings, empty maps, empty lists) are
+//!   dropped before comparison.
+//! - **Lists** are compared as sorted multisets — Forge `<>` blocks
+//!   don't guarantee a stable order.
+//! - **`null` ≡ `"None"`** — the Nix renderer has no null sentinel and
+//!   emits `"None"` for JSON `null`.
+//! - **Numeric-keyed maps** are treated as lists — `lib.nix`'s "JSON
+//!   array → submodule with `0`, `1`, ..." workaround compares equal to
+//!   the source JSON array.
+//! - **Strings** have whitespace collapsed (tabs, newlines, NBSP all
+//!   become a single space) and surrounding quotes stripped from keys.
 
 use crate::nix_gen::parse_with_detected_format;
 use crate::Ir;
