@@ -1,0 +1,86 @@
+{lib, ...}: {
+  forge_cfg = lib.mkOption {
+    description = "forge_cfg configuration (./config/forge.cfg)";
+    default = {};
+    type = lib.types.submodule {
+      options = {
+      path = lib.mkOption {
+        type = lib.types.str;
+        default = "./config/forge.cfg";
+        readOnly = true;
+      };
+      kind = lib.mkOption {
+        type = lib.types.str;
+        default = "forge";
+        readOnly = true;
+      };
+      general = lib.mkOption {
+        default = {};
+        type = lib.types.submodule {
+          options = {
+          biomeSkyBlendRange = lib.mkOption {
+            type = lib.types.listOf lib.types.int;
+            default = [ 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 ];
+            description = "Control the range of sky blending for colored skies in biomes.";
+          };
+          clumpingThreshold = lib.mkOption {
+            type = lib.types.int;
+            default = 64;
+            description = "Controls the number threshold at which Packet51 is preferred over Packet52, default and minimum 64, maximum 1024";
+          };
+          defaultSpawnFuzz = lib.mkOption {
+            type = lib.types.int;
+            default = 20;
+            description = "The spawn fuzz when a player respawns in the world, this is controlable by WorldType, this config option is for the default overworld.";
+          };
+          disableVersionCheck = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Set to true to disable Forge's version check mechanics. Forge queries a small json file on our server for version information. For more details see the ForgeVersion class in our github.";
+          };
+          enableGlobalConfig = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+          };
+          fullBoundingBoxLadders = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Set this to true to check the entire entity's collision bounding box for ladders instead of just the block they are in. Causes noticable differences in mechanics so default is vanilla behavior. Default: false";
+          };
+          removeErroringEntities = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Set this to true to remove any Entity that throws an error in its update method instead of closing the server and reporting a crash log. BE WARNED THIS COULD SCREW UP EVERYTHING USE SPARINGLY WE ARE NOT RESPONSIBLE FOR DAMAGES.";
+          };
+          removeErroringTileEntities = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Set this to true to remove any TileEntity that throws an error in its update method instead of closing the server and reporting a crash log. BE WARNED THIS COULD SCREW UP EVERYTHING USE SPARINGLY WE ARE NOT RESPONSIBLE FOR DAMAGES.";
+          };
+          sortRecipies = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Set to true to enable the post initialization sorting of crafting recipes using Forge's sorter. May cause desyncing on conflicting recipies. MUST RESTART MINECRAFT IF CHANGED FROM THE CONFIG GUI.";
+          };
+          spawnHasFuzz = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "If the overworld has ANY spawn fuzz at all. If not, the spawn will always be the exact same location.";
+          };
+          zombieBabyChance = lib.mkOption {
+            type = lib.types.float;
+            default = 0.05;
+            description = "Chance that a zombie (or subclass) is a baby. Allows changing the zombie spawning mechanic.";
+          };
+          zombieBaseSummonChance = lib.mkOption {
+            type = lib.types.float;
+            default = 0.1;
+            description = "Base zombie summoning spawn chance. Allows changing the bonus zombie summoning mechanic.";
+          };
+          };
+        };
+      };
+      };
+    };
+  };
+}
