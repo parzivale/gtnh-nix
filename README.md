@@ -382,6 +382,21 @@ nix build .#gtnh-tool
 ./result/bin/gtnh-nix --help
 ```
 
+### Configuration option docs
+
+Every mod's config options are rendered into a per-version mdbook.
+There's no hosted site — the rendered docs are too large for GitHub
+Pages (GregTech alone produces a ~109 MB single page, over the 100 MB
+per-file cap). Build them locally:
+
+```bash
+nix build .#docs
+xdg-open result/index.html
+```
+
+The result is a landing page with one mdbook per version, each with
+search across that version's ~180 mod-option pages.
+
 ### Rust API docs
 
 Every module under `src/` is rustdoc'd. To browse the API locally:
