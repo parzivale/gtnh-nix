@@ -1,0 +1,65 @@
+name: Check versions
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  list-versions:
+    runs-on: ubuntu-latest
+    outputs:
+      versions: ${{ steps.versions.outputs.versions }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - id: versions
+        # Source of truth is the flake's nixosModules attr, which haumea
+        # builds from versions/ — keeps the matrix in lockstep with the
+        # actual managed versions.
+        run: |
+          versions=$(nix eval --json --apply 'builtins.attrNames' .#nixosModules)
+          echo "versions=$versions" >> "$GITHUB_OUTPUT"
+
+  check:
+    needs: list-versions
+    runs-on: ubuntu-latest
+    strategy:
+      # One runner per version so a single bad version doesn't take
+      # down the whole matrix, and so RAM peaks stay per-job.
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.list-versions.outputs.versions) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Check ${{ matrix.version }}
+        run: |
+          nix build -L '.#checks.x86_64-linux."${{ matrix.version }}"'
+
+  tool:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - run: nix build -L .#gtnh-tool
