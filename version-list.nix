@@ -185,13 +185,12 @@
     java_version = "17-21";
     beta = false;
   }
-  # for some reason the download is not available
-  # {
-  #   version = "2.5.0-RC1";
-  #   sha = "sha256-iiRqmyeS5huZyFSDy3qusI1mfnCkK/3MBnUE9OZa6yw=";
-  #   java_version = "17-21";
-  #   beta = true;
-  # }
+  {
+    version = "2.5.0-RC-1";
+    sha = "sha256-VhWyCSXnqaSfmI4LgxtXUYrnxZlZaBHvnGRh0Pz6zdc=";
+    java_version = "17-21";
+    beta = true;
+  }
   {
     version = "2.5.0-beta-1";
     sha = "1cw0shawxiz97mdsmrkdhs5r4yv293xr5g4m16j664yjdl9mnqd6";
