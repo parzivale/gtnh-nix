@@ -4,14 +4,12 @@ HEAVILY based on [nixos-modded-minecraft-servers](https://github.com/mkaito/nixo
 
 # Most of this is Ai Generated not suited for production
 
-# [Documentation](https://parzivale.github.io/gtnh-nix/)
-
 ## What this is
 
 `gtnh-nix` is a NixOS flake that lets you describe a GT New Horizons
 Minecraft server's configuration declaratively in Nix instead of editing
 the pack's hundreds of `.cfg` files by hand. Every config option from
-the upstream pack (across 34+ supported pack versions) is exposed as a
+the upstream pack (across 33 supported pack versions) is exposed as a
 typed `lib.mkOption`, so you can override exactly the keys you want and
 let Nix render a complete config tree at activation time.
 
@@ -55,7 +53,8 @@ Three Rust subcommands are involved:
   file.
 
 The full pipeline (parser ⇄ generator ⇄ renderer ⇄ comparator) is
-verified across all 33 supported pack versions in CI.
+verified across all 33 versions in CI (see
+`.github/workflows/checks.yml`).
 
 ## Config Format Grammars
 
@@ -234,11 +233,16 @@ value      = { any_char } ;
 
 ## Known TODOs
 
-The following mods are not yet managed through Nix options because they use config formats incompatible with the Forge key=value renderer:
+The following mods are not yet fully managed through Nix options:
 
-- **GenDustry** — recipe/upgrade/bee configs use a custom DSL format (`config/gendustry/`)
-- **OpenComputers** — uses HOCON format (`config/OpenComputers.cfg`)
-  These mods fall back to the pack's default config files. Contributions welcome.
+- **GenDustry** — recipe/upgrade/bee configs use a custom DSL format
+  (`config/gendustry/`) that no parser in this project handles. These
+  files fall back to the pack's defaults.
+- **OpenComputers** — uses HOCON (`config/OpenComputers.cfg`). The
+  HOCON parser does parse it, but some files don't round-trip
+  perfectly; treat OC option overrides as best-effort.
+
+Contributions welcome.
 
 # Usage
 
@@ -259,10 +263,11 @@ nixpkgs.overlays = [
 ];
 ```
 
-import the base module and whichever version module you like
+import the version module you want (each one already includes the
+service definition; there's no separate base module):
 
 ```nix
-imports = with inputs.gtnh-nix; [nixosModules.gtnh nixosModules."2.8.4"];
+imports = [inputs.gtnh-nix.nixosModules."2.8.4"];
 ```
 
 Available version modules with configuration options:
@@ -337,8 +342,6 @@ name becomes the leaf attribute.
    generator skipped.
 
 ### Dev shell
-
-Enter the dev shell (Rust toolchain only):
 
 Enter the dev shell (Rust toolchain only):
 
@@ -421,8 +424,10 @@ The high-level entry points are:
 ```
 flake.nix              # Flake outputs; uses haumea to auto-load versions
 lib.nix                # mkConfigFile: renderers for forge/json/xml/hocon/...
+                       # also mkVersionDocs / allDocs for the mdbook
 checks.nix             # Per-version validation via `gtnh-nix normalize`
 service.nix            # NixOS systemd service definition
+nixos-test.nix         # NixOS VM test (qemu, Linux only)
 version-list.nix       # Manifest: version -> SHA256, Java, beta flag
 src/                   # Rust source
   lib.rs               # Crate root, Ir enum, GTNHParser trait
@@ -440,5 +445,5 @@ versions/<version>/    # Generated per-pack option definitions
   minecraft/           #   Core MC options (server.properties etc.)
   mods/                #   300+ generated mod option files
 tests/                 # Rust integration tests
-docs/                  # mdBook source (built into the rendered site)
+.github/workflows/     # CI: flake checks per version, tool build
 ```
