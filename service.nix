@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   inherit
     (import ./lib.nix {
       inherit lib pkgs;
@@ -16,51 +17,55 @@
     eula=true
   '';
 
-  serverPropertiesFile = serverConfig:
-    pkgs.writeText "server.properties"
-    (mkOptionText serverConfig);
+  serverPropertiesFile = serverConfig: pkgs.writeText "server.properties" (mkOptionText serverConfig);
 
-  encodeOptionValue = value: let
-    encodeBool = value:
-      if value
-      then "true"
-      else "false";
-    encodeString = value: lib.escape [":" "=" "'"] value;
-    typeMap = {
-      "bool" = encodeBool;
-      "string" = encodeString;
-    };
-  in
+  encodeOptionValue =
+    value:
+    let
+      encodeBool = value: if value then "true" else "false";
+      encodeString = value: lib.escape [ ":" "=" "'" ] value;
+      typeMap = {
+        "bool" = encodeBool;
+        "string" = encodeString;
+      };
+    in
     (typeMap.${builtins.typeOf value} or toString) value;
 
-  mkOptionLine = name: value: let
-    dotNames = ["query-port" "rcon-password" "rcon-port"];
-    fixName = name:
-      if builtins.elem name dotNames
-      then
-        lib.stringAsChars
-        (x:
-          if x == "-"
-          then "."
-          else x)
-        name
-      else name;
-  in "${fixName name}=${encodeOptionValue value}";
+  mkOptionLine =
+    name: value:
+    let
+      dotNames = [
+        "query-port"
+        "rcon-password"
+        "rcon-port"
+      ];
+      fixName =
+        name:
+        if builtins.elem name dotNames then
+          lib.stringAsChars (x: if x == "-" then "." else x) name
+        else
+          name;
+    in
+    "${fixName name}=${encodeOptionValue value}";
 
-  mkOptionText = serverConfig: let
-    # Merge declared options with extraConfig
-    c =
-      builtins.removeAttrs serverConfig ["extra-options"];
-  in
-    lib.concatStringsSep "\n"
-    (lib.mapAttrsToList mkOptionLine c);
-in {
+  mkOptionText =
+    serverConfig:
+    let
+      # Merge declared options with extraConfig
+      c = builtins.removeAttrs serverConfig [ "extra-options" ];
+    in
+    lib.concatStringsSep "\n" (lib.mapAttrsToList mkOptionLine c);
+in
+{
   systemd.services.gtnh = lib.mkIf config.programs.gtnh.enable {
     description = "GTNH Server";
-    wantedBy = ["multi-user.target"];
-    after = ["network.target"];
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
 
-    path = with pkgs; [config.programs.gtnh.minecraft.instance-options.jvmPackage bash];
+    path = with pkgs; [
+      config.programs.gtnh.minecraft.instance-options.jvmPackage
+      bash
+    ];
 
     script = ''
       exec ${config.programs.gtnh.minecraft.instance-options.jvmPackage}/bin/java \
@@ -119,16 +124,20 @@ in {
       cp ${eulaFile} eula.txt
       chmod 644 eula.txt
       # Place managed config files (copy rendered content so mods can write to them)
-      ${lib.concatStringsSep "\n" (lib.flatten (lib.mapAttrsToList (_modGroup: cfgs:
-        lib.mapAttrsToList (_cfgName: value: ''
-          if [[ -f "${value.path}" ]]; then
-            mv -f "${value.path}" "${value.path}.bak"
-          fi
-          cp ${mkConfigFile value} "${value.path}"
-          chmod 644 "${value.path}"
-        '')
-        cfgs)
-      config.programs.gtnh.mods))}
+      ${lib.concatStringsSep "\n" (
+        lib.flatten (
+          lib.mapAttrsToList (
+            _modGroup: cfgs:
+            lib.mapAttrsToList (_cfgName: value: ''
+              if [[ -f "${value.path}" ]]; then
+                mv -f "${value.path}" "${value.path}.bak"
+              fi
+              cp ${mkConfigFile value} "${value.path}"
+              chmod 644 "${value.path}"
+            '') cfgs
+          ) config.programs.gtnh.mods
+        )
+      )}
       # Ensure server.properties is present
       if [[ -f server.properties ]]; then
         mv -f server.properties server.properties.bak
@@ -145,7 +154,13 @@ in {
     home = "/var/lib/gtnh";
   };
 
-  users.groups.gtnh = lib.mkIf config.programs.gtnh.enable {};
-  networking.firewall.allowedUDPPorts = lib.mkIf config.programs.gtnh.enable [config.programs.gtnh.minecraft.server-properties.query-port];
-  networking.firewall.allowedTCPPorts = lib.mkIf config.programs.gtnh.enable [config.programs.gtnh.minecraft.server-properties.server-port config.programs.gtnh.minecraft.server-properties.query-port config.programs.gtnh.minecraft.server-properties.rcon-port];
+  users.groups.gtnh = lib.mkIf config.programs.gtnh.enable { };
+  networking.firewall.allowedUDPPorts = lib.mkIf config.programs.gtnh.enable [
+    config.programs.gtnh.minecraft.server-properties.query-port
+  ];
+  networking.firewall.allowedTCPPorts = lib.mkIf config.programs.gtnh.enable [
+    config.programs.gtnh.minecraft.server-properties.server-port
+    config.programs.gtnh.minecraft.server-properties.query-port
+    config.programs.gtnh.minecraft.server-properties.rcon-port
+  ];
 }

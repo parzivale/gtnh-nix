@@ -114,6 +114,24 @@ pub fn run(pack_root: &Path, output_dir: &Path) -> io::Result<()> {
         eprintln!("WROTE: {} ({} cfg files)", out_path.display(), entries.len());
     }
     eprintln!("\nGenerated {written} .nix files");
+
+    // The convention is to invoke `gen` with `<version_dir>/mods` as the
+    // output dir, so `launcher.nix` lands at `<version_dir>/launcher.nix`
+    // (a sibling of `mods/`). Skip silently if the pack has no
+    // startserver-java9.sh — older / non-standard packs may not.
+    if let Some(version_dir) = output_dir.parent() {
+        let launcher_dest = version_dir.join("launcher.nix");
+        match crate::launcher::extract_from_pack(pack_root) {
+            Ok(data) => {
+                crate::launcher::write_nix(&data, &launcher_dest)?;
+                eprintln!("WROTE: {}", launcher_dest.display());
+            }
+            Err(e) => {
+                eprintln!("WARN: launcher data not extracted: {e}");
+            }
+        }
+    }
+
     Ok(())
 }
 

@@ -30,6 +30,7 @@
 //! [`GTNHParser::parse`] method runs both stages and converts the parser's
 //! expression into an [`Ir`] via [`From`].
 
+pub mod launcher;
 pub mod nix_gen;
 pub mod normalize;
 pub mod parsers;

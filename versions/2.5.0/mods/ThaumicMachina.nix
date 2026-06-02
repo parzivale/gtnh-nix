@@ -1,31 +1,32 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   ThaumicMachina_cfg = lib.mkOption {
     description = "ThaumicMachina_cfg configuration (./config/ThaumicMachina.cfg)";
-    default = {};
+    default = { };
     type = lib.types.submodule {
       options = {
-      path = lib.mkOption {
-        type = lib.types.str;
-        default = "./config/ThaumicMachina.cfg";
-        readOnly = true;
-      };
-      kind = lib.mkOption {
-        type = lib.types.str;
-        default = "forge";
-        readOnly = true;
-      };
-      research = lib.mkOption {
-        default = {};
-        type = lib.types.submodule {
-          options = {
-          "research.concept.mode" = lib.mkOption {
-            type = lib.types.int;
-            default = 0;
-            description = "Concept research mode. 0 = Normal, 1 = Easy (purchased), 2 = Auto-Unlock.";
-          };
+        path = lib.mkOption {
+          type = lib.types.str;
+          default = "./config/ThaumicMachina.cfg";
+          readOnly = true;
+        };
+        kind = lib.mkOption {
+          type = lib.types.str;
+          default = "forge";
+          readOnly = true;
+        };
+        research = lib.mkOption {
+          default = { };
+          type = lib.types.submodule {
+            options = {
+              "research.concept.mode" = lib.mkOption {
+                type = lib.types.int;
+                default = 0;
+                description = "Concept research mode. 0 = Normal, 1 = Easy (purchased), 2 = Auto-Unlock.";
+              };
+            };
           };
         };
-      };
       };
     };
   };

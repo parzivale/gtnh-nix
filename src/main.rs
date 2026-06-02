@@ -44,7 +44,8 @@ enum Command {
     Gen {
         /// Root directory of the GTNH pack
         pack_root: PathBuf,
-        /// Output directory for generated .nix files
+        /// Output directory for generated .nix files (typically
+        /// `versions/<v>/mods`; `launcher.nix` lands next to it).
         output_dir: PathBuf,
     },
     /// Regenerate Nix options for all versions listed in version-list.nix.
