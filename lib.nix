@@ -38,12 +38,12 @@ let
     k: v:
     if
       builtins.isAttrs v
-    # Section names must NOT be quoted: Forge's parser treats
-    # `"name" {` as malformed and promotes the inner keys to the
-    # parent scope. The same-line `name {` form is what the packs
-    # themselves ship and Forge accepts it.
+    # Section names: quote only when ambiguous (spaces/colons). Plain
+    # names must NOT be quoted — Forge stores quoted names literally
+    # and the mod's lookup of the bare name then fails. Names with
+    # special chars MUST be quoted — see IguanaTinkerTweaks Modules.cfg.
     then
-      if k == "" then "{\n${mkCfg v}\n}" else "${k} {\n${mkCfg v}\n}"
+      if k == "" then "{\n${mkCfg v}\n}" else "${quoteKey k} {\n${mkCfg v}\n}"
     else if builtins.isList v then
       if v == [ ] then
         ""
@@ -72,12 +72,10 @@ let
     k: v:
     if
       builtins.isAttrs v
-    # Forge's untyped-config parser silently mis-handles `name {` on
-    # a single line and promotes the inner properties to the parent
-    # scope; the `name\n{` form is what untyped packs ship and what
-    # the parser actually accepts.
+    # See `mkEntry` for the quoting rationale. Untyped configs also
+    # need `{` on its own line (the typed parser accepts same-line).
     then
-      if k == "" then "{\n${mkCfgUntyped v}\n}" else "${k}\n{\n${mkCfgUntyped v}\n}"
+      if k == "" then "{\n${mkCfgUntyped v}\n}" else "${quoteKey k}\n{\n${mkCfgUntyped v}\n}"
     else if builtins.isList v then
       if v == [ ] then "" else "${quoteKey k} <\n${lib.concatMapStrings (x: "${mkValue x}\n") v}>"
     else
