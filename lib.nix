@@ -28,8 +28,10 @@ let
   # surrounding quotes) — so quoting a plain identifier creates a
   # property the mod can never look up, and it silently falls back to
   # the mod's hardcoded default. Only quote names that genuinely need
-  # it (contain a space or other ambiguity).
-  needsQuotes = k: k == "" || builtins.match ".*[[:space:]].*" k != null;
+  # it: whitespace, or a colon (would otherwise be ambiguous with the
+  # `B:`/`I:`/`D:`/`S:` type prefix in typed configs — packs always
+  # quote names containing colons).
+  needsQuotes = k: k == "" || builtins.match ".*[[:space:]:].*" k != null;
   quoteKey = k: if needsQuotes k then "\"${k}\"" else k;
 
   mkEntry =
