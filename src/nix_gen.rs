@@ -751,15 +751,21 @@ fn render_option(out: &mut String, key: &str, value: &Ir, base_indent: usize) {
                     )
                 });
             if is_obj_list {
-                let schema = merge_object_schema(items);
+                let refs: Vec<&Ir> = items.iter().collect();
                 out.push_str(&format!("{ind}{nk} = lib.mkOption {{\n"));
                 out.push_str(&format!(
                     "{i2}type = lib.types.listOf (lib.types.submodule {{\n"
                 ));
                 out.push_str(&format!("{i2}  options = {{\n"));
-                render_ir_as_options(out, &schema, base_indent + 2);
+                let optional = render_merged_options(out, &refs, base_indent + 2);
                 out.push_str(&format!("{i2}  }};\n"));
                 out.push_str(&format!("{i2}}});\n"));
+                if !optional.is_empty() {
+                    out.push_str(&format!(
+                        "{i2}apply = map ({});\n",
+                        strip_absent_fn(&optional)
+                    ));
+                }
                 out.push_str(&format!("{i2}default = ["));
                 if items.is_empty() {
                     out.push_str(" ]");
@@ -935,24 +941,289 @@ fn nix_list(items: &[Ir], inner_type: &str) -> String {
     format!("[ {} ]", parts.join(" "))
 }
 
-/// Merge keys across items of a homogeneous-object list into a single schema.
-/// Each merged entry's value uses the first item's value at that key.
-fn merge_object_schema(items: &[Ir]) -> Ir {
-    let mut merged: BTreeMap<String, Ir> = BTreeMap::new();
+/// Shape of a value as seen by the element-schema merger.
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+enum Kind {
+    Bool,
+    Int,
+    Real,
+    Str,
+    Null,
+    ScalarList,
+    Obj,
+    ObjList,
+    Other,
+}
+
+fn kind_of(ir: &Ir) -> Kind {
+    match strip_doc(ir) {
+        Ir::Bool(_) => Kind::Bool,
+        Ir::Int(_) => Kind::Int,
+        Ir::Real(_) => Kind::Real,
+        Ir::Str(_) => Kind::Str,
+        Ir::Null => Kind::Null,
+        Ir::Node {
+            tag: None,
+            attrs: Some(_),
+            children: None,
+        } => Kind::Obj,
+        Ir::Node {
+            tag: None,
+            attrs: None,
+            children: Some(c),
+        } => {
+            if !c.is_empty() && c.iter().all(|x| kind_of(x) == Kind::Obj) {
+                Kind::ObjList
+            } else if c.iter().all(|x| {
+                matches!(kind_of(x), Kind::Bool | Kind::Int | Kind::Real | Kind::Str)
+            }) {
+                Kind::ScalarList
+            } else {
+                Kind::Other
+            }
+        }
+        _ => Kind::Other,
+    }
+}
+
+fn obj_attrs(ir: &Ir) -> Option<&std::collections::HashMap<String, Ir>> {
+    match strip_doc(ir) {
+        Ir::Node { attrs: Some(a), .. } => Some(a),
+        _ => None,
+    }
+}
+
+fn node_children(ir: &Ir) -> &[Ir] {
+    match strip_doc(ir) {
+        Ir::Node {
+            children: Some(c), ..
+        } => c,
+        _ => &[],
+    }
+}
+
+/// Nix type for a set of scalar kinds observed at the same key.
+fn scalar_kinds_type(kinds: &BTreeSet<Kind>) -> &'static str {
+    let v: Vec<Kind> = kinds.iter().copied().collect();
+    match v.as_slice() {
+        [Kind::Bool] => "lib.types.bool",
+        [Kind::Int] => "lib.types.int",
+        [Kind::Real] => "lib.types.float",
+        [Kind::Str] => "lib.types.str",
+        [Kind::Int, Kind::Real] => "lib.types.number",
+        _ => "lib.types.anything",
+    }
+}
+
+/// Nix function stripping keys the generator saw missing from some items.
+/// Those keys are emitted as `nullOr` with a null default; dropping them
+/// again when unset keeps the rendered entry identical to the original
+/// (a blanket null filter would also eat genuine `null` values).
+fn strip_absent_fn(keys: &[String]) -> String {
+    let names: Vec<String> = keys.iter().map(|k| nix_str_lit(k)).collect();
+    format!(
+        "lib.filterAttrs (n: v: v != null || !(builtins.elem n [ {} ]))",
+        names.join(" ")
+    )
+}
+
+/// Emit the options of a list-of-objects element schema, merging every
+/// item's keys recursively. Keys whose values disagree in shape are widened
+/// (`either S (listOf T)`, `number`, else `anything`); keys missing from some
+/// items become `nullOr` with a null default. Returns those optional keys so
+/// the caller can strip them on render (see `strip_absent_fn`).
+fn render_merged_options(out: &mut String, items: &[&Ir], base_indent: usize) -> Vec<String> {
+    let ind = indent(base_indent);
+    let i2 = indent(base_indent + 1);
+
+    let mut by_key: BTreeMap<&str, Vec<&Ir>> = BTreeMap::new();
     for item in items {
-        if let Ir::Node {
-            attrs: Some(a), ..
-        } = strip_doc(item)
-        {
+        if let Some(a) = obj_attrs(item) {
             for (k, v) in a {
-                merged.entry(k.clone()).or_insert_with(|| v.clone());
+                by_key.entry(k.as_str()).or_default().push(v);
             }
         }
     }
-    Ir::Node {
-        tag: None,
-        attrs: Some(merged.into_iter().collect()),
-        children: None,
+
+    let mut optional_keys = Vec::new();
+    for (key, values) in &by_key {
+        let nk = nix_attr_key(key);
+        let optional = values.len() < items.len();
+        if optional {
+            optional_keys.push(key.to_string());
+        }
+        let doc = values.iter().find_map(|v| split_doc(v).0);
+        let non_null: Vec<&Ir> = values
+            .iter()
+            .copied()
+            .filter(|v| kind_of(v) != Kind::Null)
+            .collect();
+        let nullable = optional || non_null.len() < values.len();
+        let kinds: BTreeSet<Kind> = non_null.iter().map(|v| kind_of(v)).collect();
+        let first = strip_doc(values[0]);
+
+        out.push_str(&format!("{ind}{nk} = lib.mkOption {{\n"));
+        let mut apply = None;
+        let (ty, default) = match kinds.iter().copied().collect::<Vec<_>>().as_slice() {
+            [] => ("lib.types.str".to_string(), "null".to_string()),
+            [Kind::Obj] => {
+                let mut body = String::new();
+                let nested = render_merged_options(&mut body, &non_null, base_indent + 2);
+                if !nested.is_empty() {
+                    apply = Some(strip_absent_fn(&nested));
+                }
+                let ty = format!(
+                    "lib.types.submodule {{\n{i2}  options = {{\n{body}{i2}  }};\n{i2}}}"
+                );
+                let default = if nullable { "null" } else { "{}" };
+                (ty, default.to_string())
+            }
+            [Kind::ObjList] => {
+                let elems: Vec<&Ir> = non_null.iter().flat_map(|v| node_children(v)).collect();
+                let mut body = String::new();
+                let nested = render_merged_options(&mut body, &elems, base_indent + 2);
+                if !nested.is_empty() {
+                    apply = Some(format!("map ({})", strip_absent_fn(&nested)));
+                }
+                let ty = format!(
+                    "lib.types.listOf (lib.types.submodule {{\n{i2}  options = {{\n{body}{i2}  }};\n{i2}}})"
+                );
+                let default = if optional {
+                    "null".to_string()
+                } else {
+                    nix_value(first, &list_element_type(node_children(first)))
+                };
+                (ty, default)
+            }
+            [Kind::ScalarList] => {
+                let all: Vec<Ir> = non_null
+                    .iter()
+                    .flat_map(|v| node_children(v).iter().cloned())
+                    .collect();
+                let it = list_element_type(&all);
+                let default = if optional {
+                    "null".to_string()
+                } else {
+                    nix_value(first, it)
+                };
+                (format!("lib.types.listOf {it}"), default)
+            }
+            ks if ks.iter().all(|k| *k <= Kind::Str) => {
+                let ty = scalar_kinds_type(&kinds);
+                let default = if optional {
+                    "null".to_string()
+                } else {
+                    nix_value(first, ty)
+                };
+                (ty.to_string(), default)
+            }
+            // A field that is sometimes a scalar and sometimes a list of
+            // scalars, e.g. `"role"` vs `["role", "other"]`.
+            ks if ks.last() == Some(&Kind::ScalarList)
+                && ks[..ks.len() - 1].iter().all(|k| *k <= Kind::Str) =>
+            {
+                let scalars: BTreeSet<Kind> = ks[..ks.len() - 1].iter().copied().collect();
+                let all: Vec<Ir> = non_null
+                    .iter()
+                    .flat_map(|v| node_children(v).iter().cloned())
+                    .collect();
+                let it = list_element_type(&all);
+                let default = if optional {
+                    "null".to_string()
+                } else {
+                    nix_value(first, it)
+                };
+                (
+                    format!(
+                        "lib.types.either {} (lib.types.listOf {it})",
+                        scalar_kinds_type(&scalars)
+                    ),
+                    default,
+                )
+            }
+            _ => {
+                let default = if optional {
+                    "null".to_string()
+                } else {
+                    nix_value(first, "lib.types.anything")
+                };
+                ("lib.types.anything".to_string(), default)
+            }
+        };
+        let ty = if !nullable || ty == "lib.types.anything" {
+            ty
+        } else if ty.contains(' ') {
+            format!("lib.types.nullOr ({ty})")
+        } else {
+            format!("lib.types.nullOr {ty}")
+        };
+        // Field order mirrors `render_option`, so homogeneous lists generate
+        // exactly what they did before schemas were merged.
+        let description = doc.map(|d| format!("{i2}description = {};\n", nix_str_lit(&d)));
+        if ty.starts_with("lib.types.submodule") {
+            out.push_str(&format!("{i2}default = {default};\n"));
+            out.push_str(description.as_deref().unwrap_or(""));
+            out.push_str(&format!("{i2}type = {ty};\n"));
+        } else {
+            out.push_str(&format!("{i2}type = {ty};\n"));
+            out.push_str(&format!("{i2}default = {default};\n"));
+            out.push_str(description.as_deref().unwrap_or(""));
+        }
+        if let Some(a) = apply {
+            out.push_str(&format!("{i2}apply = v: if v == null then v else {a} v;\n"));
+        }
+        out.push_str(&format!("{ind}}};\n"));
+    }
+    optional_keys
+}
+
+/// Single-line Nix literal for an arbitrary value. `list_type` controls how
+/// scalar list elements are coerced (see `nix_list`).
+fn nix_value(ir: &Ir, list_type: &str) -> String {
+    match strip_doc(ir) {
+        Ir::Node {
+            attrs: Some(a),
+            children: None,
+            ..
+        } => {
+            let mut keys: Vec<&String> = a.keys().collect();
+            keys.sort();
+            let parts: Vec<String> = keys
+                .iter()
+                .map(|k| {
+                    let v = &a[*k];
+                    let lt = match kind_of(v) {
+                        Kind::ScalarList => list_element_type(node_children(v)),
+                        _ => "lib.types.anything",
+                    };
+                    format!("{} = {};", nix_attr_key(k), nix_value(v, lt))
+                })
+                .collect();
+            format!("{{ {} }}", parts.join(" "))
+        }
+        Ir::Node {
+            attrs: None,
+            children: Some(c),
+            ..
+        } => match kind_of(ir) {
+            Kind::ScalarList if list_type != "lib.types.anything" => nix_list(c, list_type),
+            _ => {
+                let parts: Vec<String> = c
+                    .iter()
+                    .map(|x| {
+                        let s = nix_value(x, "lib.types.anything");
+                        if s.starts_with('-') { format!("({s})") } else { s }
+                    })
+                    .collect();
+                if parts.is_empty() {
+                    "[ ]".into()
+                } else {
+                    format!("[ {} ]", parts.join(" "))
+                }
+            }
+        },
+        Ir::Node { .. } => "{ }".into(),
+        other => scalar_type_and_default(other).1,
     }
 }
 
@@ -985,7 +1256,7 @@ fn render_object_default(out: &mut String, item: &Ir, base_indent: usize) {
                     ..
                 } => {
                     let it = list_element_type(children);
-                    out.push_str(&format!("{i2}{nk} = {};\n", nix_list(children, it)));
+                    out.push_str(&format!("{i2}{nk} = {};\n", nix_value(v, it)));
                 }
                 _ => {
                     let (_ty, def) = scalar_type_and_default(v);
@@ -1024,7 +1295,7 @@ fn render_nested_default(out: &mut String, ir: &Ir, base_indent: usize) {
                     ..
                 } => {
                     let it = list_element_type(children);
-                    out.push_str(&format!("{i2}{nk} = {};\n", nix_list(children, it)));
+                    out.push_str(&format!("{i2}{nk} = {};\n", nix_value(v, it)));
                 }
                 _ => {
                     let (_ty, def) = scalar_type_and_default(v);
@@ -1075,5 +1346,55 @@ fn nix_float(f: f64) -> String {
         format!("{s}.0")
     } else {
         s
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn options_for(json_text: &str) -> String {
+        let ir = parse_with_format(Format::Json, json_text).expect("parse");
+        let mut out = String::new();
+        render_ir_as_options(&mut out, &ir, 0);
+        out
+    }
+
+    #[test]
+    fn obj_list_merges_heterogeneous_items() {
+        // Shape taken from gtnh-credits' credits.json (GTNH 2.9.0).
+        let out = options_for(
+            r#"{"person": [
+                {"username": "a", "name": "A", "category": {"lead": ["x", "y"], "quests": "q"}},
+                {"name": "B", "category": {"lead": "z"}}
+            ]}"#,
+        );
+        assert!(
+            out.contains("type = lib.types.either lib.types.str (lib.types.listOf lib.types.str);"),
+            "{out}"
+        );
+        // Keys missing from some items are nullable, default to null and
+        // get stripped again so they don't leak into other entries.
+        assert!(out.contains("type = lib.types.nullOr lib.types.str;\n"), "{out}");
+        assert!(!out.contains("default = \"a\";"), "{out}");
+        assert!(out.contains(r#"builtins.elem n [ "username" ]"#), "{out}");
+        assert!(out.contains(r#"builtins.elem n [ "quests" ]"#), "{out}");
+    }
+
+    #[test]
+    fn obj_list_nested_obj_list_default_is_nix() {
+        // vendingmachine's tradeDatabase.json nests object lists in items.
+        let out = options_for(r#"{"groups": [{"reqs": [{"name": "bq", "id": 7}]}]}"#);
+        assert!(out.contains(r#"reqs = [ { id = 7; name = "bq"; } ];"#), "{out}");
+        assert!(!out.contains("Node {"), "{out}");
+    }
+
+    #[test]
+    fn obj_list_homogeneous_items_unchanged() {
+        let out = options_for(r#"{"xs": [{"a": 1, "b": "s"}, {"a": 2, "b": "t"}]}"#);
+        assert!(out.contains("type = lib.types.int;\n"), "{out}");
+        assert!(out.contains("default = 1;\n"), "{out}");
+        assert!(!out.contains("apply"), "{out}");
+        assert!(!out.contains("nullOr"), "{out}");
     }
 }
