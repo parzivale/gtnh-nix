@@ -1,5 +1,35 @@
 [
   {
+    version = "2.9.0-RC-2";
+    sha = "sha256-4AWg0FDsBgc7Ow0RsUm1q5NVys9LjEuDfFC4qJlG2/k=";
+    java_version = "17-26";
+    beta = true;
+  }
+  {
+    version = "2.9.0-RC-1";
+    sha = "sha256-oSKc1RRb4BnLCwx3UQCMqSqhYHYTSfP7chZZPnu503w=";
+    java_version = "17-26";
+    beta = true;
+  }
+  {
+    version = "2.9.0-beta-3";
+    sha = "sha256-7icqjSMg8Bxx96k5Hx42coMMdvyWy50F1f1D1SS8wN8=";
+    java_version = "17-26";
+    beta = true;
+  }
+  {
+    version = "2.9.0-beta-2";
+    sha = "sha256-4OFtNoKnDVCMg1tfzMaDmLrKIpWLdJNgmgN7TXjJTt0=";
+    java_version = "17-25";
+    beta = true;
+  }
+  {
+    version = "2.9.0-beta-1";
+    sha = "sha256-M61DzB5XsDxFiFwSAUL8CY8Gg41m4Xu802j2HW6zpxk=";
+    java_version = "17-25";
+    beta = true;
+  }
+  {
     version = "2.8.4";
     sha = "sha256-pY13GgfdcHU13wFRkIV1U5gpbB6RODYS0tMv82mQwIw=";
     java_version = "17-25";
