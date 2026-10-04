@@ -24,8 +24,9 @@ cargo build --release
 # Parse a single file and dump its IR (debugging)
 ./target/release/gtnh-nix parse <parser> <file>
 
-# Build a specific version package
-nix build .#gtnh-2.8.4
+# Build a specific version package (quote the attr: the dots in the
+# version otherwise split it into an attribute path)
+nix build '.#"gtnh-2.8.4"'
 
 # Build the gtnh-nix tool as a Nix package
 nix build .#gtnh-tool
@@ -34,7 +35,7 @@ nix build .#gtnh-tool
 nix flake check
 
 # Run checks for a specific version
-nix build .#checks.x86_64-linux.2.8.4
+nix build '.#checks.x86_64-linux."2.8.4"'
 
 # Run NixOS service test
 nix build .#checks.x86_64-linux.nixos-service
@@ -63,10 +64,13 @@ GTNH Pack configs → `gtnh-nix gen` → Nix option files → NixOS module evalu
 ### Version Structure
 
 Each `versions/<version>/` directory contains:
-- `minecraft/` - Core Minecraft options (instance-options.nix, server-properties.nix)
-- `mods/` - Generated mod config options (300+ files per version)
+- `launcher.nix` - Generated JVM launcher data (`xms`, `xmx`, `opts`) from the pack's start script + `java9args.txt`
+- `mods/` - Generated mod config options (~170-190 files per version)
 
-Haumea auto-loads these directories, avoiding explicit imports.
+Haumea auto-loads `mods/`, avoiding explicit imports. Instance and
+server-properties options are shared across versions in `modules/`
+(`instance-options.nix`, `server-properties.nix`), parametrised by the
+version's `launcher.nix`.
 
 ### Config Format Support
 
@@ -119,12 +123,29 @@ these equivalences before diffing:
 If a normalize check fails, the diff is printed in the form
 `- key: type:value` (original) / `+ key: type:value` (rendered).
 
+### Lists of objects (`nix_gen::render_merged_options`)
+
+A JSON array of objects becomes `listOf (submodule ...)` whose element
+schema merges the keys of *every* item, recursively. Keys whose values
+disagree in shape are widened (`either S (listOf T)`, `number`, else
+`anything`). Keys missing from some items become `nullOr T` with a null
+default, and the option gets an `apply` that strips exactly those keys
+when null, so they don't leak into other entries while genuine `null`
+values elsewhere survive. Homogeneous lists generate the same output as
+before this merge existed.
+
 ## Development Workflows
 
 ### Adding a new GTNH version
 1. Update `version-list.nix` with version, SHA256, Java version, beta flag
-2. Run `nix build .#gtnh-<version>` to fetch pack
-3. Run `./target/release/gtnh-nix gen $(nix build .#gtnh-<version> --print-out-paths --no-link) versions/<version>/mods`
+   (prefetch with `nix store prefetch-file <url>`; beta packs live under
+   `ServerPacks/betas/`, and filenames are case-sensitive, e.g. `RC-2` vs `beta-3`)
+2. Run `nix build '.#"gtnh-<version>"'` to fetch pack
+3. Run `./target/release/gtnh-nix gen $(nix build '.#"gtnh-<version>"' --print-out-paths --no-link) versions/<version>/mods`
+   (also writes `versions/<version>/launcher.nix`)
+4. `nix fmt -- versions/<version>` (committed version files are formatted)
+5. `git add versions/<version>` (flakes only see tracked files), then run
+   `nix build '.#checks.<system>."<version>"'`
 
 ### Fixing a mod config
 1. Edit the mod's `.nix` file in `versions/<version>/mods/`
